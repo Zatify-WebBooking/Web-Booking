@@ -1,0 +1,80 @@
+/* BOOK TABLE  */
+
+.book-table-container {
+    width: 600px;
+    margin: 90px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.book-table-container h1 {
+    font-size: 4rem;
+    color: #262626;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-align: center;
+    color: #d7d7d7;
+}
+
+.book-table-container .subtitle {
+    font-size: 0.8rem;
+    margin-top: 20px;
+    color: #262626;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #d7d7d7;
+}
+
+.book-table-container .form {
+    width: 400px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.book-table-container .form-group {
+    margin-bottom: 15px;
+    width: 100%;
+    font-size: 18px;
+    color: #d7d7d7;
+}
+
+.book-table-container label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.book-table-container input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.book-table-container button {
+    width: 200px;
+    margin: auto;
+    padding: 10px;
+    background-color: #262626;
+    /* Màu xanh lá cây */
+    color: #d7d7d7;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.book-table-container button:hover {
+    background-color: #d7d7d7;
+color: #262626;}
+
+.book-table-container .success-message {
+    margin-top: 20px;
+    color: #d7d7d7;
+    /* Màu xanh lá cây cho thông báo thành công */
+    text-align: center;
+}

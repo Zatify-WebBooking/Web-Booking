@@ -1,4 +1,4 @@
-import '../styles/main.css';
+import '../../styles/main.css';
 
 function Header() {
   return (
@@ -6,7 +6,7 @@ function Header() {
       <div className="header-container">
         <h1 className="logo">Savory</h1>
         <nav className="nav">
-          <a href="#home">Home</a>
+          <a href="/">Home</a>
           <a href="#menu">Menu</a>
           <a href="#about">About</a>
           <a href="#reservation">Reservation</a>
