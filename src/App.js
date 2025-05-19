@@ -1,12 +1,15 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/partials/Header';
 import Home from './components/pages/Home';
-import Footer from './components/partials/Footer';
 import MainLayout from './components/layout/MainLayout';
 import EmptyLayout from './components/layout/EmptyLayout';
 import { Login } from './components/users/Login';
 import BookTable from './components/functional/Table/BookTable';
 import ScrollToTop from './components/functional/ScrollToTop';
+import ViewMenu from './Menu/ViewMenu';
+import CreateFood from './Menu/CreateFood';
+import EditFood from './Menu/EditFood';
+
+import Food from './Menu/Food';
 
 
 
@@ -15,14 +18,15 @@ function App() {
     <>
       <ScrollToTop />
       <Routes>
-
-        {/* Layout có Header và Footer */}
         <Route element={<MainLayout />}>
           <Route path="" element={<Home />} />
           <Route path="/booktable" element={<BookTable />} />
-        </Route>
+          <Route path="/viewmenu" element={<ViewMenu />} />
+          <Route path="/food" element={<Food />} />
+          <Route path="/editfood/:id" element={<EditFood />} />
+          <Route path="/createfood" element={<CreateFood />} />
 
-        {/* Layout không có Header và Footer */}
+        </Route>
         <Route element={<EmptyLayout />}>
           <Route path="/login" element={<Login />} />
           {/* <Route path="/register" element={<Register />} /> */}

@@ -1,0 +1,361 @@
+/* Our Starters */
+.Page2 {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  background-color: #fff;
+  line-height: 1.6;
+  height: auto;
+  padding: 20px;
+  max-width: 1200px;
+
+  margin: 0 auto;
+}
+
+/* Header section */
+.our-starters {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.our-starters .subtitle {
+  margin-top: 70px;
+  margin-bottom: -12px;
+  font-size: 0.8rem;
+  color: #262626;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.our-starters .title {
+  font-size: 4rem;
+  color: #262626;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.our-starters .description {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #666;
+  font-size: 1rem;
+}
+
+.our-main-meals {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.our-main-meals .subtitle {
+  margin-top: 70px;
+  margin-bottom: -12px;
+  font-size: 0.8rem;
+  color: #262626;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.our-main-meals .title {
+  font-size: 4rem;
+  color: #262626;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.our-main-meals .description {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #666;
+  font-size: 1rem;
+}
+
+/* desserts */
+.our-desserts {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.our-desserts .subtitle {
+  margin-top: 70px;
+  margin-bottom: -12px;
+  font-size: 0.8rem;
+  color: #262626;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.our-desserts .title {
+  font-size: 4rem;
+  color: #262626;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.our-desserts .description {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #666;
+  font-size: 1rem;
+}
+
+
+/* Grid layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px 50px;
+}
+
+.space-y-8>*+* {
+  margin-top: 0.5rem;
+}
+
+/* Menu items */
+.item {
+  margin-top: 15px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding-bottom: 20px;
+}
+
+.item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+  border-radius: 50%;
+}
+
+.item-content {
+  flex: 1;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.item-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #222;
+}
+
+.item-title .text-black {
+  color: #000;
+}
+
+.item-price {
+  font-weight: 700;
+  color: #222;
+}
+
+.item-description {
+  color: #666;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+
+
+/* FOOD */
+.food-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.food-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.food-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.food-table th,
+.food-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.food-table th {
+  background-color: #f4f4f4;
+}
+
+.food-image {
+  width: 60px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.edit-btn,
+.delete-btn {
+  padding: 6px 12px;
+  margin-right: 8px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background-color: #262626;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+}
+
+.edit-btn:hover {
+  background-color: #dddddd;
+  color: #262626;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+/* CREATE FOOD  */
+.create-food-container {
+  max-width: 500px;
+  margin: 80px auto 40px auto;
+  padding: 24px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fafafa;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  font-family: Arial, sans-serif;
+}
+
+.create-food-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.create-food-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.create-food-container input[type="text"],
+.create-food-container input[type="number"],
+.create-food-container textarea,
+.create-food-container select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.create-food-container textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.create-food-container label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.create-food-container button[type="submit"] {
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.create-food-container button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+/* EDIT FOOD  */
+.edit-food-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px 40px;
+  background-color: #fdfdfd;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.edit-food-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.edit-food-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-food-container input[type="text"],
+.edit-food-container input[type="number"],
+.edit-food-container textarea,
+.edit-food-container select {
+  padding: 10px 12px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color 0.3s;
+}
+
+.edit-food-container input[type="text"]:focus,
+.edit-food-container input[type="number"]:focus,
+.edit-food-container textarea:focus,
+.edit-food-container select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.edit-food-container textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.edit-food-container label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+  font-size: 15px;
+  color: #444;
+}
+
+.edit-food-container input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.edit-food-container button {
+  padding: 12px;
+  background-color: #28a745;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.edit-food-container button:hover {
+  background-color: #218838;
+}

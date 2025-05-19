@@ -51,6 +51,10 @@ function HeroCarousel() {
     navigate('/booktable');
   };
 
+  const handleViewMenu = () => {
+    navigate('/viewmenu')
+  }
+
   const changeSlide = (nextIndex) => {
     setAnimationClass("fade-out");
 
@@ -117,7 +121,9 @@ function HeroCarousel() {
           <div className={`overlay-content ${animationClass}`}>
             <h1>{titles[current]}</h1>
             <p>{descriptions[current]}</p>
-            <button className="btn-menu"><b>VIEW OUR MENU</b></button>
+            <button className="btn-menu" onClick={handleViewMenu}>
+              <b>VIEW OUR MENU</b>
+              </button>
           </div>
 
           {/* Sidebar Toggle Button */}

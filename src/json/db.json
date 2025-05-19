@@ -1,0 +1,121 @@
+{
+  "thucdon": [
+    {
+      "Ma_ThucDon": 1,
+      "Ten": "Mussels Soup",
+      "MoTa": "Bowl of mussels soup with herbs and sauce",
+      "Gia": 23,
+      "CoSan": true,
+      "GhiChu": "",
+      "NgayTao": "2025-05-01",
+      "NgayCapNhat": "2025-05-10",
+      "Anh": "https://storage.googleapis.com/a1aa/image/5c59bce7-f567-4ed7-2cfe-6065892e9f91.jpg",
+      "Loai": "starters",
+      "id": "f272"
+    },
+    {
+      "Ma_ThucDon": 2,
+      "Ten": "Italian Spaghetti",
+      "MoTa": "Plate of Italian spaghetti with tomato sauce and herbs",
+      "Gia": 12,
+      "CoSan": true,
+      "GhiChu": "",
+      "NgayTao": "2025-05-02",
+      "NgayCapNhat": "2025-05-11",
+      "Anh": "https://storage.googleapis.com/a1aa/image/b825f131-9267-4360-0a5e-f45f49e1b6d0.jpg",
+      "Loai": "main-meals",
+      "id": "466a"
+    },
+    {
+      "Ma_ThucDon": 3,
+      "Ten": "Beef Burger",
+      "MoTa": "Beef burger with lettuce and tomato on a bun",
+      "Gia": 10,
+      "CoSan": true,
+      "GhiChu": "",
+      "NgayTao": "2025-05-03",
+      "NgayCapNhat": "2025-05-11",
+      "Anh": "https://storage.googleapis.com/a1aa/image/db822616-5045-4cdc-caae-f2ad0a9150f7.jpg",
+      "Loai": "main-meals",
+      "id": "abf7"
+    },
+    {
+      "Ma_ThucDon": 4,
+      "Ten": "Stuffed Strawberry",
+      "MoTa": "Stuffed strawberry dessert with cream and garnish",
+      "Gia": 15,
+      "CoSan": true,
+      "GhiChu": "",
+      "NgayTao": "2025-05-04",
+      "NgayCapNhat": "2025-05-11",
+      "Anh": "https://storage.googleapis.com/a1aa/image/0315f2be-d845-499b-5b5d-b9eb95a4339f.jpg",
+      "Loai": "starters",
+      "id": "7314"
+    },
+    {
+      "Ma_ThucDon": 5,
+      "Ten": "Sicilian Meatballs",
+      "MoTa": "Plate of Sicilian meatballs with sauce and herbs",
+      "Gia": 25,
+      "CoSan": true,
+      "GhiChu": "",
+      "NgayTao": "2025-05-05",
+      "NgayCapNhat": "2025-05-11",
+      "Anh": "https://storage.googleapis.com/a1aa/image/84019eaa-160e-491a-51f1-0ea1e3c2314c.jpg",
+      "Loai": "main-meals",
+      "id": "52bd"
+    },
+    {
+      "Ma_ThucDon": 6,
+      "Ten": "Seafood Salad",
+      "MoTa": "Seafood salad with shrimp, greens, and lemon",
+      "Gia": 17,
+      "CoSan": true,
+      "GhiChu": "",
+      "NgayTao": "2025-05-06",
+      "NgayCapNhat": "2025-05-11",
+      "Loai": "starters",
+      "Anh": "https://storage.googleapis.com/a1aa/image/afea1b9e-7b69-4d2f-d12d-36c463a103c7.jpg",
+      "id": "47d2"
+    },
+    {
+      "Ma_ThucDon": 7,
+      "Ten": "Chocolate Lava Cake",
+      "MoTa": "Warm chocolate cake with molten center served with vanilla ice cream",
+      "Gia": 20,
+      "CoSan": true,
+      "GhiChu": "",
+      "NgayTao": "2025-05-07",
+      "NgayCapNhat": "2025-05-11",
+      "Loai": "desserts",
+      "Anh": "https://i.pinimg.com/736x/32/32/b3/3232b30401529f3fce3022771324a7ab.jpg",
+      "id": "d101"
+    },
+    {
+      "Ma_ThucDon": 8,
+      "Ten": "Fruit Tart",
+      "MoTa": "Fresh fruit tart with custard and flaky crust",
+      "Gia": 18,
+      "CoSan": true,
+      "GhiChu": "",
+      "NgayTao": "2025-05-08",
+      "NgayCapNhat": "2025-05-11",
+      "Loai": "desserts",
+      "Anh": "https://i.pinimg.com/736x/f7/42/ed/f742ed21bcf61d29baef0dac6fca7466.jpg",
+      "id": "e202"
+    },
+    {
+      "id": "c8fa",
+      "Ten": "Bò kho",
+      "MoTa": "Bò kho là một món ăn khá nổi tiếng ở nhà hàng chúng tôi.",
+      "Gia": 20,
+      "CoSan": true,
+      "GhiChu": "",
+      "NgayTao": "2025-05-18",
+      "NgayCapNhat": "2025-05-18",
+      "Anh": "https://i.pinimg.com/736x/f9/64/3b/f9643b176011682764c302cf251c3705.jpg",
+      "Loai": "main-meals",
+      "Ma_ThucDon": 1747581645247
+    }
+  ]
+}
