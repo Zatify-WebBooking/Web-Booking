@@ -1,4 +1,4 @@
-import '../../styles/main.css';
+import '../../styles/restaurant/main.css';
 
 function Header() {
   return (

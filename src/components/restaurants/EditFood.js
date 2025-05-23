@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import '../styles/menu.css';
+import '../../styles/restaurant/menu.css';
 
 const EditFood = () => {
-    const { id } = useParams(); // id ở đây là Ma_ThucDon
+    const { id } = useParams();
     const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
-        id: null,         // thêm trường id để lưu id thật của json-server
+        id: null,
         Ten: '',
         MoTa: '',
         Gia: '',
@@ -21,6 +21,8 @@ const EditFood = () => {
     });
 
     const [loading, setLoading] = useState(true);
+    const [imageFile, setImageFile] = useState(null);
+    const [preview, setPreview] = useState(null);
 
     useEffect(() => {
         const fetchFood = async () => {
@@ -29,7 +31,8 @@ const EditFood = () => {
                 const data = response.data;
 
                 if (data.length > 0) {
-                    setFormData(data[0]); // data[0] chứa cả trường id thật
+                    setFormData(data[0]);
+                    setPreview(data[0].Anh); // Hiển thị ảnh cũ
                 } else {
                     console.log("Không tìm thấy món ăn");
                 }
@@ -51,21 +54,48 @@ const EditFood = () => {
         });
     };
 
+    const handleImageChange = (e) => {
+        const file = e.target.files[0];
+        setImageFile(file);
+        if (file) {
+            setPreview(URL.createObjectURL(file));
+        } else {
+            setPreview(formData.Anh);
+        }
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
-            const updatedData = {
-                ...formData,
-                Gia: parseFloat(formData.Gia),
-                NgayCapNhat: new Date().toISOString().split('T')[0],
-            };
-
-            // Dùng formData.id để PUT đúng record
-            await axios.put(`http://localhost:3001/thucdon/${formData.id}`, updatedData);
-
-            alert('Cập nhật món ăn thành công!');
-            navigate('/food');
+            let imageUrl = formData.Anh;
+            if (imageFile) {
+                // Chuyển file thành base64
+                const reader = new FileReader();
+                reader.onloadend = async () => {
+                    imageUrl = reader.result;
+                    const updatedData = {
+                        ...formData,
+                        Gia: parseFloat(formData.Gia),
+                        NgayCapNhat: new Date().toISOString().split('T')[0],
+                        Anh: imageUrl
+                    };
+                    await axios.put(`http://localhost:3001/thucdon/${formData.id}`, updatedData);
+                    alert('Cập nhật món ăn thành công!');
+                    navigate('/food');
+                };
+                reader.readAsDataURL(imageFile);
+            } else {
+                const updatedData = {
+                    ...formData,
+                    Gia: parseFloat(formData.Gia),
+                    NgayCapNhat: new Date().toISOString().split('T')[0],
+                    Anh: imageUrl
+                };
+                await axios.put(`http://localhost:3001/thucdon/${formData.id}`, updatedData);
+                alert('Cập nhật món ăn thành công!');
+                navigate(`/food/${formData.restaurantId}`);
+            }
         } catch (error) {
             console.error('Lỗi khi cập nhật món ăn:', error);
             alert('Cập nhật thất bại!');
@@ -102,13 +132,13 @@ const EditFood = () => {
                     required
                 />
                 <input
-                    type="text"
-                    name="Anh"
-                    placeholder="URL ảnh"
-                    value={formData.Anh}
-                    onChange={handleChange}
-                    required
+                    type="file"
+                    accept="image/*"
+                    onChange={handleImageChange}
                 />
+                {preview && (
+                    <img src={preview} alt="preview" style={{ width: 120, margin: 8 }} />
+                )}
                 <select name="Loai" value={formData.Loai} onChange={handleChange}>
                     <option value="starters">Starters</option>
                     <option value="main-meals">Main Meals</option>

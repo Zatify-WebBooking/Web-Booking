@@ -1,27 +1,53 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
 import { Parallax } from 'react-parallax';
-import '../../../styles/table.css';
+import '../../styles/restaurant/table.css';
 
 const BookTable = () => {
     const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
     const [date, setDate] = useState('');
     const [time, setTime] = useState('');
     const [guests, setGuests] = useState(1);
+    const [note, setNote] = useState('');
     const [message, setMessage] = useState('');
+    const { id: restaurantId } = useParams(); // Lấy restaurantId từ URL
 
-    const handleSubmit = (e) => {
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        setMessage(`Đặt bàn thành công cho ${name} vào ngày ${date} lúc ${time} cho ${guests} khách.`);
+
+        const newBooking = {
+            Ma_KH: name,
+            SoDienThoai: phone,
+            GhiChu: note,
+            NgayDat: date,
+            GioDat: time,
+            SoLuongNguoi: parseInt(guests),
+            Ma_Ban: null,
+            TrangThai: "Chờ xác nhận",
+            restaurantId
+        };
+
+        try {
+            await axios.post('http://localhost:3001/datban', newBooking);
+            setMessage(`✅ Đặt bàn thành công cho ${name} vào ngày ${date} lúc ${time} cho ${guests} khách.`);
+            setName('');
+            setPhone('');
+            setDate('');
+            setTime('');
+            setGuests(1);
+            setNote('');
+        } catch (error) {
+            setMessage('❌ Đặt bàn thất bại. Vui lòng thử lại sau.');
+            console.error(error);
+        }
     };
 
     return (
-        <Parallax
-            bgImage="/images/booktable.webp"
-            strength={500}
-        >
+        <Parallax bgImage="/images/booktable.webp" strength={500}>
             <div className="book-table-parallax" style={{
-                height: '100vh',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center'
@@ -35,20 +61,18 @@ const BookTable = () => {
                             <input
                                 type="text"
                                 id="Ma_KH"
-                                name="Ma_KH"
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
                                 required
                             />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="Email">Your Email:</label>
+                            <label htmlFor="SoDienThoai">Phone Number:</label>
                             <input
-                                type="email"
-                                id="Email"
-                                name="Email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
+                                type="tel"
+                                id="SoDienThoai"
+                                value={phone}
+                                onChange={(e) => setPhone(e.target.value)}
                                 required
                             />
                         </div>
@@ -57,7 +81,6 @@ const BookTable = () => {
                             <input
                                 type="date"
                                 id="NgayDat"
-                                name="NgayDat"
                                 value={date}
                                 onChange={(e) => setDate(e.target.value)}
                                 required
@@ -68,22 +91,30 @@ const BookTable = () => {
                             <input
                                 type="time"
                                 id="GioDat"
-                                name="GioDat"
                                 value={time}
                                 onChange={(e) => setTime(e.target.value)}
                                 required
                             />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="SoLuong">People:</label>
+                            <label htmlFor="SoLuongNguoi">People:</label>
                             <input
                                 type="number"
-                                id="SoLuong"
-                                name="SoLuong"
+                                id="SoLuongNguoi"
                                 value={guests}
                                 onChange={(e) => setGuests(e.target.value)}
                                 min="1"
                                 required
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="GhiChu">Note:</label>
+                            <textarea
+                                id="GhiChu"
+                                value={note}
+                                onChange={(e) => setNote(e.target.value)}
+                                rows={3}
+                                placeholder="Ghi chú đặc biệt (nếu có)..."
                             />
                         </div>
                         <button type="submit">Book Table</button>

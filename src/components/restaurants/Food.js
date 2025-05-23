@@ -1,26 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import '../styles/menu.css';
-import { useNavigate } from 'react-router-dom';
+import '../../styles/restaurant/menu.css';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const Food = () => {
   const [foods, setFoods] = useState([]);
   const navigate = useNavigate();
+  const { restaurantId } = useParams();
 
   // Hàm load món ăn
   const fetchFoods = async () => {
     try {
       const response = await axios.get('http://localhost:3001/thucdon');
-      setFoods(response.data);
+      // Lọc theo restaurantId
+      const filtered = response.data.filter(
+        food => String(food.restaurantId) === String(restaurantId)
+      );
+      setFoods(filtered);
     } catch (error) {
       console.error('Lỗi load món ăn:', error);
     }
   };
 
-  // Gọi khi component mount
   useEffect(() => {
     fetchFoods();
-  }, []);
+  }, [restaurantId]);
 
   // Hàm xoá món ăn
   const handleDelete = async (maThucDon) => {

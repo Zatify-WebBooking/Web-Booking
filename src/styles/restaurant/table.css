@@ -1,8 +1,12 @@
 /* BOOK TABLE  */
+.book-table-parallax {
+    height: 120vh;
+}
+
 
 .book-table-container {
     width: 600px;
-    margin: 90px auto;
+    height: auto;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -70,11 +74,29 @@
 
 .book-table-container button:hover {
     background-color: #d7d7d7;
-color: #262626;}
+    color: #262626;
+}
 
 .book-table-container .success-message {
     margin-top: 20px;
     color: #d7d7d7;
     /* Màu xanh lá cây cho thông báo thành công */
     text-align: center;
+}
+
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+    /* Cho phép kéo chiều cao */
+    transition: border-color 0.3s ease;
+}
+
+.form-group textarea:focus {
+    border-color: #ff9900;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 153, 0, 0.5);
 }

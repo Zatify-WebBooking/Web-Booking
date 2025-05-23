@@ -504,7 +504,7 @@
   color: #333;
   background-color: #fff;
   line-height: 1.6;
-  height: 780px;
+  height: auto;
   padding: 20px;
   max-width: 1200px;
 
@@ -534,6 +534,62 @@
 }
 
 .our-starters .description {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #666;
+  font-size: 1rem;
+}
+
+.our-main-meals {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.our-main-meals .subtitle {
+  margin-top: 70px;
+  margin-bottom: -12px;
+  font-size: 0.8rem;
+  color: #262626;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.our-main-meals .title {
+  font-size: 4rem;
+  color: #262626;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.our-main-meals .description {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #666;
+  font-size: 1rem;
+}
+
+.our-desserts {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.our-desserts .subtitle {
+  margin-top: 70px;
+  margin-bottom: -12px;
+  font-size: 0.8rem;
+  color: #262626;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.our-desserts .title {
+  font-size: 4rem;
+  color: #262626;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.our-desserts .description {
   max-width: 600px;
   margin: 0 auto;
   color: #666;
