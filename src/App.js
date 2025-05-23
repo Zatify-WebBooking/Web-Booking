@@ -11,6 +11,7 @@ import EditFood from './components/restaurants/EditFood';
 import Food from './components/restaurants/Food';
 import BookingWeb from './components/booking/BookingWeb';
 import BookingLayout from './components/layout/BookingLayout';
+import HotelDetail from './components/hotels/HotelDetail';
 
 
 
@@ -33,6 +34,7 @@ function App() {
         </Route>
         <Route element={<BookingLayout />}>
           <Route path="/" element={<BookingWeb />} />
+          <Route path='/hotels' element={<HotelDetail />} />
         </Route>
       </Routes>
     </>
