@@ -1,14 +1,286 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from 'react';
+import '../../styles/hotel/hotel.css';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
-export function HotelDetail({ hotel }) {
+const HotelDetail = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [guestsOpen, setGuestsOpen] = useState(false);
+  const [adults, setAdults] = useState(1);
+  const [children, setChildren] = useState(0);
+  const [infants, setInfants] = useState(0);
+  const [animate, setAnimate] = useState(false);
+  const guestsRef = useRef();
+
+  const carouselItems = [
+    {
+      src: "https://i.pinimg.com/736x/6a/f9/0e/6af90eea656d653c788e7d3f92a77247.jpg",
+      text: "Island Resort / from $190"
+    },
+    {
+      src: "https://i.pinimg.com/736x/06/a7/65/06a76579b88a4259a9fec82522493346.jpg",
+      text: "Beachfront Villa / from $250"
+    },
+    {
+      src: "https://i.pinimg.com/736x/9a/d7/75/9ad775a1804e255a3c7fe920c02c8294.jpg",
+      text: "Luxury Suite / from $300"
+    }
+  ];
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    beforeChange: (current, next) => {
+      setCurrentSlide(next);
+      setAnimate(true); // Start slide animation
+    }
+  };
+
+  useEffect(() => {
+    if (animate) {
+      const timer = setTimeout(() => {
+        setAnimate(false); // Clear animation after 0.5 seconds
+      }, 500);
+      return () => clearTimeout(timer);
+    }
+  }, [animate]);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (guestsRef.current && !guestsRef.current.contains(event.target)) {
+        setGuestsOpen(false);
+      }
+    }
+    if (guestsOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [guestsOpen]);
+
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [checkIn, setCheckIn] = useState(new Date());
+  const [checkOut, setCheckOut] = useState(new Date(Date.now() + 24 * 60 * 60 * 1000));
+  const navItems = ['HOME', 'ROOMS', 'PAGES', 'GALLERY', 'BLOG', 'LANDING'];
+
+  const handleNavClick = (index, e) => {
+    e.preventDefault();
+    setActiveIndex(index);
+  };
+
   return (
-    <h1>Hotel Califonia</h1>
-    // <div className="hotel-detail">
-    //   <h2>{hotel.name}</h2>
-    //   <p>{hotel.description}</p>
-    //   <p>Price: ${hotel.price}</p>
-    //   <button className="book-button">Book Now</button>
-    // </div>
+    <div className="hotel-root container">
+      <aside>
+        <div className="logo-wrapper">
+          <h1>Alloggio</h1>
+          <span className="big-number">A</span>
+        </div>
+        <nav id="sidebar-nav">
+          {navItems.map((item, idx) => (
+            <a
+              href="#"
+              key={item}
+              className={activeIndex === idx ? 'active' : ''}
+              onClick={(e) => handleNavClick(idx, e)}
+            >
+              {item}
+            </a>
+          ))}
+        </nav>
+        <div className="footer">
+          <div className="social-icons">
+            <a href="#" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Facebook"><i className="fab fa-facebook-f"></i></a>
+          </div>
+          <address>
+            A. Via Venti Settembre, Roma<br />
+            P: 31 555 777 83<br />
+            App: Viber, WhatsApp<br />
+            E: info@alloggio.com
+          </address>
+        </div>
+      </aside>
+      <main>
+        <div className="carousel">
+          <Slider {...settings}>
+            {carouselItems.map((item, index) => (
+              <section className="image-section" key={index}>
+                <img
+                  src={item.src}
+                  alt={item.text}
+                />
+                <div className={`text-overlay ${animate ? 'slide-in' : ''}`}>
+                  {item.text}
+                </div>
+              </section>
+            ))}
+          </Slider>
+
+          <div className="booking">
+            <form>
+              <div className="form-group">
+                <label htmlFor="checkin">CHECK-IN</label>
+                <div className="react-datepicker-wrapper" style={{ position: "relative" }}>
+                  <DatePicker
+                    id="checkin"
+                    selected={checkIn}
+                    onChange={date => setCheckIn(date)}
+                    dateFormat="EEE, dd MMM yyyy"
+                    className="datepicker-input"
+                  />
+                  <i className="fas fa-calendar-alt icon-calendar" aria-hidden="true"></i>
+                </div>
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="checkout">CHECK-OUT</label>
+                <div className="react-datepicker-wrapper" style={{ position: "relative" }}>
+                  <DatePicker
+                    id="checkout"
+                    selected={checkOut}
+                    onChange={date => setCheckOut(date)}
+                    dateFormat="EEE, dd MMM yyyy"
+                    className="datepicker-input"
+                  />
+                  <i className="fas fa-calendar-alt icon-calendar" aria-hidden="true"></i>
+                </div>
+              </div>
+
+              <div className="form-group" style={{ position: "relative" }} ref={guestsRef}>
+                <label htmlFor="guests">GUESTS:</label>
+                <div
+                  className="guests-select"
+                  tabIndex={0}
+                  onClick={() => setGuestsOpen((open) => !open)}
+                >
+                  {adults} Adult{adults > 1 ? "s" : ""}
+                  {children > 0 && `, ${children} Child${children > 1 ? "ren" : ""}`}
+                  {infants > 0 && `, ${infants} Infant${infants > 1 ? "s" : ""}`}
+                  <i className="fas fa-chevron-down icon-chevron" aria-hidden="true"></i>
+                </div>
+                {guestsOpen && (
+                  <div className="guests-popup">
+                    <div className="guests-row">
+                      <span>Adults</span>
+                      <select
+                        className="guests-select-dropdown"
+                        value={adults}
+                        onChange={e => setAdults(Number(e.target.value))}
+                      >
+                        {Array.from({ length: 20 }, (_, i) => i + 1).map(num => (
+                          <option key={num} value={num}>{num}</option>
+                        ))}
+                      </select>
+                    </div>
+                    <div className="guests-row">
+                      <span>Children <small>2-12 years old</small></span>
+                      <select
+                        className="guests-select-dropdown"
+                        value={children}
+                        onChange={e => setChildren(Number(e.target.value))}
+                      >
+                        {Array.from({ length: 21 }, (_, i) => i).map(num => (
+                          <option key={num} value={num}>{num}</option>
+                        ))}
+                      </select>
+                    </div>
+                    <div className="guests-row">
+                      <span>Infant's <small>0-2 years old</small></span>
+                      <select
+                        className="guests-select-dropdown"
+                        value={infants}
+                        onChange={e => setInfants(Number(e.target.value))}
+                      >
+                        {Array.from({ length: 21 }, (_, i) => i).map(num => (
+                          <option key={num} value={num}>{num}</option>
+                        ))}
+                      </select>
+                    </div>
+                    <button type="button" className="guests-done" onClick={() => setGuestsOpen(false)}>DONE</button>
+                  </div>
+                )}
+              </div>
+
+              <button className='btn-book' type="submit">BOOK NOW</button>
+            </form>
+          </div>
+        </div>
+        <section className="elecmentor-section">
+          <article className="card-elecmentor">
+            <img
+              alt="Thatched beach hut with two blue lounge chairs on white sand surrounded by palm trees and greenery"
+              className="card-image-elecmentor"
+              src="https://i.pinimg.com/736x/4a/40/bf/4a40bfcb8facf2a159505b937e128a3c.jpg"
+            />
+            <div className="card-content-elecmentor">
+              <div className="card-header-elecmentor">
+                <h2 className="title-font-elecmentor card-title-elecmentor">Il Sole</h2>
+                <p className="price-elecmentor">
+                  <span className="price-from-elecmentor">from</span>
+                  $80
+                </p>
+              </div>
+              <p className="info-elecmentor">50m2 / 1-2 person</p>
+              <p className="description-elecmentor">
+                Ut et rhoncus odio. Quisque pellentesque nisl leo, eget ultricies nibh ullamcorper ut. Curabitur
+                bibendum sed neque quis rhon
+              </p>
+              <button aria-label="Book now for Il Sole" className="btn-book-elecmentor">
+                BOOK NOW <span className="btn-icon-elecmentor">+</span>
+              </button>
+            </div>
+          </article>
+
+          <article className="card-elecmentor">
+            <img
+              alt="Yellow water homes with red roofs on clear water connected by a wooden walkway with sky and trees in background"
+              className="card-image-elecmentor"
+              src="https://storage.googleapis.com/a1aa/image/acde98e0-9463-4fb1-dc7e-be7e00cf6e06.jpg"
+            />
+            <div className="card-content-elecmentor">
+              <div className="card-header-elecmentor">
+                <h2 className="title-font-elecmentor card-title-elecmentor">Sea Home</h2>
+                <p className="price-elecmentor">
+                  <span className="price-from-elecmentor">from</span>
+                  $80
+                </p>
+              </div>
+              <p className="info-elecmentor">73m2 / 1-4 person</p>
+              <p className="description-elecmentor">
+                Ut et rhoncus odio. Quisque pellentesque nisl leo, eget ultricies nibh ullamcorper ut. Curabitur
+                bibendum sed neque quis rhon
+              </p>
+              <button aria-label="Book now for Sea Home" className="btn-book-elecmentor">
+                BOOK NOW <span className="btn-icon-elecmentor">+</span>
+              </button>
+            </div>
+          </article>
+        </section>
+        <section className="quodef-image-section">
+          <img
+            src="https://i.pinimg.com/736x/79/3d/27/793d2756fb2afefa0b3ef9238d174024.jpg"
+            alt="Island Resort"
+            className="quodef-image"
+          />
+          <div className="quodef-text">
+            <h2>Interior & Exterior</h2>
+            <button aria-label="Book now for Sea Home" className="btn-book-elecmentor">
+              READ ME <span className="btn-icon-elecmentor">+</span>
+            </button>          </div>
+        </section>
+      </main>
+    </div>
   );
-}
+};
+
 export default HotelDetail;

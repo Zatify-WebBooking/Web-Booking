@@ -29,12 +29,13 @@ function App() {
           <Route path="/createfood/:id" element={<CreateFood />} />
         </Route>
         <Route element={<EmptyLayout />}>
+          <Route path='/hotels' element={<HotelDetail />} />
+
           {/* <Route path="/login" element={<Login />} /> */}
           {/* <Route path="/register" element={<Register />} /> */}
         </Route>
         <Route element={<BookingLayout />}>
           <Route path="/" element={<BookingWeb />} />
-          <Route path='/hotels' element={<HotelDetail />} />
         </Route>
       </Routes>
     </>
