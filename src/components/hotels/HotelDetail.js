@@ -273,11 +273,131 @@ const HotelDetail = () => {
             className="quodef-image"
           />
           <div className="quodef-text">
-            <h2>Interior & Exterior</h2>
+            <p>Interior & Exterior</p>
             <button aria-label="Book now for Sea Home" className="btn-book-elecmentor">
-              READ ME <span className="btn-icon-elecmentor">+</span>
+              READ MORE <span className="btn-icon-elecmentor">+</span>
             </button>          </div>
         </section>
+
+        <section className='about-section'>
+          <div className="about-features-grid">
+            <div className="about-feature">
+              <i className="fas fa-trophy about-icon"></i>
+              <h3>High Rating</h3>
+              <p>Vestibulum a blandit ex, in tempor dolor. Phasellus dolor nisl volutpat sit amet et moll is hendrer phare ege ipsu.</p>
+            </div>
+            <div className="about-feature">
+              <i className="fas fa-moon about-icon"></i>
+              <h3>Quiet Hours</h3>
+              <p>Vestibulum a blandit ex, in tempor dolor. Phasellus dolor nisl volutpat sit amet et moll is hendrer phare ege ipsu.</p>
+            </div>
+            <div className="about-feature">
+              <i className="fas fa-map-marker-alt about-icon"></i>
+              <h3>Best Locations</h3>
+              <p>Vestibulum a blandit ex, in tempor dolor. Phasellus dolor nisl volutpat sit amet et moll is hendrer phare ege ipsu.</p>
+            </div>
+            <div className="about-feature">
+              <i className="fas fa-calendar-times about-icon"></i>
+              <h3>Free Cancellation</h3>
+              <p>Vestibulum a blandit ex, in tempor dolor. Phasellus dolor nisl volutpat sit amet et moll is hendrer phare ege ipsu.</p>
+            </div>
+            <div className="about-feature">
+              <i className="fas fa-wallet about-icon"></i>
+              <h3>Payment Options</h3>
+              <p>Vestibulum a blandit ex, in tempor dolor. Phasellus dolor nisl volutpat sit amet et moll is hendrer phare ege ipsu.</p>
+            </div>
+            <div className="about-feature">
+              <i className="fas fa-gift about-icon"></i>
+              <h3>Special Offers</h3>
+              <p>Vestibulum a blandit ex, in tempor dolor. Phasellus dolor nisl volutpat sit amet et moll is hendrer phare ege ipsu.</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="quodef-image-section">
+          <img
+            src="https://i.pinimg.com/736x/11/77/eb/1177eb484a4e83fd05155430c49e1ee2.jpg"
+            alt="Island Resort"
+            className="quodef-image"
+          />
+          <div className="quodef-text">
+            <p>Nearby Activity</p>
+            <button aria-label="Book now for Sea Home" className="btn-book-elecmentor">
+              READ MORE <span className="btn-icon-elecmentor">+</span>
+            </button>          </div>
+        </section>
+
+        <section className="offers-section">
+          <header className="header-offer">
+            <h2 className="header-title">See our special offers</h2>
+            <p className="header-desc">
+              Morbi porta, purus at posuere consectetur, eros justo feugiat lorem, nec laoreet odio odio ac erat. Luctus sed libero dictum cursus cras consequat.
+            </p>
+          </header>
+
+          <div className="offers">
+            <section className="offer-box winter">
+              <h3 className="offer-title">Winter Offer</h3>
+              <div className="discount">
+                <span className="discount-number">25%</span>
+                <span className="discount-text">Off</span>
+              </div>
+              <ul className="offer-details">
+                <li>-Minimum stay 4 nights.</li>
+                <li>-Early booking.</li>
+                <li>-Breakfast included.</li>
+                <li>-Free cancellation (see terms).</li>
+                <li>-New Years free champagne.</li>
+                <li>-Hiking tours with hosts.</li>
+                <li>-Winter equipment.</li>
+              </ul>
+              <button className="see-deal-btn outline">See Deal</button>
+            </section>
+
+            <section className="offer-box holidays">
+              <h3 className="offer-title">Holidays</h3>
+              <div className="discount">
+                <span className="discount-number">10%</span>
+                <span className="discount-text">Off</span>
+              </div>
+              <ul className="offer-details">
+                <li>-Minimum stay 2 nights.</li>
+                <li>-Early booking.</li>
+                <li>-Breakfast included.</li>
+                <li>-Free cancellation (see terms).</li>
+                <li>-All rooms.</li>
+                <li>-Cleaning included.</li>
+                <li>-Late check-out.</li>
+              </ul>
+              <button className="see-deal-btn solid">See Deal</button>
+              <img
+                src="https://storage.googleapis.com/a1aa/image/dabd864a-bff5-4699-8991-ace5fdb293d9.jpg"
+                alt="Outline star icon"
+                className="star-icon"
+              />
+            </section>
+
+            <section className="offer-box winter">
+              <h3 className="offer-title">Special Events</h3>
+              <div className="discount">
+                <span className="discount-number">5%</span>
+                <span className="discount-text">Off</span>
+              </div>
+              <ul className="offer-details">
+                <li>-Minimum stay 2 nights.</li>
+                <li>-Up to 10 guests.</li>
+                <li>-Breakfast included.</li>
+                <li>-Free cancellation (see terms).</li>
+                <li>-All rooms.</li>
+                <li>-Cleaning included.</li>
+                <li>-Late check-out.</li>
+              </ul>
+              <button className="see-deal-btn outline">See Deal</button>
+            </section>
+          </div>
+        </section>
+
+
       </main>
     </div>
   );

@@ -109,7 +109,7 @@ function BookingWeb() {
   return (
     <div>
       {/* Voucher list ngang */}
-{vouchers.length > 0 && (
+      {vouchers.length > 0 && (
         <div className="voucher-list">
           {vouchers.map((voucher, idx) => (
             <div

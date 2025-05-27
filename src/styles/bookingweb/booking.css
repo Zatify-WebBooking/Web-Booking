@@ -99,31 +99,6 @@
   color: #1251a3;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .header-booking {
-    flex-direction: column;
-    align-items: stretch;
-    padding: 16px;
-    min-height: unset;
-    gap: 12px;
-  }
-
-  .header-booking nav {
-    justify-content: center;
-    margin-bottom: 8px;
-  }
-
-  .header-booking form {
-    margin-left: 0;
-    max-width: 100%;
-  }
-
-  .logo-bookingweb {
-    margin: 0 auto 12px auto;
-    display: block;
-  }
-}
 
 /* MAIN  */
 .tab-buttons {
