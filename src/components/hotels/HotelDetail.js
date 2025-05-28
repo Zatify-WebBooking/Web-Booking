@@ -5,6 +5,8 @@ import 'react-datepicker/dist/react-datepicker.css';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar,faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
 const HotelDetail = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -127,7 +129,7 @@ const HotelDetail = () => {
           </Slider>
 
           <div className="booking">
-            <form>
+            <form className='booking-form'>
               <div className="form-group">
                 <label htmlFor="checkin">CHECK-IN</label>
                 <div className="react-datepicker-wrapper" style={{ position: "relative" }}>
@@ -351,7 +353,7 @@ const HotelDetail = () => {
                 <li>-Hiking tours with hosts.</li>
                 <li>-Winter equipment.</li>
               </ul>
-              <button className="see-deal-btn outline">See Deal</button>
+              <button className="see-deal-btn outline">SEE DEAL</button>
             </section>
 
             <section className="offer-box holidays">
@@ -369,12 +371,8 @@ const HotelDetail = () => {
                 <li>-Cleaning included.</li>
                 <li>-Late check-out.</li>
               </ul>
-              <button className="see-deal-btn solid">See Deal</button>
-              <img
-                src="https://storage.googleapis.com/a1aa/image/dabd864a-bff5-4699-8991-ace5fdb293d9.jpg"
-                alt="Outline star icon"
-                className="star-icon"
-              />
+              <button className="see-deal-btn solid">SEE DEAL</button>
+              <FontAwesomeIcon className="star-icon" icon={faStar} />
             </section>
 
             <section className="offer-box winter">
@@ -392,12 +390,77 @@ const HotelDetail = () => {
                 <li>-Cleaning included.</li>
                 <li>-Late check-out.</li>
               </ul>
-              <button className="see-deal-btn outline">See Deal</button>
+              <button className="see-deal-btn outline">SEE DEAL</button>
             </section>
           </div>
         </section>
 
+        <section className="quodef-image-section">
+          <img
+            src="https://i.pinimg.com/736x/4f/fa/21/4ffa21704468c2dd1f770ae8bcdc0338.jpg"
+            alt="Island Resort"
+            className="quodef-image"
+          />
+          <div className="quodef-text">
+            <p>Our Daily Menu</p>
+            <button aria-label="Book now for Sea Home" className="btn-book-elecmentor">
+              READ MORE <span className="btn-icon-elecmentor">+</span>
+            </button>          </div>
+        </section>
 
+        <section className="menu-section">
+          <h2 className="menu-title">Continental</h2>
+          <p className="menu-desc">
+            Between 08.30 and 10.30 we serve our buffet of local and fresh products. Start your day with your favourite breakfast!
+          </p>
+          <div className="menu-columns">
+            <div className="menu-column">
+              <div className="menu-item">
+                <h3>Eggs &amp; Bacon</h3>
+                <p>Praesent ut ante vel augue accumsan sagittis aenean. Vivamus non porti aliqui feli.</p>
+              </div>
+              <div className="menu-item">
+                <h3>Vegan Breakfast</h3>
+                <p>Praesent ut ante vel augue accumsan sagittis aenean. Vivamus non porti aliqui feli.</p>
+              </div>
+              <div className="menu-item">
+                <h3>Tea or Coffee</h3>
+                <p>Praesent ut ante vel augue accumsan sagittis aenean. Vivamus non porti aliqui feli.</p>
+              </div>
+              <div className="menu-item">
+                <h3>Chia Oatmeal</h3>
+                <p>Praesent ut ante vel augue accumsan sagittis aenean. Vivamus non porti aliqui feli.</p>
+              </div>
+            </div>
+            <div className='vertical-line'></div>
+            <div className="menu-column">
+              <div className="menu-item">
+                <h3>French Croissant</h3>
+                <p>Praesent ut ante vel augue accumsan sagittis aenean. Vivamus non porti aliqui feli.</p>
+              </div>
+              <div className="menu-item">
+                <h3>Avocado Toast</h3>
+                <p>Praesent ut ante vel augue accumsan sagittis aenean. Vivamus non porti aliqui feli.</p>
+              </div>
+              <div className="menu-item">
+                <h3>Cheese Plate</h3>
+                <p>Praesent ut ante vel augue accumsan sagittis aenean. Vivamus non porti aliqui feli.</p>
+              </div>
+              <div className="menu-item">
+                <h3>Marmalade Selection</h3>
+                <p>Praesent ut ante vel augue accumsan sagittis aenean. Vivamus non porti aliqui feli.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="newsletter-wrapper">
+          <section className="footerhotel">
+            <div className='mail-icon'><FontAwesomeIcon icon={faEnvelope} /></div> 
+            <label for="email">Join our weekly Newsletter</label>
+            <input id="email" type="email" placeholder="Email Address" />
+            <button type="submit">SIGN ME UP</button>
+          </section>
+        </div>
       </main>
     </div>
   );
