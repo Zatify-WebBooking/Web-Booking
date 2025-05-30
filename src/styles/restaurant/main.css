@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-    font-family: 'Times New Roman', serif ;
+  font-family: 'Times New Roman', serif;
 }
 
 
@@ -45,8 +45,8 @@
 }
 
 .hero-carousel {
-  width: 1440px;
-  height: 613px;
+  width: 1586px;
+  height: 892px;
   margin: 0 auto;
   position: relative;
   margin-top: 90px;
@@ -545,6 +545,20 @@
   margin-bottom: 40px;
 }
 
+.our-main-meals .main-meal-image-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.our-main-meals .main-meal-image-group img {
+  width: 50%;
+  height: 876px;
+  object-fit: cover;
+}
+
 .our-main-meals .subtitle {
   margin-top: 70px;
   margin-bottom: -12px;
@@ -571,6 +585,20 @@
 .our-desserts {
   text-align: center;
   margin-bottom: 40px;
+}
+
+.our-desserts .beerandchill-image-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.our-desserts .beerandchill-image-group img {
+  width: 50%;
+  height: 876px;
+  object-fit: cover;
 }
 
 .our-desserts .subtitle {
@@ -601,6 +629,62 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px 50px;
+}
+
+.dessert-carousel {
+  position: relative;
+  left: -160px;
+  width: 1488px;
+  height: 1053px;
+  margin: 0 auto 40px auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+
+.dessert-slide {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.dessert-image {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dessert-prev,
+.dessert-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.4);
+  color: white;
+  border: none;
+  font-size: 36px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+.dessert-prev {
+  left: 10px;
+}
+
+.dessert-next {
+  right: 10px;
+}
+
+.dessert-prev:hover,
+.dessert-next:hover {
+  background-color: rgba(0,0,0,0.7);
 }
 
 .space-y-8>*+* {
@@ -757,6 +841,7 @@
 .overlay-content-hero-section {
   color: rgb(230, 230, 230);
   text-align: center;
+  margin-top: 190px;
   padding: 150px;
   border-radius: 8px;
   display: flex;
@@ -984,7 +1069,7 @@ hr {
 
 /* FOOTER  */
 .footer {
-  font-family: 'Montserrat', sans-serif !important; 
+  font-family: 'Montserrat', sans-serif !important;
   width: 100%;
   background-color: #1a1a1a;
   padding: 40px 24px;
@@ -1130,3 +1215,72 @@ hr {
   color: rgba(255, 255, 255, 0.5);
 }
 
+
+.dessert-slide {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.5s ease-in-out;
+}
+
+.dessert-prev,
+.dessert-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  color: white;
+  border: none;
+  font-size: 36px;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+.dessert-prev {
+  left: 10px;
+}
+
+.dessert-next {
+  right: 10px;
+}
+
+.dessert-prev:hover,
+.dessert-next:hover {
+  background: none;
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .dessert-carousel {
+    height: 250px;
+  }
+}
+
+.lang-btn {
+  background: #fff;
+  width: 40px;
+  height: 30px;
+  cursor: pointer;
+  margin-left: 16px;
+  transition: background 0.2s, border 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 0;
+}
+
+.lang-btn:hover {
+  background: none;
+  transform: scale(1.08);
+}
+
+.flag-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

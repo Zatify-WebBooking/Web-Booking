@@ -30,9 +30,9 @@ const Footer = () => {
             error sit voluptatem accusantium<br />
             doloremque.
           </p>
-          <p className="footer-text">+387648592568</p>
-          <p className="footer-text">savory@qodeinteractive.com</p>
-          <p className="footer-text">Eighth Avenue 487, New York</p>
+          <p className="footer-text">0909.944.879</p>
+          <p className="footer-text">trangntt@bam.globalx.com.vn</p>
+          <p className="footer-text">2 Bis Nguyễn Thị Minh Khai, Phường Đa Kao, Quận 1, TP.HCM</p>
           <div className="footer-social" aria-label="Social media links">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <FontAwesomeIcon icon={faSquareFacebook} className="social-icon" />

@@ -6,9 +6,13 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar,faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import { faStar, faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import { useTranslation } from 'react-i18next';
+
 
 const HotelDetail = () => {
+  const { t } = useTranslation();
+
   const [currentSlide, setCurrentSlide] = useState(0);
   const [guestsOpen, setGuestsOpen] = useState(false);
   const [adults, setAdults] = useState(1);
@@ -42,14 +46,14 @@ const HotelDetail = () => {
     autoplaySpeed: 3000,
     beforeChange: (current, next) => {
       setCurrentSlide(next);
-      setAnimate(true); // Start slide animation
+      setAnimate(true);
     }
   };
 
   useEffect(() => {
     if (animate) {
       const timer = setTimeout(() => {
-        setAnimate(false); // Clear animation after 0.5 seconds
+        setAnimate(false);
       }, 500);
       return () => clearTimeout(timer);
     }
@@ -72,7 +76,15 @@ const HotelDetail = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [checkIn, setCheckIn] = useState(new Date());
   const [checkOut, setCheckOut] = useState(new Date(Date.now() + 24 * 60 * 60 * 1000));
-  const navItems = ['HOME', 'ROOMS', 'PAGES', 'GALLERY', 'BLOG', 'LANDING'];
+  const navItems = [
+    t('HOME'),
+    t('ROOMS'),
+    t('PAGES'),
+    t('GALLERY'),
+    t('BLOG'),
+    t('LANDING')
+  ];
+
 
   const handleNavClick = (index, e) => {
     e.preventDefault();
@@ -131,7 +143,7 @@ const HotelDetail = () => {
           <div className="booking">
             <form className='booking-form'>
               <div className="form-group">
-                <label htmlFor="checkin">CHECK-IN</label>
+                <label htmlFor="checkin">{t('hotelDetail.booking.checkin')}</label>
                 <div className="react-datepicker-wrapper" style={{ position: "relative" }}>
                   <DatePicker
                     id="checkin"
@@ -145,7 +157,7 @@ const HotelDetail = () => {
               </div>
 
               <div className="form-group">
-                <label htmlFor="checkout">CHECK-OUT</label>
+                <label htmlFor="checkout">{t('hotelDetail.booking.checkout')}</label>
                 <div className="react-datepicker-wrapper" style={{ position: "relative" }}>
                   <DatePicker
                     id="checkout"
@@ -159,13 +171,13 @@ const HotelDetail = () => {
               </div>
 
               <div className="form-group" style={{ position: "relative" }} ref={guestsRef}>
-                <label htmlFor="guests">GUESTS:</label>
+                <label htmlFor="guests">{t('hotelDetail.booking.guests')}</label>
                 <div
                   className="guests-select"
                   tabIndex={0}
                   onClick={() => setGuestsOpen((open) => !open)}
                 >
-                  {adults} Adult{adults > 1 ? "s" : ""}
+                  {adults} {t('hotelDetail.booking.adults')}{adults > 1 ? "s" : ""}
                   {children > 0 && `, ${children} Child${children > 1 ? "ren" : ""}`}
                   {infants > 0 && `, ${infants} Infant${infants > 1 ? "s" : ""}`}
                   <i className="fas fa-chevron-down icon-chevron" aria-hidden="true"></i>
@@ -173,7 +185,7 @@ const HotelDetail = () => {
                 {guestsOpen && (
                   <div className="guests-popup">
                     <div className="guests-row">
-                      <span>Adults</span>
+                      <span>{t('hotelDetail.booking.adults')}</span>
                       <select
                         className="guests-select-dropdown"
                         value={adults}
@@ -185,7 +197,7 @@ const HotelDetail = () => {
                       </select>
                     </div>
                     <div className="guests-row">
-                      <span>Children <small>2-12 years old</small></span>
+                      <span>{t('hotelDetail.booking.children')}<small>{t('hotelDetail.booking.childrenAge')}</small></span>
                       <select
                         className="guests-select-dropdown"
                         value={children}
@@ -197,7 +209,7 @@ const HotelDetail = () => {
                       </select>
                     </div>
                     <div className="guests-row">
-                      <span>Infant's <small>0-2 years old</small></span>
+                      <span>{t('hotelDetail.booking.infants')}<small>{t('hotelDetail.booking.infantsAge')}</small></span>
                       <select
                         className="guests-select-dropdown"
                         value={infants}
@@ -208,12 +220,12 @@ const HotelDetail = () => {
                         ))}
                       </select>
                     </div>
-                    <button type="button" className="guests-done" onClick={() => setGuestsOpen(false)}>DONE</button>
+                    <button type="button" className="guests-done" onClick={() => setGuestsOpen(false)}>{t('hotelDetail.booking.done')}</button>
                   </div>
                 )}
               </div>
 
-              <button className='btn-book' type="submit">BOOK NOW</button>
+              <button className='btn-book' type="submit">{t('hotelDetail.booking.bookNow')}</button>
             </form>
           </div>
         </div>
@@ -222,23 +234,22 @@ const HotelDetail = () => {
             <img
               alt="Thatched beach hut with two blue lounge chairs on white sand surrounded by palm trees and greenery"
               className="card-image-elecmentor"
-              src="https://i.pinimg.com/736x/4a/40/bf/4a40bfcb8facf2a159505b937e128a3c.jpg"
+              src="https://i.pinimg.com/736x/9b/4f/91/9b4f916b2d4e8cbbe1ea4b24b03eef42.jpg"
             />
             <div className="card-content-elecmentor">
               <div className="card-header-elecmentor">
-                <h2 className="title-font-elecmentor card-title-elecmentor">Il Sole</h2>
+                <h2 className="title-font-elecmentor card-title-elecmentor">{t('hotelDetail.rooms.ilSole.title')}</h2>
                 <p className="price-elecmentor">
-                  <span className="price-from-elecmentor">from</span>
-                  $80
+                  <span className="price-from-elecmentor">{t('hotelDetail.rooms.ilSole.priceFrom')}</span>
+                  {t('hotelDetail.rooms.ilSole.price')}
                 </p>
               </div>
-              <p className="info-elecmentor">50m2 / 1-2 person</p>
+              <p className="info-elecmentor">{t('hotelDetail.rooms.ilSole.info')}</p>
               <p className="description-elecmentor">
-                Ut et rhoncus odio. Quisque pellentesque nisl leo, eget ultricies nibh ullamcorper ut. Curabitur
-                bibendum sed neque quis rhon
+                {t('hotelDetail.rooms.ilSole.description')}
               </p>
               <button aria-label="Book now for Il Sole" className="btn-book-elecmentor">
-                BOOK NOW <span className="btn-icon-elecmentor">+</span>
+                {t('hotelDetail.rooms.ilSole.button')}<span className="btn-icon-elecmentor">+</span>
               </button>
             </div>
           </article>
@@ -251,19 +262,19 @@ const HotelDetail = () => {
             />
             <div className="card-content-elecmentor">
               <div className="card-header-elecmentor">
-                <h2 className="title-font-elecmentor card-title-elecmentor">Sea Home</h2>
+                <h2 className="title-font-elecmentor card-title-elecmentor"> {t('hotelDetail.rooms.SeaHose.title')}</h2>
                 <p className="price-elecmentor">
-                  <span className="price-from-elecmentor">from</span>
+                  <span className="price-from-elecmentor">{t('hotelDetail.rooms.SeaHose.priceFrom')}</span>
                   $80
                 </p>
               </div>
-              <p className="info-elecmentor">73m2 / 1-4 person</p>
+              <p className="info-elecmentor">{t('hotelDetail.rooms.SeaHose.info')}</p>
               <p className="description-elecmentor">
-                Ut et rhoncus odio. Quisque pellentesque nisl leo, eget ultricies nibh ullamcorper ut. Curabitur
-                bibendum sed neque quis rhon
+                {t('hotelDetail.rooms.SeaHose.description')}
               </p>
               <button aria-label="Book now for Sea Home" className="btn-book-elecmentor">
-                BOOK NOW <span className="btn-icon-elecmentor">+</span>
+                {t('hotelDetail.rooms.SeaHose.button')}
+                <span className="btn-icon-elecmentor">+</span>
               </button>
             </div>
           </article>
@@ -455,7 +466,7 @@ const HotelDetail = () => {
         </section>
         <div class="newsletter-wrapper">
           <section className="footerhotel">
-            <div className='mail-icon'><FontAwesomeIcon icon={faEnvelope} /></div> 
+            <div className='mail-icon'><FontAwesomeIcon icon={faEnvelope} /></div>
             <label for="email">Join our weekly Newsletter</label>
             <input id="email" type="email" placeholder="Email Address" />
             <button type="submit">SIGN ME UP</button>

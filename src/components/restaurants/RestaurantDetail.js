@@ -12,6 +12,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { Parallax } from 'react-parallax';
 import { useNavigate, useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const images = [
   "/images/slide1.jpg",
@@ -19,17 +20,6 @@ const images = [
   "/images/slide3.jpg"
 ];
 
-const titles = [
-  "Authentic Dishes",
-  "Fresh Restaurant",
-  "Traditional Food"
-];
-
-const descriptions = [
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eismod tempor incidition ullamco laboris nisi ut aliquip ex ea commodo condorico.",
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eismod tempor incidition ullamco laboris nisi ut aliquip ex ea commodo condorico.",
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidition ullamco laboris nisi ut aliquip ex ea commodo condorico."
-];
 
 const scrollToTopVariants = {
   initial: { scale: 0, opacity: 0 },
@@ -38,12 +28,39 @@ const scrollToTopVariants = {
 };
 
 function RestaurantDetail() {
+  const { t } = useTranslation(); // Lấy hàm t ở đây
+  const descriptions = [
+    t('restaurantDetail.carousel.Carouseldescription'),
+    t('restaurantDetail.carousel.Carouseldescription'),
+    t('restaurantDetail.carousel.Carouseldescription')
+  ];
+
+  const titles = [
+    t('restaurantDetail.carousel.AuthenticDishes'),
+    t('restaurantDetail.carousel.FreshRestaurant'),
+    t('restaurantDetail.carousel.TraditionalFood')
+  ];
+
   const [current, setCurrent] = useState(0);
   const [animationClass, setAnimationClass] = useState("fade-in");
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
   const [showScrollToTop, setShowScrollToTop] = useState(false);
   const [menuItems, setMenuItems] = useState({ starters: [], mainMeals: [], desserts: [] });
+
+  // New state for desserts carousel
+  const [dessertCurrent, setDessertCurrent] = useState(0);
+  const [dessertAnimationClass, setDessertAnimationClass] = useState("fade-in");
+
+  // Images for desserts carousel
+  const dessertImages = [
+    "/images/beerandchill1.jpg",
+    "/images/beerandchill2.jpg",
+    "/images/beerandchill3.jpg",
+    "/images/beerandchill4.jpg",
+    "/images/beerandchill5.jpg",
+    "/images/beerandchill6.jpg"
+  ];
   const navigate = useNavigate();
   const { id: restaurantId } = useParams();
 
@@ -86,12 +103,36 @@ function RestaurantDetail() {
     changeSlide((current - 1 + images.length) % images.length);
   };
 
+  // New carousel functions for desserts
+  const changeDessertSlide = (nextIndex) => {
+    setDessertAnimationClass("fade-out");
+    setTimeout(() => {
+      setDessertCurrent(nextIndex);
+      setDessertAnimationClass("fade-in");
+    }, 800);
+  };
+
+  const nextDessertSlide = () => {
+    changeDessertSlide((dessertCurrent + 1) % Math.ceil(dessertImages.length / 2));
+  };
+
+  const prevDessertSlide = () => {
+    changeDessertSlide((dessertCurrent - 1 + Math.ceil(dessertImages.length / 2)) % Math.ceil(dessertImages.length / 2));
+  };
+
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
     }, 5000);
     return () => clearInterval(interval);
   }, [current]);
+
+  useEffect(() => {
+    const dessertInterval = setInterval(() => {
+      nextDessertSlide();
+    }, 5000);
+    return () => clearInterval(dessertInterval);
+  }, [dessertCurrent]);
 
   const toggleMenu = (menu) => {
     if (activeMenu === menu) {
@@ -134,7 +175,7 @@ function RestaurantDetail() {
             <h1>{titles[current]}</h1>
             <p>{descriptions[current]}</p>
             <button className="btn-menu" onClick={handleViewMenu}>
-              <b>VIEW OUR MENU</b>
+              <b>{t('restaurantDetail.carousel.VIEWOURMENU')}</b>
             </button>
           </div>
 
@@ -166,7 +207,7 @@ function RestaurantDetail() {
                     onClick={() => toggleMenu("home")}
                     aria-expanded={activeMenu === "home"}
                   >
-                    Home
+                    {t('restaurantDetail.sidebar.Home')}
                   </button>
                   <AnimatePresence>
                     {activeMenu === "home" && (
@@ -177,12 +218,12 @@ function RestaurantDetail() {
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <li>Restaurant Home</li>
-                        <li>Light Home</li>
-                        <li>Dinner Home</li>
-                        <li>Masonry Blog</li>
-                        <li>Health Food Home</li>
-                        <li>Landing</li>
+                        <li>{t('restaurantDetail.sidebar.Restaurant Home')}</li>
+                        <li>{t('restaurantDetail.sidebar.Light Home')}</li>
+                        <li>{t('restaurantDetail.sidebar.Dinner Home')}</li>
+                        <li>{t('restaurantDetail.sidebar.Masonry Blog')}</li>
+                        <li>{t('restaurantDetail.sidebar.Health Food Home')}</li>
+                        <li>{t('restaurantDetail.sidebar.Landing')}</li>
                       </motion.ul>
                     )}
                   </AnimatePresence>
@@ -193,7 +234,7 @@ function RestaurantDetail() {
                     onClick={() => toggleMenu("page")}
                     aria-expanded={activeMenu === "page"}
                   >
-                    Pages
+                    {t('restaurantDetail.sidebar.Pages')}
                   </button>
                   <AnimatePresence>
                     {activeMenu === "page" && (
@@ -204,12 +245,12 @@ function RestaurantDetail() {
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <li>About Us</li>
-                        <li>Services</li>
-                        <li>Our Menu</li>
-                        <li>Contact Page</li>
-                        <li>Reservations</li>
-                        <li>Meet The Chefs</li>
+                        <li>{t('restaurantDetail.sidebar.About Us')}</li>
+                        <li>{t('restaurantDetail.sidebar.Services')}</li>
+                        <li>{t('restaurantDetail.sidebar.Our Menu')}</li>
+                        <li>{t('restaurantDetail.sidebar.Contact Page')}</li>
+                        <li>{t('restaurantDetail.sidebar.Reservations')}</li>
+                        <li>{t('restaurantDetail.sidebar.Meet The Chefs')}</li>
                       </motion.ul>
                     )}
                   </AnimatePresence>
@@ -220,7 +261,7 @@ function RestaurantDetail() {
                     onClick={() => toggleMenu("element")}
                     aria-expanded={activeMenu === "element"}
                   >
-                    Elements
+                    {t('restaurantDetail.sidebar.Elements')}
                   </button>
                   <AnimatePresence>
                     {activeMenu === "element" && (
@@ -231,12 +272,12 @@ function RestaurantDetail() {
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <li>Restaurant Item</li>
-                        <li>Counters</li>
-                        <li>Dropcaps</li>
-                        <li>Info Box</li>
-                        <li>Blog List</li>
-                        <li>Portfolio Slider</li>
+                        <li>{t('restaurantDetail.sidebar.Restaurant Item')} </li>
+                        <li>{t('restaurantDetail.sidebar.Counters')} </li>
+                        <li>{t('restaurantDetail.sidebar.Dropcaps')} </li>
+                        <li>{t('restaurantDetail.sidebar.Info Box')} </li>
+                        <li>{t('restaurantDetail.sidebar.Blog List')} </li>
+                        <li>{t('restaurantDetail.sidebar.Portfolio Slider')} </li>
                       </motion.ul>
                     )}
                   </AnimatePresence>
@@ -247,7 +288,7 @@ function RestaurantDetail() {
                     onClick={() => toggleMenu("portfolio")}
                     aria-expanded={activeMenu === "portfolio"}
                   >
-                    Portfolio
+                    {t('restaurantDetail.sidebar.Portfolio')}
                   </button>
                   <AnimatePresence>
                     {activeMenu === "portfolio" && (
@@ -258,11 +299,11 @@ function RestaurantDetail() {
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <li>Standard</li>
-                        <li>Gallery</li>
-                        <li>Gallery With Space</li>
-                        <li>Masonry Wide</li>
-                        <li>Portfolio Single</li>
+                        <li>{t('restaurantDetail.sidebar.Standard')}</li>
+                        <li>{t('restaurantDetail.sidebar.Gallery')}</li>
+                        <li>{t('restaurantDetail.sidebar.Gallery With Space')}</li>
+                        <li>{t('restaurantDetail.sidebar.Masonry Wide')}</li>
+                        <li>{t('restaurantDetail.sidebar.Portfolio Single')}</li>
                       </motion.ul>
                     )}
                   </AnimatePresence>
@@ -273,7 +314,7 @@ function RestaurantDetail() {
                     onClick={() => toggleMenu("blog")}
                     aria-expanded={activeMenu === "blog"}
                   >
-                    Blog
+                    {t('restaurantDetail.sidebar.Blog')}
                   </button>
                   <AnimatePresence>
                     {activeMenu === "blog" && (
@@ -284,10 +325,10 @@ function RestaurantDetail() {
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <li>Standard</li>
-                        <li>Masonry</li>
-                        <li>Masonry Gallery</li>
-                        <li>Blog Single</li>
+                        <li>{t('restaurantDetail.sidebar.Standard')}</li>
+                        <li>{t('restaurantDetail.sidebar.Masonry')}</li>
+                        <li>{t('restaurantDetail.sidebar.Masonry Gallery')}</li>
+                        <li>{t('restaurantDetail.sidebar.Blog Single')}</li>
                       </motion.ul>
                     )}
                   </AnimatePresence>
@@ -298,7 +339,7 @@ function RestaurantDetail() {
                     onClick={() => toggleMenu("shop")}
                     aria-expanded={activeMenu === "shop"}
                   >
-                    Shop
+                    {t('restaurantDetail.sidebar.Shop')}
                   </button>
                   <AnimatePresence>
                     {activeMenu === "shop" && (
@@ -309,10 +350,10 @@ function RestaurantDetail() {
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <li>With Sidebar</li>
-                        <li>Two Columns</li>
-                        <li>Full Width</li>
-                        <li>Product Single</li>
+                        <li>{t('restaurantDetail.sidebar.With Sidebar')}</li>
+                        <li>{t('restaurantDetail.sidebar.Two Columns')}</li>
+                        <li>{t('restaurantDetail.sidebar.Full Width')}</li>
+                        <li>{t('restaurantDetail.sidebar.Product Single')}</li>
                       </motion.ul>
                     )}
                   </AnimatePresence>
@@ -352,11 +393,10 @@ function RestaurantDetail() {
 
       <div className="Page2">
         <div className="our-starters">
-          <p className="subtitle">TASTY AND CRUNCHY</p>
-          <h1 className="title">Our Starters</h1>
+          <p className="subtitle">{t('restaurantDetail.section_starters.TASTY AND CRUNCHY')}</p>
+          <h1 className="title">{t('restaurantDetail.section_starters.Yoyo Appetizers')}</h1>
           <p className="description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedolorm reminusto do eiusmod tempor incidition
-            ulla mco laboris nisi ut aliquip ex ea commo condorico consectetur adipiscing eiltut aliquip.
+            {t('restaurantDetail.section_starters.description')}
           </p>
         </div>
         <div className="grid">
@@ -366,7 +406,7 @@ function RestaurantDetail() {
               <div className="item-content">
                 <div className="item-header">
                   <span className="item-title">{item.Ten}</span>
-                  <span className="item-price">${Number(item.Gia).toLocaleString(undefined, { minimumFractionDigits: 2 })}</span>
+                  <span className="item-price">{Number(item.Gia).toLocaleString(undefined, { minimumFractionDigits: 3 })}đ</span>
                 </div>
                 <div className="divider"></div>
                 <p className="item-description">{item.MoTa}</p>
@@ -406,15 +446,13 @@ function RestaurantDetail() {
         >
           <div style={{ height: '100vh' }}>
             <div className="overlay-content-hero-section">
-              <p className="subtitle">TASTY AND CRUNCHY</p>
-              <h1>Book a Table</h1>
+              <p className="subtitle">{t('restaurantDetail.section_hero.TASTY AND CRUNCHY')}</p>
+              <h1>{t('restaurantDetail.section_hero.Book a Table')}</h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedolorm reminusto<br />
-                doeiusmod tempor incidition ulla mco laboris nisi ut aliquip ex ea commo<br />
-                condorico consectetur adipiscing elitut aliquip.
+                {t('restaurantDetail.section_hero.description')}
               </p>
               <button className="btn-menu" onClick={handleBookTable}>
-                <b>BOOK NOW</b>
+                <b>{t('restaurantDetail.section_hero.BOOK NOW')}</b>
               </button>
             </div>
           </div>
@@ -423,11 +461,10 @@ function RestaurantDetail() {
 
       <div className="Page2">
         <div className="our-main-meals">
-          <p className="subtitle">TASTY AND CRUNCHY</p>
-          <h1 className="title">Our Main Meals</h1>
+          <p className="subtitle">{t('restaurantDetail.section_main_meals.TASTY AND CRUNCHY')}</p>
+          <h1 className="title">{t('restaurantDetail.section_main_meals.Yoyo Main Meals')}</h1>
           <p className="description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedolorm reminusto do eiusmod tempor incidition
-            ulla mco laboris nisi ut aliquip ex ea commo condorico consectetur adipiscing eiltut aliquip.
+            {t('restaurantDetail.section_main_meals.description')}
           </p>
         </div>
         <div className="grid">
@@ -437,7 +474,7 @@ function RestaurantDetail() {
               <div className="item-content">
                 <div className="item-header">
                   <span className="item-title">{item.Ten}</span>
-                  <span className="item-price">${Number(item.Gia).toLocaleString(undefined, { minimumFractionDigits: 2 })}</span>
+                  <span className="item-price">{Number(item.Gia).toLocaleString(undefined, { minimumFractionDigits: 3 })}đ</span>
                 </div>
                 <div className="divider"></div>
                 <p className="item-description">{item.MoTa}</p>
@@ -450,7 +487,7 @@ function RestaurantDetail() {
       <div className="review-section">
         <Parallax
           bgImage="/images/slide5.jpg"
-          strength={400}
+          strength={600}
           className="testimonial-parallax"
           bgImageStyle={{
             backgroundAttachment: 'fixed',
@@ -459,54 +496,51 @@ function RestaurantDetail() {
           }}
         >
           <div className="overlay-content-review-section">
-            <p className="subtitle">TASTY AND CRUNCHY</p>
-            <h1>What People Say</h1>
+            <p className="subtitle"> {t('restaurantDetail.section_review.TASTY AND CRUNCHY')}</p>
+            <h1>{t('restaurantDetail.section_review.What People Say')}</h1>
             <p className="body-text-gray-centered">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedolorm reminusto <br />
-              doeiusmod tempor incidition ulla mco laboris nisi ut aliquip ex ea commo<br />
-              condorico consectetur adipiscing elitut aliquip.
+              {t('restaurantDetail.section_review.description')}
             </p>
           </div>
           <div className="grid-3">
             <div className="card">
               <p className="card-text">
-                “Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusan
-                tium doloremque lauatiium.”
+                {t('restaurantDetail.section_review.testimonialText')}
               </p>
               <hr className="hr" />
               <div className="flex-row">
                 <img alt="Portrait of a woman with long brown hair wearing sunglasses" className="avatar" src="https://storage.googleapis.com/a1aa/image/71812286-09b9-44d0-7e1d-b78b7b1eaf14.jpg" width="48" height="48" />
                 <div>
                   <p className="name">Sofia Mayer</p>
-                  <p className="role">Founder</p>
+                  <p className="role">{t('restaurantDetail.section_review.Founder')}</p>
                 </div>
               </div>
             </div>
             <div className="card">
               <p className="card-text">
-                “Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusan
-                tium doloremque lauatiium.”
+                {t('restaurantDetail.section_review.testimonialText')}
+
               </p>
               <hr className="hr" />
               <div className="flex-row">
                 <img alt="Portrait of a woman with long blonde hair" className="avatar" src="https://storage.googleapis.com/a1aa/image/f219820e-6735-4b53-750a-ab2a3c1cb63b.jpg" width="48" height="48" />
                 <div>
                   <p className="name">Marta Williams</p>
-                  <p className="role">Founder</p>
+                  <p className="role">{t('restaurantDetail.section_review.Founder')}</p>
                 </div>
               </div>
             </div>
             <div className="card">
               <p className="card-text">
-                “Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusan
-                tium doloremque lauatiium.”
+                {t('restaurantDetail.section_review.testimonialText')}
+
               </p>
               <hr className="hr" />
               <div className="flex-row">
                 <img alt="Portrait of a man with beard wearing a hat" className="avatar" src="https://storage.googleapis.com/a1aa/image/5d7a55b5-4155-4bd0-436a-bab39d63d037.jpg" width="48" height="48" />
                 <div>
                   <p className="name">Marco Williams</p>
-                  <p className="role">Founder</p>
+                  <p className="role">{t('restaurantDetail.section_review.Founder')}</p>
                 </div>
               </div>
             </div>
@@ -516,27 +550,29 @@ function RestaurantDetail() {
 
       <div className="Page2">
         <div className="our-desserts">
-          <p className="subtitle">TASTY AND CRUNCHY</p>
-          <h1 className="title">Our Desserts</h1>
+          <p className="subtitle">{t('restaurantDetail.section_dessert.TASTY AND CRUNCHY')}</p>
+          <h1 className="title">{t('restaurantDetail.section_dessert.Beer And Chill')}</h1>
           <p className="description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedolorm reminusto do eiusmod tempor incidition
-            ulla mco laboris nisi ut aliquip ex ea commo condorico consectetur adipiscing eiltut aliquip.
+            {t('restaurantDetail.section_dessert.description')}
           </p>
         </div>
-        <div className="grid">
-          {menuItems.desserts.map(item => (
-            <div className="item" key={item.id || item.Ma_ThucDon}>
-              <img alt={item.Ten} src={item.Anh} />
-              <div className="item-content">
-                <div className="item-header">
-                  <span className="item-title">{item.Ten}</span>
-                  <span className="item-price">${Number(item.Gia).toLocaleString(undefined, { minimumFractionDigits: 2 })}</span>
-                </div>
-                <div className="divider"></div>
-                <p className="item-description">{item.MoTa}</p>
-              </div>
-            </div>
-          ))}
+        <div className="dessert-carousel">
+          <div className={`dessert-slide ${dessertAnimationClass}`}>
+            <img
+              src={dessertImages[dessertCurrent * 2]}
+              alt={`Dessert ${dessertCurrent * 2 + 1}`}
+              className="dessert-image"
+            />
+            {dessertImages[dessertCurrent * 2 + 1] && (
+              <img
+                src={dessertImages[dessertCurrent * 2 + 1]}
+                alt={`Dessert ${dessertCurrent * 2 + 2}`}
+                className="dessert-image"
+              />
+            )}
+          </div>
+          <button className="dessert-prev" onClick={prevDessertSlide} aria-label="Previous dessert slide">❮</button>
+          <button className="dessert-next" onClick={nextDessertSlide} aria-label="Next dessert slide">❯</button>
         </div>
       </div>
     </div>

@@ -1,0 +1,180 @@
+{
+  "hotelDetail": {
+    "logo": "Alloggio",
+    "rooms": {
+      "ilSole": {
+        "title": "il Sole",
+        "priceFrom": "from",
+        "price": "$80",
+        "info": "50m2 / 1-2 persons",
+        "description": "Traditional stilt houses are built with natural wood, creating a cozy space close to nature.",
+        "button": "BOOK NOW",
+        "ariaLabel": "Book now"
+      },
+      "SeaHose": {
+        "title": "Sea House",
+        "priceFrom": "from",
+        "price": "$95",
+        "info": "60m2 / 1-3 persons",
+        "description": "A waterfront resort with stunning views and a unique relaxing experience.",
+        "button": "BOOK NOW",
+        "ariaLabel": "Book now"
+      }
+    },
+    "nav": {
+      "home": "HOME",
+      "rooms": "ROOMS",
+      "pages": "PAGES",
+      "gallery": "GALLERY",
+      "blog": "BLOG",
+      "landing": "LANDING"
+    },
+    "booking": {
+      "checkin": "CHECK-IN",
+      "checkout": "CHECK-OUT",
+      "guests": "GUESTS:",
+      "adults": "Adults",
+      "children": "Children",
+      "childrenAge": "2-12 years old",
+      "infants": "Infants",
+      "infantsAge": "0-2 years old",
+      "done": "DONE",
+      "bookNow": "BOOK NOW"
+    },
+    "offers": {
+      "seeSpecialOffers": "See our special offers",
+      "headerDesc": "Morbi porta, purus at posuere consectetur, eros justo feugiat lorem, nec laoreet odio odio ac erat. Luctus sed libero dictum cursus cras consequat.",
+      "winterOffer": "Winter Offer",
+      "off": "Off",
+      "minimumStay": "Minimum stay {{count}} nights.",
+      "earlyBooking": "Early booking.",
+      "breakfastIncluded": "Breakfast included.",
+      "freeCancellation": "Free cancellation (see terms).",
+      "newYearsFreeChampagne": "New Years free champagne.",
+      "hikingTours": "Hiking tours with hosts.",
+      "winterEquipment": "Winter equipment.",
+      "holidays": "Holidays",
+      "allRooms": "All rooms.",
+      "cleaningIncluded": "Cleaning included.",
+      "lateCheckOut": "Late check-out.",
+      "specialEvents": "Special Events",
+      "upToGuests": "Up to {{count}} guests."
+    },
+    "aboutFeatures": {
+      "highRating": "High Rating",
+      "quietHours": "Quiet Hours",
+      "bestLocations": "Best Locations",
+      "freeCancellation": "Free Cancellation",
+      "paymentOptions": "Payment Options",
+      "specialOffers": "Special Offers",
+      "description": "Vestibulum a blandit ex, in tempor dolor. Phasellus dolor nisl volutpat sit amet et mollis hendrer phare ege ipsu."
+    },
+    "menu": {
+      "continental": "Continental",
+      "menuDesc": "Between 08.30 and 10.30 we serve our buffet of local and fresh products. Start your day with your favourite breakfast!",
+      "items": {
+        "eggsBacon": "Eggs & Bacon",
+        "eggsBaconDesc": "Praesent ut ante vel augue accumsan sagittis aenean. Vivamus non porti aliqui feli.",
+        "veganBreakfast": "Vegan Breakfast",
+        "veganBreakfastDesc": "Praesent ut ante vel augue accumsan sagittis aenean. Vivamus non porti aliqui feli.",
+        "teaCoffee": "Tea or Coffee",
+        "teaCoffeeDesc": "Praesent ut ante vel augue accumsan sagittis aenean. Vivamus non porti aliqui feli.",
+        "chiaOatmeal": "Chia Oatmeal",
+        "chiaOatmealDesc": "Praesent ut ante vel augue accumsan sagittis aenean. Vivamus non porti aliqui feli.",
+        "frenchCroissant": "French Croissant",
+        "frenchCroissantDesc": "Praesent ut ante vel augue accumsan sagittis aenean. Vivamus non porti aliqui feli.",
+        "avocadoToast": "Avocado Toast",
+        "avocadoToastDesc": "Praesent ut ante vel augue accumsan sagittis aenean. Vivamus non porti aliqui feli.",
+        "cheesePlate": "Cheese Plate",
+        "cheesePlateDesc": "Praesent ut ante vel augue accumsan sagittis aenean. Vivamus non porti aliqui feli.",
+        "marmaladeSelection": "Marmalade Selection",
+        "marmaladeSelectionDesc": "Praesent ut ante vel augue accumsan sagittis aenean. Vivamus non porti aliqui feli."
+      }
+    },
+    "newsletter": {
+      "joinNewsletter": "Join our weekly Newsletter",
+      "emailPlaceholder": "Email Address",
+      "signMeUp": "SIGN ME UP"
+    }
+  },
+  "restaurantDetail": {
+    "carousel": {
+      "AuthenticDishes": "Authentic Dishes",
+      "FreshRestaurant": "Fresh Restaurant",
+      "TraditionalFood": "Traditional Food",
+      "VIEWOURMENU": "VIEW OUR MENU",
+      "Carouseldescription": "Discover traditional and fresh dishes at our restaurant. Enjoy a unique culinary experience with the finest fresh ingredients."
+    },
+    "sidebar": {
+      "Home": "Home",
+      "Pages": "Pages",
+      "Elements": "Elements",
+      "Portfolio": "Portfolio",
+      "Blog": "Blog",
+      "Shop": "Shop",
+      "Restaurant Home": "Restaurant Home",
+      "Light Home": "Light Home",
+      "Dinner Home": "Dinner Home",
+      "Masonry Blog": "Masonry Blog",
+      "Health Food Home": "Health Food Home",
+      "Landing": "Landing",
+      "About Us": "About Us",
+      "Services": "Services",
+      "Our Menu": "Our Menu",
+      "Contact Page": "Contact Page",
+      "Reservations": "Reservations",
+      "Meet The Chefs": "Meet The Chefs",
+      "Restaurant Item": "Restaurant Item",
+      "Counters": "Counters",
+      "Dropcaps": "Dropcaps",
+      "Info Box": "Info Box",
+      "Blog List": "Blog List",
+      "Portfolio Slider": "Portfolio Slider",
+      "Standard": "Standard",
+      "Gallery": "Gallery",
+      "Gallery With Space": "Gallery With Space",
+      "Masonry Wide": "Masonry Wide",
+      "Portfolio Single": "Portfolio Single",
+      "Masonry": "Masonry",
+      "Masonry Gallery": "Masonry Gallery",
+      "Blog Single": "Blog Single",
+      "With Sidebar": "With Sidebar",
+      "Two Columns": "Two Columns",
+      "Full Width": "Full Width",
+      "Product Single": "Product Single"
+    },
+    "section_starters": {
+      "TASTY AND CRUNCHY": "TASTY AND CRUNCHY",
+      "Yoyo Appetizers": "Yoyo Appetizers",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedolorm reminusto do eiusmod tempor incidition ulla mco laboris nisi ut aliquip ex ea commo condorico consectetur adipiscing eiltut aliquip."
+    },
+    "section_hero": {
+      "TASTY AND CRUNCHY": "TASTY AND CRUNCHY",
+      "Book a Table": "Book a Table",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedolorm reminusto doeiusmod tempor incidition ulla mco laboris nisi ut aliquip ex ea commo condorico consectetur adipiscing elitut aliquip.",
+      "BOOK NOW": "BOOK NOW"
+    },
+    "section_main_meals": {
+      "TASTY AND CRUNCHY": "TASTY AND CRUNCHY",
+      "Yoyo Main Meals": "Yoyo Main Meals",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedolorm reminusto do eiusmod tempor incidition ulla mco laboris nisi ut aliquip ex ea commo condorico consectetur adipiscing eiltut aliquip."
+    },
+    "section_review": {
+      "TASTY AND CRUNCHY": "TASTY AND CRUNCHY",
+      "What People Say": "What People Say",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedolorm reminusto doeiusmod tempor incidition ulla mco laboris nisi ut aliquip ex ea commo condorico consectetur adipiscing elitut aliquip.",
+      "Founder": "Founder",
+      "testimonialText": "“Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusan tium doloremque lauatiium.”"
+    },
+    "section_dessert": {
+      "TASTY AND CRUNCHY": "TASTY AND CRUNCHY",
+      "Beer And Chill": "Beer And Chill",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedolorm reminusto do eiusmod tempor incidition ulla mco laboris nisi ut aliquip ex ea commo condorico consectetur adipiscing eiltut aliquip.",
+      "Previous dessert slide": "Previous dessert slide",
+      "Next dessert slide": "Next dessert slide"
+    },
+    "common": {
+      "Scroll to top": "Scroll to top"
+    }
+  }
+}
