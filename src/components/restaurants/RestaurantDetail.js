@@ -408,7 +408,7 @@ function RestaurantDetail() {
                   <span className="item-title">{item.Ten}</span>
                   <span className="item-price">{Number(item.Gia).toLocaleString(undefined, { minimumFractionDigits: 3 })}đ</span>
                 </div>
-                <div className="divider"></div>
+                <div className="item-divider"></div>
                 <p className="item-description">{item.MoTa}</p>
               </div>
             </div>
@@ -476,7 +476,7 @@ function RestaurantDetail() {
                   <span className="item-title">{item.Ten}</span>
                   <span className="item-price">{Number(item.Gia).toLocaleString(undefined, { minimumFractionDigits: 3 })}đ</span>
                 </div>
-                <div className="divider"></div>
+                <div className="item-divider"></div>
                 <p className="item-description">{item.MoTa}</p>
               </div>
             </div>

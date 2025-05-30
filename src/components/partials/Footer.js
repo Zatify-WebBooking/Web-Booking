@@ -21,7 +21,7 @@ const Footer = () => {
         </div>
         <div className="footer-col footer-col-center">
           <img
-            src="https://storage.googleapis.com/a1aa/image/7de0f694-2c70-4a33-86eb-c9780aa0fc81.jpg"
+            src="https://yoyobeer.com.vn/wp-content/uploads/2023/11/logo-1400x764.png"
             alt="White stylized signature logo on dark background"
             className="footer-logo"
           />

@@ -12,7 +12,7 @@ function Header() {
   return (
     <header className="header">
       <div className="header-container">
-        <h1 className="logo">Savory</h1>
+        <img className="logo" src='https://yoyobeer.com.vn/wp-content/uploads/2023/11/logo-1400x764.png' alt="Logo" />
         <nav className="nav">
           <a href="/">Home</a>
           <a href="#menu">Menu</a>

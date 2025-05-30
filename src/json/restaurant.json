@@ -330,13 +330,13 @@
   "restaurants": [
     {
       "id": 1,
-      "name": "Pizza 4P's Hai Bà Trưng",
-      "image": "https://estellaplace.com.vn/Data/Sites/1/Product/141/pz_est_e-information-2.jpg",
-      "address": "8/15 Le Thanh Ton, Ben Nghe, District 1, Ho Chi Minh City",
-      "phone": "+84 28 3622 0500",
-      "cuisine": "Italian, Pizza",
+      "name": "Yoyo Central Hồ Con Rùa",
+      "image": "https://th.bing.com/th/id/R.771709bddfe196a2e8e46c64538c110d?rik=z4FfwXPwSCsUsw&riu=http%3a%2f%2fbookingservice.com.vn%2fupload%2fimages%2fyoyo-central-ho-con-rua-quan-3-14.jpg&ehk=g1zMASbFm2m0jhWfeSMUtAqLXb7EI6D%2bSMlkMw%2bQS00%3d&risl=&pid=ImgRaw&r=0",
+      "address": "2 Bis Nguyễn Thị Minh Khai, Phường Đa Kao, Quận 1, TP.HCM",
+      "phone": "0909.944.879",
+      "cuisine": "Italian, Beer Garden",
       "opening_hours": "10:00 - 23:00",
-      "description": "Nhà hàng pizza nổi tiếng với phô mai tự làm và thực đơn phong phú.",
+      "description": "Nơi để bạn thư giãn sau ngày dài làm việc căng thẳng với các món ăn ngon và không gian thoáng đãng.",
       "rating": 4.2
     },
     {

@@ -27,6 +27,8 @@
 }
 
 .logo {
+  width: 65px;
+  height: 50px;
   font-size: 28px;
   font-family: 'Georgia', serif;
 }
@@ -790,7 +792,7 @@
 }
 
 
-.divider {
+.item-divider {
   margin-top: -10px;
   height: 1px;
   background-color: #dadada;

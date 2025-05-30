@@ -2,45 +2,66 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../styles/bookingweb/booking.css";
 
-function HeaderBooking({ onSearch }) {
-    const [search, setSearch] = useState("");
-    const navigate = useNavigate();
+// Font Awesome CDN for icons
+const fontAwesomeLink = document.createElement("link");
+fontAwesomeLink.rel = "stylesheet";
+fontAwesomeLink.href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css";
+document.head.appendChild(fontAwesomeLink);
 
-    const handleSearch = (e) => {
-        e.preventDefault();
-        if (onSearch) onSearch(search.trim());
-    };
+const NAV_ITEMS = [
+  { label: "Restaurant" },
+  { label: "Hotel" },
+  { label: "Booking" },
+  { label: "Contact" },
+];
 
-    const handleChange = (e) => {
-        const value = e.target.value;
-        setSearch(value);
-        if (onSearch) onSearch(value.trim());
-    };
+const HeaderBooking = () => {
+  const [activeIdx, setActiveIdx] = useState(0);
 
-    return (
-        <header className="header-booking">
-            <img
-                src="/images/logo.png"
-                alt="BookingWeb Logo"
-                className="logo-bookingweb"
-                style={{ height: 40, marginRight: 24, cursor: "pointer" }}
-                onClick={() => navigate("/")}
-            />
-            <form onSubmit={handleSearch} style={{ flex: 1, display: "flex" }}>
-                <input
-                    type="text"
-                    placeholder="Tìm kiếm khách sạn, nhà hàng..."
-                    value={search}
-                    onChange={handleChange}
-                />
-            </form>
-            <nav style={{ marginRight: "32px" }}>
-                <button className="nav-btn" onClick={() => navigate("/")}>Home</button>
-                <button className="nav-btn" onClick={() => navigate("/about")}>About</button>
-                <button className="nav-btn" onClick={() => navigate("/contact")}>Contact</button>
-            </nav>
-        </header>
-    );
-}
+  return (
+    <header className="header-booking-header">
+      <nav className="header-booking-nav">
+        <div className="header-booking-nav-container">
+          {/* Left side */}
+          <div className="header-booking-left-side">
+            <div className="header-booking-logo">
+              <img src="https://diendantructuyen.com/wp-content/uploads/2024/09/dia-chi-vector-2.jpg" alt="Red location pin icon" />
+              <span>listeo</span>
+            </div>
+            <ul className="header-booking-nav-links">
+              {NAV_ITEMS.map((item, idx) => (
+                <li key={item.label}>
+                  <button
+                    className={activeIdx === idx ? "active" : ""}
+                    onClick={() => setActiveIdx(idx)}
+                    onFocus={() => setActiveIdx(idx)}
+                  >
+                    <span>{item.label}</span>
+                   
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+          {/* Right side */}
+          <div className="header-booking-right-side">
+            <button className="header-booking-cart-button" aria-label="Shopping cart">
+              <i className="fas fa-shopping-cart fa-lg"></i>
+              <span className="header-booking-cart-count">0</span>
+            </button>
+            <button className="header-booking-sign-in-button">
+              <svg fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 14a4 4 0 10-8 0 4 4 0 008 0z" strokeLinecap="round" strokeLinejoin="round"></path>
+                <path d="M12 14v7m-4-7v7m8-7v7m-8 0h8" strokeLinecap="round" strokeLinejoin="round"></path>
+              </svg>
+              <span>Sign In</span>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+  );
+};
 
 export default HeaderBooking;
+
