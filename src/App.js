@@ -12,8 +12,8 @@ import Food from './components/restaurants/Food';
 import BookingWeb from './components/booking/BookingWeb';
 import BookingLayout from './components/layout/BookingLayout';
 import HotelDetail from './components/hotels/HotelDetail';
-
-
+import AboutRestaurant from './components/restaurants/AboutRestaurant';
+import React from 'react';
 
 function App() {
   return (
@@ -22,14 +22,16 @@ function App() {
       <Routes>
         <Route element={<MainLayout />}>
           <Route path="/restaurant/:id" element={<RestaurantDetail />} />
-          <Route path="/booktable/:id" element={<BookTable />} />
+          <Route path="/booking/:id" element={<BookTable />} />
           <Route path="/viewmenu/:id" element={<ViewMenu />} />
           <Route path="/food/:restaurantId" element={<Food />} />
           <Route path="/editfood/:id" element={<EditFood />} />
           <Route path="/createfood/:id" element={<CreateFood />} />
+          <Route path="/createfood/:id" element={<CreateFood />} />
+          <Route path="/about/:id" element={<AboutRestaurant />} />
         </Route>
         <Route element={<EmptyLayout />}>
-          <Route path='/hotels' element={<HotelDetail />} />
+          <Route path='/hotel/:id' element={<HotelDetail />} />
 
           {/* <Route path="/login" element={<Login />} /> */}
           {/* <Route path="/register" element={<Register />} /> */}

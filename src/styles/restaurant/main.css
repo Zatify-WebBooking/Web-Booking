@@ -27,7 +27,7 @@
 }
 
 .logo {
-  width: 65px;
+  width: 50x;
   height: 50px;
   font-size: 28px;
   font-family: 'Georgia', serif;
@@ -47,11 +47,14 @@
 }
 
 .hero-carousel {
-  width: 1586px;
-  height: 892px;
+  width: 90%;
+  max-width: 1586px;
+  aspect-ratio: 1586 / 892;
+  /* Giữ đúng tỷ lệ 16:9 */
+  height: auto;
   margin: 0 auto;
   position: relative;
-  margin-top: 90px;
+  margin-top: 54px;
   overflow: hidden;
 }
 
@@ -542,8 +545,65 @@
   font-size: 1rem;
 }
 
+.starter-carousel {
+  position: relative;
+  left: -160px;
+  width: 1488px;
+  height: 1053px;
+  margin: 0 auto 40px auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+
+.starter-slide {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.starter-image {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.starter-prev,
+.starter-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  color: white;
+  border: none;
+  font-size: 36px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+.starter-prev {
+  left: 10px;
+}
+
+.starter-next {
+  right: 10px;
+}
+
+.starter-prev:hover,
+.starter-next:hover {
+  color: #000;
+}
+
 .our-main-meals {
   text-align: center;
+  width: 100%;
   margin-bottom: 40px;
 }
 
@@ -553,10 +613,12 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  width: 100%;
+
 }
 
 .our-main-meals .main-meal-image-group img {
-  width: 50%;
+  max-width: 50%;
   height: 876px;
   object-fit: cover;
 }
@@ -626,6 +688,63 @@
   font-size: 1rem;
 }
 
+.main-meal-carousel {
+  position: relative;
+  left: -160px;
+  width: 1487px;
+  height: 1053px;
+  margin: 0 auto 40px auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-meal-slide {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+}
+
+.main-meal-image {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.main-meal-prev,
+.main-meal-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  color: white;
+  border: none;
+  font-size: 36px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+  transition: background-color 0.1s ease;
+}
+
+.main-meal-prev {
+  left: 10px;
+}
+
+.main-meal-next {
+  right: 10px;
+}
+
+.main-meal-prev:hover,
+.main-meal-next:hover {
+  color: #000;
+}
+
+
 /* Grid layout */
 .grid {
   display: grid;
@@ -660,12 +779,40 @@
   object-fit: cover;
 }
 
-.dessert-prev,
-.dessert-next {
+.dessert-carousel-about {
+  position: relative;
+  left: -160px;
+  width: 1488px;
+  height: 527px;
+  margin: 0 auto 40px auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+
+.description-about {
+  max-width: 1200px;
+  margin: 3rem auto;
+  color: #666;
+  font-size: 1rem;
+  text-align: justify;
+}
+
+.dessert-image-about {
+  width: 70%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.dessert-prev-about,
+.dessert-next-about {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0,0,0,0.4);
+  background: none;
   color: white;
   border: none;
   font-size: 36px;
@@ -673,7 +820,37 @@
   cursor: pointer;
   border-radius: 50%;
   z-index: 10;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.11s ease;
+}
+
+.dessert-prev-about {
+  left: 30vh;
+}
+
+.dessert-next-about {
+  right: 30vh;
+}
+
+.dessert-prev-about:hover,
+.dessert-next-about:hover {
+  background: none;
+  color: #000;
+}
+
+.dessert-prev,
+.dessert-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  font-size: 36px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+  transition: background-color 0.11s ease;
 }
 
 .dessert-prev {
@@ -686,7 +863,7 @@
 
 .dessert-prev:hover,
 .dessert-next:hover {
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .space-y-8>*+* {
@@ -843,7 +1020,7 @@
 .overlay-content-hero-section {
   color: rgb(230, 230, 230);
   text-align: center;
-  margin-top: 190px;
+  margin-top: 10vh;
   padding: 150px;
   border-radius: 8px;
   display: flex;
@@ -1271,7 +1448,7 @@ hr {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   padding: 0;
 }
 

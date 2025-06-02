@@ -1,14 +1,51 @@
 /* Our Starters */
-.Page2 {
+.Viewmenu {
   font-family: 'Arial', sans-serif;
   color: #333;
   background-color: #fff;
   line-height: 1.6;
   height: auto;
   padding: 20px;
-  max-width: 1200px;
+  max-width: 1500px;
 
   margin: 0 auto;
+}
+
+.Viewmenu .starters-image-list,
+.Viewmenu .main-meal-image-list,
+.Viewmenu .dessert-image-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1500px;
+  margin: 0 auto;
+  gap: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 1px solid transparent; /* to fix centering issue in some browsers */
+}
+
+.Viewmenu .starters-image-list img,
+.Viewmenu .main-meal-image-list img,
+.Viewmenu .dessert-image-list img {
+  flex: 0 0 50%;
+  max-width: 50%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Responsive: stack images vertically on small screens */
+@media (max-width: 600px) {
+  .Viewmenu .starters-image-list img,
+  .Viewmenu .main-meal-image-list img,
+  .Viewmenu .dessert-image-list img {
+    flex: 0 1 100%;
+    max-width: 100%;
+  }
 }
 
 /* Header section */

@@ -1,10 +1,31 @@
 import '../../styles/restaurant/main.css';
-import { useTranslation } from 'react-i18next'; // Thêm dòng này
+import { useTranslation } from 'react-i18next';
+import { useLocation } from 'react-router-dom';
+import restaurantData from '../../json/restaurant.json';
 
 function Header() {
-  const { i18n } = useTranslation(); // Thêm dòng này
+  const { i18n } = useTranslation();
 
-  // Hàm đổi ngôn ngữ
+  const location = useLocation();
+  const pathSegments = location.pathname.split('/');
+  let restaurantId = null;
+  if (pathSegments.length > 2) {
+    restaurantId = pathSegments[2];
+  }
+
+  // Find restaurant by id in restaurantData
+  const restaurant = restaurantData.restaurants.find(
+    (r) => String(r.id) === String(restaurantId)
+  );
+
+  // Use restaurant logo or fallback to default logo URL
+  const logoSrc = restaurant && restaurant.logo
+    ? restaurant.logo.startsWith('http') || restaurant.logo.startsWith('/')
+      ? restaurant.logo
+      : '/' + restaurant.logo
+    : 'https://yoyobeer.com.vn/wp-content/uploads/2023/11/logo-1400x764.png';
+
+  // Language toggle function
   const toggleLanguage = () => {
     i18n.changeLanguage(i18n.language === 'vi' ? 'en' : 'vi');
   };
@@ -12,13 +33,12 @@ function Header() {
   return (
     <header className="header">
       <div className="header-container">
-        <img className="logo" src='https://yoyobeer.com.vn/wp-content/uploads/2023/11/logo-1400x764.png' alt="Logo" />
+        <img className="logo" src={logoSrc} alt="Logo" />
         <nav className="nav">
-          <a href="/">Home</a>
-          <a href="#menu">Menu</a>
-          <a href="#about">About</a>
-          <a href="#reservation">Reservation</a>
-          <a href="#contact">Contact</a>
+          <a href={restaurantId ? `/restaurant/${restaurantId}` : '/restaurant'}>Home</a>
+          <a href={restaurantId ? `/viewmenu/${restaurantId}` : '/viewmenu'}>Menu</a>
+          <a href={restaurantId ? `/about/${restaurantId}` : '/about'}>About</a>
+          <a href={restaurantId ? `/booking/${restaurantId}` : '/booking'}>Reservation</a>
         </nav>
         <button onClick={toggleLanguage} className="lang-btn" title="Change language">
           <img
