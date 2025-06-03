@@ -1078,7 +1078,13 @@ nav a {
     padding: 60px 0 80px 0;
     background: #fff;
     text-align: center;
+    width: 100%;
 }
+
+
+
+
+
 
 .offers-section .header-offer {
     margin-bottom: 32px;
@@ -1103,13 +1109,13 @@ nav a {
 
 .offers {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 32px;
-    margin-top: 4.5rem;
-    margin-left: 20px;
-    margin-right: 20px;
+}
+.image-price {
+    width: 100%;
 }
 
 .offer-details li {

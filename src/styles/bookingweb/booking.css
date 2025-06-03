@@ -711,7 +711,11 @@
   z-index: 3;
   color: #fff;
   text-align: center;
-  width: 100%;
+  width: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1rem;
   font-family: 'Raleway', sans-serif;
   font-weight: 600;
   font-size: 28px;
@@ -1662,4 +1666,9 @@ section.container {
   font-size: 18px;
   pointer-events: none;
   z-index: 2;
+}
+
+/* Hide the location dropdown section in the search bar */
+.location-dropdown-wrapper {
+  display: none !important;
 }

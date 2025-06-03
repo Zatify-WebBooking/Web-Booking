@@ -16,10 +16,13 @@ import AboutRestaurant from './components/restaurants/AboutRestaurant';
 import AboutHotel from './components/hotels/AboutHotel';
 import React from 'react';
 import BookRoom from './components/hotels/BookRoom';
+import PriceHotel from './components/hotels/PriceHotel';
+import FloatingZaloButton from './components/common/FloatingZaloButton';
 
 function App() {
   return (
     <>
+      <FloatingZaloButton />
       <ScrollToTop />
       <Routes>
         <Route element={<MainLayout />}>
@@ -35,7 +38,8 @@ function App() {
         <Route element={<EmptyLayout />}>
           <Route path='/hotel/:id' element={<HotelDetail />} />
           <Route path='/hotel/abouthotel/:id' element={<AboutHotel />} />
-          <Route path='/bookroom/:id' element={<BookRoom />} />
+          <Route path='/hotel/price/:id' element={<PriceHotel />} />
+          <Route path='/hotel/bookroom/:id' element={<BookRoom />} />
 
           {/* <Route path="/login" element={<Login />} /> */}
           {/* <Route path="/register" element={<Register />} /> */}

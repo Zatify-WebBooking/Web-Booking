@@ -22,8 +22,8 @@ function BookingWeb() {
   const [typing, setTyping] = useState("");
 
   const carouselImages = [
-    "https://truongphugroup.vn/wp-content/uploads/2022/10/Mot-so-tieu-chuan-khi-thiet-ke-nha-hang-ban-can-biet-e1665399224187.jpg",
-    "https://noithattrevietnam.com/uploaded/Kien-thuc-nha-dep/sai-lam-trong-thiet-ke-noi-that-nha-hang/1thiet-ke-noi-that-nha-hang-dep.jpg"
+    process.env.PUBLIC_URL + "https://novaworld.info/wp-content/uploads/2023/07/yoyo-beer-garden-Novaworldinfo.jpg",
+    process.env.PUBLIC_URL + "https://viethouzz.com/wp-content/uploads/2024/10/yoyo-garden-nguyen-thi-minh-khai-copy.webp"
   ];
   const navigate = useNavigate();
   const [search] = useOutletContext();
@@ -104,6 +104,15 @@ function BookingWeb() {
       navigate(`/restaurant/${id}`);
     } else if (activeTab.toLowerCase() === "hotel") {
       navigate(`/hotel/${id}`);
+    } else if (activeTab.toLowerCase() === "all") {
+      // Determine if id is in restaurants or hotels
+      const isRestaurant = data.restaurants.some(item => item.id === id);
+      const isHotel = data.hotels.some(item => item.id === id);
+      if (isRestaurant) {
+        navigate(`/restaurant/${id}`);
+      } else if (isHotel) {
+        navigate(`/hotel/${id}`);
+      }
     } else if (activeTab.toLowerCase() === "tourist") {
       navigate(`/tourist/${id}`);
     }
@@ -116,8 +125,8 @@ function BookingWeb() {
         <div
           key={item.id || idx}
           className="card"
-          style={{ cursor: activeTab === "restaurant" ? "pointer" : "default" }}
-          onClick={() => activeTab === "restaurant" && handleCardClick(item.id)}
+          style={{ cursor: ["restaurant", "hotel"].includes(activeTab.toLowerCase()) ? "pointer" : "default" }}
+          onClick={() => handleCardClick(item.id)}
         >
           <div className="card-image">
             <img
@@ -142,12 +151,21 @@ function BookingWeb() {
     setPage(0);
   }, [activeTab, search]);
 
-  // Carousel slide infinite loop
+  // --- Carousel slide infinite loop with smooth direction ---
+  const getTotalPages = () => {
+    const items = activeTab === 'all'
+      ? [...(popularCategories.restaurant || []), ...(popularCategories.hotel || []), ...(popularCategories.tourist || [])]
+      : (popularCategories[activeTab] || []);
+    return Math.ceil(items.length / pageSize);
+  };
+
   const handlePrev = () => {
-    setPage((prev) => (prev === 0 ? filteredList.length - 1 : prev - 1));
+    setSlideDirection('left');
+    setPage((prev) => (prev === 0 ? getTotalPages() - 1 : prev - 1));
   };
   const handleNext = () => {
-    setPage((prev) => (prev === filteredList.length - 1 ? 0 : prev + 1));
+    setSlideDirection('right');
+    setPage((prev) => (prev === getTotalPages() - 1 ? 0 : prev + 1));
   };
 
   useEffect(() => {
@@ -214,70 +232,42 @@ function BookingWeb() {
   const mostVisitedSlides = [
     [
       {
-        img: "/images/mainmeal1.jpg", // Restaurant (đổi sang ảnh có sẵn)
+        img: "https://product.hstatic.net/1000268128/product/405381975_122121706436051211_2192545811434395977_n_a9152707a20043f5b4e42994a38a3d5e_master.jpg",
         title: "Yoyo Central Hồ Con Rùa",
-        address: "Quận 3, Hồ Chí Minh",
-        badges: [
-         
-          
-        ],
-        bottomBadges: [
-      
-        ]
+        badges: [],
+        bottomBadges: []
       },
       {
-        img: "/images/slide1.jpg", // Hotel
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk-VY6FaelSmAIprPnSLz7UNE8OlKqbl36vg&s",
         title: "Hotel Seava",
-        address: "Vũng Tàu, Bà Rịa - Vũng Tàu",
-        badges: [
-          
-        ],
-        bottomBadges: [
-          
-        ]
+        badges: [],
+        bottomBadges: []
       },
       {
-        img: "/images/slide3.jpg", // Tourist
+        img: "https://tpiland.com/wp-content/uploads/2025/04/NovaWorld_HoTram_phan_khu_biet_thu-1024x579.jpg",
         title: "NovaWorld Hồ Tràm",
-        address: "Xuyên Mộc, Bà Rịa - Vũng Tàu",
-       
+        badges: [],
+        bottomBadges: []
       }
     ],
     [
       {
-        img: "/images/mainmeal2.jpg", // Restaurant
+        img: "https://www.propertyvietnam.com.vn/upload/images/349309233_773374067751872_6403154603336304582_n.jpeg",
         title: "Dragon Palace",
-        address: "Quận 1, Hồ Chí Minh",
-        badges: [
-          
-          
-        ],
-        bottomBadges: [
-          
-        ]
+        badges: [],
+        bottomBadges: []
       },
       {
-        img: "/images/slide2.jpg", // Hotel
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0FucntH7O5fdsAvnbQGdtMnqmX_VWTHrYUr3YePL0BfNwfD5pARmvpaERxxSWXhdIeKg&usqp=CAU",
         title: "Hotel Minera",
-        address: "Bình Dương",
-        badges: [
-         
-        ],
-        bottomBadges: [
-          
-        ]
+        badges: [],
+        bottomBadges: []
       },
       {
-        img: "/images/slide4.jpg", // Tourist
+        img: "https://cdn3.ivivu.com/2022/08/Cong-vien-bikini-beach-novaworld-phan-thiet-ivivu.jpeg",
         title: "NovaWorld Phan Thiết",
-        address: "Phan Thiết, Bình Thuận",
-        badges: [
-        
-        ],
-        topRight: { text: "Now Open", color: "#fff", bg: "#43a047" },
-        bottomBadges: [
-          
-        ]
+        badges: [],
+        bottomBadges: []
       }
     ]
   ];
@@ -364,6 +354,16 @@ function BookingWeb() {
   ];
   const [selectedCity, setSelectedCity] = useState(null);
 
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 300);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   if (loading) return <div>Đang tải dữ liệu...</div>;
 
   const handleSearch = (e) => {
@@ -407,13 +407,31 @@ function BookingWeb() {
             </button>
             <p className="category-label">Or browse featured categories:</p>
             <div className="category-buttons">
-              <button className="category-btn">
+              <button className="category-btn" onClick={() => {
+                setActiveTab('restaurant');
+                setTimeout(() => {
+                  const el = document.querySelector('.card-container-wrapper');
+                  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 200);
+              }}>
                 <i className="fas fa-utensils"></i> Restaurants
               </button>
-              <button className="category-btn">
+              <button className="category-btn" onClick={() => {
+                setActiveTab('hotel');
+                setTimeout(() => {
+                  const el = document.querySelector('.card-container-wrapper');
+                  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 200);
+              }}>
                 <i className="fas fa-hotel"></i> Hotels
               </button>
-              <button className="category-btn">
+              <button className="category-btn" onClick={() => {
+                setActiveTab('tourist');
+                setTimeout(() => {
+                  const el = document.querySelector('.card-container-wrapper');
+                  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 200);
+              }}>
                 <i className="fas fa-map-marked-alt"></i> Tourist
               </button>
             </div>
@@ -553,7 +571,7 @@ function BookingWeb() {
             display: 'flex',
             justifyContent: 'center',
             gap: 24,
-            transition: 'transform 0.5s',
+            transition: 'transform 0.5s cubic-bezier(.7, 0, .2, 1)',
             minHeight: 210
           }}
         >
@@ -563,23 +581,36 @@ function BookingWeb() {
           ).slice(page * pageSize, page * pageSize + pageSize).map((item, idx) => (
             <div
               key={item.id || idx}
-              className="card carousel-card"
+              className={`card carousel-card${slideDirection ? ' slide-' + slideDirection : ''}`}
               style={{ cursor: 'pointer' }}
               onClick={() => handleCardClick(item.id)}
+              onAnimationEnd={() => setSlideDirection(null)}
             >
               <img
                 src={item.image}
                 alt={item.name || 'Category'}
               />
               <div className="carousel-card-overlay"></div>
-              <div className="carousel-card-title">{item.name}</div>
-              <div className="carousel-card-listings">1 listings</div>
-              <button className="carousel-card-browse-btn"
-                onClick={e => { e.stopPropagation(); handleCardClick(item.id); }}
-                style={{ cursor: 'pointer' }}
-              >
-                Browse
-              </button>
+              <div className="carousel-card-title" style={{
+                fontFamily: 'Montserrat, Raleway, Arial, sans-serif',
+                fontWeight: 700,
+                fontSize: 22,
+                color: '#fff',
+                textShadow: '0 2px 12px #000a',
+                letterSpacing: 0.5,
+                padding: '10px 0 2px 0',
+                margin: 0,
+                textAlign: 'center',
+                width: '100%',
+                lineHeight: 1.2,
+                background: 'rgba(30,30,30,0.32)',
+                borderRadius: '0 0 12px 12px',
+                boxSizing: 'border-box',
+                position: 'absolute',
+                left: 0,
+                bottom: 0,
+                zIndex: 4
+              }}>{item.name}</div>
             </div>
           ))}
         </div>
@@ -731,8 +762,8 @@ function BookingWeb() {
                 left: 0,
                 bottom: 0,
                 width: '100%',
-                background: 'linear-gradient(90deg, rgba(30,30,30,0.82) 80%, rgba(30,30,30,0.5) 100%)',
-                padding: '18px 18px 14px 18px',
+                background: 'linear-gradient(90deg, rgba(30,30,30,0.68) 80%, rgba(30,30,30,0.38) 100%)',
+                padding: '12px 16px 10px 16px',
                 zIndex: 3,
                 textAlign: 'left',
                 maxWidth: '100%',
@@ -745,21 +776,13 @@ function BookingWeb() {
               }}>
                 <h3 style={{
                   margin: 0,
-                  fontWeight: 800,
-                  fontSize: 22,
-                  lineHeight: 1.2,
-                  color: '#fff',
-                  textShadow: '0 2px 8px #000a',
-                  letterSpacing: 0.2
+                  fontWeight: 700,
+                  fontSize: 20,
+                  lineHeight: 1.18,
+                  color: 'rgba(255,255,255,0.92)',
+                  textShadow: '0 2px 8px #0007',
+                  letterSpacing: 0.1
                 }}>{card.title}</h3>
-                <p style={{
-                  margin: 0,
-                  fontSize: 15,
-                  fontWeight: 500,
-                  color: '#fff',
-                  textShadow: '0 1px 4px #000a',
-                  opacity: 0.92
-                }}>{card.address}</p>
               </div>
             </div>
           ))}
@@ -811,11 +834,9 @@ function BookingWeb() {
           </button>
         </div>
       </section>
-      {/* Testimonial Section - What our users say (carousel) */}
       <section className="testimonial-section">
         <h2>What our users say</h2>
         <div className="testimonial-list">
-          {/* Left testimonial */}
           <div className="testimonial-item">
             <span className="testimonial-quote-icon">“</span>
             <div className="testimonial-quote">{testimonials[leftIdx].text}</div>
@@ -823,7 +844,6 @@ function BookingWeb() {
             <div className="testimonial-name">{testimonials[leftIdx].name}</div>
             <div className="testimonial-role">{testimonials[leftIdx].title}</div>
           </div>
-          {/* Center testimonial (active) */}
           <div className="testimonial-item active">
             <span className="testimonial-quote-icon">“</span>
             <div className="testimonial-quote">{testimonials[centerIdx].text}</div>
@@ -861,7 +881,7 @@ function BookingWeb() {
       {/* Hero Section - Streamline Your Business */}
       <section className="hero-section" style={{ position: 'relative', width: '100%', height: 400, overflow: 'hidden' }}>
         <img
-          src="/images/mainmeal5.jpg"
+          src="https://thegioiclub.com/Uploads/files/8up/nhahanggarden5-22.jpg"
           alt="Restaurant interior with tables and chairs"
           className="hero-image"
           width="1920"
@@ -937,7 +957,7 @@ function BookingWeb() {
         <div className="blog-grid">
           {/* Card 1 */}
           <article className="blog-card">
-            <img src="https://storage.googleapis.com/a1aa/image/61c0a733-7272-4e74-214e-3e08b9642a54.jpg"
+            <img src="https://thegioiclub.com/Uploads/files/8up/nhahanggarden5-22.jpg"
               alt="Woman with sunglasses smiling in sunlight with trees and buildings in background" />
             <div className="overlay">
               <span className="badge">Tips</span>
@@ -973,6 +993,34 @@ function BookingWeb() {
       </section>
       {/* Footer Section (HTML/CSS from user) */}
       <FooterBooking />
+      {/* Scroll to Top Button */}
+      {showScrollTop && (
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          style={{
+            position: 'fixed',
+            bottom: 32,
+            right: 32,
+            zIndex: 9999,
+            background: '#222',
+            color: '#fff',
+            border: 'none',
+            
+            width: 48,
+            height: 48,
+            boxShadow: '0 2px 12px #0003',
+            cursor: 'pointer',
+            fontSize: 24,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            transition: 'background 0.2s',
+          }}
+          aria-label="Scroll to top"
+        >
+          <i className="fas fa-arrow-up" />
+        </button>
+      )}
     </div>  
   );
 }

@@ -16,7 +16,7 @@ const BookTable = () => {
             }}>
                 <div className="book-table-container" style={{ textAlign: 'center' }}>
                     <p className="subtitle">NGON VÀ GIÒN    </p>
-                    <h1>Liện hệ đặt bàn</h1>
+                    <h1>Liên hệ đặt bàn</h1>
                     <div style={{ display: 'flex',flexDirection: 'column' ,alignItems: 'center', justifyContent: 'center', gap: '20px', marginBottom: '20px', fontSize: '18px', color:'white' }}>
                         <div>Vui lòng liên hệ với Zalo: {zaloPhone}</div>
                         <p>Scan mã này để liên hệ đạt bàn</p>

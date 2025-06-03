@@ -41,10 +41,7 @@ const NAV_ITEMS = [
   },
   {
     label: "Contact",
-    dropdown: [
-      { label: "Liên hệ hỗ trợ", href: "/contact/support" },
-      { label: "Góp ý & Phản hồi", href: "/contact/feedback" },
-    ],
+    dropdown: null, // Remove dropdown for Contact
   },
 ];
 
@@ -75,7 +72,7 @@ const HeaderBooking = () => {
                   className={item.dropdown ? "dropdown" : ""}
                 >
                   <span className="dropdown-btn">
-                    <span style={{ marginLeft: 8 }}>{t(`${item.label.toLowerCase()}`)}</span>
+                    <span style={{ marginLeft: 8, textTransform: 'capitalize' }}>{t(`${item.label.toLowerCase()}`)}</span>
                     {item.dropdown && (
                       <i className="fas fa-chevron-down" style={{ fontSize: 13, marginLeft: 4 }}></i>
                     )}
@@ -90,7 +87,7 @@ const HeaderBooking = () => {
                               if (item.label === "Restaurant") {
                                 e.preventDefault();
                                 const id = sub.href.split("/").pop();
-                                navigate(`/restaurants/${id}`);
+                                navigate(`/restaurant/${id}`);
                               }
                             }}
                           >

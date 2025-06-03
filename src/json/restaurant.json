@@ -651,6 +651,9 @@
           "/images/seava/about20.jpg",
           "/images/seava/about21.jpg",
           "/images/seava/about22.jpg"
+        ],
+        "price": [
+          "/images/seava/price.jpg"
         ]
       },
       "carouselItems": [
@@ -692,69 +695,128 @@
     },
     {
       "id": 2,
-      "name": "Caca",
+      "name": "Minera",
       "image": "https://i.pinimg.com/736x/68/7e/16/687e16b383db5a854552169aacf463e5.jpg",
       "serviceImages": {
         "about": [
-          "/images/seava/about1.jpg",
-          "/images/seava/about2.jpg",
-          "/images/seava/about3.jpg",
-          "/images/seava/about4.jpg",
-          "/images/seava/about5.jpg",
-          "/images/seava/about6.jpg",
-          "/images/seava/about7.jpg",
-          "/images/seava/about8.jpg",
-          "/images/seava/about9.jpg",
-          "/images/seava/about10.jpg",
-          "/images/seava/about11.jpg",
-          "/images/seava/about12.jpg",
-          "/images/seava/about13.jpg",
-          "/images/seava/about14.jpg",
-          "/images/seava/about15.jpg",
-          "/images/seava/about16.jpg",
-          "/images/seava/about17.jpg",
-          "/images/seava/about18.jpg",
-          "/images/seava/about19.jpg",
-          "/images/seava/about20.jpg",
-          "/images/seava/about21.jpg",
-          "/images/seava/about22.jpg"
+          "/images/minera/about1.jpg",
+          "/images/minera/about2.jpg",
+          "/images/minera/about3.jpg",
+          "/images/minera/about4.jpg",
+          "/images/minera/about5.jpg",
+          "/images/minera/about6.jpg",
+          "/images/minera/about7.jpg",
+          "/images/minera/about8.jpg",
+          "/images/minera/about9.jpg",
+          "/images/minera/about10.jpg",
+          "/images/minera/about11.jpg",
+          "/images/minera/about12.jpg",
+          "/images/minera/about13.jpg",
+          "/images/minera/about14.jpg",
+          "/images/minera/about15.jpg",
+          "/images/minera/about16.jpg",
+          "/images/minera/about17.jpg",
+          "/images/minera/about18.jpg",
+          "/images/minera/about19.jpg",
+          "/images/minera/about20.jpg",
+          "/images/minera/about21.jpg",
+          "/images/minera/about22.jpg",
+          "/images/minera/about23.jpg",
+          "/images/minera/about24.jpg",
+          "/images/minera/about25.jpg",
+          "/images/minera/about26.jpg",
+          "/images/minera/about27.jpg",
+          "/images/minera/about28.jpg",
+          "/images/minera/about29.jpg",
+          "/images/minera/about30.jpg",
+          "/images/minera/about31.jpg",
+          "/images/minera/about32.jpg",
+          "/images/minera/about33.jpg",
+          "/images/minera/about34.jpg",
+          "/images/minera/about5.jpg"
+        ],
+        "price": [
+          "/images/minera/price.jpg"
         ]
       },
       "carouselItems": [
         {
-          "src": "/images/seava/slide1.jpg",
-          "text": "Phòng tiện ích, sạch sẽ"
+          "src": "/images/minera/slide1.jpg",
+          "text": "Sạch sẽ  và thoáng mát"
         },
         {
-          "src": "/images/seava/slide4.jpg",
-          "text": "Gần bãi biển "
+          "src": "/images/minera/slide2.jpg",
+          "text": "Sang trọng và tinh tế"
         },
         {
-          "src": "/images/seava/slide3.jpg",
-          "text": "Hồ bơi ngay tại khách sạn"
+          "src": "/images/minera/slide3.jpg",
+          "text": "Đầy đủ tiện nghi"
         }
       ],
       "elecmentorCards": [
         {
-          "image": "/images/seava/slide1.jpg",
-          "title": "Phòng Đơn",
+          "image": "/images/minera/gardenexe.jpg",
+          "title": "Exe Garden Deluxe",
           "price": "1tr5",
           "info": "1-2 person",
-          "description": "Phòng được thiết kế thông minh, đầy đủ tiện nghi, sạch sẽ và đặc biệt cửa số hướng ra biển thoáng mát."
+          "description": "Nằm trong khuôn viên xanh mát, mang đến không gian yên tĩnh, tiện nghi hiện đại và dịch vụ chuyên nghiệp, lý tưởng cho kỳ nghỉ thư giãn hoặc chuyến công tác tại thành phố."
         },
         {
-          "image": "/images/seava/slide2.jpg",
-          "title": "Phòng Đôi",
+          "image": "/images/minera/premiumwonder.jpg",
+          "title": "Pre Wonder",
           "price": "1tr9",
+          "info": "1-2 person",
+          "description": "Loại phòng cao cấp mang phong cách hiện đại và tinh tế, kết hợp không gian rộng rãi với tiện nghi sang trọng, tạo nên trải nghiệm nghỉ dưỡng ấn tượng và đầy cảm hứng."
+        },
+        {
+          "image": "/images/minera/premiumsuite.jpg",
+          "title": "Pre Suite",
+          "price": "4tr",
           "info": "1-4 person",
-          "description": "Phòng được thiết kế thông minh, đầy đủ tiện nghi, sạch sẽ và đặc biệt cửa số hướng ra biển thoáng mát."
+          "description": "Căn hộ cao cấp với 2 phòng ngủ riêng biệt, không gian rộng rãi, đầy đủ tiện nghi sang trọng, phù hợp cho gia đình hoặc nhóm bạn, mang đến cảm giác thoải mái và riêng tư như ở nhà."
+        },
+        {
+          "image": "/images/minera/premiumwonder.jpg",
+          "title": "Pre Wonder",
+          "price": "1tr9",
+          "info": "1-2 person",
+          "description": "Không gian nghỉ dưỡng cao cấp với thiết kế hòa mình vào thiên nhiên, trang bị tiện nghi hiện đại, mang đến trải nghiệm thư thái, sang trọng giữa khu vườn xanh mát và yên bình."
+        },
+        {
+          "image": "/images/minera/aquavilla.jpg",
+          "title": "Aqua Villa",
+          "price": "4tr5",
+          "info": "1-2 person",
+          "description": "Biệt thự cao cấp với hồ bơi riêng ngay tại sân nhà, thiết kế hiện đại hòa quyện với thiên nhiên, mang đến không gian nghỉ dưỡng riêng tư, thư giãn tuyệt đối và tiện nghi đẳng cấp."
+        },
+        {
+          "image": "/images/minera/grandvilla.jpg",
+          "title": "Grand Villa",
+          "price": "6tr5",
+          "info": "1-4 person",
+          "description": "Biệt thự sang trọng với không gian rộng lớn, thiết kế tinh tế, tiện nghi cao cấp, khuôn viên riêng biệt, lý tưởng cho kỳ nghỉ đẳng cấp cùng gia đình hoặc nhóm bạn trong không gian riêng tư và yên bình."
+        },
+        {
+          "image": "/images/minera/familyroom.jpg",
+          "title": "Family Room 4 pax",
+          "price": "3tr3",
+          "info": "1-4 person",
+          "description": "Phòng nghỉ rộng rãi được trang bị 4 giường riêng biệt, đầy đủ tiện nghi hiện đại, mang đến sự thoải mái và thuận tiện cho kỳ nghỉ chung nhưng vẫn đảm bảo không gian riêng tư."
+        }
+        ,
+        {
+          "image": "/images/minera/family6pax.jpg",
+          "title": "Family Room 6 pax",
+          "price": "4tr9",
+          "info": "1-6 person",
+          "description": "Phòng nghỉ rộng rãi được trang bị 3 giường đôi, đầy đủ tiện nghi hiện đại, mang đến sự thoải mái và thuận tiện cho kỳ nghỉ chung nhưng vẫn đảm bảo không gian riêng tư."
         }
       ],
       "quodefSection": {
-        "image": "/images/seava/slide3.jpg",
+        "image": "/images/minera/slide4.jpg",
         "text": "Tiện ích và dịch vụ",
-        "image2": "/images/seava/slide4.jpg",
-        "text2": "Vị trí khách sạn"
+        "image2": "/images/minera/slide5.jpg",
+        "text2": "Nhà hàng và Cafe"
       }
     }
   ]
