@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { useNavigate, useOutletContext } from "react-router-dom";
+import Select from "react-select";
 import "../../styles/bookingweb/booking.css";
 import FooterBooking from "../partials/FooterBooking";
 
 function BookingWeb() {
-  const [activeTab, setActiveTab] = useState("restaurant");
+  const [activeTab, setActiveTab] = useState("all");
   const [page, setPage] = useState(0);
   const [data, setData] = useState({ restaurants: [], hotels: [] });
   const [loading, setLoading] = useState(true);
@@ -16,7 +17,7 @@ function BookingWeb() {
   const [searchText, setSearchText] = useState("");
 
   const [animatedWord, setAnimatedWord] = useState("Hotel");
-  const animatedWords = ["Hotel", "Restaurant", "Tour"]; // Sửa ở đây
+  const animatedWords = ["Hotel", "Restaurant", "Tourist"];
   const animatedIndex = useRef(0);
   const [typing, setTyping] = useState("");
 
@@ -60,8 +61,30 @@ function BookingWeb() {
     fetchData();
   }, []);
 
-  const list = activeTab === "restaurant" ? data.restaurants : data.hotels;
-  const pageSize = 5;
+  // Tab buttons (giả sử có đoạn render tab, thêm icon và sửa tên)
+  {/* <div className="bookingweb-tabs">
+    <button
+      className={activeTab === "Restaurant" ? "active" : ""}
+      onClick={() => setActiveTab("Restaurant")}
+    >
+      <i className="fas fa-utensils"></i> Restaurant
+    </button>
+    <button
+      className={activeTab === "Hotel" ? "active" : ""}
+      onClick={() => setActiveTab("Hotel")}
+    >
+      <i className="fas fa-hotel"></i> Hotel
+    </button>
+    <button
+      className={activeTab === "Tourist" ? "active" : ""}
+      onClick={() => setActiveTab("Tourist")}
+    >
+      <i className="fas fa-map-marked-alt"></i> Tourist
+    </button>
+  </div> */}
+
+  const list = activeTab === "Restaurant" ? data.restaurants : activeTab === "Hotel" ? data.hotels : [];
+  const pageSize = 4;
 
   // Lọc theo tên hoặc địa chỉ (ưu tiên searchText nếu có)
   const filteredList = list.filter(item => {
@@ -75,9 +98,14 @@ function BookingWeb() {
 
   const maxPage = Math.ceil(filteredList.length / pageSize) - 1;
 
+  // Khi bấm Browse trên từng card trong Popular Categories, chuyển đúng trang chi tiết
   const handleCardClick = (id) => {
-    if (activeTab === "restaurant") {
+    if (activeTab.toLowerCase() === "restaurant") {
       navigate(`/restaurant/${id}`);
+    } else if (activeTab.toLowerCase() === "hotel") {
+      navigate(`/hotel/${id}`);
+    } else if (activeTab.toLowerCase() === "tourist") {
+      navigate(`/tourist/${id}`);
     }
   };
 
@@ -100,7 +128,12 @@ function BookingWeb() {
           <div className="card-overlay">
             <div className="card-title">{item.name || `Nhà hàng ${idx + 1}`}</div>
             <div className="card-listings">1 listings</div>
-            <button className="card-browse-btn">Browse</button>
+            <button className="card-browse-btn"
+              onClick={() => handleCardClick(item.id)}
+              style={{ cursor: ["Restaurant","Hotel","Tourist"].includes(activeTab) ? "pointer" : "not-allowed", opacity: ["Restaurant","Hotel","Tourist"].includes(activeTab) ? 1 : 0.6 }}
+            >
+              Browse
+            </button>
           </div>
         </div>
       ));
@@ -181,77 +214,69 @@ function BookingWeb() {
   const mostVisitedSlides = [
     [
       {
-        img: "https://storage.googleapis.com/a1aa/image/ede2f3c0-edb0-4525-91ca-2879e21d8e5a.jpg",
-        title: "Sunny Apartment",
-        address: "Dorothea Lane, New York",
+        img: "/images/mainmeal1.jpg", // Restaurant (đổi sang ảnh có sẵn)
+        title: "Yoyo Central Hồ Con Rùa",
+        address: "Quận 3, Hồ Chí Minh",
         badges: [
-          { text: "Featured", color: "#fbc02d", bg: "#fff", icon: "star" },
-          { text: "$25.99 - $35.00", color: "#43a047", bg: "#fff", icon: "tag" }
+         
+          
         ],
         bottomBadges: [
-          { text: "4.1", color: "#fff", bg: "#43a047", fontWeight: 700 },
-          { text: "Sponsored", color: "#fff", bg: "#ffc107", fontWeight: 600 }
+      
         ]
       },
       {
-        img: "https://storage.googleapis.com/a1aa/image/2988d3b8-a46b-42d7-0e21-dd18d69a11aa.jpg",
-        title: "George Burton – Life Coach",
-        address: "Ocean Avenue, New York",
+        img: "/images/slide1.jpg", // Hotel
+        title: "Hotel Seava",
+        address: "Vũng Tàu, Bà Rịa - Vũng Tàu",
         badges: [
-          { text: "Starts from $100.00", color: "#43a047", bg: "#fff", icon: "tag" }
+          
         ],
         bottomBadges: [
-          { text: "4.3", color: "#fff", bg: "#43a047", fontWeight: 700 }
+          
         ]
       },
       {
-        img: "https://storage.googleapis.com/a1aa/image/0d5a990b-c1f8-4f4b-345d-c8b8758024da.jpg",
-        title: "Sports Car",
-        address: "Suffolk County, New York",
-        badges: [
-          { text: "Starts from $20.00", color: "#43a047", bg: "#fff", icon: "tag" }
-        ],
-        topRight: { text: "Now Open", color: "#fff", bg: "#43a047" },
-        bottomBadges: [
-          { text: "5.0", color: "#fff", bg: "#43a047", fontWeight: 700 }
-        ]
+        img: "/images/slide3.jpg", // Tourist
+        title: "NovaWorld Hồ Tràm",
+        address: "Xuyên Mộc, Bà Rịa - Vũng Tàu",
+       
       }
     ],
     [
       {
-        img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-        title: "Luxury Villa",
-        address: "Palm Beach, Miami",
+        img: "/images/mainmeal2.jpg", // Restaurant
+        title: "Dragon Palace",
+        address: "Quận 1, Hồ Chí Minh",
         badges: [
-          { text: "Featured", color: "#fbc02d", bg: "#fff", icon: "star" },
-          { text: "$120.00 - $200.00", color: "#43a047", bg: "#fff", icon: "tag" }
+          
+          
         ],
         bottomBadges: [
-          { text: "4.8", color: "#fff", bg: "#43a047", fontWeight: 700 },
-          { text: "Sponsored", color: "#fff", bg: "#ffc107", fontWeight: 600 }
+          
         ]
       },
       {
-        img: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca",
-        title: "Yoga Studio",
-        address: "Downtown, LA",
+        img: "/images/slide2.jpg", // Hotel
+        title: "Hotel Minera",
+        address: "Bình Dương",
         badges: [
-          { text: "Starts from $15.00", color: "#43a047", bg: "#fff", icon: "tag" }
+         
         ],
         bottomBadges: [
-          { text: "4.6", color: "#fff", bg: "#43a047", fontWeight: 700 }
+          
         ]
       },
       {
-        img: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308",
-        title: "Classic Barbershop",
-        address: "5th Avenue, NY",
+        img: "/images/slide4.jpg", // Tourist
+        title: "NovaWorld Phan Thiết",
+        address: "Phan Thiết, Bình Thuận",
         badges: [
-          { text: "Starts from $10.00", color: "#43a047", bg: "#fff", icon: "tag" }
+        
         ],
         topRight: { text: "Now Open", color: "#fff", bg: "#43a047" },
         bottomBadges: [
-          { text: "4.9", color: "#fff", bg: "#43a047", fontWeight: 700 }
+          
         ]
       }
     ]
@@ -330,7 +355,31 @@ function BookingWeb() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const cityOptions = [
+    { value: "hcm", label: "Hồ Chí Minh" },
+    { value: "hn", label: "Hà Nội" },
+    { value: "dn", label: "Đà Nẵng" },
+    { value: "nt", label: "Nha Trang" },
+    { value: "other", label: "Khác..." },
+  ];
+  const [selectedCity, setSelectedCity] = useState(null);
+
   if (loading) return <div>Đang tải dữ liệu...</div>;
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    setPage(0); // reset về trang đầu tiên khi search
+  };
+
+  // Popular Categories data cho từng loại
+  const popularCategories = {
+    restaurant: data.restaurants,
+    hotel: data.hotels,
+    tourist: [
+      { id: 1, name: 'NovaWorld Hồ Tràm', image: '/images/slide3.jpg', address: 'Xuyên Mộc, Bà Rịa - Vũng Tàu' },
+      { id: 2, name: 'NovaWorld Phan Thiết', image: '/images/slide4.jpg', address: 'Phan Thiết, Bình Thuận' },
+    ]
+  };
 
   return (
     <div className="bookingweb-root">
@@ -348,17 +397,24 @@ function BookingWeb() {
             <p className="hero-description">
               Explore top-rated attractions, activities and more!
             </p>
-            <button className="btn-primary">Browse Our Listings</button>
+            <button className="btn-primary" onClick={() => {
+              const el = document.querySelector('.most-visited-places-section');
+              if (el) {
+                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }}>
+              Browse Our Listings
+            </button>
             <p className="category-label">Or browse featured categories:</p>
             <div className="category-buttons">
               <button className="category-btn">
-                <i className="fas fa-utensils"></i> Eat & Drink
+                <i className="fas fa-utensils"></i> Restaurants
               </button>
               <button className="category-btn">
-                <i className="fas fa-dumbbell"></i> Fitness
+                <i className="fas fa-hotel"></i> Hotels
               </button>
               <button className="category-btn">
-                <i className="fas fa-tags"></i> Classifieds
+                <i className="fas fa-map-marked-alt"></i> Tourist
               </button>
             </div>
           </div>
@@ -381,25 +437,22 @@ function BookingWeb() {
       {/* Đưa search-bar ra ngoài carousel-booking */}
       <div className="search-bar">
         <nav className="search-nav">
-          <a className="nav-link selected" href="#">
+          <a className={activeTab === 'all' ? 'nav-link selected' : 'nav-link'} href="#" onClick={e => {e.preventDefault(); setActiveTab('all'); const el = document.querySelector('.card-container-wrapper'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });}}>
             All
           </a>
-          <a className="nav-link" href="#">
-            Services
+          <a className={activeTab === 'restaurant' ? 'nav-link selected' : 'nav-link'} href="#" onClick={e => {e.preventDefault(); setActiveTab('restaurant'); const el = document.querySelector('.card-container-wrapper'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });}}>
+            Nhà hàng
           </a>
-          <a className="nav-link" href="#">
-            Rental
+          <a className={activeTab === 'hotel' ? 'nav-link selected' : 'nav-link'} href="#" onClick={e => {e.preventDefault(); setActiveTab('hotel'); const el = document.querySelector('.card-container-wrapper'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });}}>
+            Khách sạn
           </a>
-          <a className="nav-link" href="#">
-            Events
-          </a>
-          <a className="nav-link" href="#">
-            Classifieds
+          <a className={activeTab === 'tourist' ? 'nav-link selected' : 'nav-link'} href="#" onClick={e => {e.preventDefault(); setActiveTab('tourist'); const el = document.querySelector('.card-container-wrapper'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });}}>
+            Du lịch
           </a>
         </nav>
         <form
-          onSubmit={e => e.preventDefault()}
-          className="search-form"
+          onSubmit={handleSearch}
+          className="search-form search-form-equal"
         >
           <input
             type="text"
@@ -408,15 +461,59 @@ function BookingWeb() {
             value={searchText}
             onChange={e => setSearchText(e.target.value)}
           />
-          <div className="location-input-wrapper">
-            <input
-              type="text"
-              placeholder="Location"
-              className="location-input"
-            />
+          <div className="location-input-wrapper location-dropdown-wrapper">
             <i className="fas fa-map-marker-alt location-icon"></i>
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <Select
+                classNamePrefix="city-select"
+                options={cityOptions}
+                value={selectedCity}
+                onChange={setSelectedCity}
+                placeholder="Location"
+                isClearable
+                styles={{
+                  control: (base) => ({
+                    ...base,
+                    minHeight: 56,
+                    height: 56,
+                    border: 'none',
+                    boxShadow: 'none',
+                    borderRadius: 0,
+                    paddingLeft: 32,
+                    background: '#fff',
+                  }),
+                  valueContainer: (base) => ({
+                    ...base,
+                    paddingLeft: 8,
+                  }),
+                  input: (base) => ({
+                    ...base,
+                    margin: 0,
+                    padding: 0,
+                  }),
+                  placeholder: (base) => ({
+                    ...base,
+                    color: '#888',
+                    fontWeight: 500,
+                  }),
+                  singleValue: (base) => ({
+                    ...base,
+                    color: '#222',
+                  }),
+                  menu: (base) => ({
+                    ...base,
+                    zIndex: 9999,
+                  }),
+                }}
+              />
+            </div>
           </div>
-          <select className="category-select">
+          <select
+            className="category-select"
+            value={activeTab}
+            onChange={e => setActiveTab(e.target.value)}
+            style={{ minWidth: 180 }}
+          >
             <option value="restaurant">Restaurant</option>
             <option value="hotel">Hotel</option>
             <option value="tourist">Tourist</option>
@@ -427,6 +524,7 @@ function BookingWeb() {
         </form>
       </div>
       {/* Popular Categories heading */}
+      <div className="popular-categories-anchor" style={{ position: 'absolute', top: -120 }}></div>
       <div style={{ width: '100%', textAlign: 'center', margin: '60px 0 100px 0', zIndex: 2, position: 'relative', minHeight: 90 }}>
         <h2 style={{
           fontFamily: 'Raleway, sans-serif',
@@ -450,14 +548,24 @@ function BookingWeb() {
       <div className="card-container-wrapper" style={{ marginTop: '-90px', marginBottom: 0 }}>
         <div
           className="card-container-carousel"
-          style={{ transform: `translateX(-${page * 372}px)` }}
+          style={{ 
+            transform: `translateX(-${page * 298}px)`,
+            display: 'flex',
+            justifyContent: 'center',
+            gap: 24,
+            transition: 'transform 0.5s',
+            minHeight: 210
+          }}
         >
-          {filteredList.map((item, idx) => (
+          {(activeTab === 'all'
+            ? [...(popularCategories.restaurant || []), ...(popularCategories.hotel || []), ...(popularCategories.tourist || [])]
+            : (popularCategories[activeTab] || [])
+          ).slice(page * pageSize, page * pageSize + pageSize).map((item, idx) => (
             <div
               key={item.id || idx}
               className="card carousel-card"
-              style={{ cursor: activeTab === 'restaurant' ? 'pointer' : 'default' }}
-              onClick={() => activeTab === 'restaurant' && handleCardClick(item.id)}
+              style={{ cursor: 'pointer' }}
+              onClick={() => handleCardClick(item.id)}
             >
               <img
                 src={item.image}
@@ -466,7 +574,12 @@ function BookingWeb() {
               <div className="carousel-card-overlay"></div>
               <div className="carousel-card-title">{item.name}</div>
               <div className="carousel-card-listings">1 listings</div>
-              <button className="carousel-card-browse-btn">Browse</button>
+              <button className="carousel-card-browse-btn"
+                onClick={e => { e.stopPropagation(); handleCardClick(item.id); }}
+                style={{ cursor: 'pointer' }}
+              >
+                Browse
+              </button>
             </div>
           ))}
         </div>
@@ -478,11 +591,36 @@ function BookingWeb() {
               onClick={handlePrev}
               aria-label="Previous category"
               type="button"
-              style={{ background: 'none', border: 'none', borderRadius: '50%', width: 22, height: 22, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', marginRight: 6, color: '#bbb', fontSize: 15, transition: 'color 0.2s' }}
+              disabled={page === 0}
+              style={{ 
+                background: 'none', 
+                border: 'none', 
+                borderRadius: '50%', 
+                width: 22, 
+                height: 22, 
+                cursor: page === 0 ? 'not-allowed' : 'pointer', 
+                display: 'flex', 
+                alignItems: 'center', 
+                justifyContent: 'center', 
+                marginRight: 6, 
+                color: page === 0 ? '#eee' : '#bbb', 
+                fontSize: 15, 
+                transition: 'color 0.2s',
+                opacity: page === 0 ? 0.5 : 1
+              }}
             >
               <span>&lt;</span>
             </button>
-            {filteredList.map((_, idx) => (
+            {((activeTab === 'all'
+              ? [...(popularCategories.restaurant || []), ...(popularCategories.hotel || []), ...(popularCategories.tourist || [])]
+              : (popularCategories[activeTab] || [])
+            ).length / pageSize > 1 ?
+              Array.from({ length: Math.ceil((activeTab === 'all'
+                ? [...(popularCategories.restaurant || []), ...(popularCategories.hotel || []), ...(popularCategories.tourist || [])]
+                : (popularCategories[activeTab] || [])
+              ).length / pageSize) }, (_, idx) => idx)
+              : filteredList.map((_, idx) => idx)
+            ).map((idx) => (
               <span
                 key={idx}
                 className={page === idx ? 'pagination-dot-bar active' : 'pagination-dot-bar'}
@@ -498,16 +636,28 @@ function BookingWeb() {
                   boxShadow: page === idx ? '0 1px 4px #bbb3' : 'none',
                   border: 'none'
                 }}
-                onClick={() => handleSetPage(idx)}
+                onClick={e => { e.preventDefault(); e.stopPropagation(); handleSetPage(idx); const wrapper = document.querySelector('.card-container-wrapper'); if(wrapper) wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}
                 aria-label={`Page ${idx + 1}`}
                 role="button"
                 tabIndex={0}
-                onKeyPress={e => (e.key === 'Enter' || e.key === ' ') && handleSetPage(idx)}
+                onKeyPress={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); handleSetPage(idx); const wrapper = document.querySelector('.card-container-wrapper'); if(wrapper) wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }}
               />
             ))}
             <button
               className="pagination-arrow-btn"
-              onClick={handleNext}
+              onClick={e => { e.preventDefault(); e.stopPropagation();
+                const totalPages = Math.ceil((activeTab === 'all'
+                  ? [...(popularCategories.restaurant || []), ...(popularCategories.hotel || []), ...(popularCategories.tourist || [])]
+                  : (popularCategories[activeTab] || [])
+                ).length / pageSize);
+                if (page === totalPages - 1) {
+                  handleSetPage(0);
+                } else {
+                  handleNext();
+                }
+                const wrapper = document.querySelector('.card-container-wrapper');
+                if(wrapper) wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
               aria-label="Next category"
               type="button"
               style={{ background: 'none', border: 'none', borderRadius: '50%', width: 22, height: 22, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', marginLeft: 6, color: '#bbb', fontSize: 15, transition: 'color 0.2s' }}
@@ -546,7 +696,7 @@ function BookingWeb() {
           <p style={{ color: '#888', fontSize: 16, fontWeight: 500, margin: 0, position: 'relative', zIndex: 1 }}>Top-Rated Local Businesses</p>
         </div>
         <div
-          className={`most-visited-slide-wrapper${mostVisitedDirection ? ' slide-' + mostVisitedDirection : ''}`}
+          className={`most-visited-slide-wrapper` + (mostVisitedDirection ? ' slide-' + mostVisitedDirection : '')}
           style={{ display: 'flex', justifyContent: 'center', gap: 24, marginTop: 24, flexWrap: 'wrap', minHeight: 210, position: 'relative', transition: 'transform 0.5s' }}
           onAnimationEnd={() => setMostVisitedDirection(null)}
         >
@@ -575,9 +725,41 @@ function BookingWeb() {
                   <span key={i} style={{ background: b.bg, color: b.color, fontWeight: b.fontWeight, borderRadius: 6, padding: '2px 10px', fontSize: 12 }}>{b.text}</span>
                 ))}
               </div>
-              <div style={{ position: 'absolute', left: 14, bottom: 38, color: '#fff', textShadow: '0 2px 8px #0007', zIndex: 2 }}>
-                <h3 style={{ margin: 0, fontWeight: 700, fontSize: 16 }}>{card.title}</h3>
-                <p style={{ margin: 0, fontSize: 12 }}>{card.address}</p>
+              {/* Title and address: chỉnh lại cho đẹp, rõ nét, có nền mờ nhẹ */}
+              <div style={{
+                position: 'absolute',
+                left: 0,
+                bottom: 0,
+                width: '100%',
+                background: 'linear-gradient(90deg, rgba(30,30,30,0.82) 80%, rgba(30,30,30,0.5) 100%)',
+                padding: '18px 18px 14px 18px',
+                zIndex: 3,
+                textAlign: 'left',
+                maxWidth: '100%',
+                borderBottomLeftRadius: 8,
+                borderBottomRightRadius: 8,
+                boxSizing: 'border-box',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 2
+              }}>
+                <h3 style={{
+                  margin: 0,
+                  fontWeight: 800,
+                  fontSize: 22,
+                  lineHeight: 1.2,
+                  color: '#fff',
+                  textShadow: '0 2px 8px #000a',
+                  letterSpacing: 0.2
+                }}>{card.title}</h3>
+                <p style={{
+                  margin: 0,
+                  fontSize: 15,
+                  fontWeight: 500,
+                  color: '#fff',
+                  textShadow: '0 1px 4px #000a',
+                  opacity: 0.92
+                }}>{card.address}</p>
               </div>
             </div>
           ))}
@@ -679,7 +861,7 @@ function BookingWeb() {
       {/* Hero Section - Streamline Your Business */}
       <section className="hero-section" style={{ position: 'relative', width: '100%', height: 400, overflow: 'hidden' }}>
         <img
-          src="https://ik.imagekit.io/xxl72uialf/comnieu/images/media/677662a5bdc46c406053e434.jpg"
+          src="/images/mainmeal5.jpg"
           alt="Restaurant interior with tables and chairs"
           className="hero-image"
           width="1920"
@@ -691,7 +873,7 @@ function BookingWeb() {
             willChange: 'transform',
             transform: `translateY(${heroOffset}px)`,
             transition: 'transform 0.2s cubic-bezier(.4,1.2,.6,1)',
-            pointerEvents: 'none', // không cho ảnh bị kéo rê
+            pointerEvents: 'none',
             userSelect: 'none',
           }}
         />
@@ -705,7 +887,7 @@ function BookingWeb() {
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'flex-start',
-          paddingLeft: '4%', // giảm paddingLeft để overlay gọn hơn
+          paddingLeft: '4%',
           zIndex: 2,
         }}>
           <h1 style={{
@@ -728,19 +910,22 @@ function BookingWeb() {
           }}>
             We’re full-service, local agents who know how to find people and home each together. We use online tools with unmatched search capability to make you smarter and faster.
           </p>
-          <button style={{
-            background: '#ee2a4a',
-            color: '#fff',
-            border: 'none',
-            borderRadius: 20, // giảm border radius
-            padding: '10px 28px', // giảm padding
-            fontSize: 16, // giảm font size
-            fontWeight: 700,
-            boxShadow: '0 2px 12px #0002',
-            cursor: 'pointer',
-            transition: 'background 0.2s',
-          }}>
-            Get Started
+          <button
+            style={{
+              background: '#ee2a4a',
+              color: '#fff',
+              border: 'none',
+              borderRadius: 20, // giảm border radius
+              padding: '10px 28px', // giảm padding
+              fontSize: 16, // giảm font size
+              fontWeight: 700,
+              boxShadow: '0 2px 12px #0002',
+              cursor: 'pointer',
+              transition: 'background 0.2s',
+            }}
+            onClick={() => navigate("/booking/1")}
+          >
+            Book Now
           </button>
         </div>
       </section>
@@ -788,7 +973,7 @@ function BookingWeb() {
       </section>
       {/* Footer Section (HTML/CSS from user) */}
       <FooterBooking />
-    </div>
+    </div>  
   );
 }
 

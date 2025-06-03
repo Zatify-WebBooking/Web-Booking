@@ -620,24 +620,39 @@
         "/images/londoncorner/drink33.jpg",
         "/images/londoncorner/drink34.jpg"
       ]
-    },
-    {
-      "id": 10,
-      "name": "Nhà hàng El Gaucho Steakhouse",
-      "image": "https://th.bing.com/th/id/R.b453ab50fdba84d7e8011263d2534ed0?rik=B4RzLuZomA%2bvlg&pid=ImgRaw&r=0",
-      "address": "74/1 Hai Ba Trung, Ben Nghe, District 1, Ho Chi Minh City",
-      "phone": "+84 28 3825 1879",
-      "cuisine": "Steakhouse, Argentinian",
-      "opening_hours": "11:00 - 23:00",
-      "description": "Nhà hàng bít tết phong cách Argentina nổi tiếng tại Sài Gòn.",
-      "rating": 4.2
     }
   ],
   "hotels": [
     {
       "id": 1,
-      "name": "Khách sạn X",
-      "image": "https://i.pinimg.com/736x/68/7e/16/687e16b383db5a854552169aacf463e5.jpg",
+      "name": "Seava",
+      "image": "/images/seava/image.jpg",
+      "serviceImages": {
+        "about": [
+          "/images/seava/about1.jpg",
+          "/images/seava/about2.jpg",
+          "/images/seava/about3.jpg",
+          "/images/seava/about4.jpg",
+          "/images/seava/about5.jpg",
+          "/images/seava/about6.jpg",
+          "/images/seava/about7.jpg",
+          "/images/seava/about8.jpg",
+          "/images/seava/about9.jpg",
+          "/images/seava/about10.jpg",
+          "/images/seava/about11.jpg",
+          "/images/seava/about12.jpg",
+          "/images/seava/about13.jpg",
+          "/images/seava/about14.jpg",
+          "/images/seava/about15.jpg",
+          "/images/seava/about16.jpg",
+          "/images/seava/about17.jpg",
+          "/images/seava/about18.jpg",
+          "/images/seava/about19.jpg",
+          "/images/seava/about20.jpg",
+          "/images/seava/about21.jpg",
+          "/images/seava/about22.jpg"
+        ]
+      },
       "carouselItems": [
         {
           "src": "/images/seava/slide1.jpg",
@@ -654,117 +669,93 @@
       ],
       "elecmentorCards": [
         {
-          "image": "https://i.pinimg.com/736x/4a/40/bf/4a40bfcb8facf2a159505b937e128a3c.jpg",
-          "title": "Il Sole",
-          "price": "$80",
-          "info": "50m2 / 1-2 person",
-          "description": "Ut et rhoncus odio. Quisque pellentesque nisl leo, eget ultricies nibh ullamcorper ut. Curabitur bibendum sed neque quis rhon"
+          "image": "/images/seava/slide1.jpg",
+          "title": "Phòng Đơn",
+          "price": "1tr5",
+          "info": "1-2 person",
+          "description": "Phòng được thiết kế thông minh, đầy đủ tiện nghi, sạch sẽ và đặc biệt cửa số hướng ra biển thoáng mát."
         },
         {
-          "image": "https://i.pinimg.com/736x/4a/40/bf/4a40bfcb8facf2a159505b937e128a3c.jpg",
-          "title": "Il Sole",
-          "price": "$80",
-          "info": "50m2 / 1-2 person",
-          "description": "Ut et rhoncus odio. Quisque pellentesque nisl leo, eget ultricies nibh ullamcorper ut. Curabitur bibendum sed neque quis rhon"
-        },
-        {
-          "image": "https://storage.googleapis.com/a1aa/image/acde98e0-9463-4fb1-dc7e-be7e00cf6e06.jpg",
-          "title": "Sea Home",
-          "price": "$80",
-          "info": "73m2 / 1-4 person",
-          "description": "Ut et rhoncus odio. Quisque pellentesque nisl leo, eget ultricies nibh ullamcorper ut. Curabitur bibendum sed neque quis rhon"
+          "image": "/images/seava/slide2.jpg",
+          "title": "Phòng Đôi",
+          "price": "1tr9",
+          "info": "1-4 person",
+          "description": "Phòng được thiết kế thông minh, đầy đủ tiện nghi, sạch sẽ và đặc biệt cửa số hướng ra biển thoáng mát."
         }
-      ]
+      ],
+      "quodefSection": {
+        "image": "/images/seava/slide3.jpg",
+        "text": "Tiện ích và dịch vụ",
+        "image2": "/images/seava/slide4.jpg",
+        "text2": "Vị trí khách sạn"
+      }
     },
     {
       "id": 2,
-      "name": "Khách sạn Y",
-      "image": "https://via.placeholder.com/300x120?text=Khach+San+Y",
-      "carouselItems": [
-        {
-          "src": "https://i.pinimg.com/736x/6a/f9/0e/6af90eea656d653c788e7d3f92a77247.jpg",
-          "text": "Island Resort / from $190"
-        },
-        {
-          "src": "https://i.pinimg.com/736x/9a/d7/75/9ad775a1804e255a3c7fe920c02c8294.jpg",
-          "text": "Luxury Suite / from $300"
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "name": "Khách sạn Z",
-      "image": "https://via.placeholder.com/300x120?text=Khach+San+Z",
-      "carouselItems": [
-        {
-          "src": "https://i.pinimg.com/736x/6a/f9/0e/6af90eea656d653c788e7d3f92a77247.jpg",
-          "text": "Island Resort / from $190"
-        },
-        {
-          "src": "https://i.pinimg.com/736x/06/a7/65/06a76579b88a4259a9fec82522493346.jpg",
-          "text": "Beachfront Villa / from $250"
-        },
-        {
-          "src": "https://i.pinimg.com/736x/9a/d7/75/9ad775a1804e255a3c7fe920c02c8294.jpg",
-          "text": "Luxury Suite / from $300"
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "name": "Khách sạn M",
-      "image": "https://via.placeholder.com/300x120?text=Khach+San+M",
+      "name": "Caca",
+      "image": "https://i.pinimg.com/736x/68/7e/16/687e16b383db5a854552169aacf463e5.jpg",
+      "serviceImages": {
+        "about": [
+          "/images/seava/about1.jpg",
+          "/images/seava/about2.jpg",
+          "/images/seava/about3.jpg",
+          "/images/seava/about4.jpg",
+          "/images/seava/about5.jpg",
+          "/images/seava/about6.jpg",
+          "/images/seava/about7.jpg",
+          "/images/seava/about8.jpg",
+          "/images/seava/about9.jpg",
+          "/images/seava/about10.jpg",
+          "/images/seava/about11.jpg",
+          "/images/seava/about12.jpg",
+          "/images/seava/about13.jpg",
+          "/images/seava/about14.jpg",
+          "/images/seava/about15.jpg",
+          "/images/seava/about16.jpg",
+          "/images/seava/about17.jpg",
+          "/images/seava/about18.jpg",
+          "/images/seava/about19.jpg",
+          "/images/seava/about20.jpg",
+          "/images/seava/about21.jpg",
+          "/images/seava/about22.jpg"
+        ]
+      },
       "carouselItems": [
         {
           "src": "/images/seava/slide1.jpg",
-          "text": "Island Resort / from $190"
+          "text": "Phòng tiện ích, sạch sẽ"
         },
         {
-          "src": "https://i.pinimg.com/736x/06/a7/65/06a76579b88a4259a9fec82522493346.jpg",
-          "text": "Beachfront Villa / from $250"
+          "src": "/images/seava/slide4.jpg",
+          "text": "Gần bãi biển "
         },
         {
-          "src": "https://i.pinimg.com/736x/9a/d7/75/9ad775a1804e255a3c7fe920c02c8294.jpg",
-          "text": "Luxury Suite / from $300"
+          "src": "/images/seava/slide3.jpg",
+          "text": "Hồ bơi ngay tại khách sạn"
         }
       ],
       "elecmentorCards": [
         {
-          "image": "https://i.pinimg.com/736x/4a/40/bf/4a40bfcb8facf2a159505b937e128a3c.jpg",
-          "title": "Il Sole",
-          "price": "$80",
-          "info": "50m2 / 1-2 person",
-          "description": "Ut et rhoncus odio. Quisque pellentesque nisl leo, eget ultricies nibh ullamcorper ut. Curabitur bibendum sed neque quis rhon",
-          "buttonLabel": "BOOK NOW"
+          "image": "/images/seava/slide1.jpg",
+          "title": "Phòng Đơn",
+          "price": "1tr5",
+          "info": "1-2 person",
+          "description": "Phòng được thiết kế thông minh, đầy đủ tiện nghi, sạch sẽ và đặc biệt cửa số hướng ra biển thoáng mát."
         },
         {
-          "image": "https://storage.googleapis.com/a1aa/image/acde98e0-9463-4fb1-dc7e-be7e00cf6e06.jpg",
-          "title": "Sea Home",
-          "price": "$80",
-          "info": "73m2 / 1-4 person",
-          "description": "Ut et rhoncus odio. Quisque pellentesque nisl leo, eget ultricies nibh ullamcorper ut. Curabitur bibendum sed neque quis rhon",
-          "buttonLabel": "BOOK NOW"
+          "image": "/images/seava/slide2.jpg",
+          "title": "Phòng Đôi",
+          "price": "1tr9",
+          "info": "1-4 person",
+          "description": "Phòng được thiết kế thông minh, đầy đủ tiện nghi, sạch sẽ và đặc biệt cửa số hướng ra biển thoáng mát."
         }
-      ]
-    },
-    {
-      "id": 5,
-      "name": "Khách sạn N",
-      "image": "https://i.pinimg.com/736x/63/c1/f3/63c1f38307b961d147e211e7ebacfdd0.jpg",
-      "carouselItems": [
-        {
-          "src": "https://i.pinimg.com/736x/6a/f9/0e/6af90eea656d653c788e7d3f92a77247.jpg",
-          "text": "Island Resort / from $190"
-        },
-        {
-          "src": "https://i.pinimg.com/736x/06/a7/65/06a76579b88a4259a9fec82522493346.jpg",
-          "text": "Beachfront Villa / from $250"
-        },
-        {
-          "src": "https://i.pinimg.com/736x/9a/d7/75/9ad775a1804e255a3c7fe920c02c8294.jpg",
-          "text": "Luxury Suite / from $300"
-        }
-      ]
+      ],
+      "quodefSection": {
+        "image": "/images/seava/slide3.jpg",
+        "text": "Tiện ích và dịch vụ",
+        "image2": "/images/seava/slide4.jpg",
+        "text2": "Vị trí khách sạn"
+      }
     }
   ]
 }

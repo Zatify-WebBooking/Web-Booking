@@ -1,81 +1,84 @@
 import React from "react";
-import "../../styles/bookingweb/booking.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faSquareFacebook,
+  faTwitter,
+  faInstagram,
+  faYoutube,
+  faPinterest
+} from "@fortawesome/free-brands-svg-icons";
+import { useLocation } from "react-router-dom";
+import restaurantData from "../../json/restaurant.json";
 
-const FooterBooking = () => {
-  // Scroll to top handler
-  const handleScrollTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+const Footer = () => {
+  const location = useLocation();
+  const pathSegments = location.pathname.split('/');
+  let restaurantId = null;
+  if (pathSegments.length > 2) {
+    restaurantId = pathSegments[2];
+  }
+
+  // Tìm restaurant theo id
+  const restaurant = restaurantData.restaurants.find(
+    (r) => String(r.id) === String(restaurantId)
+  );
+
+  // Logo của nhà hàng, nếu không có thì dùng logo mặc định
+  const logoSrc = restaurant && restaurant.logo
+    ? restaurant.logo.startsWith('http') || restaurant.logo.startsWith('/')
+      ? restaurant.logo
+      : '/' + restaurant.logo
+    : 'https://yoyobeer.com.vn/wp-content/uploads/2023/11/logo-1400x764.png';
 
   return (
-    <div className="footer-booking-wrapper">
-      <footer className="footer-booking-main">
-        <div className="footer-booking-container">
-          {/* Brand */}
-          <div className="footer-booking-brand">
-            <div className="footer-booking-logo-row">
-              <img src="https://diendantructuyen.com/wp-content/uploads/2024/09/dia-chi-vector-2.jpg" alt="Logo" width={40} height={40} />
-              <span className="footer-booking-logo-text">listeo</span>
-            </div>
-            <p className="footer-booking-desc">
-              Listeo is <strong>all-in-one WordPress directory theme</strong> with front-end user dashboard, <strong>built-in booking system, multi-vendor marketplace</strong>, private messaging and many more gorgeous features!
-            </p>
-          </div>
-          {/* Helpful Links */}
-          <div className="footer-booking-links">
-            <div>
-              <h3>Helpful Links</h3>
-              <div style={{display: 'flex', gap: 48}}>
-                <ul style={{margin: 0, padding: 0}}>
-                  <li><i className="fas fa-angle-right"></i> Reviews</li>
-                  <li><i className="fas fa-angle-right"></i> Bookmarks</li>
-                  <li><i className="fas fa-angle-right"></i> Bookings</li>
-                  <li><i className="fas fa-angle-right"></i> Contact</li>
-                </ul>
-                <ul style={{margin: 0, padding: 0}}>
-                  <li><i className="fas fa-angle-right"></i> My Profile</li>
-                  <li><i className="fas fa-angle-right"></i> My Listings</li>
-                  <li><i className="fas fa-angle-right"></i> Bookmarks</li>
-                  <li><i className="fas fa-angle-right"></i> Add Listing</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          {/* Contact Info */}
-          <div className="footer-booking-contact">
-            <h3>Contact Us</h3>
-            <p>
-              12345 Little Lonsdale St, Melbourne<br />
-              Phone: <span>(123) 123-456</span><br />
-              E-Mail: <a href="mailto:office@example.com">office@example.com</a>
-            </p>
-            <div className="footer-booking-payments">
-              <img src="https://static.cdnlogo.com/logos/v/71/visa.svg" alt="Visa" height={28} />
-              <img src="https://cdn.listeo.pro/images/payment-skrill.svg" alt="Skrill" height={28} />
-              <img src="https://cdn.listeo.pro/images/payment-paypal.svg" alt="Paypal" height={28} />
-            </div>
+    <footer className="footer" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+      <div className="footer-container">
+        <div className="footer-col footer-col-left">
+          <h3 className="footer-title">Follow Me</h3>
+          <p className="footer-text">
+            Để cập nhật những tin tức và thông báo mới nhất, hãy theo dõi chúng tôi trên Facebook:
+            <span className="footer-strong">@QodeInteractive.com</span>
+          </p>
+        </div>
+        <div className="footer-col footer-col-center">
+
+          <p className="footer-text">0909.944.879</p>
+          <p className="footer-text">trangntt@bam.globalx.com.vn</p>
+          <p className="footer-text">2 Bis Nguyễn Thị Minh Khai, Phường Đa Kao, Quận 1, TP.HCM</p>
+          <div className="footer-social" aria-label="Social media links">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <FontAwesomeIcon icon={faSquareFacebook} className="social-icon" />
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+              <FontAwesomeIcon icon={faTwitter} className="social-icon" />
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <FontAwesomeIcon icon={faInstagram} className="social-icon" />
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <FontAwesomeIcon icon={faYoutube} className="social-icon" />
+            </a>
+            <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
+              <FontAwesomeIcon icon={faPinterest} className="social-icon" />
+            </a>
           </div>
         </div>
-        {/* Bottom Row */}
-        <div className="footer-booking-bottom-row">
-          <span className="footer-booking-copyright">
-            <img src="https://diendantructuyen.com/wp-content/uploads/2024/09/dia-chi-vector-2.jpg" alt="Logo" style={{height: '22px', verticalAlign: 'middle', marginRight: '10px', marginTop: '-2px', display: 'inline-block'}} />
-            © Theme by Purethemes.net. All Rights Reserved.
-          </span>
-          <div className="footer-booking-socials">
-            <button aria-label="X"><i className="fab fa-x-twitter"></i></button>
-            <button aria-label="LinkedIn"><i className="fab fa-linkedin-in"></i></button>
-            <button aria-label="Messenger"><i className="fab fa-facebook-messenger"></i></button>
-            <button aria-label="Instagram"><i className="fab fa-instagram"></i></button>
+        <div className="footer-col footer-col-right">
+          <h3 className="footer-title">Reservation Now</h3>
+          <div className="footer-grid-imgs">
+            {/* Các ảnh Instagram giả lập */}
+            <img src="https://storage.googleapis.com/a1aa/image/b5dd4d52-de32-46b5-0b9c-7fc1c20f075c.jpg" alt="Burger" width="60" height="60" />
+            <img src="https://storage.googleapis.com/a1aa/image/35f2661f-c160-427d-58d6-2655b46fa137.jpg" alt="Eggs" width="60" height="60" />
+            <img src="https://storage.googleapis.com/a1aa/image/a062f71e-90ab-4cba-9833-86fda362c395.jpg" alt="Salad" width="60" height="60" />
+            <img src="https://storage.googleapis.com/a1aa/image/d9b5e591-dbce-4f37-637b-23d6b6bfcf56.jpg" alt="Tacos" width="60" height="60" />
+            <img src="https://storage.googleapis.com/a1aa/image/1c086bb4-a6a4-4e15-9f58-273eedac2d6a.jpg" alt="Shrimp" width="60" height="60" />
+            <img src="https://storage.googleapis.com/a1aa/image/5dfa62f8-7cc1-4cbb-f01a-1d0bc9466134.jpg" alt="Asparagus" width="60" height="60" />
           </div>
         </div>
-      </footer>
-      {/* Scroll to top */}
-      <button className="footer-booking-scrolltop" aria-label="Scroll to top" onClick={handleScrollTop}>
-        <i className="fas fa-chevron-up"></i>
-      </button>
-    </div>
+      </div>
+      <div className="footer-bottom">© 2016 Qode Interactive, All Rights Reserved</div>
+    </footer>
   );
 };
 
-export default FooterBooking;
+export default Footer;

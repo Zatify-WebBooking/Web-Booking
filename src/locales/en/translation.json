@@ -2,21 +2,12 @@
   "hotelDetail": {
     "logo": "Alloggio",
     "rooms": {
-      "ilSole": {
-        "title": "il Sole",
+      "Phong": {
+        "title": "Single Room",
         "priceFrom": "from",
-        "price": "$80",
+        "price": "1tr5",
         "info": "50m2 / 1-2 persons",
         "description": "Traditional stilt houses are built with natural wood, creating a cozy space close to nature.",
-        "button": "BOOK NOW",
-        "ariaLabel": "Book now"
-      },
-      "SeaHose": {
-        "title": "Sea House",
-        "priceFrom": "from",
-        "price": "$95",
-        "info": "60m2 / 1-3 persons",
-        "description": "A waterfront resort with stunning views and a unique relaxing experience.",
         "button": "BOOK NOW",
         "ariaLabel": "Book now"
       }
@@ -24,10 +15,10 @@
     "nav": {
       "home": "HOME",
       "rooms": "ROOMS",
-      "pages": "PAGES",
+      "about": "ABOUT",
       "gallery": "GALLERY",
       "blog": "BLOG",
-      "landing": "LANDING"
+      "contact": "CONTACT"
     },
     "booking": {
       "checkin": "CHECK-IN",
@@ -45,7 +36,7 @@
       "seeSpecialOffers": "See our special offers",
       "headerDesc": "Morbi porta, purus at posuere consectetur, eros justo feugiat lorem, nec laoreet odio odio ac erat. Luctus sed libero dictum cursus cras consequat.",
       "winterOffer": "Winter Offer",
-      "off": "Off",
+      "off": "Up",
       "minimumStay": "Minimum stay {{count}} nights.",
       "earlyBooking": "Early booking.",
       "breakfastIncluded": "Breakfast included.",

@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 import "../../styles/bookingweb/booking.css";
 
 // Font Awesome CDN for icons
@@ -9,14 +10,53 @@ fontAwesomeLink.href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15
 document.head.appendChild(fontAwesomeLink);
 
 const NAV_ITEMS = [
-  { label: "Restaurant" },
-  { label: "Hotel" },
-  { label: "Booking" },
-  { label: "Contact" },
+  {
+    label: "Restaurant",
+    dropdown: [
+      { label: "Yoyo Central Hồ Con Rùa", href: "/restaurant/1" },
+      { label: "Dragon Palace", href: "/restaurant/2" },
+      { label: "ChillHouse 197 Hai Bà Trưng", href: "/restaurant/3" },
+      { label: "Yoyo Garden Nam Kỳ Khởi Nghĩa", href: "/restaurant/4" },
+      { label: "Lalaland Bình Khánh", href: "/restaurant/5" },
+      { label: "Paris Garden", href: "/restaurant/6" },
+      { label: "LonDon Conner", href: "/restaurant/7" },
+      { label: "Casa Cafe Hồ Con Rùa", href: "/restaurant/8" },
+    ],
+  },
+  {
+    label: "Hotel",
+    dropdown: [
+      { label: "Hotel Seava", href: "/hotel/1" },
+      { label: "Hotel Minera", href: "/hotel/2" },
+      { label: "Hotel Ktown & Wonderland", href: "/hotel/3" },
+      { label: "Hotel Radison", href: "/hotel/4" },
+    ],
+  },
+  {
+    label: "Tourist",
+    dropdown: [
+      { label: "Nova World Hồ Tràm", href: "/booking/history" },
+      { label: "Nova World Phan Thiết", href: "/booking/manage" },
+    ],
+  },
+  {
+    label: "Contact",
+    dropdown: [
+      { label: "Liên hệ hỗ trợ", href: "/contact/support" },
+      { label: "Góp ý & Phản hồi", href: "/contact/feedback" },
+    ],
+  },
 ];
 
 const HeaderBooking = () => {
-  const [activeIdx, setActiveIdx] = useState(0);
+  const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
+  const cartCount = 0; 
+
+  // Hàm đổi ngôn ngữ
+  const handleChangeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
 
   return (
     <header className="header-booking-header">
@@ -29,34 +69,43 @@ const HeaderBooking = () => {
               <span>listeo</span>
             </div>
             <ul className="header-booking-nav-links">
-              {NAV_ITEMS.map((item, idx) => (
-                <li key={item.label}>
-                  <button
-                    className={activeIdx === idx ? "active" : ""}
-                    onClick={() => setActiveIdx(idx)}
-                    onFocus={() => setActiveIdx(idx)}
-                  >
-                    <span>{item.label}</span>
-                   
-                  </button>
+              {NAV_ITEMS.map((item) => (
+                <li
+                  key={item.label}
+                  className={item.dropdown ? "dropdown" : ""}
+                >
+                  <span className="dropdown-btn">
+                    <span style={{ marginLeft: 8 }}>{t(`${item.label.toLowerCase()}`)}</span>
+                    {item.dropdown && (
+                      <i className="fas fa-chevron-down" style={{ fontSize: 13, marginLeft: 4 }}></i>
+                    )}
+                  </span>
+                  {item.dropdown && (
+                    <ul className="dropdown-menu">
+                      {item.dropdown.map((sub) => (
+                        <li key={sub.label}>
+                          <a
+                            href={sub.href}
+                            onClick={e => {
+                              if (item.label === "Restaurant") {
+                                e.preventDefault();
+                                const id = sub.href.split("/").pop();
+                                navigate(`/restaurants/${id}`);
+                              }
+                            }}
+                          >
+                            {sub.label}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </li>
               ))}
             </ul>
           </div>
           {/* Right side */}
-          <div className="header-booking-right-side">
-            <button className="header-booking-cart-button" aria-label="Shopping cart">
-              <i className="fas fa-shopping-cart fa-lg"></i>
-              <span className="header-booking-cart-count">0</span>
-            </button>
-            <button className="header-booking-sign-in-button">
-              <svg fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 14a4 4 0 10-8 0 4 4 0 008 0z" strokeLinecap="round" strokeLinejoin="round"></path>
-                <path d="M12 14v7m-4-7v7m8-7v7m-8 0h8" strokeLinecap="round" strokeLinejoin="round"></path>
-              </svg>
-              <span>Sign In</span>
-            </button>
-          </div>
+          {/* Đã bỏ nút chuyển đổi ngôn ngữ, giỏ hàng và đăng nhập theo yêu cầu */}
         </div>
       </nav>
     </header>

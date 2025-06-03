@@ -1112,12 +1112,19 @@ nav a {
     margin-right: 20px;
 }
 
+.offer-details li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 .offer-box {
     background: #faf9f6;
     padding: 4.5rem 32px 32px 32px;
     flex: 1 1 300px;
     max-width: 420px;
-    height: 75vh;
+    min-height: 75vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1372,4 +1379,14 @@ nav a {
 .footerhotel button:hover {
     background-color: #1A1A1A;
     color: white;
+}
+
+.about-hotel-image {
+    width: 100%;
+}
+
+.slide-about {
+    display: flex;
+    flex-direction: column;
+    margin-left: 352px;
 }

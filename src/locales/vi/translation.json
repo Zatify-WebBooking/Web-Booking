@@ -1,33 +1,23 @@
 {
   "hotelDetail": {
     "rooms": {
-      "ilSole": {
-        "title": "Nhà sàn",
+      "Phong": {
+        "title": "Phòng Đơn",
         "priceFrom": "từ",
-        "price": "$80",
-        "info": "50m2 / 1-2 người",
-        "description": "Nhà sàn truyền thống được xây dựng bằng gỗ tự nhiên, mang lại không gian ấm cúng và gần gũi với thiên nhiên.",
+        "price": "1tr5",
+        "info": "1-2 người",
+        "description": "Phòng được thiết kế thông minh, đầy đủ tiện nghi, sạch sẽ và đặc biệt là cửa số hướng ra biển thoáng mát.",
         "button": "ĐẶT NGAY",
-        "ariaLabel": "Đặt ngay"
-      },
-      "SeaHose": {
-        "title": "Nhà trên biển",
-        "priceFrom": "từ",
-        "price": "$95",
-        "info": "60m2 / 1-3 người",
-        "description": "Một điểm nghỉ dưỡng trên mặt nước với tầm nhìn tuyệt đẹp và trải nghiệm thư giãn độc đáo.",
-        "button": "ĐẶT NGAY",
-        "ariaLabel": "Đặt ngay"
+        "ariaLabel": "Đặt ngay",
+        "readmore": "Xem thêm"
       }
     },
     "logo": "Alloggio",
     "nav": {
       "home": "TRANG CHỦ",
       "rooms": "PHÒNG",
-      "pages": "TRANG",
-      "gallery": "BỘ SƯU TẬP",
-      "blog": "BLOG",
-      "landing": "TRANG ĐÍCH"
+      "about": "GIỚI THIỆU",
+      "contact": "LIÊN HỆ"
     },
     "booking": {
       "checkin": "NHẬN PHÒNG",
@@ -42,10 +32,10 @@
       "bookNow": "ĐẶT NGAY"
     },
     "offers": {
-      "seeSpecialOffers": "Xem các ưu đãi đặc biệt",
+      "seeSpecialOffers": "Xem Giá",
       "headerDesc": "Morbi porta, purus at posuere consectetur, eros justo feugiat lorem, nec laoreet odio odio ac erat. Luctus sed libero dictum cursus cras consequat.",
       "winterOffer": "Ưu đãi mùa đông",
-      "off": "Giảm",
+      "off": "Tăng",
       "minimumStay": "Ở tối thiểu {{count}} đêm.",
       "earlyBooking": "Đặt trước.",
       "breakfastIncluded": "Bao gồm bữa sáng.",

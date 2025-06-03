@@ -546,57 +546,66 @@
   padding: 0;
 }
 
-.search-input,
-.location-input,
-.category-select {
+.search-form-equal {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0;
+  flex-grow: 1;
+  background: #fff;
+  border-radius: 999px;
+  box-shadow: 0 2px 8px #0001;
+  align-items: center;
+  padding: 0;
+}
+
+.search-form-equal .search-input,
+.search-form-equal .location-input,
+.search-form-equal .category-select {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 56px;
   font-size: 1.08rem;
   border: none;
   border-radius: 0;
-  flex-grow: 1;
   outline: none;
   background: #fff;
   font-family: 'Raleway', 'Montserrat', sans-serif;
   box-shadow: none;
   font-weight: 500;
   color: #888;
-  height: 56px;
-  /* Giảm chiều cao cho đồng bộ với nút */
 }
 
-.search-input {
-  padding-left: 24px;
+.search-form-equal .search-input {
   border-top-left-radius: 999px;
   border-bottom-left-radius: 999px;
+  padding-left: 24px;
 }
 
-.category-select {
+.search-form-equal .category-select {
   border-top-right-radius: 999px;
   border-bottom-right-radius: 999px;
-  min-width: 180px;
 }
 
-.location-input-wrapper {
-  position: relative;
-  flex-grow: 1;
-  max-width: 220px;
+.search-form-equal .location-input-wrapper {
+  flex: 1 1 0;
+  max-width: unset;
   border-left: 1px solid #e0e0e0;
   border-right: 1px solid #e0e0e0;
   height: 56px;
-  /* Đồng bộ chiều cao */
   display: flex;
   align-items: center;
 }
 
-.location-input {
+.search-form-equal .location-input {
   width: 100%;
   border-radius: 0;
   border: none;
   padding-left: 40px;
   background: #fff;
-  height: 64px;
+  height: 56px;
 }
 
-.location-icon {
+.search-form-equal .location-icon {
   position: absolute;
   top: 50%;
   left: 16px;
@@ -629,23 +638,18 @@
   border-bottom-right-radius: 999px;
 }
 
-.btn-primary[type="submit"] {
-  background: #ff1843;
-  color: #fff;
-  font-size: 1.15rem;
-  font-weight: 700;
-  border-radius: 999px !important;
-  /* Bo tròn hoàn toàn */
-  padding: 0 40px;
+.btn-primary[type="submit"] {  font-size: 1.08rem;
+  font-weight: 500;
+  font-family: 'Raleway', 'Montserrat', sans-serif;
   height: 56px;
-  margin-left: 24px;
-  border: none;
-  cursor: pointer;
-  transition: background 0.2s, box-shadow 0.2s;
-  box-shadow: 0 5px 25px #ff184355, 0 2px 8px #0002;
+  min-width: 110px;
+  padding: 0 24px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0;
+  box-shadow: 0 2px 8px #ff184333;
+  border-radius: 999px;
 }
 
 /* Card container carousel styles */
@@ -1497,335 +1501,165 @@ section.container {
 }
 
 /* FooterBooking full width, đồng bộ hero section, reset lại từ đầu */
-.bookingweb-root .footer-booking-wrapper {
-  width: 100vw;
-  min-width: 0;
-  background: #fff;
-  margin-top: 80px;
-  padding: 0;
+
+
+/* Dropdown menu styles for header nav */
+.header-booking-nav-links .dropdown {
   position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  box-sizing: border-box;
 }
 
-.bookingweb-root .footer-booking-main {
-  width: 100vw;
-  margin: 0;
-  padding: 60px 0 0 0;
-  background: #fff;
-  box-sizing: border-box;
-}
-
-.bookingweb-root .footer-booking-container {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 0;
-  align-items: start;
-  width: 100vw;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 80px;
-  box-sizing: border-box;
-}
-
-.bookingweb-root .footer-booking-brand {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding-top: 12px;
-}
-
-.bookingweb-root .footer-booking-logo-row {
+.header-booking-nav-links .dropdown-btn {
   display: flex;
   align-items: center;
-  gap: 18px;
-  font-size: 44px;
-  font-weight: 400;
-  color: #222;
-  user-select: none;
-  margin-bottom: 18px;
-  font-family: 'Raleway', Arial, sans-serif;
-}
-
-.bookingweb-root .footer-booking-logo-text {
-  font-family: 'Raleway', Arial, sans-serif;
-  font-weight: 400;
-  font-size: 30px;
-  color: #222;
-  letter-spacing: 0.5px;
-}
-
-.bookingweb-root .footer-booking-desc {
-  font-size: 17px;
-  line-height: 1.7;
-  color: #666;
-  max-width: 600px;
-  margin-bottom: 0;
-  font-family: 'Raleway', Arial, sans-serif;
-  font-weight: 400;
-}
-
-.bookingweb-root .footer-booking-links h3,
-.bookingweb-root .footer-booking-contact h3 {
-  font-size: 20px;
-  margin-bottom: 18px;
-  color: #222;
-  font-weight: 600;
-  font-family: 'Raleway', Arial, sans-serif;
-}
-
-.bookingweb-root .footer-booking-links {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 48px;
-  font-family: 'Raleway', Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  min-width: 0;
-}
-
-.bookingweb-root .footer-booking-links ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.bookingweb-root .footer-booking-links li {
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  font-size: 16px;
-  font-family: 'Raleway', Arial, sans-serif;
-  font-weight: 400;
-  color: #888;
-  white-space: nowrap;
-}
-
-.bookingweb-root .footer-booking-links li:last-child {
-  margin-bottom: 0;
-}
-
-.bookingweb-root .footer-booking-links li a {
-  color: #888;
-  text-decoration: none;
-  font-family: 'Raleway', Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  transition: color 0.2s;
-}
-
-.bookingweb-root .footer-booking-links li a:hover {
-  color: #e11d48;
-}
-
-.bookingweb-root .footer-booking-links i {
-  margin-right: 8px;
-  color: #bbb;
-  font-size: 14px;
-}
-
-.bookingweb-root .footer-booking-contact p,
-.bookingweb-root .footer-booking-contact a {
-  font-family: 'Raleway', Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-}
-
-.bookingweb-root .bookingweb-root .footer-booking-bottom {
-  font-family: 'Raleway', Arial, sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-}
-
-.bookingweb-root .footer-booking-socials {
-  display: flex;
-  gap: 24px;
-  margin-left: 24px;
-}
-
-.bookingweb-root .footer-booking-socials button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #bdbdbd;
-  font-size: 22px;
-  transition: color 0.2s, background 0.2s;
-  border-radius: 6px;
-  padding: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.bookingweb-root .footer-booking-socials button[aria-label="X"] i {
-  color: #111;
-  background: #fff;
-}
-
-.bookingweb-root .footer-booking-socials button[aria-label="LinkedIn"] i {
-  color: #0077b5;
-}
-
-.bookingweb-root .footer-booking-socials button[aria-label="Messenger"] i {
-  color: #0084ff;
-}
-
-.bookingweb-root .footer-booking-socials button[aria-label="Instagram"] i {
-  color: #e4405f;
-}
-
-.bookingweb-root .footer-booking-socials button:hover i {
-  color: #e11d48;
-}
-
-.bookingweb-root .footer-booking-scrolltop {
-  position: fixed;
-  bottom: 40px;
-  right: 40px;
-  background-color: #e11d48;
-  /* Đỏ tươi */
-  color: white;
-  width: 50px;
-  height: 50px;
+  gap: 6px;
+  padding: 0 24px;
+  height: 48px;
   border-radius: 9999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border: none;
-  cursor: pointer;
-  box-shadow: 0 4px 24px #ee2a4a33;
-  transition: background-color 0.2s;
-  font-size: 30px;
-  z-index: 100;
-}
-
-.bookingweb-root .footer-booking-scrolltop:active {
-  background-color: #c3002f;
-  /* Đỏ đậm hơn khi click */
-}
-
-@media (max-width: 1200px) {
-  .bookingweb-root .footer-booking-container {
-    grid-template-columns: 1fr 1fr 1fr;
-    max-width: 100vw;
-    padding: 0 16px;
-  }
-
-  .bookingweb-root .footer-booking-bottom {
-    width: 98vw;
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-}
-
-@media (max-width: 900px) {
-  .bookingweb-root .footer-booking-container {
-    grid-template-columns: 1fr;
-    gap: 32px;
-    padding: 0 16px;
-  }
-}
-
-.bookingweb-root .footer-container {
-  width: 100%;
-  max-width: 100vw;
-  margin-left: 50%;
-  transform: translateX(-50%);
-  padding-left: 0;
-  padding-right: 0;
-  box-sizing: border-box;
-}
-
-.bookingweb-root .footer {
-  width: 100%;
-  max-width: 100vw;
-  margin-left: 50%;
-  transform: translateX(-50%);
-  padding-left: 0;
-  padding-right: 0;
-  box-sizing: border-box;
-  background: #fafbfc;
-  position: relative;
-}
-
-/* --- Footer bottom row custom style for booking --- */
-.bookingweb-root .footer-booking-bottom-row {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  background: #f7f7f7;
-  padding: 10px 40px 8px 60px;
-  border-radius: 0 0 8px 8px;
-  margin-top: 18px;
-  min-height: 38px;
-  box-sizing: border-box;
-  border-top: 1.5px solid #ededed;
-  box-shadow: 0 1px 8px #0001;
-}
-
-.bookingweb-root .footer-booking-bottom-row span {
-  color: #a0a0a0;
-  font-size: 13px;
-  font-family: 'Raleway', Arial, sans-serif;
-  font-weight: 400;
-  line-height: 1.7;
-  height: 28px;
-  display: flex;
-  align-items: flex-start;
-  padding-left: 0;
-  letter-spacing: 0.1px;
-  margin-top: 0;
-}
-
-.bookingweb-root .footer-booking-bottom-row .footer-booking-socials {
-  display: flex;
-  gap: 18px;
-  margin-left: 0;
-}
-
-.bookingweb-root .footer-booking-bottom-row .footer-booking-socials button {
-  color: #bdbdbd;
   background: none;
-  border: none;
-  font-size: 22px;
-  transition: color 0.2s, background 0.2s;
-  padding: 4px;
-  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.1rem;
+  color: #4b5563;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+
+.header-booking-nav-links .dropdown-btn:hover,
+.header-booking-nav-links .dropdown-btn:focus {
+  background: #ffe6eb;
+  color: #ee2a4a;
+}
+
+.header-booking-nav-links .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  border-radius: 8px;
+  z-index: 100;
+  padding: 8px 0;
+}
+
+.header-booking-nav-links .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.header-booking-nav-links .dropdown-menu li a {
+  display: block;
+  padding: 10px 24px;
+  color: #4b5563;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.header-booking-nav-links .dropdown-menu li a:hover {
+  background: #ffe6eb;
+  color: #ee2a4a;
+}
+
+.location-dropdown-wrapper {
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
+  flex: 1 1 0;
+  max-width: unset;
+  border-left: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+  height: 56px;
+  background: #fff;
+  overflow: visible;
+}
+
+.location-dropdown-wrapper select.location-dropdown {
+  /* ...existing code... */
+  direction: ltr;
+}
+
+.location-dropdown-wrapper select.location-dropdown:focus {
   outline: none;
+  box-shadow: none;
+  border: none;
 }
 
-.bookingweb-root .footer-booking-bottom-row .footer-booking-socials button:hover {
-  color: #e11d48;
-  background: #f0f0f0;
+/* Force dropdown to open downward */
+.location-dropdown-wrapper select.location-dropdown {
+  /* For Chrome, Edge, Safari */
+  position: relative;
+  z-index: 1;
 }
 
-@media (max-width: 900px) {
-  .bookingweb-root .footer-booking-bottom-row {
-    flex-direction: column;
-    gap: 8px;
-    padding: 10px 8px 8px 8px;
-    text-align: center;
-    min-height: unset;
-    box-shadow: none;
-  }
+.location-dropdown-wrapper select.location-dropdown:focus {
+  z-index: 10;
+}
 
-  .bookingweb-root .bookingweb-root .footer-booking-bottom-row .footer-booking-socials {
-    justify-content: center;
-  }
+/* Fix for dropdown menu always opening downward */
+.location-dropdown-wrapper select.location-dropdown {
+  /* Remove any transform that may cause popup upward */
+}
 
-  .bookingweb-root .footer-booking-bottom-row span {
-    justify-content: center;
-    padding-left: 0;
-    height: auto;
-    margin-top: 0;
-  }
+/* Optional: Prevent dropdown from being cut off */
+.location-dropdown-wrapper {
+  overflow: visible;
+}
+
+.city-select__control {
+  min-height: 56px !important;
+  height: 56px !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  background: #fff !important;
+  font-size: 1.08rem;
+  font-family: 'Raleway', 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+
+.city-select__value-container {
+  padding-left: 8px !important;
+}
+
+.city-select__placeholder {
+  color: #888 !important;
+  font-weight: 500 !important;
+}
+
+.city-select__single-value {
+  color: #222 !important;
+}
+
+.city-select__menu {
+  z-index: 9999 !important;
+}
+
+.city-select__indicator-separator {
+  display: none !important;
+}
+
+.location-dropdown-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1 1 0;
+  max-width: unset;
+  border-left: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+  height: 56px;
+  background: #fff;
+  overflow: visible;
+}
+
+.location-dropdown-wrapper .location-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #bbb;
+  font-size: 18px;
+  pointer-events: none;
+  z-index: 2;
 }
