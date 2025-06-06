@@ -18,6 +18,9 @@ const NAV_ITEMS = [
       { label: "Lalaland Bình Khánh", href: "/restaurant/4" },
       { label: "Paris Garden", href: "/restaurant/5" },
       { label: "LonDon Conner", href: "/restaurant/6" },
+      { label: "ChillHouse Beach Club", href: "/restaurant/7" },
+      { label: "Casa Cafe Hồ Con Rùa", href: "/restaurant/8" },
+
     ],
   },
   {
@@ -25,8 +28,10 @@ const NAV_ITEMS = [
     dropdown: [
       { label: "Seava", href: "/hotel/1" },
       { label: "Minera", href: "/hotel/2" },
-      { label: "Ktown & Wonderland", href: "/hotel/3" },
-      { label: "Radison", href: "/hotel/4" },
+      { label: "Ktown", href: "/hotel/3" },
+      { label: "Wonderland", href: "/hotel/4" },
+      { label: "Radison", href: "/hotel/5" },
+      { label: "Long Hải Palace", href: "/hotel/6" },
     ],
   },
   {
@@ -53,11 +58,7 @@ const HeaderBooking = () => {
           {showBackBtn && (
             <button
               onClick={() => {
-                if (location.state && location.state.from === 'tourist') {
-                  navigate('/tourist');
-                } else {
-                  navigate('/');
-                }
+                navigate(-1);
               }}
               style={{
                 position: 'absolute',

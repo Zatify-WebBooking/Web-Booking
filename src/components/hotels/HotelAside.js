@@ -32,8 +32,38 @@ const HotelAside = ({ hotelId, hotelName, activeIndex, setActiveIndex }) => {
     setActiveIndex(index);
   };
 
+  const handleBackClick = () => {
+    navigate('/');
+  };
+
   return (
     <aside>
+      <div
+        title="Quay lại trang BookingWeb"
+        style={{
+          color: 'black',
+          position: 'absolute',
+          left: '32px',
+          top: '15%',
+          transform: 'translateY(-50%)',
+          zIndex: 20,
+          cursor: 'pointer',
+          width: '44px',
+          height: '44px',
+          borderRadius: '8px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          transition: 'background 0.2s',
+          border: 'none',
+        }}
+        onClick={handleBackClick}
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="20" height="20" rx="4" fill="none" stroke="#1ccfc9" strokeWidth="2"></rect>
+          <polyline points="13,8 9,12 13,16" fill="none" stroke="#1ccfc9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></polyline>
+        </svg>
+      </div>
       <div className="logo-wrapper">
         <h1>{hotelName || t('hotelDetail.logo')}</h1>
         <span className="big-number">{hotelName ? hotelName.charAt(0) : 'A'}</span>
@@ -83,7 +113,7 @@ const HotelAside = ({ hotelId, hotelName, activeIndex, setActiveIndex }) => {
           0909.944.879<br />
           trangntt@bam.globalx.com.vn
         </address>
-      </div>
+      </div> 
     </aside>
   );
 };

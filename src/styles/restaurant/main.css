@@ -578,10 +578,42 @@
 
 .starter-image {
   width: 50%;
+
+  object-fit: cover;
+}
+
+.starter-image-fullwidth {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.main-meal-image {
+  width: 50%;
   height: 100%;
   object-fit: cover;
 }
 
+.main-meal-image-fullwidth {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.dessert-image {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dessert-image-fullwidth {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 1rem;
+}
 .starter-prev,
 .starter-next {
   position: absolute;

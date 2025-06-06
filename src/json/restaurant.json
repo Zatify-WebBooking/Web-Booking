@@ -277,19 +277,19 @@
           }
         ],
         "galleryImage": [
-          "/images/yoyonamkikhoinghia/about1.jpg",
-          "/images/yoyonamkikhoinghia/about2.jpg",
-          "/images/yoyonamkikhoinghia/about3.jpg",
-          "/images/yoyonamkikhoinghia/about4.jpg",
-          "/images/yoyonamkikhoinghia/about5.jpg",
-          "/images/yoyonamkikhoinghia/about6.jpg",
-          "/images/yoyonamkikhoinghia/birthday1.jpg",
-          "/images/yoyonamkikhoinghia/birthday2.jpg",
-          "/images/yoyonamkikhoinghia/birthday3.jpg",
-          "/images/yoyonamkikhoinghia/birthday4.jpg",
-          "/images/yoyonamkikhoinghia/wedding1.jpg",
-          "/images/yoyonamkikhoinghia/wedding2.jpg",
-          "/images/yoyonamkikhoinghia/wedding3.jpg"
+          "/images/yoyonamkikhoinghia/about (1).jpg",
+          "/images/yoyonamkikhoinghia/about (2).jpg",
+          "/images/yoyonamkikhoinghia/about (3).jpg",
+          "/images/yoyonamkikhoinghia/about (4).jpg",
+          "/images/yoyonamkikhoinghia/about (5).jpg",
+          "/images/yoyonamkikhoinghia/about (6).jpg",
+          "/images/yoyonamkikhoinghia/about (7).jpg",
+          "/images/yoyonamkikhoinghia/about (8).jpg",
+          "/images/yoyonamkikhoinghia/about (9).jpg",
+          "/images/yoyonamkikhoinghia/about (10).jpg",
+          "/images/yoyonamkikhoinghia/about (11).jpg",
+          "/images/yoyonamkikhoinghia/about (12).jpg",
+          "/images/yoyonamkikhoinghia/about (13).jpg"
         ],
         "serviceImages": {
           "birthday": [
@@ -805,6 +805,207 @@
           "/images/londoncorner/drink33.jpg",
           "/images/londoncorner/drink34.jpg"
         ]
+      },
+      {
+        "id": 7,
+        "name": "ChillHouse Saigon Beach Club",
+        "logo": "/images/chillhouse/image.jpg",
+        "image": "/images/chillhouse/image.jpg",
+        "address": "138 Nam Ky Khoi Nghia, Ben Nghe, District 1, Ho Chi Minh City",
+        "phone": "+84 28 3825 7179",
+        "cuisine": "Vietnamese",
+        "opening_hours": "07:00 - 22:00",
+        "description": "Tọa lạc ven biển với khung cảnh thiên nhiên tuyệt đẹp, ChillHose Beach Club là địa điểm lý tưởng để thưởng thức các món ăn đặc sản ba miền, kết hợp hài hòa cùng phong cách nghỉ dưỡng biển phóng khoáng và hiện đại. Với không gian mở, thoáng đãng và đầy cảm hứng, nơi đây mang đến trải nghiệm ẩm thực độc đáo cho thực khách. Thực đơn tại ChillHose Beach Club đa dạng với các món Việt chế biến công phu như phở bò, bánh mì, cùng các món Âu đẳng cấp như Bò Wellington, cá chẽm sốt Verde và súp đông trùng hạ thảo. Không chỉ là nơi thưởng thức ẩm thực, ChillHose Beach Club còn là điểm đến lý tưởng cho những buổi hẹn hò lãng mạn, gặp gỡ bạn bè, hay tổ chức các sự kiện đáng nhớ – nơi tinh hoa ẩm thực Việt gặp gỡ phong cách biển đầy phóng khoáng và tinh tế.",
+        "descriptionbirthday": "Tại ChillHose Beach Club, mỗi buổi tiệc sinh nhật không chỉ đơn thuần là một buổi gặp mặt – mà là một trải nghiệm đáng nhớ được chăm chút đến từng chi tiết. Với không gian mở, mang phong cách biển sang trọng và gần gũi, nơi đây là lựa chọn lý tưởng để bạn cùng người thân tận hưởng những khoảnh khắc đáng quý bên nhau. Chúng tôi cung cấp nhiều gói tổ chức sinh nhật đa dạng, từ thân mật đến sôi động, phù hợp cho cả trẻ em, người lớn và tiệc gia đình. Thực đơn phong phú với các món ăn đặc sản ba miền cùng đồ uống đa dạng, kết hợp dịch vụ trang trí, bánh kem, MC, và chụp hình – tất cả đều được chuẩn bị theo yêu cầu riêng của bạn. ChillHose Beach Club – nơi lưu giữ những khoảnh khắc sinh nhật đầy cảm xúc giữa thiên nhiên biển cả.",
+        "descriptionwedding": "ChillHose Beach Club là lựa chọn hoàn hảo cho những cặp đôi mong muốn một lễ cưới lãng mạn, tinh tế và đậm chất biển ngay bên bờ cát trắng. Với không gian mở, hòa quyện giữa kiến trúc hiện đại và khung cảnh thiên nhiên thơ mộng, nhà hàng mang đến một khung cảnh khó quên cho ngày trọng đại của bạn. Chúng tôi cung cấp dịch vụ tổ chức tiệc cưới trọn gói, bao gồm thực đơn cao cấp, trang trí theo chủ đề, hệ thống âm thanh ánh sáng hiện đại và đội ngũ phục vụ chuyên nghiệp. Dù là tiệc cưới truyền thống, hiện đại hay phong cách beach wedding ngoài trời, ChillHose Beach Club luôn sẵn sàng hiện thực hóa mọi ý tưởng để mang đến cho bạn một ngày cưới trọn vẹn và đầy ấn tượng. ChillHose – nơi tình yêu bắt đầu giữa sóng biển và hoàng hôn lãng mạn.",
+        "rating": 4.5,
+        "reviews": [
+          {
+            "name": "Tuấn Anh",
+            "imagepeple": "https://randomuser.me/api/portraits/men/12.jpg",
+            "comment": "Không gian ấm cúng, đồ ăn ngon, rất đáng thử!!"
+          },
+          {
+            "name": "Thùy Linh",
+            "imagepeple": "https://randomuser.me/api/portraits/women/34.jpg",
+            "comment": "Phục vụ thân thiện, món ăn chuẩn vị Anh quốc!!"
+          },
+          {
+            "name": "Minh Quân",
+            "imagepeple": "https://randomuser.me/api/portraits/men/56.jpg",
+            "comment": "Giá cả hợp lý, không gian thoáng mát, rất hài lòng!!"
+          }
+        ],
+        "galleryImage": [
+          "/images/chillhouse/gal2.jpg",
+          "/images/chillhouse/gal1.jpg",
+          "/images/chillhouse/gal3.jpg",
+          "/images/chillhouse/gal4.jpg",
+          "/images/chillhouse/gal5.jpg",
+          "/images/chillhouse/gal6.jpg",
+          "/images/chillhouse/gal7.jpg",
+          "/images/chillhouse/gal8.jpg",
+          "/images/chillhouse/gal9.jpg",
+          "/images/chillhouse/gal10.jpg",
+          "/images/chillhouse/gal11.jpg"
+        ],
+        "serviceImages": {
+          "birthday": [
+            "/images/chillhouse/gal3.jpg",
+            "/images/chillhouse/birthday2.jpg",
+            "/images/chillhouse/birthday1.jpg"
+          ],
+          "wedding": [
+            "/images/chillhouse/gal1.jpg",
+            "/images/chillhouse/gal4.jpg",
+            "/images/chillhouse/gal5.jpg",
+            "/images/chillhouse/gal6.jpg"
+          ],
+          "about": [
+            "/images/chillhouse/slide1.jpg",
+            "/images/chillhouse/slide2.jpg",
+            "/images/chillhouse/gal7.jpg",
+            "/images/chillhouse/birthday1.jpg"
+          ]
+        },
+        "sectionTitles": {
+          "starters": {
+            "en": "Breakfast",
+            "vi": "Bữa sáng"
+          },
+          "mainMeals": {
+            "en": "Main Meal",
+            "vi": "Món chính"
+          },
+          "desserts": {
+            "en": "Drink",
+            "vi": "Đồ uống"
+          }
+        },
+        "slideImages": [
+          "/images/chillhouse/slide1.jpg",
+          "/images/chillhouse/slide2.jpg",
+          "/images/chillhouse/slide3.jpg"
+        ],
+        "hero-section": [
+          "/images/chillhouse/slide4.jpg"
+        ],
+        "review-section": [
+          "/images/chillhouse/gal1.jpg"
+        ],
+        "startersImages": [
+          "/images/chillhouse/sang1.jpg",
+          "/images/chillhouse/sang2.jpg",
+          "/images/chillhouse/sang3.jpg"
+        ],
+        "mainImages": [
+          "/images/chillhouse/menu1.jpg",
+          "/images/chillhouse/menu2.jpg",
+          "/images/chillhouse/menu3.jpg",
+          "/images/chillhouse/menu4.jpg",
+          "/images/chillhouse/menu5.jpg",
+          "/images/chillhouse/menu6.jpg",
+          "/images/chillhouse/menu7.jpg",
+          "/images/chillhouse/menu8.jpg",
+          "/images/chillhouse/menu9.jpg"
+        ],
+        "dessertImages": [
+          "/images/chillhouse/drink1.jpg",
+          "/images/chillhouse/drink2.jpg",
+          "/images/chillhouse/drink3.jpg",
+          "/images/chillhouse/drink4.jpg",
+          "/images/chillhouse/drink5.jpg"
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Casa Cafe Hồ Con Rùa",
+        "logo": "/images/casa/image.jpg",
+        "image": "/images/casa/image.jpg",
+        "address": "138 Nam Ky Khoi Nghia, Ben Nghe, District 1, Ho Chi Minh City",
+        "phone": "+84 28 3825 7179",
+        "cuisine": "Vietnamese",
+        "opening_hours": "07:00 - 22:00",
+        "description": "Nằm ngay trung tâm Sài Gòn, bên cạnh biểu tượng Hồ Con Rùa, Casa Cafe là điểm hẹn lý tưởng cho những ai yêu thích sự hoài cổ pha lẫn hiện đại. Với không gian được thiết kế tinh tế, đậm chất Á Đông xen lẫn nét châu Âu cổ điển, Casa Cafe mang đến trải nghiệm ẩm thực và cà phê đặc biệt giữa lòng thành phố náo nhiệt. Thực đơn tại Casa đa dạng từ các món ăn nhẹ như bánh mì kẹp, mì Ý, đến các món Việt truyền thống được chế biến tinh tế. Cùng với đó là danh mục cà phê phong phú – từ cà phê phin đậm đà, cà phê sữa đá đặc trưng, đến các món espresso, cold brew hiện đại. Casa Cafe không chỉ là nơi để thưởng thức món ngon, mà còn là không gian lý tưởng để làm việc, hẹn hò, gặp gỡ bạn bè – nơi nhịp sống thành thị lắng lại trong từng khoảnh khắc.",
+        "descriptionbirthday": "Tại Casa Cafe Hồ Con Rùa, mỗi buổi tiệc sinh nhật là một dịp để sẻ chia niềm vui trong không gian ấm áp và gần gũi giữa lòng Sài Gòn. Với thiết kế tinh tế cùng ánh sáng vàng ấm áp, Casa là lựa chọn hoàn hảo cho những bữa tiệc sinh nhật nhẹ nhàng, ý nghĩa. Chúng tôi cung cấp các gói tổ chức tiệc sinh nhật phù hợp cho mọi lứa tuổi – từ tiệc nhỏ thân mật đến buổi gặp mặt đông vui cùng bạn bè. Thực đơn đa dạng gồm món ăn nhẹ, món Việt và quốc tế, cùng thức uống độc đáo từ cà phê đến trà trái cây, soda tươi mát. Ngoài ra, Casa còn hỗ trợ dịch vụ trang trí theo yêu cầu, bánh sinh nhật và không gian check-in mang dấu ấn riêng cho mỗi khách hàng. Casa Cafe – nơi lưu giữ những khoảnh khắc sinh nhật giản dị mà đáng nhớ.",
+        "descriptionwedding": "Giữa lòng thành phố, Casa Cafe Hồ Con Rùa mang đến một lựa chọn tiệc cưới mới mẻ, tinh tế và gần gũi cho những cặp đôi yêu thích sự ấm cúng và lãng mạn. Không gian sân vườn nhỏ xinh kết hợp nội thất cổ điển tạo nên bầu không khí vừa sang trọng vừa thân quen – lý tưởng cho những buổi lễ đính hôn, tiệc cưới thân mật hoặc tiệc tiền cưới. Chúng tôi cung cấp dịch vụ tổ chức tiệc cưới mini với thực đơn linh hoạt, âm nhạc nhẹ nhàng, trang trí tối giản nhưng đầy cảm xúc. Với đội ngũ nhân viên chuyên nghiệp và tận tâm, Casa Cafe sẽ cùng bạn tạo nên một buổi lễ đáng nhớ – nơi cảm xúc thăng hoa giữa tiếng nhạc du dương và khung cảnh Sài Gòn dịu dàng về đêm.",
+        "rating": 4.5,
+        "reviews": [
+          {
+            "name": "Tuấn Anh",
+            "imagepeple": "https://randomuser.me/api/portraits/men/12.jpg",
+            "comment": "Không gian ấm cúng, đồ ăn ngon, rất đáng thử!!"
+          },
+          {
+            "name": "Thùy Linh",
+            "imagepeple": "https://randomuser.me/api/portraits/women/34.jpg",
+            "comment": "Phục vụ thân thiện, món ăn chuẩn vị Anh quốc!!"
+          },
+          {
+            "name": "Minh Quân",
+            "imagepeple": "https://randomuser.me/api/portraits/men/56.jpg",
+            "comment": "Giá cả hợp lý, không gian thoáng mát, rất hài lòng!!"
+          }
+        ],
+        "galleryImage": [
+          "/images/casa/gal15.jpg",
+          "/images/casa/gal2.jpg",
+          "/images/casa/gal1.jpg",
+          "/images/casa/gal3.jpg",
+          "/images/casa/gal4.jpg",
+          "/images/casa/gal5.jpg",
+          "/images/casa/gal6.jpg",
+          "/images/casa/gal7.jpg",
+          "/images/casa/gal8.jpg",
+          "/images/casa/gal9.jpg",
+          "/images/casa/gal10.jpg",
+          "/images/casa/gal11.jpg",
+          "/images/casa/gal12.jpg",
+          "/images/casa/gal13.jpg",
+          "/images/casa/gal14.jpg"
+        ],
+        "serviceImages": {
+          "birthday": [
+            "/images/casa/gal5.jpg",
+            "/images/casa/gal6.jpg",
+            "/images/casa/gal7.jpg",
+            "/images/casa/gal8.jpg",
+            "/images/casa/gal9.jpg"
+          ],
+          "wedding": [
+            "/images/casa/gal10.jpg",
+            "/images/casa/gal11.jpg",
+            "/images/casa/gal12.jpg",
+            "/images/casa/gal13.jpg",
+            "/images/casa/gal14.jpg"
+          ],
+          "about": [
+            "/images/casa/gal15.jpg",
+            "/images/casa/gal2.jpg",
+            "/images/casa/gal1.jpg",
+            "/images/casa/gal3.jpg"
+          ]
+        },
+        "sectionTitles": {
+          "mainMeals": {
+            "en": "Main Meal",
+            "vi": "Món chính"
+          }
+        },
+        "slideImages": [
+          "/images/casa/gal1.jpg",
+          "/images/casa/gal3.jpg",
+          "/images/casa/gal4.jpg"
+        ],
+        "hero-section": [
+          "/images/casa/gal5.jpg"
+        ],
+        "review-section": [
+          "/images/casa/gal6.jpg"
+        ],
+        "mainImages": [
+          "/images/casa/menu.jpg"
+        ]
       }
     ],
     "hotels": [
@@ -813,17 +1014,15 @@
         "name": "Seava Hotel",
         "image": "/images/seava/image.jpg",
         "galleryImage": [
-          "/images/lalalandbinhkhanh/birthday1.jpg",
-          "/images/lalalandbinhkhanh/birthday2.jpg",
-          "/images/lalalandbinhkhanh/birthday3.jpg",
-          "/images/lalalandbinhkhanh/wedding1.jpg",
-          "/images/lalalandbinhkhanh/wedding2.jpg",
-          "/images/lalalandbinhkhanh/wedding3.jpg",
-          "/images/lalalandbinhkhanh/about1.jpg",
-          "/images/lalalandbinhkhanh/about2.jpg",
-          "/images/lalalandbinhkhanh/about3.jpg",
-          "/images/lalalandbinhkhanh/about4.jpg",
-          "/images/lalalandbinhkhanh/about5.jpg"
+          "/images/seava/slide1.jpg",
+          "/images/seava/slide4.jpg",
+          "/images/seava/slide3.jpg",
+          "/images/seava/1.jpg",
+          "/images/seava/2.jpg",
+          "/images/seava/3.jpg",
+          "/images/seava/4.jpg",
+          "/images/seava/5.jpg",
+          "/images/seava/6.jpg"
         ],
         "serviceImages": {
           "about": [
@@ -1032,7 +1231,7 @@
       },
       {
         "id": 3,
-        "name": "Ktown & Wonderland",
+        "name": "Ktown",
         "image": "/images/nova/image.jpg",
         "galleryImage": [
           "/images/nova/slide1.jpg",
@@ -1054,18 +1253,10 @@
             "/images/nova/about7.jpg",
             "/images/nova/about8.jpg",
             "/images/nova/about9.jpg",
-            "/images/nova/about10.jpg",
-            "/images/nova/about11.jpg",
-            "/images/nova/about12.jpg",
-            "/images/nova/about13.jpg",
-            "/images/nova/about14.jpg",
-            "/images/nova/about15.jpg",
-            "/images/nova/about16.jpg",
             "/images/nova/about17.jpg"
           ],
           "price": [
-            "/images/nova/price1.jpg",
-            "/images/nova/price2.jpg"
+            "/images/nova/price1.jpg"
           ]
         },
         "carouselItems": [
@@ -1106,7 +1297,7 @@
         }
       },
       {
-        "id": 4,
+        "id": 5,
         "name": "Radison",
         "image": "/images/radison/image.jpg",
         "galleryImage": [
@@ -1241,6 +1432,161 @@
           "text": "Tiện ích và dịch vụ",
           "image2": "/images/radison/slide5.jpg",
           "text2": "Nhà hàng và Cafe"
+        }
+      },
+      {
+        "id": 4,
+        "name": "Wonderland",
+        "image": "/images/nova/image2.jpg",
+        "galleryImage": [
+          "/images/nova/slide3.jpg",
+          "/images/nova/slide5.jpg",
+          "/images/nova/congvien.jpg",
+          "/images/nova/congvien2.jpg",
+          "/images/nova/congvien3.jpg",
+          "/pdf/nvwhotram/hotram2.jpg",
+          "/pdf/nvwhotram/hotram3.jpg",
+          "/pdf/nvwhotram/hotram4.jpg",
+          "/images/nova/gallery.jpg",
+          "/images/nova/BungalowDouble.jpg"
+        ],
+        "serviceImages": {
+          "about": [
+            "/images/nova/about1.jpg",
+            "/images/nova/about2.jpg",
+            "/images/nova/about11.jpg",
+            "/images/nova/about12.jpg",
+            "/images/nova/about13.jpg",
+            "/images/nova/about14.jpg",
+            "/images/nova/about15.jpg",
+            "/images/nova/about16.jpg",
+            "/images/nova/about17.jpg"
+          ],
+          "price": [
+            "/images/nova/price2.jpg"
+          ]
+        },
+        "carouselItems": [
+          {
+            "src": "/pdf/nvwhotram/hotram4.jpg",
+            "text": "Sạch sẽ, thoáng mát"
+          },
+          {
+            "src": "/pdf/nvwhotram/hotram2.jpg",
+            "text": "Khu vui chơi lớn"
+          },
+          {
+            "src": "/images/nova/congvien.jpg",
+            "text": "Công viên nước lớn nhất"
+          }
+        ],
+        "elecmentorCards": [
+          {
+            "image": "/images/nova/Family.jpg",
+            "title": "Family",
+            "price": "1tr3",
+            "info": "1-4 person",
+            "description": "Nằm giữa không gian xanh mát, đầy đủ tiện nghi và bao gồm vé vào 5 công viên giải trí, lý tưởng cho kỳ nghỉ trọn vẹn tại NovaWorld Phan Thiết."
+          },
+          {
+            "image": "/images/nova/BungalowDouble.jpg",
+            "title": "Bungalow Double",
+            "price": "950k",
+            "info": "1-2 person",
+            "description": "Nằm giữa không gian xanh mát, đầy đủ tiện nghi và bao gồm vé vào 5 công viên giải trí, lý tưởng cho kỳ nghỉ trọn vẹn tại NovaWorld Phan Thiết."
+          }
+        ],
+        "quodefSection": {
+          "image": "/images/nova/congvien.jpg",
+          "text": "Khu vui chơi lớn nhất",
+          "image2": "/images/nova/slide5.jpg",
+          "text2": "Tiện ích và dịch vụ"
+        }
+      },
+      {
+        "id": 6,
+        "name": "Long Hải",
+        "image": "/images/seava/image.jpg",
+        "galleryImage": [
+          "/images/seava/slide1.jpg",
+          "/images/seava/slide4.jpg",
+          "/images/seava/slide3.jpg",
+          "/images/seava/1.jpg",
+          "/images/seava/2.jpg",
+          "/images/seava/3.jpg",
+          "/images/seava/4.jpg",
+          "/images/seava/5.jpg",
+          "/images/seava/6.jpg"
+        ],
+        "serviceImages": {
+          "about": [
+            "/pdf/longhai/tropical/d1.jpg",
+            "/pdf/longhai/tropical/d2.jpg",
+            "/pdf/longhai/tropical/d3.jpg",
+            "/pdf/longhai/tropical/d4.jpg",
+            "/pdf/longhai/tropical/d5.jpg",
+            "/pdf/longhai/tropical/d6.jpg",
+            "/pdf/longhai/tropical/d7.jpg",
+            "/pdf/longhai/tropical/d8.jpg",
+            "/pdf/longhai/tropical/d9.jpg",
+            "/pdf/longhai/ocean/d1.jpg",
+            "/pdf/longhai/ocean/d2.jpg",
+            "/pdf/longhai/ocean/d3.jpg",
+            "/pdf/longhai/ocean/d4.jpg",
+            "/pdf/longhai/ocean/d5.jpg",
+            "/pdf/longhai/ocean/d6.jpg",
+            "/pdf/longhai/ocean/d7.jpg",
+            "/pdf/longhai/ocean/d8.jpg",
+            "/pdf/longhai/ocean/d9.jpg",
+            "/pdf/longhai/ocean/d10.jpg",
+            "/pdf/longhai/ocean/d11.jpg",
+            "/pdf/longhai/ocean/d12.jpg",
+            "/pdf/longhai/ocean/d13.jpg",
+            "/pdf/longhai/ocean/d14.jpg",
+            "/pdf/longhai/ocean/d15.jpg",
+            "/pdf/longhai/ocean/d16.jpg",
+            "/pdf/longhai/ocean/d17.jpg"
+          ],
+          "price": [
+            "/pdf/longhai/price1.jpg",
+            "/pdf/longhai/price2.jpg"
+          ]
+        },
+        "carouselItems": [
+          {
+            "src": "/pdf/longhai/slide2.jpg",
+            "text": "Khuôn viên rộng "
+          },
+          {
+            "src": "/pdf/longhai/slide3.jpg",
+            "text": "Thoáng mát, sạch sẽ "
+          },
+          {
+            "src": "/pdf/longhai/slide4.jpg",
+            "text": "Hồ bơi cạnh biển"
+          }
+        ],
+        "elecmentorCards": [
+          {
+            "image": "/images/seava/slide1.jpg",
+            "title": "Phòng Đơn",
+            "price": "1tr6",
+            "info": "1-2 person",
+            "description": "Phòng được thiết kế thông minh, đầy đủ tiện nghi, sạch sẽ và đặc biệt cửa số hướng ra biển thoáng mát."
+          },
+          {
+            "image": "/images/seava/slide2.jpg",
+            "title": "Phòng gia đình",
+            "price": "1tr6",
+            "info": "1-4 person",
+            "description": "Phòng được thiết kế thông minh, đầy đủ tiện nghi, sạch sẽ và đặc biệt cửa số hướng ra biển thoáng mát."
+          }
+        ],
+        "quodefSection": {
+          "image": "/pdf/longhai/slide5.jpg",
+          "text": "Tiện ích và dịch vụ",
+          "image2": "/pdf/longhai/slide6.jpg",
+          "text2": "Vị trí khách sạn"
         }
       }
     ],

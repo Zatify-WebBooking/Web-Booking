@@ -39,10 +39,6 @@ function RestaurantDetail() {
     t('restaurantDetail.carousel.TraditionalFood')
   ];
 
-  // Remove old shared current and animationClass for main slide and carousels
-  // const [current, setCurrent] = useState(0);
-  // const [animationClass, setAnimationClass] = useState("fade-in");
-
   // State for main slide carousel
   const [mainCurrent, setMainCurrent] = useState(0);
   const [mainAnimationClass, setMainAnimationClass] = useState("fade-in");
@@ -284,46 +280,101 @@ function RestaurantDetail() {
         </div>
       </div>
 
-      <div className="Page2">
-        <div className="our-starters">
-          <p className="subtitle">{t('restaurantDetail.section_starters.TASTY AND CRUNCHY')}</p>
-          <h1 className="title">{sectionTitles.starters}</h1>
-          <p className="description">
-            {t('restaurantDetail.section_starters.description')}
-          </p>
-        </div>
-        <div className="starter-carousel">
-          <div className={`starter-slide ${startersAnimationClass}`}>
-            {startersImages[startersCurrent * 2] && (
-              <img
-                src={startersImages[startersCurrent * 2]}
-                alt={`Starter ${startersCurrent * 2 + 1}`}
-                className="starter-image"
-              />
-            )}
-            {startersImages[startersCurrent * 2 + 1] && (
-              <img
-                src={startersImages[startersCurrent * 2 + 1]}
-                alt={`Starter ${startersCurrent * 2 + 2}`}
-                className="starter-image"
-              />
-            )}
+      {String(restaurantId) === "8" && (
+        <div className="Page2">
+          <div className="our-main-meals">
+            <p className="subtitle">Ngon và Giòn</p>
+            <h1 className="title">{sectionTitles.main}</h1>
+            <p className="description">
+              {t('restaurantDetail.section_main_meals.description')}
+            </p>
           </div>
-          <button
-            className="starter-prev"
-            onClick={prevStartersSlide}
-            aria-label="Previous starter slide"
-          >
-            ❮
-          </button>
-          <button
-            className="starter-next"
-            onClick={nextStartersSlide}
-            aria-label="Next starter slide"
-          >
-            ❯
-          </button>
+          <div className="main-meal-carousel">
+            <div className={`main-meal-slide ${mainMealsAnimationClass}`}>
+              {mainImages[mainMealsCurrent] && (
+                <img
+                  src={mainImages[mainMealsCurrent]}
+                  alt={`Main meal ${mainMealsCurrent + 1}`}
+                  className="main-meal-image-fullwidth"
+                />
+              )}
+            </div>
+          </div>
         </div>
+      )}
+
+      <div className="Page2">
+        {String(restaurantId) !== "8" && (
+          <>
+            <div className="our-starters">
+              <p className="subtitle">{t('restaurantDetail.section_starters.TASTY AND CRUNCHY')}</p>
+              <h1 className="title">{sectionTitles.starters}</h1>
+              <p className="description">
+                {t('restaurantDetail.section_starters.description')}
+              </p>
+            </div>
+            {String(restaurantId) === "7" ? (
+              <div className="starter-carousel">
+                <div className={`starter-slide ${startersAnimationClass}`}>
+                  {startersImages[startersCurrent] && (
+                    <img
+                      src={startersImages[startersCurrent]}
+                      alt={`Starter ${startersCurrent + 1}`}
+                      className="starter-image-fullwidth"
+                    />
+                  )}
+                </div>
+                <button
+                  className="starter-prev"
+                  onClick={prevStartersSlide}
+                  aria-label="Previous starter slide"
+                >
+                  ❮
+                </button>
+                <button
+                  className="starter-next"
+                  onClick={nextStartersSlide}
+                  aria-label="Next starter slide"
+                >
+                  ❯
+                </button>
+              </div>
+            ) : (
+              <div className="starter-carousel">
+                <div className={`starter-slide ${startersAnimationClass}`}>
+                  {startersImages[startersCurrent * 2] && (
+                    <img
+                      src={startersImages[startersCurrent * 2]}
+                      alt={`Starter ${startersCurrent * 2 + 1}`}
+                      className="starter-image"
+                    />
+                  )}
+                  {startersImages[startersCurrent * 2 + 1] && (
+                    <img
+                      src={startersImages[startersCurrent * 2 + 1]}
+                      alt={`Starter ${startersCurrent * 2 + 2}`}
+                      className="starter-image"
+                    />
+                  )}
+                </div>
+                <button
+                  className="starter-prev"
+                  onClick={prevStartersSlide}
+                  aria-label="Previous starter slide"
+                >
+                  ❮
+                </button>
+                <button
+                  className="starter-next"
+                  onClick={nextStartersSlide}
+                  aria-label="Next starter slide"
+                >
+                  ❯
+                </button>
+              </div>
+            )}
+          </>
+        )}
       </div>
 
 
@@ -370,137 +421,200 @@ function RestaurantDetail() {
         </Parallax>
       </div>
 
-      <div className="Page2">
-        <div className="our-main-meals">
-          <p className="subtitle">{t('restaurantDetail.section_main_meals.TASTY AND CRUNCHY')}</p>
-          <h1 className="title">{sectionTitles.main}</h1>
-          <p className="description">
-            {t('restaurantDetail.section_main_meals.description')}
-          </p>
-        </div>
-        <div className="main-meal-carousel">
-          <div className={`main-meal-slide ${mainMealsAnimationClass}`}>
-            {mainImages[mainMealsCurrent * 2] && (
-              <img
-                src={mainImages[mainMealsCurrent * 2]}
-                alt={`Main meal ${mainMealsCurrent * 2 + 1}`}
-                className="main-meal-image"
-              />
-            )}
-            {mainImages[mainMealsCurrent * 2 + 1] && (
-              <img
-                src={mainImages[mainMealsCurrent * 2 + 1]}
-                alt={`Main meal ${mainMealsCurrent * 2 + 2}`}
-                className="main-meal-image"
-              />
-            )}
-          </div>
-          <button
-            className="main-meal-prev"
-            onClick={prevMainMealsSlide}
-            aria-label="Previous main meal slide"
-          >
-            ❮
-          </button>
-          <button
-            className="main-meal-next"
-            onClick={nextMainMealsSlide}
-            aria-label="Next main meal slide"
-          >
-            ❯
-          </button>
-        </div>
-      </div>
-
-
-
-      <div className="review-section">
-        <Parallax
-          bgImage={reviewSectionImage || "/images/slide5.jpg"}
-          strength={600}
-          className="testimonial-parallax"
-          bgImageStyle={{
-            backgroundAttachment: 'fixed',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        >
-          <div className="overlay-content-review-section">
-            <p className="subtitle"> {t('restaurantDetail.section_review.TASTY AND CRUNCHY')}</p>
-            <h1>{t('restaurantDetail.section_review.What People Say')}</h1>
-            <p className="body-text-gray-centered">
-              {t('restaurantDetail.section_review.description')}
+      {String(restaurantId) !== "8" && (
+        <div className="Page2">
+          <div className="our-main-meals">
+            <p className="subtitle">{t('restaurantDetail.section_main_meals.TASTY AND CRUNCHY')}</p>
+            <h1 className="title">{sectionTitles.main}</h1>
+            <p className="description">
+              {t('restaurantDetail.section_main_meals.description')}
             </p>
           </div>
-          <div className="grid-3">
-            {(() => {
-              const restaurantData = require('../../json/restaurant.json');
-              const restaurant = restaurantData.restaurants.find(r => String(r.id) === String(restaurantId));
-              if (!restaurant || !restaurant.reviews) return null;
-              return restaurant.reviews.map((review, index) => (
-                <div className="card" key={index}>
-                  <p className="card-text">{review.comment}</p>
-                  <hr className="hr" />
-                  <div className="flex-row">
-                    <img
-                      alt={`Portrait of ${review.name}`}
-                      className="avatar"
-                      src={review.imagepeple}
-                      width="48"
-                      height="48"
-                    />
-                    <div>
-                      <p className="name">{review.name}</p>
+          {String(restaurantId) === "7" ? (
+            <div className="main-meal-carousel">
+              <div className={`main-meal-slide ${mainMealsAnimationClass}`}>
+                {mainImages[mainMealsCurrent] && (
+                  <img
+                    src={mainImages[mainMealsCurrent]}
+                    alt={`Main meal ${mainMealsCurrent + 1}`}
+                    className="main-meal-image-fullwidth"
+                  />
+                )}
+              </div>
+              <button
+                className="main-meal-prev"
+                onClick={prevMainMealsSlide}
+                aria-label="Previous main meal slide"
+              >
+                ❮
+              </button>
+              <button
+                className="main-meal-next"
+                onClick={nextMainMealsSlide}
+                aria-label="Next main meal slide"
+              >
+                ❯
+              </button>
+            </div>
+          ) : (
+            <div className="main-meal-carousel">
+              <div className={`main-meal-slide ${mainMealsAnimationClass}`}>
+                {mainImages[mainMealsCurrent * 2] && (
+                  <img
+                    src={mainImages[mainMealsCurrent * 2]}
+                    alt={`Main meal ${mainMealsCurrent * 2 + 1}`}
+                    className="main-meal-image"
+                  />
+                )}
+                {mainImages[mainMealsCurrent * 2 + 1] && (
+                  <img
+                    src={mainImages[mainMealsCurrent * 2 + 1]}
+                    alt={`Main meal ${mainMealsCurrent * 2 + 2}`}
+                    className="main-meal-image"
+                  />
+                )}
+              </div>
+              <button
+                className="main-meal-prev"
+                onClick={prevMainMealsSlide}
+                aria-label="Previous main meal slide"
+              >
+                ❮
+              </button>
+              <button
+                className="main-meal-next"
+                onClick={nextMainMealsSlide}
+                aria-label="Next main meal slide"
+              >
+                ❯
+              </button>
+            </div>
+          )}
+        </div>
+      )}
+
+
+
+
+      {String(restaurantId) !== "8" && (
+        <div className="review-section">
+          <Parallax
+            bgImage={reviewSectionImage || "/images/slide5.jpg"}
+            strength={600}
+            className="testimonial-parallax"
+            bgImageStyle={{
+              backgroundAttachment: 'fixed',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          >
+            <div className="overlay-content-review-section">
+              <p className="subtitle"> {t('restaurantDetail.section_review.TASTY AND CRUNCHY')}</p>
+              <h1>{t('restaurantDetail.section_review.What People Say')}</h1>
+              <p className="body-text-gray-centered">
+                {t('restaurantDetail.section_review.description')}
+              </p>
+            </div>
+            <div className="grid-3">
+              {(() => {
+                const restaurantData = require('../../json/restaurant.json');
+                const restaurant = restaurantData.restaurants.find(r => String(r.id) === String(restaurantId));
+                if (!restaurant || !restaurant.reviews) return null;
+                return restaurant.reviews.map((review, index) => (
+                  <div className="card" key={index}>
+                    <p className="card-text">{review.comment}</p>
+                    <hr className="hr" />
+                    <div className="flex-row">
+                      <img
+                        alt={`Portrait of ${review.name}`}
+                        className="avatar"
+                        src={review.imagepeple}
+                        width="48"
+                        height="48"
+                      />
+                      <div>
+                        <p className="name">{review.name}</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ));
-            })()}
-          </div>
-        </Parallax>
-      </div>
+                ));
+              })()}
+            </div>
+          </Parallax>
+        </div>
+      )}
 
-      <div className="Page2">
-        <div className="our-desserts">
-          <p className="subtitle">{t('restaurantDetail.section_dessert.TASTY AND CRUNCHY')}</p>
-          <h1 className="title">{sectionTitles.dessert}</h1>
-          <p className="description">
-            {t('restaurantDetail.section_dessert.description')}
-          </p>
-        </div>
-        <div className="dessert-carousel">
-          <div className={`dessert-slide ${dessertAnimationClass}`}>
-            {dessertImages[dessertCurrent * 2] && (
-              <img
-                src={dessertImages[dessertCurrent * 2]}
-                alt={`Dessert ${dessertCurrent * 2 + 1}`}
-                className="dessert-image"
-              />
-            )}
-            {dessertImages[dessertCurrent * 2 + 1] && (
-              <img
-                src={dessertImages[dessertCurrent * 2 + 1]}
-                alt={`Dessert ${dessertCurrent * 2 + 2}`}
-                className="dessert-image"
-              />
-            )}
+      {String(restaurantId) !== "8" && (
+        <div className="Page2">
+          <div className="our-desserts">
+            <p className="subtitle">{t('restaurantDetail.section_dessert.TASTY AND CRUNCHY')}</p>
+            <h1 className="title">{sectionTitles.dessert}</h1>
+            <p className="description">
+              {t('restaurantDetail.section_dessert.description')}
+            </p>
           </div>
-          <button
-            className="dessert-prev"
-            onClick={prevDessertSlide}
-            aria-label="Previous dessert slide"
-          >
-            ❮
-          </button>
-          <button
-            className="dessert-next"
-            onClick={nextDessertSlide}
-            aria-label="Next dessert slide"
-          >
-            ❯
-          </button>
+          {String(restaurantId) === "7" ? (
+            <div className="dessert-carousel">
+              <div className={`dessert-slide ${dessertAnimationClass}`}>
+                {dessertImages[dessertCurrent] && (
+                  <img
+                    src={dessertImages[dessertCurrent]}
+                    alt={`Dessert ${dessertCurrent + 1}`}
+                    className="dessert-image-fullwidth"
+                  />
+                )}
+              </div>
+              <button
+                className="dessert-prev"
+                onClick={prevDessertSlide}
+                aria-label="Previous dessert slide"
+              >
+                ❮
+              </button>
+              <button
+                className="dessert-next"
+                onClick={nextDessertSlide}
+                aria-label="Next dessert slide"
+              >
+                ❯
+              </button>
+            </div>
+          ) : (
+            <div className="dessert-carousel">
+              <div className={`dessert-slide ${dessertAnimationClass}`}>
+                {dessertImages[dessertCurrent * 2] && (
+                  <img
+                    src={dessertImages[dessertCurrent * 2]}
+                    alt={`Dessert ${dessertCurrent * 2 + 1}`}
+                    className="dessert-image"
+                  />
+                )}
+                {dessertImages[dessertCurrent * 2 + 1] && (
+                  <img
+                    src={dessertImages[dessertCurrent * 2 + 1]}
+                    alt={`Dessert ${dessertCurrent * 2 + 2}`}
+                    className="dessert-image"
+                  />
+                )}
+              </div>
+              <button
+                className="dessert-prev"
+                onClick={prevDessertSlide}
+                aria-label="Previous dessert slide"
+              >
+                ❮
+              </button>
+              <button
+                className="dessert-next"
+                onClick={nextDessertSlide}
+                aria-label="Next dessert slide"
+              >
+                ❯
+              </button>
+            </div>
+          )}
         </div>
-      </div>
+      )}
 
     </div>
   );

@@ -19,7 +19,7 @@ const BookTable = () => {
                     <h1>Liên hệ đặt bàn</h1>
                     <div style={{ display: 'flex',flexDirection: 'column' ,alignItems: 'center', justifyContent: 'center', gap: '20px', marginBottom: '20px', fontSize: '18px', color:'white' }}>
                         <div>Vui lòng liên hệ với Zalo: {zaloPhone}</div>
-                        <p>Scan mã này để liên hệ đạt bàn</p>
+                        <p>Scan mã này để liên hệ đặt bàn</p>
                         <img src={qrCodeUrl} alt="Zalo QR Code" style={{ height: '150px', width: '150px' }} />
                         <a href={zaloLink} target="_blank" rel="noopener noreferrer">
                             <button type="button">Chuyển sang Zalo</button>

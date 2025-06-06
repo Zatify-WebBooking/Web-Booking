@@ -71,7 +71,7 @@ const ViewMenu = () => {
       {items.map(item => (
         <div key={item.Ma_ThucDon} className="item">
           <img
-            src={item.Anh || `https://via.placeholder.com/400x250?text=${encodeURIComponent(item.Ten)}`}
+            src={item.Anh || `https://via.placeholder.com/800x500?text=${encodeURIComponent(item.Ten)}`}
             alt={item.Ten}
           />
           <div className="item-content">
@@ -94,6 +94,23 @@ const ViewMenu = () => {
     else if (type === 'main') className = 'main-meal-image-list';
     else if (type === 'dessert') className = 'dessert-image-list';
 
+    if (String(restaurantId) === "7") {
+      className = 'fullwidth-image-list';
+      return (
+        <div className={className}>
+          {images.map((img, index) => (
+            <img
+              key={index}
+              src={img}
+              alt={`Image ${index + 1}`}
+              className="fullwidth-image"
+              style={{ width: '100%' }}
+            />
+          ))}
+        </div>
+      );
+    }
+
     return (
       <div className={className}>
         {images.map((img, index) => (
@@ -110,11 +127,13 @@ const ViewMenu = () => {
   return (
     <div className="Viewmenu">
       {/* Starters */}
-      <div className="our-starters">
-        <p className="subtitle">{t('restaurantDetail.section_starters.TASTY AND CRUNCHY')}</p>
-        <h2 className="title">{sectionTitles.starters}</h2>
-        {renderImages(startersImages, 'starters')}
-      </div>
+      {String(restaurantId) !== "8" && (
+        <div className="our-starters">
+          <p className="subtitle">{t('restaurantDetail.section_starters.TASTY AND CRUNCHY')}</p>
+          <h2 className="title">{sectionTitles.starters}</h2>
+          {renderImages(startersImages, 'starters')}
+        </div>
+      )}
 
       {/* Main Meals */}
       <div className="our-main-meals">
@@ -124,13 +143,15 @@ const ViewMenu = () => {
       </div>
 
       {/* Desserts */}
-      <div className="our-desserts">
-        <p className="subtitle">{t('restaurantDetail.section_dessert.TASTY AND CRUNCHY')}</p>
-        <h2 className="title">{sectionTitles.dessert}</h2>
-        {renderImages(dessertImages, 'dessert')}
-      </div>
+      {String(restaurantId) !== "8" && (
+        <div className="our-desserts">
+          <p className="subtitle">{t('restaurantDetail.section_dessert.TASTY AND CRUNCHY')}</p>
+          <h2 className="title">{sectionTitles.dessert}</h2>
+          {renderImages(dessertImages, 'dessert')}
+        </div>
+      )}
     </div>
   );
 };
 
-export default ViewMenu
+export default ViewMenu;

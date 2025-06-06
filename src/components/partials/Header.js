@@ -1,10 +1,11 @@
 import '../../styles/restaurant/main.css';
 import { useTranslation } from 'react-i18next';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import restaurantData from '../../json/restaurant.json';
 
 function Header() {
   const { i18n } = useTranslation();
+  const navigate = useNavigate();
 
   const location = useLocation();
   const pathSegments = location.pathname.split('/');
@@ -25,6 +26,11 @@ function Header() {
       : '/' + restaurant.logo
     : 'https://yoyobeer.com.vn/wp-content/uploads/2023/11/logo-1400x764.png';
 
+  // Back button click handler
+  const handleBackClick = () => {
+    navigate('/');
+  };
+
   // Language toggle function
   const toggleLanguage = () => {
     i18n.changeLanguage(i18n.language === 'vi' ? 'en' : 'vi');
@@ -41,15 +47,32 @@ function Header() {
           <a href={restaurantId ? `/booking/${restaurantId}` : '/booking'}>Reservation</a>
           <a href={restaurantId ? `/galleryrestaurant/${restaurantId}` : '/galleryrestaurant'}>Gallery</a>
         </nav>
-        <button onClick={toggleLanguage} className="lang-btn" title="Change language">
-          <img
-            src={i18n.language === 'vi'
-              ? 'https://i.pinimg.com/736x/3f/aa/0b/3faa0b3d7207fcb4f8bfc91dfa55d0be.jpg'
-              : 'https://i.pinimg.com/736x/d4/db/01/d4db01fc4ca4b584563f32f75e032c2a.jpg'}
-            alt={i18n.language === 'vi' ? 'English' : 'Tiếng Việt'}
-            className="flag-icon"
-          />
-        </button>
+        <div
+          title="Quay lại trang BookingWeb"
+          style={{
+            color: 'black',
+            position: 'absolute',
+            left: '32px',
+            top: '50%',
+            transform: 'translateY(-50%)',
+            zIndex: 20,
+            cursor: 'pointer',
+            width: '44px',
+            height: '44px',
+            borderRadius: '8px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            transition: 'background 0.2s',
+            border: 'none',
+          }}
+          onClick={handleBackClick}
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="20" height="20" rx="4" fill="none" stroke="#1ccfc9" strokeWidth="2"></rect>
+            <polyline points="13,8 9,12 13,16" fill="none" stroke="#1ccfc9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></polyline>
+          </svg>
+        </div>
       </div>
     </header>
   );

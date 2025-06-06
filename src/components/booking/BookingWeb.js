@@ -170,13 +170,13 @@ function BookingWeb() {
     setPage((prev) => (prev === getTotalPages() - 1 ? 0 : prev + 1));
   };
 
-  useEffect(() => {
-    if (filteredList.length === 0) return;
-    const timer = setTimeout(() => {
-      setPage((prev) => (prev === filteredList.length - 1 ? 0 : prev + 1));
-    }, 3000); // chuyển slide sau 3s
-    return () => clearTimeout(timer);
-  }, [page, filteredList.length]);
+  // useEffect(() => {
+  //   if (filteredList.length === 0) return;
+  //   const timer = setTimeout(() => {
+  //     setPage((prev) => (prev === filteredList.length - 1 ? 0 : prev + 1));
+  //   }, 3000); // chuyển slide sau 3s
+  //   return () => clearTimeout(timer);
+  // }, [page, filteredList.length]);
 
   // Detect direction when user click
   const handleSetPage = (idx) => {
@@ -599,7 +599,6 @@ function BookingWeb() {
         <div
           className="card-container-carousel"
           style={{
-            transform: (activeTab === 'hotel' || activeTab === 'tourist') ? 'none' : `translateX(-${page * 298}px)`,
             display: 'flex',
             justifyContent: 'center',
             gap: 24,
@@ -620,27 +619,24 @@ function BookingWeb() {
               );
             })
             .slice(
-              (activeTab === 'hotel' || activeTab === 'tourist') ? 0 : page * pageSize,
-              (activeTab === 'hotel' || activeTab === 'tourist') ? undefined : page * pageSize + pageSize
+              page * pageSize,
+              page * pageSize + pageSize
             )
             .map((item, idx) => (
               <div
                 key={item.id || idx}
-                className={`card carousel-card${slideDirection ? ' slide-' + slideDirection : ''}`}
+                className="card carousel-card"
                 style={{ cursor: 'pointer' }}
                 onClick={() => handleCardClick(item.id)}
-                onAnimationEnd={() => setSlideDirection(null)}
               >
                 <img
                   src={item.image}
                   alt={item.name || 'Category'}
                 />
                 <div className="carousel-card-overlay"></div>
-                {/* Đã bỏ carousel-card-title để không còn nền màu và không còn tên hiển thị */}
               </div>
             ))}
         </div>
-        {/* Pagination dots chỉ là các chấm tròn */}
         <div className="pagination-dots-only" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 24, marginBottom: 8 }}>
           <div style={{ background: '#fafafa', borderRadius: 32, padding: '4px 14px', display: 'flex', alignItems: 'center', boxShadow: '0 2px 8px #0001' }}>
             <button
@@ -982,47 +978,6 @@ function BookingWeb() {
         </div>
       </section>
       {/* From The Blog Section */}
-      <section className="blog-section">
-        <h2>Tin tức mới nhất</h2>
-        <div className="divider"></div>
-        <p className="subtitle">Tin tức & Chia sẻ</p>
-        <div className="blog-grid">
-          {/* Card 1 */}
-          <article className="blog-card">
-            <img src="https://thegioiclub.com/Uploads/files/8up/nhahanggarden5-22.jpg"
-              alt="Woman with sunglasses smiling in sunlight with trees and buildings in background" />
-            <div className="overlay">
-              <span className="badge">Tips</span>
-              <time dateTime="2024-02-01">February 1, 2024</time>
-              <h3>Experience In The Spotlight</h3>
-              <p>Nam nisi lacus, dignissim ac tristique ut, scelerisque eu massa. Vestibulum ligula nunc, rutrum in...</p>
-            </div>
-          </article>
-          {/* Card 2 */}
-          <article className="blog-card">
-            <img src="https://storage.googleapis.com/a1aa/image/36578714-c112-4a15-894a-b4228322bdb8.jpg"
-              alt="Cozy living room with plants and sofa near window with natural light" />
-            <div className="overlay">
-              <span className="badge">Room Design</span>
-              <time dateTime="2024-01-22">January 22, 2024</time>
-              <h3>7 Big Ideas For Small Places</h3>
-              <p>Nam nisi lacus, dignissim ac tristique ut, scelerisque eu massa. Vestibulum ligula nunc, rutrum in...</p>
-            </div>
-          </article>
-          {/* Card 3 */}
-          <article className="blog-card">
-            <img src="https://storage.googleapis.com/a1aa/image/05352976-bfc3-4a2a-37cb-3b7813f48cfb.jpg"
-              alt="View of Paris cityscape with Eiffel Tower in background under cloudy sky" />
-            <div className="overlay">
-              <span className="badge">Tips</span>
-              <time dateTime="2024-01-01">January 1, 2024</time>
-              <h3>Top 20 Places to Stay in Europe</h3>
-              <p>Dignissim ac tristique ut, scelerisque eu massa. Vestibulum ligula nunc, rutrum in malesuada vitae, tempus...</p>
-            </div>
-          </article>
-        </div>
-        <button className="view-blog-button" type="button">Xem tất cả bài viết</button>
-      </section>
       {/* Footer Section (HTML/CSS from user) */}
       <FooterBooking />
       {/* Scroll to Top Button */}

@@ -38,6 +38,27 @@
   box-sizing: border-box;
 }
 
+/* Full width image list for restaurant id 7 */
+.Viewmenu .fullwidth-image-list {
+  display: flex;
+  flex-direction: column;
+  max-width: 1500px;
+  margin: 0 auto;
+  gap: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Viewmenu .fullwidth-image-list img.fullwidth-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  margin: 0 0 10px 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* Responsive: stack images vertically on small screens */
 @media (max-width: 600px) {
   .Viewmenu .starters-image-list img,

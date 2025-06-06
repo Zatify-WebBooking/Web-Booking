@@ -54,10 +54,10 @@ const BookRoom = () => {
                     }}>
                         <div className="book-table-container" style={{ textAlign: 'center' }}>
                             <p className="subtitle">SẠCH SẼ VÀ TIỆN NGHI</p>
-                            <h1>Liên hệ đạt phòng </h1>
+                            <h1>Liên hệ đặt phòng </h1>
                             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '20px', marginBottom: '20px', fontSize: '18px', color: 'white' }}>
                                 <div>Vui lòng liên hệ với Zalo: {zaloPhone}</div>
-                                <p>Scan mã này để liên hệ đạt phòng</p>
+                                <p>Scan mã này để liên hệ đặt phòng</p>
                                 <img src={qrCodeUrl} alt="Zalo QR Code" style={{ height: '150px', width: '150px' }} />
                                 <a href={zaloLink} target="_blank" rel="noopener noreferrer">
                                     <button type="button">Chuyển sang Zalo</button>
