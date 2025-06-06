@@ -101,6 +101,26 @@ const HotelDetail = () => {
 
   const currentCards = elecmentorCards.slice(currentPage * cardsPerPage, (currentPage + 1) * cardsPerPage);
 
+  // New state and effect for card image carousel
+  const [cardImageIndexes, setCardImageIndexes] = useState({});
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCardImageIndexes(prevIndexes => {
+        const newIndexes = { ...prevIndexes };
+        currentCards.forEach((card, idx) => {
+          if (card.images && card.images.length > 1) {
+            newIndexes[idx] = (prevIndexes[idx] + 1) % card.images.length || 0;
+          } else {
+            newIndexes[idx] = 0;
+          }
+        });
+        return newIndexes;
+      });
+    }, 2000);
+    return () => clearInterval(interval);
+  }, [currentCards]);
+
   return (
     <div className="hotel-root container">
       <HotelAside
@@ -132,35 +152,40 @@ const HotelDetail = () => {
               ❮
             </button>
           )}
-          {currentCards.map((card, index) => (
-            <article className="card-elecmentor" key={index}>
-              <img
-                alt={card.title}
-                className="card-image-elecmentor"
-                src={card.image}
-              />
-              <div className="card-content-elecmentor">
-                <div className="card-header-elecmentor">
-                  <h2 className="title-font-elecmentor card-title-elecmentor">{card.title}</h2>
-                  <p className="price-elecmentor">
-                    <span className="price-from-elecmentor">from</span>
-                    {card.price}
-                  </p>
+          {currentCards.map((card, index) => {
+            const imageIndex = cardImageIndexes[index] || 0;
+            const images = card.images && card.images.length > 0 ? card.images : [card.image];
+            const currentImage = images[imageIndex];
+            return (
+              <article className="card-elecmentor" key={index}>
+                <img
+                  alt={card.title}
+                  className="card-image-elecmentor"
+                  src={currentImage}
+                  style={{ transition: 'opacity 0.8s ease-in-out' }}
+                />
+                <div className="card-content-elecmentor">
+                  <div className="card-header-elecmentor">
+                    <h2 className="title-font-elecmentor card-title-elecmentor">{card.title}</h2>
+                    <p className="price-elecmentor">
+                      <span className="price-from-elecmentor">from</span>
+                      {card.price}
+                    </p>
+                  </div>
+                  <p className="info-elecmentor">{card.info}</p>
+                  <p className="description-elecmentor">{card.description}</p>
+                  <button
+                    aria-label={`${t('hotelDetail.rooms.ilSole.ariaLabel')} ${t(`hotelDetail.rooms.${card.title}.title`)}`}
+                    className="btn-book-elecmentor"
+                    onClick={handleBookingClick}
+                  >
+                    {t('hotelDetail.rooms.Phong.button')}
+                    <span className="btn-icon-elecmentor">+</span>
+                  </button>
                 </div>
-                <p className="info-elecmentor">{card.info}</p>
-                <p className="description-elecmentor">{card.description}</p>
-                <button
-                  aria-label={`${t('hotelDetail.rooms.ilSole.ariaLabel')} ${t(`hotelDetail.rooms.${card.title}.title`)}`}
-                  className="btn-book-elecmentor"
-                  onClick={handleBookingClick}
-                >
-                  {t('hotelDetail.rooms.Phong.button')}
-                  <span className="btn-icon-elecmentor">+</span>
-                </button>
-
-              </div>
-            </article>
-          ))}
+              </article>
+            );
+          })}
           {totalPages > 1 && (
             <button onClick={handleNext} disabled={currentPage === totalPages - 1} className="btn-next">
               ❯

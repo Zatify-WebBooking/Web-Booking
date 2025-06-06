@@ -37,7 +37,7 @@ const Footer = () => {
           <h3 className="footer-title">Follow Me</h3>
           <p className="footer-text">
             Để cập nhật những tin tức và thông báo mới nhất, hãy theo dõi chúng tôi trên Facebook:
-            <span className="footer-strong">@QodeInteractive.com</span>
+            <span className="footer-strong">https://www.facebook.com/trang.nguyen.915559/</span>
           </p>
         </div>
         <div className="footer-col footer-col-center">

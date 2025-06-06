@@ -1,0 +1,33 @@
+.gallery-restaurant {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+  max-width: 70%;
+  margin: 0 auto;
+  margin: 10vh auto;
+}
+
+.gallery-row {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+.gallery-row.single-image {
+  justify-content: center;
+}
+
+.gallery-row.single-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+    aspect-ratio: 16 / 9;
+}
+
+.gallery-row.two-images img {
+  width: calc(50% - 10px);
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}

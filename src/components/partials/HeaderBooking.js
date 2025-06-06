@@ -1,6 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import { useTranslation } from 'react-i18next';
+import { useNavigate, useLocation } from "react-router-dom";
 import "../../styles/bookingweb/booking.css";
 
 // Font Awesome CDN for icons
@@ -11,59 +10,80 @@ document.head.appendChild(fontAwesomeLink);
 
 const NAV_ITEMS = [
   {
-    label: "Restaurant",
+    label: "Nhà hàng",
     dropdown: [
       { label: "Yoyo Central Hồ Con Rùa", href: "/restaurant/1" },
       { label: "Dragon Palace", href: "/restaurant/2" },
-      { label: "ChillHouse 197 Hai Bà Trưng", href: "/restaurant/3" },
-      { label: "Yoyo Garden Nam Kỳ Khởi Nghĩa", href: "/restaurant/4" },
-      { label: "Lalaland Bình Khánh", href: "/restaurant/5" },
-      { label: "Paris Garden", href: "/restaurant/6" },
-      { label: "LonDon Conner", href: "/restaurant/7" },
-      { label: "Casa Cafe Hồ Con Rùa", href: "/restaurant/8" },
+      { label: "Yoyo Garden Nam Kỳ Khởi Nghĩa", href: "/restaurant/3" },
+      { label: "Lalaland Bình Khánh", href: "/restaurant/4" },
+      { label: "Paris Garden", href: "/restaurant/5" },
+      { label: "LonDon Conner", href: "/restaurant/6" },
     ],
   },
   {
-    label: "Hotel",
+    label: "Khách sạn",
     dropdown: [
-      { label: "Hotel Seava", href: "/hotel/1" },
-      { label: "Hotel Minera", href: "/hotel/2" },
-      { label: "Hotel Ktown & Wonderland", href: "/hotel/3" },
-      { label: "Hotel Radison", href: "/hotel/4" },
+      { label: "Seava", href: "/hotel/1" },
+      { label: "Minera", href: "/hotel/2" },
+      { label: "Ktown & Wonderland", href: "/hotel/3" },
+      { label: "Radison", href: "/hotel/4" },
     ],
   },
   {
-    label: "Tourist",
-    dropdown: [
-      { label: "Nova World Hồ Tràm", href: "/booking/history" },
-      { label: "Nova World Phan Thiết", href: "/booking/manage" },
-    ],
+    label: "Du lịch",
+    dropdown: null
   },
   {
-    label: "Contact",
-    dropdown: null, // Remove dropdown for Contact
+    label: "Liên hệ",
+    dropdown: null,
+    href: "/contact-info"
   },
 ];
 
 const HeaderBooking = () => {
-  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
-  const cartCount = 0; 
-
-  // Hàm đổi ngôn ngữ
-  const handleChangeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-  };
+  const location = useLocation();
+  const showBackBtn = window.location.pathname === '/contact-info';
 
   return (
     <header className="header-booking-header">
       <nav className="header-booking-nav">
-        <div className="header-booking-nav-container">
+        <div className="header-booking-nav-container" style={{ position: 'relative' }}>
+          {/* Back button for Contact page */}
+          {showBackBtn && (
+            <button
+              onClick={() => {
+                if (location.state && location.state.from === 'tourist') {
+                  navigate('/tourist');
+                } else {
+                  navigate('/');
+                }
+              }}
+              style={{
+                position: 'absolute',
+                right: 32,
+                top: 24,
+                background: '#1877f3',
+                color: '#fff',
+                border: 'none',
+                borderRadius: 8,
+                padding: '10px 28px',
+                fontWeight: 700,
+                fontSize: 18,
+                cursor: 'pointer',
+                boxShadow: '0 2px 8px #0002',
+                transition: 'background 0.2s',
+                zIndex: 1000
+              }}
+            >
+              Trở về
+            </button>
+          )}
           {/* Left side */}
           <div className="header-booking-left-side">
             <div className="header-booking-logo">
-              <img src="https://diendantructuyen.com/wp-content/uploads/2024/09/dia-chi-vector-2.jpg" alt="Red location pin icon" />
-              <span>listeo</span>
+              <img src="https://novaworld.info/wp-content/uploads/2023/09/global-x-logo.jpeg" alt="Red location pin icon" />
+              <span>GLoBal X</span>
             </div>
             <ul className="header-booking-nav-links">
               {NAV_ITEMS.map((item) => (
@@ -71,13 +91,31 @@ const HeaderBooking = () => {
                   key={item.label}
                   className={item.dropdown ? "dropdown" : ""}
                 >
-                  <span className="dropdown-btn">
-                    <span style={{ marginLeft: 8, textTransform: 'capitalize' }}>{t(`${item.label.toLowerCase()}`)}</span>
-                    {item.dropdown && (
-                      <i className="fas fa-chevron-down" style={{ fontSize: 13, marginLeft: 4 }}></i>
-                    )}
-                  </span>
-                  {item.dropdown && (
+                  {item.label === "Liên hệ" ? (
+                    <span
+                      className="dropdown-btn"
+                      style={{ cursor: 'pointer' }}
+                      onClick={() => navigate(item.href)}
+                    >
+                      <span style={{ marginLeft: 8 }}>{item.label}</span>
+                    </span>
+                  ) : item.label === "Du lịch" ? (
+                    <span
+                      className="dropdown-btn"
+                      style={{ cursor: 'pointer' }}
+                      onClick={() => navigate('/tourist')}
+                    >
+                      <span style={{ marginLeft: 8 }}>{item.label}</span>
+                    </span>
+                  ) : (
+                    <span className="dropdown-btn">
+                      <span style={{ marginLeft: 8 }}>{item.label}</span>
+                      {item.dropdown && (
+                        <i className="fas fa-chevron-down" style={{ fontSize: 13, marginLeft: 4 }}></i>
+                      )}
+                    </span>
+                  )}
+                  {item.dropdown && item.label !== "Tourist" && (
                     <ul className="dropdown-menu">
                       {item.dropdown.map((sub) => (
                         <li key={sub.label}>
@@ -88,6 +126,11 @@ const HeaderBooking = () => {
                                 e.preventDefault();
                                 const id = sub.href.split("/").pop();
                                 navigate(`/restaurant/${id}`);
+                              }
+                              if (item.label === "Hotel") {
+                                e.preventDefault();
+                                const id = sub.href.split("/").pop();
+                                navigate(`/hotel/${id}`);
                               }
                             }}
                           >
@@ -110,4 +153,3 @@ const HeaderBooking = () => {
 };
 
 export default HeaderBooking;
-

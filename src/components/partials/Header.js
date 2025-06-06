@@ -39,6 +39,7 @@ function Header() {
           <a href={restaurantId ? `/viewmenu/${restaurantId}` : '/viewmenu'}>Menu</a>
           <a href={restaurantId ? `/about/${restaurantId}` : '/about'}>About</a>
           <a href={restaurantId ? `/booking/${restaurantId}` : '/booking'}>Reservation</a>
+          <a href={restaurantId ? `/galleryrestaurant/${restaurantId}` : '/galleryrestaurant'}>Gallery</a>
         </nav>
         <button onClick={toggleLanguage} className="lang-btn" title="Change language">
           <img

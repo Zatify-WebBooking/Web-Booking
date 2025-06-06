@@ -1,823 +1,1298 @@
-{
-  "restaurants": [
-    {
-      "id": 1,
-      "name": "Yoyo Central Hồ Con Rùa",
-      "logo": "/images/yoyohoconrua/logo.jpg",
-      "image": "https://th.bing.com/th/id/R.771709bddfe196a2e8e46c64538c110d?rik=z4FfwXPwSCsUsw&riu=http%3a%2f%2fbookingservice.com.vn%2fupload%2fimages%2fyoyo-central-ho-con-rua-quan-3-14.jpg&ehk=g1zMASbFm2m0jhWfeSMUtAqLXb7EI6D%2bSMlkMw%2bQS00%3d&risl=&pid=ImgRaw&r=0",
-      "address": "2 Bis Nguyễn Thị Minh Khai, Phường Đa Kao, Quận 1, TP.HCM",
-      "phone": "0909.944.879",
-      "cuisine": "Italian, Beer Garden",
-      "opening_hours": "10:00 - 23:00",
-      "description": "Yoyo không chỉ là một chuỗi nhà hàng – cà phê, mà là 'tọa độ bung mood' dành cho mọi cuộc vui! Không gian tại Yoyo được thiết kế theo phong cách hiện đại, trẻ trung và đổi vibe theo từng chi nhánh – từ chill nhẹ đến cực cháy. Dù bạn cần nơi tụ họp bạn bè, spot sống ảo, hay chỉ đơn giản là 'đi trốn deadline', Yoyo luôn có một góc dành cho bạn. Menu đậm chất fusion với món ăn Á – Âu, đồ uống xịn từ trà trái cây trendy đến cocktail chill hết sẩy. Tới Yoyo, là tới nơi kết nối vị giác, cảm xúc và những phút giây sống thật với chính mình.",
-      "descriptionbirthday": "Sinh nhật phải chất – phải khác biệt – phải quẩy! Yoyo chính là sân chơi hoàn hảo cho một buổi sinh nhật đáng nhớ, không cần giới hạn concept hay giới hạn vui. Muốn ấm áp bên gia đình? Có! Muốn 'bung lụa' cùng hội bạn thân? Có luôn! Với không gian sân vườn, phòng riêng hay khu vực event lung linh, Yoyo giúp bạn biến mọi ý tưởng thành tiệc thật. Gói trang trí siêu linh hoạt, thực đơn tiệc đủ kiểu vị, đội ngũ hỗ trợ tận tâm từ đầu đến lúc cắt bánh. Yoyo – nơi bạn thổi nến, thổi bay mọi giới hạn và chill tới bến trong ngày đặc biệt nhất của mình!",
-      "descriptionwedding": "Yoyo không làm cưới kiểu truyền thống – Yoyo làm tiệc cưới theo đúng chất của bạn! Từ đám cưới sân vườn cực tình, đến không gian ấm cúng hay tối giản hiện đại, Yoyo có đủ không gian và chất riêng để ngày trọng đại trở nên 'đúng vibe – đúng gu'. Trang trí cá nhân hóa theo chủ đề, thực đơn chọn lọc riêng, âm thanh ánh sáng 'cháy nhẹ' đúng gu cưới chill – tất cả được team Yoyo lo tận răng. Dù là đám cưới thân mật hay một bữa tiệc yêu thương náo nhiệt, Yoyo sẽ cùng bạn tạo nên một ngày bùng nổ cảm xúc và đầy ắp khoảnh khắc nhớ hoài không quên!",
-      "serviceImages": {
-        "birthday": [
-          "/images/yoyonamkikhoinghia/birthday1.jpg",
-          "/images/yoyonamkikhoinghia/birthday2.jpg",
-          "/images/yoyonamkikhoinghia/birthday3.jpg",
-          "/images/yoyonamkikhoinghia/birthday4.jpg"
+  {
+    "restaurants": [
+      {
+        "id": 1,
+        "name": "Yoyo Central Hồ Con Rùa",
+        "logo": "/images/yoyohoconrua/logo.jpg",
+        "image": "/images/yoyohoconrua/image.jpg",
+        "address": "2 Bis Nguyễn Thị Minh Khai, Phường Đa Kao, Quận 1, TP.HCM",
+        "phone": "0909.944.879",
+        "cuisine": "Italian, Beer Garden",
+        "opening_hours": "10:00 - 23:00",
+        "description": "Yoyo không chỉ là một chuỗi nhà hàng – cà phê, mà là 'tọa độ bung mood' dành cho mọi cuộc vui! Không gian tại Yoyo được thiết kế theo phong cách hiện đại, trẻ trung và đổi vibe theo từng chi nhánh – từ chill nhẹ đến cực cháy. Dù bạn cần nơi tụ họp bạn bè, spot sống ảo, hay chỉ đơn giản là 'đi trốn deadline', Yoyo luôn có một góc dành cho bạn. Menu đậm chất fusion với món ăn Á – Âu, đồ uống xịn từ trà trái cây trendy đến cocktail chill hết sẩy. Tới Yoyo, là tới nơi kết nối vị giác, cảm xúc và những phút giây sống thật với chính mình.",
+        "reviews": [
+          {
+            "comment": "Nhà hàng Yoyo Hồ Con Rùa có không gian thoáng mát, món ăn trình bày đẹp và hương vị tuyệt vời. Rất đáng để trải nghiệm!",
+            "imagepeple": "https://th.bing.com/th/id/OIP.0pfJd7ecH0Hw39AT8tFNnwHaHa?r=0&rs=1&pid=ImgDetMain",
+            "name": "Mai Hoàng Nguyễn"
+          },
+          {
+            "comment": "Dịch vụ chuyên nghiệp, nhân viên thân thiện và món ăn ngon miệng. Tôi chắc chắn sẽ quay lại Yoyo Hồ Con Rùa.",
+            "imagepeple": "https://cdn.tuoitre.vn/thumb_w/1200/471584752817336320/2024/12/22/tranh-biem-hoa-chan-dung-nguyen-xuan-son-rafaelson-tuyen-viet-nam-2-1734847958049968490147.jpg",
+            "name": "An Nguyễn"
+          },
+          {
+            "comment": "Một trong những nhà hàng đáng thử nhất ở Sài Gòn! Không gian gần Hồ Con Rùa rất lý tưởng cho buổi tối thư giãn.",
+            "imagepeple": "https://scontent.fsgn5-5.fna.fbcdn.net/v/t39.30808-6/489855799_1334562491159559_3056431488451717655_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=JrVLHfFdvr0Q7kNvwEzU0JJ&_nc_oc=AdmJGoeFsI997gppTXJmihaNFTOw6n0dBdYfg2TjSma2ak3Hqjp9W-7kCWt8RUsSC38&_nc_zt=23&_nc_ht=scontent.fsgn5-5.fna&_nc_gid=xOwQCKZ9U8x6NS_VdKhb4w&oh=00_AfO8epg5VxHIx4kuggc2Tzv_iFjPvw1PRDDFP41B6rLE5A&oe=6848859E",
+            "name": "Hoàng Phúc"
+          }
         ],
-        "wedding": [
-          "/images/yoyonamkikhoinghia/wedding1.jpg",
-          "/images/yoyonamkikhoinghia/wedding2.jpg",
-          "/images/yoyonamkikhoinghia/wedding3.jpg"
-        ],
-        "about": [
+        "descriptionbirthday": "Sinh nhật phải chất – phải khác biệt – phải quẩy! Yoyo chính là sân chơi hoàn hảo cho một buổi sinh nhật đáng nhớ, không cần giới hạn concept hay giới hạn vui. Muốn ấm áp bên gia đình? Có! Muốn 'bung lụa' cùng hội bạn thân? Có luôn! Với không gian sân vườn, phòng riêng hay khu vực event lung linh, Yoyo giúp bạn biến mọi ý tưởng thành tiệc thật. Gói trang trí siêu linh hoạt, thực đơn tiệc đủ kiểu vị, đội ngũ hỗ trợ tận tâm từ đầu đến lúc cắt bánh. Yoyo – nơi bạn thổi nến, thổi bay mọi giới hạn và chill tới bến trong ngày đặc biệt nhất của mình!",
+        "descriptionwedding": "Yoyo không làm cưới kiểu truyền thống – Yoyo làm tiệc cưới theo đúng chất của bạn! Từ đám cưới sân vườn cực tình, đến không gian ấm cúng hay tối giản hiện đại, Yoyo có đủ không gian và chất riêng để ngày trọng đại trở nên 'đúng vibe – đúng gu'. Trang trí cá nhân hóa theo chủ đề, thực đơn chọn lọc riêng, âm thanh ánh sáng 'cháy nhẹ' đúng gu cưới chill – tất cả được team Yoyo lo tận răng. Dù là đám cưới thân mật hay một bữa tiệc yêu thương náo nhiệt, Yoyo sẽ cùng bạn tạo nên một ngày bùng nổ cảm xúc và đầy ắp khoảnh khắc nhớ hoài không quên!",
+        "galleryImage": [
           "/images/yoyonamkikhoinghia/about1.jpg",
           "/images/yoyonamkikhoinghia/about2.jpg",
           "/images/yoyonamkikhoinghia/about3.jpg",
           "/images/yoyonamkikhoinghia/about4.jpg",
           "/images/yoyonamkikhoinghia/about5.jpg",
-          "/images/yoyonamkikhoinghia/about6.jpg"
+          "/images/yoyonamkikhoinghia/about6.jpg",
+          "/images/yoyonamkikhoinghia/birthday1.jpg",
+          "/images/yoyonamkikhoinghia/birthday2.jpg",
+          "/images/yoyonamkikhoinghia/birthday3.jpg",
+          "/images/yoyonamkikhoinghia/birthday4.jpg"
+        ],
+        "serviceImages": {
+          "birthday": [
+            "/images/yoyonamkikhoinghia/birthday1.jpg",
+            "/images/yoyonamkikhoinghia/birthday2.jpg",
+            "/images/yoyonamkikhoinghia/birthday3.jpg",
+            "/images/yoyonamkikhoinghia/birthday4.jpg"
+          ],
+          "wedding": [
+            "/images/yoyonamkikhoinghia/wedding1.jpg",
+            "/images/yoyonamkikhoinghia/wedding2.jpg",
+            "/images/yoyonamkikhoinghia/wedding3.jpg"
+          ],
+          "about": [
+            "/images/yoyonamkikhoinghia/about1.jpg",
+            "/images/yoyonamkikhoinghia/about2.jpg",
+            "/images/yoyonamkikhoinghia/about3.jpg",
+            "/images/yoyonamkikhoinghia/about4.jpg",
+            "/images/yoyonamkikhoinghia/about5.jpg",
+            "/images/yoyonamkikhoinghia/about6.jpg"
+          ]
+        },
+        "rating": 4.2,
+        "sectionTitles": {
+          "starters": {
+            "en": "Yoyo Appetizers",
+            "vi": "Khai Vị Yoyo"
+          },
+          "mainMeals": {
+            "en": "Yoyo Main Meals",
+            "vi": "Món Chính Yoyo"
+          },
+          "desserts": {
+            "en": "Beer And Chill",
+            "vi": "Bia và Thư Giãn"
+          }
+        },
+        "slideImages": [
+          "/images/yoyohoconrua/slide1.jpg",
+          "/images/yoyohoconrua/slide2.jpg",
+          "/images/yoyohoconrua/slide3.jpg"
+        ],
+        "hero-section": [
+          "/images/yoyohoconrua/slide4.jpg"
+        ],
+        "review-section": [
+          "/images/yoyohoconrua/slide5.jpg"
+        ],
+        "startersImages": [
+          "/images/yoyohoconrua/monkhaivi.jpg"
+        ],
+        "mainImages": [
+          "/images/yoyohoconrua/mainmeal1.jpg",
+          "/images/yoyohoconrua/mainmeal2.jpg",
+          "/images/yoyohoconrua/mainmeal3.jpg",
+          "/images/yoyohoconrua/mainmeal4.jpg",
+          "/images/yoyohoconrua/mainmeal5.jpg",
+          "/images/yoyohoconrua/mainmeal6.jpg",
+          "/images/yoyohoconrua/mainmeal7.jpg",
+          "/images/yoyohoconrua/mainmeal8.jpg",
+          "/images/yoyohoconrua/mainmeal9.jpg",
+          "/images/yoyohoconrua/mainmeal10.jpg",
+          "/images/yoyohoconrua/mainmeal11.jpg",
+          "/images/yoyohoconrua/mainmeal12.jpg",
+          "/images/yoyohoconrua/mainmeal13.jpg",
+          "/images/yoyohoconrua/mainmeal14.jpg"
+        ],
+        "dessertImages": [
+          "/images/yoyohoconrua/beerandchill1.jpg",
+          "/images/yoyohoconrua/beerandchill2.jpg",
+          "/images/yoyohoconrua/beerandchill3.jpg",
+          "/images/yoyohoconrua/beerandchill4.jpg",
+          "/images/yoyohoconrua/beerandchill5.jpg",
+          "/images/yoyohoconrua/beerandchill6.jpg"
         ]
       },
-      "rating": 4.2,
-      "sectionTitles": {
-        "starters": {
-          "en": "Yoyo Appetizers",
-          "vi": "Khai Vị Yoyo"
-        },
-        "mainMeals": {
-          "en": "Yoyo Main Meals",
-          "vi": "Món Chính Yoyo"
-        },
-        "desserts": {
-          "en": "Beer And Chill",
-          "vi": "Bia và Thư Giãn"
-        }
-      },
-      "slideImages": [
-        "/images/yoyohoconrua/slide1.jpg",
-        "/images/yoyohoconrua/slide2.jpg",
-        "/images/yoyohoconrua/slide3.jpg"
-      ],
-      "hero-section": [
-        "/images/yoyohoconrua/slide4.jpg"
-      ],
-      "review-section": [
-        "/images/yoyohoconrua/slide5.jpg"
-      ],
-      "startersImages": [
-        "/images/yoyohoconrua/monkhaivi.jpg"
-      ],
-      "mainImages": [
-        "/images/yoyohoconrua/mainmeal1.jpg",
-        "/images/yoyohoconrua/mainmeal2.jpg",
-        "/images/yoyohoconrua/mainmeal3.jpg",
-        "/images/yoyohoconrua/mainmeal4.jpg",
-        "/images/yoyohoconrua/mainmeal5.jpg",
-        "/images/yoyohoconrua/mainmeal6.jpg",
-        "/images/yoyohoconrua/mainmeal7.jpg",
-        "/images/yoyohoconrua/mainmeal8.jpg",
-        "/images/yoyohoconrua/mainmeal9.jpg",
-        "/images/yoyohoconrua/mainmeal10.jpg",
-        "/images/yoyohoconrua/mainmeal11.jpg",
-        "/images/yoyohoconrua/mainmeal12.jpg",
-        "/images/yoyohoconrua/mainmeal13.jpg",
-        "/images/yoyohoconrua/mainmeal14.jpg"
-      ],
-      "dessertImages": [
-        "/images/yoyohoconrua/beerandchill1.jpg",
-        "/images/yoyohoconrua/beerandchill2.jpg",
-        "/images/yoyohoconrua/beerandchill3.jpg",
-        "/images/yoyohoconrua/beerandchill4.jpg",
-        "/images/yoyohoconrua/beerandchill5.jpg",
-        "/images/yoyohoconrua/beerandchill6.jpg"
-      ]
-    },
-    {
-      "id": 2,
-      "name": "Dragon Palace",
-      "logo": "/images/dragonpalace/logo.jpg",
-      "image": "/images/dragonpalace/image.jpg",
-      "address": "160 Pasteur, Ben Nghe, District 1, Ho Chi Minh City",
-      "phone": "+84 28 3827 7131",
-      "cuisine": "Vietnamese",
-      "opening_hours": "07:00 - 22:00",
-      "description": "Tọa lạc tại vị trí đắc địa ngay trung tâm thành phố, Dragon Palace là nhà hàng cao cấp mang phong cách Á Đông sang trọng, kết hợp hài hòa giữa nét truyền thống và hiện đại. Với không gian rộng lớn, kiến trúc tinh tế cùng nội thất đậm chất hoàng gia, Dragon Palace là điểm đến lý tưởng cho các buổi tiệc cưới, hội nghị, liên hoan và tiếp đãi đối tác. Thực đơn tại nhà hàng là sự chắt lọc tinh hoa ẩm thực Hoa – Việt, nổi bật với các món như vịt quay Bắc Kinh, súp vi cá, hải sản tươi sống chế biến theo phong cách Quảng Đông. Dragon Palace – nơi tôn vinh nghệ thuật ẩm thực và sự đẳng cấp trong từng trải nghiệm.",
-      "descriptionbirthday": "Dragon Palace là lựa chọn hoàn hảo cho các buổi tiệc sinh nhật trang trọng, ấm cúng và đầy ý nghĩa. Với hệ thống sảnh tiệc sang trọng, đa dạng về diện tích và phong cách bài trí, nhà hàng đáp ứng mọi nhu cầu tổ chức – từ tiệc sinh nhật gia đình đến sự kiện cá nhân quy mô lớn. Đội ngũ sự kiện chuyên nghiệp tại Dragon Palace sẽ hỗ trợ lên kế hoạch chi tiết, từ thực đơn đặc biệt, trang trí không gian, bánh sinh nhật cho đến âm thanh – ánh sáng và biểu diễn nghệ thuật. Tất cả được chăm chút kỹ lưỡng để tạo nên một buổi tiệc đáng nhớ. Dragon Palace – nơi lưu giữ những khoảnh khắc sinh nhật đẳng cấp và đầy cảm xúc.",
-      "descriptionwedding": "Dragon Palace là điểm đến hàng đầu cho các cặp đôi tìm kiếm một lễ cưới sang trọng, hoàn hảo và đầy ý nghĩa. Với nhiều sảnh tiệc lớn được thiết kế theo phong cách cung điện châu Á hiện đại, nhà hàng mang đến không gian cưới đẳng cấp và linh hoạt, phù hợp với mọi phong cách – từ truyền thống đến hiện đại, từ tinh tế đến lộng lẫy. Gói dịch vụ cưới trọn gói tại Dragon Palace bao gồm tư vấn ý tưởng, trang trí, thực đơn cao cấp, hệ thống ánh sáng – âm thanh và đội ngũ phục vụ chuyên nghiệp. Dragon Palace – nơi bắt đầu hành trình hạnh phúc bằng một lễ cưới tuyệt mỹ và đáng nhớ.",
-      "serviceImages": {
-        "birthday": [
+      {
+        "id": 2,
+        "name": "Dragon Palace",
+        "logo": "/images/dragonpalace/logo.jpg",
+        "image": "/images/dragonpalace/image.jpg",
+        "address": "160 Pasteur, Ben Nghe, District 1, Ho Chi Minh City",
+        "phone": "+84 28 3827 7131",
+        "cuisine": "Vietnamese",
+        "opening_hours": "07:00 - 22:00",
+        "description": "Tọa lạc tại vị trí đắc địa ngay trung tâm thành phố, Dragon Palace là nhà hàng cao cấp mang phong cách Á Đông sang trọng, kết hợp hài hòa giữa nét truyền thống và hiện đại. Với không gian rộng lớn, kiến trúc tinh tế cùng nội thất đậm chất hoàng gia, Dragon Palace là điểm đến lý tưởng cho các buổi tiệc cưới, hội nghị, liên hoan và tiếp đãi đối tác. Thực đơn tại nhà hàng là sự chắt lọc tinh hoa ẩm thực Hoa – Việt, nổi bật với các món như vịt quay Bắc Kinh, súp vi cá, hải sản tươi sống chế biến theo phong cách Quảng Đông. Dragon Palace – nơi tôn vinh nghệ thuật ẩm thực và sự đẳng cấp trong từng trải nghiệm.",
+        "descriptionbirthday": "Dragon Palace là lựa chọn hoàn hảo cho các buổi tiệc sinh nhật trang trọng, ấm cúng và đầy ý nghĩa. Với hệ thống sảnh tiệc sang trọng, đa dạng về diện tích và phong cách bài trí, nhà hàng đáp ứng mọi nhu cầu tổ chức – từ tiệc sinh nhật gia đình đến sự kiện cá nhân quy mô lớn. Đội ngũ sự kiện chuyên nghiệp tại Dragon Palace sẽ hỗ trợ lên kế hoạch chi tiết, từ thực đơn đặc biệt, trang trí không gian, bánh sinh nhật cho đến âm thanh – ánh sáng và biểu diễn nghệ thuật. Tất cả được chăm chút kỹ lưỡng để tạo nên một buổi tiệc đáng nhớ. Dragon Palace – nơi lưu giữ những khoảnh khắc sinh nhật đẳng cấp và đầy cảm xúc.",
+        "descriptionwedding": "Dragon Palace là điểm đến hàng đầu cho các cặp đôi tìm kiếm một lễ cưới sang trọng, hoàn hảo và đầy ý nghĩa. Với nhiều sảnh tiệc lớn được thiết kế theo phong cách cung điện châu Á hiện đại, nhà hàng mang đến không gian cưới đẳng cấp và linh hoạt, phù hợp với mọi phong cách – từ truyền thống đến hiện đại, từ tinh tế đến lộng lẫy. Gói dịch vụ cưới trọn gói tại Dragon Palace bao gồm tư vấn ý tưởng, trang trí, thực đơn cao cấp, hệ thống ánh sáng – âm thanh và đội ngũ phục vụ chuyên nghiệp. Dragon Palace – nơi bắt đầu hành trình hạnh phúc bằng một lễ cưới tuyệt mỹ và đáng nhớ.",
+        "reviews": [
+          {
+            "comment": "Không gian xịn xò quá!! Món nào cũng ngon hết sẩy 😍",
+            "imagepeple": "https://scontent.fsgn5-5.fna.fbcdn.net/v/t1.6435-9/181351957_471419010807249_5014501114942494526_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=f727a1&_nc_ohc=2b6kWjna9zEQ7kNvwGkdZEo&_nc_oc=AdluQ0M_Zaj3QpFQ2pEaxlT31odTWUkrsCyaho7LOVoOKI-6MQ5E2d8LAZGyU4aSWsU&_nc_zt=23&_nc_ht=scontent.fsgn5-5.fna&_nc_gid=XKPeM49ydZw0uQm0e_Ltjw&oh=00_AfNx85Y-70dJSSGukEbx7BxgoFvr8AKEZtyLmjCdBsAmKw&oe=686A1548",
+            "name": "Minh Nhựt"
+          },
+          {
+            "comment": "Nhân viên dễ thương cực!! Ăn một lần là ghiền luôn á ",
+            "imagepeple": "https://khoinguonsangtao.vn/wp-content/uploads/2022/08/hinh-anh-meo-cute-doi-mat-to-tron-den-lay-de-thuong.jpg",
+            "name": "Hoàng Nam"
+          },
+          {
+            "comment": "Không gian quán khá sang trọng và có nhiều góc chụp hình. Quá đỉnh luôn!! ",
+            "imagepeple": "https://scontent.fsgn5-10.fna.fbcdn.net/v/t1.6435-9/66139495_116638592951961_2224546760133443584_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_ohc=4F0l0nIQQysQ7kNvwHeehuZ&_nc_oc=AdmdjAR88cFi8WhDQJ6gKPAAyJ2h9cwlwGDOMdkVNUzop03BFIJ1K_7FB8TDwPQ6BgM&_nc_zt=23&_nc_ht=scontent.fsgn5-10.fna&_nc_gid=Cc7RzD7tn2mazdN68bIVng&oh=00_AfPgHgyolieJuOQ5z8kWkomo2absRCThI6xSARC5jWLiaQ&oe=6869FC8C",
+            "name": "Tấn Đạt"
+          }
+        ],
+        "galleryImage": [
+          "/images/dragonpalace/about1.jpg",
+          "/images/dragonpalace/about2.jpg",
+          "/images/dragonpalace/about3.jpg",
+          "/images/dragonpalace/about4.jpg",
           "/images/dragonpalace/birthday1.jpg",
           "/images/dragonpalace/birthday2.jpg",
           "/images/dragonpalace/birthday3.jpg",
-          "/images/dragonpalace/birthday4.jpg"
-        ],
-        "wedding": [
+          "/images/dragonpalace/birthday4.jpg",
           "/images/dragonpalace/wedding1.jpg",
           "/images/dragonpalace/wedding2.jpg",
           "/images/dragonpalace/wedding3.jpg"
         ],
-        "about": [
-          "/images/dragonpalace/about1.jpg",
-          "/images/dragonpalace/about2.jpg",
-          "/images/dragonpalace/about3.jpg",
-          "/images/dragonpalace/about4.jpg"
+        "serviceImages": {
+          "birthday": [
+            "/images/dragonpalace/birthday1.jpg",
+            "/images/dragonpalace/birthday2.jpg",
+            "/images/dragonpalace/birthday3.jpg",
+            "/images/dragonpalace/birthday4.jpg"
+          ],
+          "wedding": [
+            "/images/dragonpalace/wedding1.jpg",
+            "/images/dragonpalace/wedding2.jpg",
+            "/images/dragonpalace/wedding3.jpg"
+          ],
+          "about": [
+            "/images/dragonpalace/about1.jpg",
+            "/images/dragonpalace/about2.jpg",
+            "/images/dragonpalace/about3.jpg",
+            "/images/dragonpalace/about4.jpg"
+          ]
+        },
+        "rating": 4,
+        "sectionTitles": {
+          "starters": {
+            "en": "Startes",
+            "vi": "Khai vị"
+          },
+          "mainMeals": {
+            "en": "Main Meals",
+            "vi": "Món Chính"
+          },
+          "desserts": {
+            "en": "Drinks",
+            "vi": "Đồ Uống và Tráng Miệng"
+          }
+        },
+        "slideImages": [
+          "/images/dragonpalace/slide1.jpg",
+          "/images/dragonpalace/slide2.jpg",
+          "/images/dragonpalace/slide3.jpg"
+        ],
+        "hero-section": [
+          "/images/dragonpalace/slide1.jpg"
+        ],
+        "review-section": [
+          "/images/dragonpalace/slide3.jpg"
+        ],
+        "startersImages": [
+          "/images/dragonpalace/monkhaivi.jpg"
+        ],
+        "mainImages": [
+          "/images/dragonpalace/mainmeal1.jpg",
+          "/images/dragonpalace/mainmeal2.jpg",
+          "/images/dragonpalace/mainmeal3.jpg",
+          "/images/dragonpalace/mainmeal4.jpg",
+          "/images/dragonpalace/mainmeal5.jpg",
+          "/images/dragonpalace/mainmeal6.jpg",
+          "/images/dragonpalace/mainmeal7.jpg",
+          "/images/dragonpalace/mainmeal8.jpg",
+          "/images/dragonpalace/mainmeal9.jpg",
+          "/images/dragonpalace/mainmeal10.jpg",
+          "/images/dragonpalace/mainmeal11.jpg",
+          "/images/dragonpalace/mainmeal12.jpg",
+          "/images/dragonpalace/mainmeal13.jpg",
+          "/images/dragonpalace/mainmeal14.jpg",
+          "/images/dragonpalace/mainmeal15.jpg",
+          "/images/dragonpalace/mainmeal16.jpg",
+          "/images/dragonpalace/mainmeal17.jpg",
+          "/images/dragonpalace/mainmeal18.jpg",
+          "/images/dragonpalace/mainmeal19.jpg",
+          "/images/dragonpalace/mainmeal20.jpg",
+          "/images/dragonpalace/mainmeal21.jpg",
+          "/images/dragonpalace/mainmeal22.jpg",
+          "/images/dragonpalace/mainmeal23.jpg",
+          "/images/dragonpalace/mainmeal24.jpg",
+          "/images/dragonpalace/mainmeal25.jpg",
+          "/images/dragonpalace/mainmeal26.jpg",
+          "/images/dragonpalace/mainmeal27.jpg",
+          "/images/dragonpalace/mainmeal28.jpg",
+          "/images/dragonpalace/mainmeal29.jpg",
+          "/images/dragonpalace/mainmeal30.jpg",
+          "/images/dragonpalace/setlunch1.jpg",
+          "/images/dragonpalace/setlunch2.jpg"
+        ],
+        "dessertImages": [
+          "/images/dragonpalace/dessert1.jpg",
+          "/images/dragonpalace/dessert2.jpg",
+          "/images/dragonpalace/dessert3.jpg",
+          "/images/dragonpalace/dessert4.jpg"
         ]
       },
-      "rating": 4,
-      "sectionTitles": {
-        "starters": {
-          "en": "Startes",
-          "vi": "Khai vị"
-        },
-        "mainMeals": {
-          "en": "Main Meals",
-          "vi": "Món Chính"
-        },
-        "desserts": {
-          "en": "Drinks",
-          "vi": "Đồ Uống và Tráng Miệng"
-        }
-      },
-      "slideImages": [
-        "/images/dragonpalace/slide1.jpg",
-        "/images/dragonpalace/slide2.jpg",
-        "/images/dragonpalace/slide3.jpg"
-      ],
-      "hero-section": [
-        "/images/dragonpalace/slide1.jpg"
-      ],
-      "review-section": [
-        "/images/dragonpalace/slide3.jpg"
-      ],
-      "startersImages": [
-        "/images/dragonpalace/monkhaivi.jpg"
-      ],
-      "mainImages": [
-        "/images/dragonpalace/mainmeal1.jpg",
-        "/images/dragonpalace/mainmeal2.jpg",
-        "/images/dragonpalace/mainmeal3.jpg",
-        "/images/dragonpalace/mainmeal4.jpg",
-        "/images/dragonpalace/mainmeal5.jpg",
-        "/images/dragonpalace/mainmeal6.jpg",
-        "/images/dragonpalace/mainmeal7.jpg",
-        "/images/dragonpalace/mainmeal8.jpg",
-        "/images/dragonpalace/mainmeal9.jpg",
-        "/images/dragonpalace/mainmeal10.jpg",
-        "/images/dragonpalace/mainmeal11.jpg",
-        "/images/dragonpalace/mainmeal12.jpg",
-        "/images/dragonpalace/mainmeal13.jpg",
-        "/images/dragonpalace/mainmeal14.jpg",
-        "/images/dragonpalace/mainmeal15.jpg",
-        "/images/dragonpalace/mainmeal16.jpg",
-        "/images/dragonpalace/mainmeal17.jpg",
-        "/images/dragonpalace/mainmeal18.jpg",
-        "/images/dragonpalace/mainmeal19.jpg",
-        "/images/dragonpalace/mainmeal20.jpg",
-        "/images/dragonpalace/mainmeal21.jpg",
-        "/images/dragonpalace/mainmeal22.jpg",
-        "/images/dragonpalace/mainmeal23.jpg",
-        "/images/dragonpalace/mainmeal24.jpg",
-        "/images/dragonpalace/mainmeal25.jpg",
-        "/images/dragonpalace/mainmeal26.jpg",
-        "/images/dragonpalace/mainmeal27.jpg",
-        "/images/dragonpalace/mainmeal28.jpg",
-        "/images/dragonpalace/mainmeal29.jpg",
-        "/images/dragonpalace/mainmeal30.jpg"
-      ],
-      "dessertImages": [
-        "/images/dragonpalace/dessert1.jpg",
-        "/images/dragonpalace/dessert2.jpg",
-        "/images/dragonpalace/dessert3.jpg",
-        "/images/dragonpalace/dessert4.jpg"
-      ]
-    },
-    {
-      "id": 3,
-      "name": "Yoyo Garden Nam Kỳ Khởi Nghĩa",
-      "logo": "/images/yoyohoconrua/logo.jpg",
-      "image": "/images/yoyonamkikhoinghia/image.jpg",
-      "address": "138 Nam Ky Khoi Nghia, Ben Nghe, District 1, Ho Chi Minh City",
-      "phone": "+84 28 3825 7179",
-      "cuisine": "Vietnamese",
-      "opening_hours": "07:00 - 22:00",
-      "description": "Yoyo không chỉ là một chuỗi nhà hàng – cà phê, mà là 'tọa độ bung mood' dành cho mọi cuộc vui! Không gian tại Yoyo được thiết kế theo phong cách hiện đại, trẻ trung và đổi vibe theo từng chi nhánh – từ chill nhẹ đến cực cháy. Dù bạn cần nơi tụ họp bạn bè, spot sống ảo, hay chỉ đơn giản là 'đi trốn deadline', Yoyo luôn có một góc dành cho bạn. Menu đậm chất fusion với món ăn Á – Âu, đồ uống xịn từ trà trái cây trendy đến cocktail chill hết sẩy. Tới Yoyo, là tới nơi kết nối vị giác, cảm xúc và những phút giây sống thật với chính mình.",
-      "descriptionbirthday": "Sinh nhật phải chất – phải khác biệt – phải quẩy! Yoyo chính là sân chơi hoàn hảo cho một buổi sinh nhật đáng nhớ, không cần giới hạn concept hay giới hạn vui. Muốn ấm áp bên gia đình? Có! Muốn 'bung lụa' cùng hội bạn thân? Có luôn! Với không gian sân vườn, phòng riêng hay khu vực event lung linh, Yoyo giúp bạn biến mọi ý tưởng thành tiệc thật. Gói trang trí siêu linh hoạt, thực đơn tiệc đủ kiểu vị, đội ngũ hỗ trợ tận tâm từ đầu đến lúc cắt bánh. Yoyo – nơi bạn thổi nến, thổi bay mọi giới hạn và chill tới bến trong ngày đặc biệt nhất của mình!",
-      "descriptionwedding": "Yoyo không làm cưới kiểu truyền thống – Yoyo làm tiệc cưới theo đúng chất của bạn! Từ đám cưới sân vườn cực tình, đến không gian ấm cúng hay tối giản hiện đại, Yoyo có đủ không gian và chất riêng để ngày trọng đại trở nên 'đúng vibe – đúng gu'. Trang trí cá nhân hóa theo chủ đề, thực đơn chọn lọc riêng, âm thanh ánh sáng 'cháy nhẹ' đúng gu cưới chill – tất cả được team Yoyo lo tận răng. Dù là đám cưới thân mật hay một bữa tiệc yêu thương náo nhiệt, Yoyo sẽ cùng bạn tạo nên một ngày bùng nổ cảm xúc và đầy ắp khoảnh khắc nhớ hoài không quên!",
-      "serviceImages": {
-        "birthday": [
-          "/images/yoyonamkikhoinghia/birthday1.jpg",
-          "/images/yoyonamkikhoinghia/birthday2.jpg",
-          "/images/yoyonamkikhoinghia/birthday3.jpg",
-          "/images/yoyonamkikhoinghia/birthday4.jpg"
+      {
+        "id": 3,
+        "name": "Yoyo Garden Nam Kỳ Khởi Nghĩa",
+        "logo": "/images/yoyohoconrua/logo.jpg",
+        "image": "/images/yoyonamkikhoinghia/image.jpg",
+        "address": "138 Nam Ky Khoi Nghia, Ben Nghe, District 1, Ho Chi Minh City",
+        "phone": "+84 28 3825 7179",
+        "cuisine": "Vietnamese",
+        "opening_hours": "07:00 - 22:00",
+        "description": "Yoyo không chỉ là một chuỗi nhà hàng – cà phê, mà là 'tọa độ bung mood' dành cho mọi cuộc vui! Không gian tại Yoyo được thiết kế theo phong cách hiện đại, trẻ trung và đổi vibe theo từng chi nhánh – từ chill nhẹ đến cực cháy. Dù bạn cần nơi tụ họp bạn bè, spot sống ảo, hay chỉ đơn giản là 'đi trốn deadline', Yoyo luôn có một góc dành cho bạn. Menu đậm chất fusion với món ăn Á – Âu, đồ uống xịn từ trà trái cây trendy đến cocktail chill hết sẩy. Tới Yoyo, là tới nơi kết nối vị giác, cảm xúc và những phút giây sống thật với chính mình.",
+        "descriptionbirthday": "Sinh nhật phải chất – phải khác biệt – phải quẩy! Yoyo chính là sân chơi hoàn hảo cho một buổi sinh nhật đáng nhớ, không cần giới hạn concept hay giới hạn vui. Muốn ấm áp bên gia đình? Có! Muốn 'bung lụa' cùng hội bạn thân? Có luôn! Với không gian sân vườn, phòng riêng hay khu vực event lung linh, Yoyo giúp bạn biến mọi ý tưởng thành tiệc thật. Gói trang trí siêu linh hoạt, thực đơn tiệc đủ kiểu vị, đội ngũ hỗ trợ tận tâm từ đầu đến lúc cắt bánh. Yoyo – nơi bạn thổi nến, thổi bay mọi giới hạn và chill tới bến trong ngày đặc biệt nhất của mình!",
+        "descriptionwedding": "Yoyo không làm cưới kiểu truyền thống – Yoyo làm tiệc cưới theo đúng chất của bạn! Từ đám cưới sân vườn cực tình, đến không gian ấm cúng hay tối giản hiện đại, Yoyo có đủ không gian và chất riêng để ngày trọng đại trở nên 'đúng vibe – đúng gu'. Trang trí cá nhân hóa theo chủ đề, thực đơn chọn lọc riêng, âm thanh ánh sáng 'cháy nhẹ' đúng gu cưới chill – tất cả được team Yoyo lo tận răng. Dù là đám cưới thân mật hay một bữa tiệc yêu thương náo nhiệt, Yoyo sẽ cùng bạn tạo nên một ngày bùng nổ cảm xúc và đầy ắp khoảnh khắc nhớ hoài không quên!",
+        "reviews": [
+          {
+            "name": "Lan Trần",
+            "imagepeple": "https://scontent.fsgn5-9.fna.fbcdn.net/v/t39.30808-6/497454836_2076234822859111_4050076216978938613_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=OUOj80IdW5QQ7kNvwFd4hKM&_nc_oc=AdlXrVtoPtIx5Pjtx8Wa3qO6KNEEYfaH4awRKkJ_DmwPMaGp0ldh3nD4K9PB7-tTED4&_nc_zt=23&_nc_ht=scontent.fsgn5-9.fna&_nc_gid=zeVVACztVdTJ3UIVA-DSiQ&oh=00_AfNvl7Guhc_mGBCTwiXvtS6xKzqfyipfiKG_1kSiyYgVKA&oe=684886BF",
+            "comment": "Bia tươi lạnh ghê, ai mê craft beer phải thử!! 🍻"
+          },
+          {
+            "name": "Hoàng Phạm",
+            "imagepeple": "https://scontent.fsgn5-8.fna.fbcdn.net/v/t39.30808-6/497730910_2697133220677205_1581250715608443859_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=OhxA4OM2CkwQ7kNvwH6wyu2&_nc_oc=AdmpS7KNBlXxI6dyUMoc3cAtuwvX8Psq0jkXe7OmFu4trDPB4JBC7KX1sWZh6kNbVV0&_nc_zt=23&_nc_ht=scontent.fsgn5-8.fna&_nc_gid=UyO3zAh-FW3Mvvd40VPA2g&oh=00_AfPq88VVOioNsmGAPGymVSUFAapWrgANLJF1fbqejNQ7pg&oe=68487799",
+            "comment": "Menu đa dạng, đồ ăn Á Âu gì cũng có 😋"
+          },
+          {
+            "name": "Hà Lê",
+            "imagepeple": "https://scontent.fsgn5-10.fna.fbcdn.net/v/t39.30808-6/452972648_3710087949260834_2341517908462396047_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=DofDqzs6H0cQ7kNvwGQGgcY&_nc_oc=Adn3DgN62Lj3cr_zXkT5fIWLlEz0NhyNpxjVxu-IZJkE36BpObY8HHkYunqGV5rciCg&_nc_zt=23&_nc_ht=scontent.fsgn5-10.fna&_nc_gid=TQFmf2fPpu2ciyTkaHA7Yw&oh=00_AfNCheCN1_Dq_p0bUpAufpCKR0wV1jYCrtHig9CNlkRc9g&oe=68488C4D",
+            "comment": "Cuối tuần đông dã man, nên đặt bàn trước nha!!"
+          }
         ],
-        "wedding": [
-          "/images/yoyonamkikhoinghia/wedding1.jpg",
-          "/images/yoyonamkikhoinghia/wedding2.jpg",
-          "/images/yoyonamkikhoinghia/wedding3.jpg"
-        ],
-        "about": [
+        "galleryImage": [
           "/images/yoyonamkikhoinghia/about1.jpg",
           "/images/yoyonamkikhoinghia/about2.jpg",
           "/images/yoyonamkikhoinghia/about3.jpg",
           "/images/yoyonamkikhoinghia/about4.jpg",
           "/images/yoyonamkikhoinghia/about5.jpg",
-          "/images/yoyonamkikhoinghia/about6.jpg"
+          "/images/yoyonamkikhoinghia/about6.jpg",
+          "/images/yoyonamkikhoinghia/birthday1.jpg",
+          "/images/yoyonamkikhoinghia/birthday2.jpg",
+          "/images/yoyonamkikhoinghia/birthday3.jpg",
+          "/images/yoyonamkikhoinghia/birthday4.jpg",
+          "/images/yoyonamkikhoinghia/wedding1.jpg",
+          "/images/yoyonamkikhoinghia/wedding2.jpg",
+          "/images/yoyonamkikhoinghia/wedding3.jpg"
+        ],
+        "serviceImages": {
+          "birthday": [
+            "/images/yoyonamkikhoinghia/birthday1.jpg",
+            "/images/yoyonamkikhoinghia/birthday2.jpg",
+            "/images/yoyonamkikhoinghia/birthday3.jpg",
+            "/images/yoyonamkikhoinghia/birthday4.jpg"
+          ],
+          "wedding": [
+            "/images/yoyonamkikhoinghia/wedding1.jpg",
+            "/images/yoyonamkikhoinghia/wedding2.jpg",
+            "/images/yoyonamkikhoinghia/wedding3.jpg"
+          ],
+          "about": [
+            "/images/yoyonamkikhoinghia/about1.jpg",
+            "/images/yoyonamkikhoinghia/about2.jpg",
+            "/images/yoyonamkikhoinghia/about3.jpg",
+            "/images/yoyonamkikhoinghia/about4.jpg",
+            "/images/yoyonamkikhoinghia/about5.jpg",
+            "/images/yoyonamkikhoinghia/about6.jpg"
+          ]
+        },
+        "rating": 4.5,
+        "sectionTitles": {
+          "starters": {
+            "en": "Yoyo Appetizers",
+            "vi": "Khai Vị Yoyo"
+          },
+          "mainMeals": {
+            "en": "Yoyo Main Meals",
+            "vi": "Món Chính Yoyo"
+          },
+          "desserts": {
+            "en": "Beer And Chill",
+            "vi": "Bia và Thư Giãn"
+          }
+        },
+        "slideImages": [
+          "/images/yoyohoconrua/slide1.jpg",
+          "/images/yoyohoconrua/slide2.jpg",
+          "/images/yoyohoconrua/slide3.jpg"
+        ],
+        "hero-section": [
+          "/images/yoyohoconrua/slide4.jpg"
+        ],
+        "review-section": [
+          "/images/yoyohoconrua/slide5.jpg"
+        ],
+        "startersImages": [
+          "/images/yoyonamkikhoinghia/monkhaivi1.jpg",
+          "/images/yoyonamkikhoinghia/monkhaivi2.jpg"
+        ],
+        "mainImages": [
+          "/images/yoyonamkikhoinghia/mainmeal1.jpg",
+          "/images/yoyonamkikhoinghia/mainmeal2.jpg",
+          "/images/yoyonamkikhoinghia/mainmeal3.jpg",
+          "/images/yoyonamkikhoinghia/mainmeal4.jpg",
+          "/images/yoyonamkikhoinghia/mainmeal5.jpg",
+          "/images/yoyonamkikhoinghia/mainmeal6.jpg",
+          "/images/yoyonamkikhoinghia/mainmeal7.jpg",
+          "/images/yoyonamkikhoinghia/mainmeal8.jpg",
+          "/images/yoyonamkikhoinghia/mainmeal9.jpg",
+          "/images/yoyonamkikhoinghia/mainmeal10.jpg"
+        ],
+        "dessertImages": [
+          "/images/yoyonamkikhoinghia/mongoithem.jpg",
+          "/images/yoyonamkikhoinghia/drink1.jpg",
+          "/images/yoyonamkikhoinghia/drink2.jpg",
+          "/images/yoyonamkikhoinghia/drink3.jpg",
+          "/images/yoyonamkikhoinghia/drink4.jpg",
+          "/images/yoyonamkikhoinghia/drink5.jpg"
         ]
       },
-      "rating": 4.5,
-      "sectionTitles": {
-        "starters": {
-          "en": "Yoyo Appetizers",
-          "vi": "Khai Vị Yoyo"
-        },
-        "mainMeals": {
-          "en": "Yoyo Main Meals",
-          "vi": "Món Chính Yoyo"
-        },
-        "desserts": {
-          "en": "Beer And Chill",
-          "vi": "Bia và Thư Giãn"
-        }
-      },
-      "slideImages": [
-        "/images/yoyohoconrua/slide1.jpg",
-        "/images/yoyohoconrua/slide2.jpg",
-        "/images/yoyohoconrua/slide3.jpg"
-      ],
-      "hero-section": [
-        "/images/yoyohoconrua/slide4.jpg"
-      ],
-      "review-section": [
-        "/images/yoyohoconrua/slide5.jpg"
-      ],
-      "startersImages": [
-        "/images/yoyonamkikhoinghia/monkhaivi1.jpg",
-        "/images/yoyonamkikhoinghia/monkhaivi2.jpg"
-      ],
-      "mainImages": [
-        "/images/yoyonamkikhoinghia/mainmeal1.jpg",
-        "/images/yoyonamkikhoinghia/mainmeal2.jpg",
-        "/images/yoyonamkikhoinghia/mainmeal3.jpg",
-        "/images/yoyonamkikhoinghia/mainmeal4.jpg",
-        "/images/yoyonamkikhoinghia/mainmeal5.jpg",
-        "/images/yoyonamkikhoinghia/mainmeal6.jpg",
-        "/images/yoyonamkikhoinghia/mainmeal7.jpg",
-        "/images/yoyonamkikhoinghia/mainmeal8.jpg",
-        "/images/yoyonamkikhoinghia/mainmeal9.jpg",
-        "/images/yoyonamkikhoinghia/mainmeal10.jpg"
-      ],
-      "dessertImages": [
-        "/images/yoyonamkikhoinghia/mongoithem.jpg",
-        "/images/yoyonamkikhoinghia/drink1.jpg",
-        "/images/yoyonamkikhoinghia/drink2.jpg",
-        "/images/yoyonamkikhoinghia/drink3.jpg",
-        "/images/yoyonamkikhoinghia/drink4.jpg",
-        "/images/yoyonamkikhoinghia/drink5.jpg"
-      ]
-    },
-    {
-      "id": 4,
-      "name": "Lalaland Bình Khánh",
-      "logo": "/images/lalalandbinhkhanh/logo.jpg",
-      "image": "/images/lalalandbinhkhanh/image.jpg",
-      "address": "138 Nam Ky Khoi Nghia, Ben Nghe, District 1, Ho Chi Minh City",
-      "phone": "+84 28 3825 7179",
-      "cuisine": "Vietnamese",
-      "opening_hours": "07:00 - 22:00",
-      "rating": 4.5,
-      "description": "Nằm bên bờ sông Sài Gòn, ngay trung tâm khu vực Thủ Thiêm – TP. Thủ Đức, Lalaland Bình Khánh là điểm đến lý tưởng để trải nghiệm ẩm thực đa dạng trong một không gian mở, hiện đại và ngập tràn sắc xanh. Với kiến trúc lấy cảm hứng từ phong cách Địa Trung Hải, kết hợp cùng cảnh quan sân vườn và hồ nước trong lành, nhà hàng mang đến cảm giác thư thái, gần gũi với thiên nhiên nhưng vẫn toát lên vẻ sang trọng. Thực đơn tại Lalaland phong phú từ món Việt truyền thống đến các món Âu – Á đặc sắc, phù hợp cho bữa ăn gia đình, buổi hẹn hò, hay những dịp đặc biệt. Lalaland Bình Khánh – nơi ẩm thực kết hợp hài hòa với không gian sống động và nghệ thuật giải trí.",
-      "descriptionbirthday": "Lalaland Bình Khánh là nơi lý tưởng để tổ chức tiệc sinh nhật trong không gian xanh mát, rộng rãi và mang đậm phong cách Địa Trung Hải phóng khoáng. Tại đây, mỗi buổi tiệc sinh nhật không chỉ là dịp kỷ niệm, mà còn là một sự kiện đáng nhớ được đầu tư chỉn chu từ khâu trang trí, âm thanh, ánh sáng đến thực đơn món ăn. Nhà hàng cung cấp nhiều lựa chọn tổ chức tiệc trong khu vực sân vườn, phòng riêng hay bờ sông lãng mạn, phù hợp cho cả trẻ em và người lớn. Thực đơn tiệc sinh nhật linh hoạt theo yêu cầu, kết hợp cùng các dịch vụ như bánh kem, MC, chụp hình và sân khấu nhạc sống. Lalaland – nơi mọi khoảnh khắc sinh nhật trở nên đặc biệt và ngập tràn cảm xúc.",
-      "descriptionwedding": "Với khuôn viên rộng gần 3ha và thiết kế đậm chất thiên nhiên, Lalaland Bình Khánh là địa điểm hoàn hảo để tổ chức những buổi tiệc cưới ngoài trời lãng mạn giữa lòng thành phố. Không gian ven sông nên thơ, kiến trúc Địa Trung Hải tinh tế cùng hệ thống âm thanh – ánh sáng hiện đại giúp tạo nên một lễ cưới vừa sang trọng vừa gần gũi. Nhà hàng cung cấp gói tổ chức tiệc cưới trọn gói, từ lên ý tưởng, trang trí theo chủ đề, thực đơn tiệc cưới đặc biệt cho đến đội ngũ phục vụ chuyên nghiệp. Dù bạn chọn phong cách cưới cổ điển, boho hay tối giản hiện đại, Lalaland đều sẵn sàng hiện thực hóa ngày trọng đại theo cách ấn tượng nhất. Lalaland Bình Khánh – nơi bắt đầu hành trình yêu thương bằng một lễ cưới đáng mơ ước.",
-      "serviceImages": {
-        "birthday": [
+      {
+        "id": 4,
+        "name": "Lalaland Bình Khánh",
+        "logo": "/images/lalalandbinhkhanh/logo.jpg",
+        "image": "/images/lalalandbinhkhanh/image.jpg",
+        "address": "138 Nam Ky Khoi Nghia, Ben Nghe, District 1, Ho Chi Minh City",
+        "phone": "+84 28 3825 7179",
+        "cuisine": "Vietnamese",
+        "opening_hours": "07:00 - 22:00",
+        "rating": 4.5,
+        "description": "Nằm bên bờ sông Sài Gòn, ngay trung tâm khu vực Thủ Thiêm – TP. Thủ Đức, Lalaland Bình Khánh là điểm đến lý tưởng để trải nghiệm ẩm thực đa dạng trong một không gian mở, hiện đại và ngập tràn sắc xanh. Với kiến trúc lấy cảm hứng từ phong cách Địa Trung Hải, kết hợp cùng cảnh quan sân vườn và hồ nước trong lành, nhà hàng mang đến cảm giác thư thái, gần gũi với thiên nhiên nhưng vẫn toát lên vẻ sang trọng. Thực đơn tại Lalaland phong phú từ món Việt truyền thống đến các món Âu – Á đặc sắc, phù hợp cho bữa ăn gia đình, buổi hẹn hò, hay những dịp đặc biệt. Lalaland Bình Khánh – nơi ẩm thực kết hợp hài hòa với không gian sống động và nghệ thuật giải trí.",
+        "descriptionbirthday": "Lalaland Bình Khánh là nơi lý tưởng để tổ chức tiệc sinh nhật trong không gian xanh mát, rộng rãi và mang đậm phong cách Địa Trung Hải phóng khoáng. Tại đây, mỗi buổi tiệc sinh nhật không chỉ là dịp kỷ niệm, mà còn là một sự kiện đáng nhớ được đầu tư chỉn chu từ khâu trang trí, âm thanh, ánh sáng đến thực đơn món ăn. Nhà hàng cung cấp nhiều lựa chọn tổ chức tiệc trong khu vực sân vườn, phòng riêng hay bờ sông lãng mạn, phù hợp cho cả trẻ em và người lớn. Thực đơn tiệc sinh nhật linh hoạt theo yêu cầu, kết hợp cùng các dịch vụ như bánh kem, MC, chụp hình và sân khấu nhạc sống. Lalaland – nơi mọi khoảnh khắc sinh nhật trở nên đặc biệt và ngập tràn cảm xúc.",
+        "descriptionwedding": "Với khuôn viên rộng gần 3ha và thiết kế đậm chất thiên nhiên, Lalaland Bình Khánh là địa điểm hoàn hảo để tổ chức những buổi tiệc cưới ngoài trời lãng mạn giữa lòng thành phố. Không gian ven sông nên thơ, kiến trúc Địa Trung Hải tinh tế cùng hệ thống âm thanh – ánh sáng hiện đại giúp tạo nên một lễ cưới vừa sang trọng vừa gần gũi. Nhà hàng cung cấp gói tổ chức tiệc cưới trọn gói, từ lên ý tưởng, trang trí theo chủ đề, thực đơn tiệc cưới đặc biệt cho đến đội ngũ phục vụ chuyên nghiệp. Dù bạn chọn phong cách cưới cổ điển, boho hay tối giản hiện đại, Lalaland đều sẵn sàng hiện thực hóa ngày trọng đại theo cách ấn tượng nhất. Lalaland Bình Khánh – nơi bắt đầu hành trình yêu thương bằng một lễ cưới đáng mơ ước.",
+        "reviews": [
+          {
+            "name": "Hải Anh",
+            "imagepeple": "https://randomuser.me/api/portraits/women/50.jpg",
+            "comment": "Không gian LaLaLand thật đẹp!! Món ăn ngon và phục vụ chuyên nghiệp."
+          },
+          {
+            "name": "Quốc Trung",
+            "imagepeple": "https://randomuser.me/api/portraits/men/35.jpg",
+            "comment": "Đồ ăn đa dạng, hương vị tuyệt vời!! Mình rất thích!"
+          },
+          {
+            "name": "Lan Phương",
+            "imagepeple": "https://randomuser.me/api/portraits/women/47.jpg",
+            "comment": "Phục vụ thân thiện, không gian ấm cúng, rất đáng thử!!"
+          }
+        ],
+        "galleryImage": [
           "/images/lalalandbinhkhanh/birthday1.jpg",
           "/images/lalalandbinhkhanh/birthday2.jpg",
-          "/images/lalalandbinhkhanh/birthday3.jpg"
-        ],
-        "wedding": [
+          "/images/lalalandbinhkhanh/birthday3.jpg",
           "/images/lalalandbinhkhanh/wedding1.jpg",
           "/images/lalalandbinhkhanh/wedding2.jpg",
-          "/images/lalalandbinhkhanh/wedding3.jpg"
-        ],
-        "about": [
+          "/images/lalalandbinhkhanh/wedding3.jpg",
           "/images/lalalandbinhkhanh/about1.jpg",
           "/images/lalalandbinhkhanh/about2.jpg",
           "/images/lalalandbinhkhanh/about3.jpg",
           "/images/lalalandbinhkhanh/about4.jpg",
           "/images/lalalandbinhkhanh/about5.jpg"
+        ],
+        "serviceImages": {
+          "birthday": [
+            "/images/lalalandbinhkhanh/birthday1.jpg",
+            "/images/lalalandbinhkhanh/birthday2.jpg",
+            "/images/lalalandbinhkhanh/birthday3.jpg"
+          ],
+          "wedding": [
+            "/images/lalalandbinhkhanh/wedding1.jpg",
+            "/images/lalalandbinhkhanh/wedding2.jpg",
+            "/images/lalalandbinhkhanh/wedding3.jpg"
+          ],
+          "about": [
+            "/images/lalalandbinhkhanh/about1.jpg",
+            "/images/lalalandbinhkhanh/about2.jpg",
+            "/images/lalalandbinhkhanh/about3.jpg",
+            "/images/lalalandbinhkhanh/about4.jpg",
+            "/images/lalalandbinhkhanh/about5.jpg"
+          ]
+        },
+        "sectionTitles": {
+          "starters": {
+            "en": "Lalaland Appetizers",
+            "vi": "Khai Vị Lalaland"
+          },
+          "mainMeals": {
+            "en": "Lalaland Main Meals",
+            "vi": "Món Chính Lalaland"
+          },
+          "desserts": {
+            "en": "Beer And Chill",
+            "vi": "Bia và Thư Giãn"
+          }
+        },
+        "slideImages": [
+          "/images/lalalandbinhkhanh/slide1.jpg",
+          "/images/lalalandbinhkhanh/slide2.jpg",
+          "/images/lalalandbinhkhanh/slide3.jpg"
+        ],
+        "hero-section": [
+          "/images/lalalandbinhkhanh/slide4.jpg"
+        ],
+        "review-section": [
+          "/images/lalalandbinhkhanh/slide5.jpg"
+        ],
+        "startersImages": [
+          "/images/lalalandbinhkhanh/monkhaivi1.jpg",
+          "/images/lalalandbinhkhanh/monkhaivi2.jpg",
+          "/images/lalalandbinhkhanh/monkhaivi3.jpg",
+          "/images/lalalandbinhkhanh/monkhaivi4.jpg",
+          "/images/lalalandbinhkhanh/monkhaivi5.jpg",
+          "/images/lalalandbinhkhanh/monkhaivi6.jpg"
+        ],
+        "mainImages": [
+          "/images/lalalandbinhkhanh/mainmeal1.jpg",
+          "/images/lalalandbinhkhanh/mainmeal2.jpg",
+          "/images/lalalandbinhkhanh/mainmeal3.jpg",
+          "/images/lalalandbinhkhanh/mainmeal4.jpg",
+          "/images/lalalandbinhkhanh/mainmeal5.jpg",
+          "/images/lalalandbinhkhanh/mainmeal6.jpg",
+          "/images/lalalandbinhkhanh/mainmeal7.jpg",
+          "/images/lalalandbinhkhanh/mainmeal8.jpg",
+          "/images/lalalandbinhkhanh/mainmeal9.jpg",
+          "/images/lalalandbinhkhanh/mainmeal10.jpg",
+          "/images/lalalandbinhkhanh/mainmeal11.jpg",
+          "/images/lalalandbinhkhanh/mainmeal12.jpg",
+          "/images/lalalandbinhkhanh/mainmeal13.jpg",
+          "/images/lalalandbinhkhanh/mainmeal14.jpg",
+          "/images/lalalandbinhkhanh/mainmeal15.jpg",
+          "/images/lalalandbinhkhanh/mainmeal16.jpg",
+          "/images/lalalandbinhkhanh/mainmeal17.jpg",
+          "/images/lalalandbinhkhanh/mainmeal18.jpg",
+          "/images/lalalandbinhkhanh/mainmeal19.jpg",
+          "/images/lalalandbinhkhanh/mainmeal20.jpg",
+          "/images/lalalandbinhkhanh/mainmeal21.jpg",
+          "/images/lalalandbinhkhanh/mainmeal22.jpg",
+          "/images/lalalandbinhkhanh/mainmeal23.jpg",
+          "/images/lalalandbinhkhanh/mainmeal24.jpg",
+          "/images/lalalandbinhkhanh/mainmeal25.jpg",
+          "/images/lalalandbinhkhanh/mainmeal26.jpg",
+          "/images/lalalandbinhkhanh/mainmeal27.jpg",
+          "/images/lalalandbinhkhanh/mainmeal28.jpg",
+          "/images/lalalandbinhkhanh/mainmeal29.jpg",
+          "/images/lalalandbinhkhanh/mainmeal30.jpg",
+          "/images/lalalandbinhkhanh/mainmeal31.jpg",
+          "/images/lalalandbinhkhanh/mainmeal32.jpg",
+          "/images/lalalandbinhkhanh/mainmeal33.jpg",
+          "/images/lalalandbinhkhanh/mainmeal34.jpg"
+        ],
+        "dessertImages": [
+          "/images/lalalandbinhkhanh/beeranddrink1.jpg",
+          "/images/lalalandbinhkhanh/beeranddrink2.jpg",
+          "/images/lalalandbinhkhanh/beeranddrink3.jpg",
+          "/images/lalalandbinhkhanh/beeranddrink4.jpg",
+          "/images/lalalandbinhkhanh/beeranddrink5.jpg",
+          "/images/lalalandbinhkhanh/beeranddrink6.jpg",
+          "/images/lalalandbinhkhanh/beeranddrink7.jpg",
+          "/images/lalalandbinhkhanh/beeranddrink8.jpg",
+          "/images/lalalandbinhkhanh/beeranddrink9.jpg",
+          "/images/lalalandbinhkhanh/beeranddrink10.jpg",
+          "/images/lalalandbinhkhanh/beeranddrink11.jpg",
+          "/images/lalalandbinhkhanh/beeranddrink12.jpg",
+          "/images/lalalandbinhkhanh/beeranddrink13.jpg",
+          "/images/lalalandbinhkhanh/beeranddrink13.jpg",
+          "/images/lalalandbinhkhanh/beeranddrink14.jpg",
+          "/images/lalalandbinhkhanh/beeranddrink15.jpg",
+          "/images/lalalandbinhkhanh/mongoithem.jpg"
         ]
       },
-      "sectionTitles": {
-        "starters": {
-          "en": "Lalaland Appetizers",
-          "vi": "Khai Vị Lalaland"
-        },
-        "mainMeals": {
-          "en": "Lalaland Main Meals",
-          "vi": "Món Chính Lalaland"
-        },
-        "desserts": {
-          "en": "Beer And Chill",
-          "vi": "Bia và Thư Giãn"
-        }
-      },
-      "slideImages": [
-        "/images/lalalandbinhkhanh/slide1.jpg",
-        "/images/lalalandbinhkhanh/slide2.jpg",
-        "/images/lalalandbinhkhanh/slide3.jpg"
-      ],
-      "hero-section": [
-        "/images/lalalandbinhkhanh/slide4.jpg"
-      ],
-      "review-section": [
-        "/images/lalalandbinhkhanh/slide5.jpg"
-      ],
-      "startersImages": [
-        "/images/lalalandbinhkhanh/monkhaivi1.jpg",
-        "/images/lalalandbinhkhanh/monkhaivi2.jpg",
-        "/images/lalalandbinhkhanh/monkhaivi3.jpg",
-        "/images/lalalandbinhkhanh/monkhaivi4.jpg",
-        "/images/lalalandbinhkhanh/monkhaivi5.jpg",
-        "/images/lalalandbinhkhanh/monkhaivi6.jpg"
-      ],
-      "mainImages": [
-        "/images/lalalandbinhkhanh/mainmeal1.jpg",
-        "/images/lalalandbinhkhanh/mainmeal2.jpg",
-        "/images/lalalandbinhkhanh/mainmeal3.jpg",
-        "/images/lalalandbinhkhanh/mainmeal4.jpg",
-        "/images/lalalandbinhkhanh/mainmeal5.jpg",
-        "/images/lalalandbinhkhanh/mainmeal6.jpg",
-        "/images/lalalandbinhkhanh/mainmeal7.jpg",
-        "/images/lalalandbinhkhanh/mainmeal8.jpg",
-        "/images/lalalandbinhkhanh/mainmeal9.jpg",
-        "/images/lalalandbinhkhanh/mainmeal10.jpg",
-        "/images/lalalandbinhkhanh/mainmeal11.jpg",
-        "/images/lalalandbinhkhanh/mainmeal12.jpg",
-        "/images/lalalandbinhkhanh/mainmeal13.jpg",
-        "/images/lalalandbinhkhanh/mainmeal14.jpg",
-        "/images/lalalandbinhkhanh/mainmeal15.jpg",
-        "/images/lalalandbinhkhanh/mainmeal16.jpg",
-        "/images/lalalandbinhkhanh/mainmeal17.jpg",
-        "/images/lalalandbinhkhanh/mainmeal18.jpg",
-        "/images/lalalandbinhkhanh/mainmeal19.jpg",
-        "/images/lalalandbinhkhanh/mainmeal20.jpg",
-        "/images/lalalandbinhkhanh/mainmeal21.jpg",
-        "/images/lalalandbinhkhanh/mainmeal22.jpg",
-        "/images/lalalandbinhkhanh/mainmeal23.jpg",
-        "/images/lalalandbinhkhanh/mainmeal24.jpg",
-        "/images/lalalandbinhkhanh/mainmeal25.jpg",
-        "/images/lalalandbinhkhanh/mainmeal26.jpg",
-        "/images/lalalandbinhkhanh/mainmeal27.jpg",
-        "/images/lalalandbinhkhanh/mainmeal28.jpg",
-        "/images/lalalandbinhkhanh/mainmeal29.jpg",
-        "/images/lalalandbinhkhanh/mainmeal30.jpg",
-        "/images/lalalandbinhkhanh/mainmeal31.jpg",
-        "/images/lalalandbinhkhanh/mainmeal32.jpg",
-        "/images/lalalandbinhkhanh/mainmeal33.jpg",
-        "/images/lalalandbinhkhanh/mainmeal34.jpg"
-      ],
-      "dessertImages": [
-        "/images/lalalandbinhkhanh/beeranddrink1.jpg",
-        "/images/lalalandbinhkhanh/beeranddrink2.jpg",
-        "/images/lalalandbinhkhanh/beeranddrink3.jpg",
-        "/images/lalalandbinhkhanh/beeranddrink4.jpg",
-        "/images/lalalandbinhkhanh/beeranddrink5.jpg",
-        "/images/lalalandbinhkhanh/beeranddrink6.jpg",
-        "/images/lalalandbinhkhanh/beeranddrink7.jpg",
-        "/images/lalalandbinhkhanh/beeranddrink8.jpg",
-        "/images/lalalandbinhkhanh/beeranddrink9.jpg",
-        "/images/lalalandbinhkhanh/beeranddrink10.jpg",
-        "/images/lalalandbinhkhanh/beeranddrink11.jpg",
-        "/images/lalalandbinhkhanh/beeranddrink12.jpg",
-        "/images/lalalandbinhkhanh/beeranddrink13.jpg",
-        "/images/lalalandbinhkhanh/beeranddrink13.jpg",
-        "/images/lalalandbinhkhanh/beeranddrink14.jpg",
-        "/images/lalalandbinhkhanh/beeranddrink15.jpg",
-        "/images/lalalandbinhkhanh/mongoithem.jpg"
-      ]
-    },
-    {
-      "id": 5,
-      "name": "Paris Garden",
-      "logo": "/images/parisgarden/logo.jpg",
-      "image": "/images/parisgarden/image.jpg",
-      "address": "138 Nam Ky Khoi Nghia, Ben Nghe, District 1, Ho Chi Minh City",
-      "phone": "+84 28 3825 7179",
-      "cuisine": "Vietnamese",
-      "opening_hours": "07:00 - 22:00",
-      "rating": 4.5,
-      "description": "Tọa lạc tại khuôn viên xanh mát giữa lòng thành phố, Parin Garden là nhà hàng sân vườn lý tưởng để thưởng thức những món ăn Á – Âu độc đáo trong không gian gần gũi với thiên nhiên. Với kiến trúc mở, kết hợp giữa hiện đại và mộc mạc, Parin Garden mang đến trải nghiệm ẩm thực thư giãn, tinh tế và đậm chất nghệ thuật. Thực đơn tại đây là sự hòa quyện giữa tinh hoa ẩm thực Việt và phong cách ẩm thực châu Âu, nổi bật với các món như sườn cừu nướng sốt tiêu đen, gỏi cuốn tôm Parin, cá hồi áp chảo và các món chay thanh đạm. Parin Garden không chỉ là điểm đến của ẩm thực, mà còn là nơi lý tưởng để gặp gỡ bạn bè, tổ chức sự kiện hay đơn, giản là tận hưởng sự bình yên giữa lòng thành phố náo nhiệt.",
-      "descriptionbirthday": "Parin Garden mang đến một không gian mở, xanh mát và gần gũi thiên nhiên – là lựa chọn hoàn hảo để tổ chức các buổi tiệc sinh nhật đáng nhớ. Với phong cách trang trí tinh tế, khu vực sân vườn được thiết kế linh hoạt phù hợp cho cả tiệc sinh nhật gia đình ấm cúng hay tiệc ngoài trời năng động. Chúng tôi cung cấp đa dạng gói dịch vụ từ trang trí, bánh kem, tổ chức trò chơi cho trẻ em đến âm nhạc và chụp hình chuyên nghiệp. Đặc biệt, thực đơn sinh nhật được thiết kế riêng theo khẩu vị và chủ đề của từng buổi tiệc, mang đến sự hài lòng cho mọi khách mời. Parin Garden – nơi mỗi buổi sinh nhật trở thành một kỷ niệm trọn vẹn và đầy cảm xúc.",
-      "descriptionwedding": "Với không gian sân vườn nên thơ, lãng mạn và đậm chất tự nhiên, Parin Garden là địa điểm lý tưởng để tổ chức các buổi tiệc cưới ngoài trời ngọt ngào và đầy phong cách. Nhà hàng cung cấp các gói cưới đa dạng theo chủ đề: từ cổ điển, rustic, đến hiện đại tối giản, tất cả đều được đội ngũ chuyên nghiệp chăm chút kỹ lưỡng. Không gian rộng rãi, thoáng đãng được bao quanh bởi cây xanh và ánh sáng tự nhiên tạo nên khung cảnh hoàn hảo cho lễ cưới trong mơ của bạn. Thực đơn tiệc cưới được thiết kế riêng biệt, kết hợp giữa ẩm thực truyền thống và hiện đại, đáp ứng mọi nhu cầu từ tiệc ngọt nhẹ nhàng đến đại tiệc sang trọng. Parin Garden – nơi tình yêu được thăng hoa giữa thiên nhiên trong lành và không gian đầy nghệ thuật.",
-      "serviceImages": {
-        "birthday": [
-          "/images/parisgarden/birthday1.jpg",
-          "/images/parisgarden/birthday2.jpg",
-          "/images/parisgarden/birthday3.jpg",
-          "/images/parisgarden/birthday4.jpg"
+      {
+        "id": 5,
+        "name": "Paris Garden",
+        "logo": "/images/parisgarden/logo.jpg",
+        "image": "/images/parisgarden/image.jpg",
+        "address": "138 Nam Ky Khoi Nghia, Ben Nghe, District 1, Ho Chi Minh City",
+        "phone": "+84 28 3825 7179",
+        "cuisine": "Vietnamese",
+        "opening_hours": "07:00 - 22:00",
+        "rating": 4.5,
+        "description": "Tọa lạc tại khuôn viên xanh mát giữa lòng thành phố, Parin Garden là nhà hàng sân vườn lý tưởng để thưởng thức những món ăn Á – Âu độc đáo trong không gian gần gũi với thiên nhiên. Với kiến trúc mở, kết hợp giữa hiện đại và mộc mạc, Parin Garden mang đến trải nghiệm ẩm thực thư giãn, tinh tế và đậm chất nghệ thuật. Thực đơn tại đây là sự hòa quyện giữa tinh hoa ẩm thực Việt và phong cách ẩm thực châu Âu, nổi bật với các món như sườn cừu nướng sốt tiêu đen, gỏi cuốn tôm Parin, cá hồi áp chảo và các món chay thanh đạm. Parin Garden không chỉ là điểm đến của ẩm thực, mà còn là nơi lý tưởng để gặp gỡ bạn bè, tổ chức sự kiện hay đơn, giản là tận hưởng sự bình yên giữa lòng thành phố náo nhiệt.",
+        "descriptionbirthday": "Parin Garden mang đến một không gian mở, xanh mát và gần gũi thiên nhiên – là lựa chọn hoàn hảo để tổ chức các buổi tiệc sinh nhật đáng nhớ. Với phong cách trang trí tinh tế, khu vực sân vườn được thiết kế linh hoạt phù hợp cho cả tiệc sinh nhật gia đình ấm cúng hay tiệc ngoài trời năng động. Chúng tôi cung cấp đa dạng gói dịch vụ từ trang trí, bánh kem, tổ chức trò chơi cho trẻ em đến âm nhạc và chụp hình chuyên nghiệp. Đặc biệt, thực đơn sinh nhật được thiết kế riêng theo khẩu vị và chủ đề của từng buổi tiệc, mang đến sự hài lòng cho mọi khách mời. Parin Garden – nơi mỗi buổi sinh nhật trở thành một kỷ niệm trọn vẹn và đầy cảm xúc.",
+        "descriptionwedding": "Với không gian sân vườn nên thơ, lãng mạn và đậm chất tự nhiên, Parin Garden là địa điểm lý tưởng để tổ chức các buổi tiệc cưới ngoài trời ngọt ngào và đầy phong cách. Nhà hàng cung cấp các gói cưới đa dạng theo chủ đề: từ cổ điển, rustic, đến hiện đại tối giản, tất cả đều được đội ngũ chuyên nghiệp chăm chút kỹ lưỡng. Không gian rộng rãi, thoáng đãng được bao quanh bởi cây xanh và ánh sáng tự nhiên tạo nên khung cảnh hoàn hảo cho lễ cưới trong mơ của bạn. Thực đơn tiệc cưới được thiết kế riêng biệt, kết hợp giữa ẩm thực truyền thống và hiện đại, đáp ứng mọi nhu cầu từ tiệc ngọt nhẹ nhàng đến đại tiệc sang trọng. Parin Garden – nơi tình yêu được thăng hoa giữa thiên nhiên trong lành và không gian đầy nghệ thuật.",
+        "reviews": [
+          {
+            "name": "Sophie Nguyen",
+            "imagepeple": "https://randomuser.me/api/portraits/women/60.jpg",
+            "comment": "Không gian như một khu vườn Paris, thơ mộng và yên bình!!"
+          },
+          {
+            "name": "Julien Tran",
+            "imagepeple": "https://randomuser.me/api/portraits/men/29.jpg",
+            "comment": "Món ăn chuẩn vị Pháp, hương vị đậm đà, tuyệt vời!!"
+          },
+          {
+            "name": "Claire Le",
+            "imagepeple": "https://randomuser.me/api/portraits/women/33.jpg",
+            "comment": "Dịch vụ tận tâm, nhân viên thân thiện, rất hài lòng!!"
+          }
         ],
-        "wedding": [
-          "/images/parisgarden/wedding1.jpg",
-          "/images/parisgarden/wedding2.jpg",
-          "/images/parisgarden/wedding3.jpg"
-        ],
-        "about": [
+        "galleryImage": [
           "/images/parisgarden/about1.jpg",
           "/images/parisgarden/about2.jpg",
           "/images/parisgarden/about3.jpg",
           "/images/parisgarden/about4.jpg",
-          "/images/parisgarden/about5.jpg"
+          "/images/parisgarden/about5.jpg",
+          "/images/parisgarden/birthday1.jpg",
+          "/images/parisgarden/birthday2.jpg",
+          "/images/parisgarden/birthday3.jpg",
+          "/images/parisgarden/birthday4.jpg",
+          "/images/parisgarden/wedding1.jpg",
+          "/images/parisgarden/wedding2.jpg",
+          "/images/parisgarden/wedding3.jpg"
+        ],
+        "serviceImages": {
+          "birthday": [
+            "/images/parisgarden/birthday1.jpg",
+            "/images/parisgarden/birthday2.jpg",
+            "/images/parisgarden/birthday3.jpg",
+            "/images/parisgarden/birthday4.jpg"
+          ],
+          "wedding": [
+            "/images/parisgarden/wedding1.jpg",
+            "/images/parisgarden/wedding2.jpg",
+            "/images/parisgarden/wedding3.jpg"
+          ],
+          "about": [
+            "/images/parisgarden/about1.jpg",
+            "/images/parisgarden/about2.jpg",
+            "/images/parisgarden/about3.jpg",
+            "/images/parisgarden/about4.jpg",
+            "/images/parisgarden/about5.jpg"
+          ]
+        },
+        "sectionTitles": {
+          "starters": {
+            "en": "Breakfast and Lucnh",
+            "vi": "Bữa sáng và Trưa"
+          },
+          "mainMeals": {
+            "en": "Dinner",
+            "vi": "Bữa Tối"
+          },
+          "desserts": {
+            "en": "Drink and Wine",
+            "vi": "Đồ uống và Rượu"
+          }
+        },
+        "slideImages": [
+          "/images/parisgarden/slide1.jpg",
+          "/images/parisgarden/slide2.jpg",
+          "/images/parisgarden/slide3.jpg"
+        ],
+        "hero-section": [
+          "/images/parisgarden/slide4.jpg"
+        ],
+        "review-section": [
+          "/images/parisgarden/slide5.jpg"
+        ],
+        "startersImages": [
+          "/images/parisgarden/breakfastandlunch1.jpg",
+          "/images/parisgarden/breakfastandlunch2.jpg",
+          "/images/parisgarden/breakfastandlunch3.jpg",
+          "/images/parisgarden/breakfastandlunch4.jpg",
+          "/images/parisgarden/breakfastandlunch5.jpg",
+          "/images/parisgarden/breakfastandlunch6.jpg",
+          "/images/parisgarden/breakfastandlunch7.jpg",
+          "/images/parisgarden/breakfastandlunch8.jpg",
+          "/images/parisgarden/breakfastandlunch9.jpg",
+          "/images/parisgarden/breakfastandlunch10.jpg",
+          "/images/parisgarden/breakfastandlunch11.jpg",
+          "/images/parisgarden/breakfastandlunch12.jpg"
+        ],
+        "mainImages": [
+          "/images/parisgarden/dinner1.jpg",
+          "/images/parisgarden/dinner2.jpg",
+          "/images/parisgarden/dinner3.jpg",
+          "/images/parisgarden/dinner4.jpg",
+          "/images/parisgarden/dinner5.jpg",
+          "/images/parisgarden/dinner6.jpg",
+          "/images/parisgarden/dinner7.jpg",
+          "/images/parisgarden/dinner8.jpg",
+          "/images/parisgarden/dinner9.jpg",
+          "/images/parisgarden/dinner10.jpg",
+          "/images/parisgarden/dinner11.jpg",
+          "/images/parisgarden/dinner12.jpg",
+          "/images/parisgarden/dinner13.jpg",
+          "/images/parisgarden/dinner14.jpg"
+        ],
+        "dessertImages": [
+          "/images/parisgarden/drinkandwine1.jpg",
+          "/images/parisgarden/drinkandwine2.jpg",
+          "/images/parisgarden/drinkandwine3.jpg",
+          "/images/parisgarden/drinkandwine4.jpg",
+          "/images/parisgarden/drinkandwine5.jpg",
+          "/images/parisgarden/drinkandwine6.jpg",
+          "/images/parisgarden/drinkandwine7.jpg",
+          "/images/parisgarden/drinkandwine8.jpg",
+          "/images/parisgarden/drinkandwine9.jpg",
+          "/images/parisgarden/drinkandwine10.jpg",
+          "/images/parisgarden/drinkandwine11.jpg",
+          "/images/parisgarden/drinkandwine12.jpg",
+          "/images/parisgarden/drinkandwine13.jpg",
+          "/images/parisgarden/drinkandwine14.jpg",
+          "/images/parisgarden/drinkandwine15.jpg",
+          "/images/parisgarden/drinkandwine16.jpg"
         ]
       },
-      "sectionTitles": {
-        "starters": {
-          "en": "Breakfast and Lucnh",
-          "vi": "Bữa sáng và Trưa"
-        },
-        "mainMeals": {
-          "en": "Dinner",
-          "vi": "Bữa Tối"
-        },
-        "desserts": {
-          "en": "Drink and Wine",
-          "vi": "Đồ uống và Rượu"
-        }
-      },
-      "slideImages": [
-        "/images/parisgarden/slide1.jpg",
-        "/images/parisgarden/slide2.jpg",
-        "/images/parisgarden/slide3.jpg"
-      ],
-      "hero-section": [
-        "/images/parisgarden/slide4.jpg"
-      ],
-      "review-section": [
-        "/images/parisgarden/slide5.jpg"
-      ],
-      "startersImages": [
-        "/images/parisgarden/breakfastandlunch1.jpg",
-        "/images/parisgarden/breakfastandlunch2.jpg",
-        "/images/parisgarden/breakfastandlunch3.jpg",
-        "/images/parisgarden/breakfastandlunch4.jpg",
-        "/images/parisgarden/breakfastandlunch5.jpg",
-        "/images/parisgarden/breakfastandlunch6.jpg",
-        "/images/parisgarden/breakfastandlunch7.jpg",
-        "/images/parisgarden/breakfastandlunch8.jpg",
-        "/images/parisgarden/breakfastandlunch9.jpg",
-        "/images/parisgarden/breakfastandlunch10.jpg",
-        "/images/parisgarden/breakfastandlunch11.jpg",
-        "/images/parisgarden/breakfastandlunch12.jpg"
-      ],
-      "mainImages": [
-        "/images/parisgarden/dinner1.jpg",
-        "/images/parisgarden/dinner2.jpg",
-        "/images/parisgarden/dinner3.jpg",
-        "/images/parisgarden/dinner4.jpg",
-        "/images/parisgarden/dinner5.jpg",
-        "/images/parisgarden/dinner6.jpg",
-        "/images/parisgarden/dinner7.jpg",
-        "/images/parisgarden/dinner8.jpg",
-        "/images/parisgarden/dinner9.jpg",
-        "/images/parisgarden/dinner10.jpg",
-        "/images/parisgarden/dinner11.jpg",
-        "/images/parisgarden/dinner12.jpg",
-        "/images/parisgarden/dinner13.jpg",
-        "/images/parisgarden/dinner14.jpg"
-      ],
-      "dessertImages": [
-        "/images/parisgarden/drinkandwine1.jpg",
-        "/images/parisgarden/drinkandwine2.jpg",
-        "/images/parisgarden/drinkandwine3.jpg",
-        "/images/parisgarden/drinkandwine4.jpg",
-        "/images/parisgarden/drinkandwine5.jpg",
-        "/images/parisgarden/drinkandwine6.jpg",
-        "/images/parisgarden/drinkandwine7.jpg",
-        "/images/parisgarden/drinkandwine8.jpg",
-        "/images/parisgarden/drinkandwine9.jpg",
-        "/images/parisgarden/drinkandwine10.jpg",
-        "/images/parisgarden/drinkandwine11.jpg",
-        "/images/parisgarden/drinkandwine12.jpg",
-        "/images/parisgarden/drinkandwine13.jpg",
-        "/images/parisgarden/drinkandwine14.jpg",
-        "/images/parisgarden/drinkandwine15.jpg",
-        "/images/parisgarden/drinkandwine16.jpg"
-      ]
-    },
-    {
-      "id": 6,
-      "name": "London Corner",
-      "logo": "/images/londoncorner/logo.jpg",
-      "image": "/images/londoncorner/image.jpg",
-      "address": "138 Nam Ky Khoi Nghia, Ben Nghe, District 1, Ho Chi Minh City",
-      "phone": "+84 28 3825 7179",
-      "cuisine": "Vietnamese",
-      "opening_hours": "07:00 - 22:00",
-      "description": "Tọa lạc giữa trung tâm Quận 1, TP.HCM, London Corner là địa điểm lý tưởng để thưởng thức các món ăn đặc sản ba miền, kết hợp tinh tế cùng phong cách hoàng gia Anh sang trọng và đậm chất cổ điển châu Âu. Với không gian ấm cúng, thanh lịch và đầy cảm hứng, nơi đây mang đến trải nghiệm ẩm thực độc đáo cho thực khách. Thực đơn tại London Corner đa dạng với các món Việt chế biến công phu như phở bò, bánh mì, cùng các món Âu đẳng cấp như Bò Wellington, cá chẽm sốt Verde và súp đông trùng hạ thảo. Không chỉ là nơi thưởng thức ẩm thực, London Corner còn là điểm đến lý tưởng cho các buổi hẹn hò, gặp gỡ đối tác hay tổ chức sự kiện đáng nhớ – nơi tinh hoa ẩm thực Việt gặp gỡ nét đẹp hoàng gia Anh.",
-      "descriptionbirthday": "Tại London Corner, mỗi buổi tiệc sinh nhật không chỉ đơn thuần là một buổi gặp mặt – mà là một trải nghiệm đáng nhớ được chăm chút đến từng chi tiết. Với không gian sang trọng, ấm cúng mang phong cách hoàng gia Anh, nhà hàng là lựa chọn lý tưởng để bạn cùng người thân tận hưởng những khoảnh khắc đáng quý bên nhau. Chúng tôi cung cấp nhiều gói tổ chức sinh nhật đa dạng từ thân mật đến sang trọng, phù hợp cho cả trẻ em, người lớn và tiệc gia đình. Thực đơn phong phú với các món ăn đặc sản ba miền cùng đồ uống đa dạng, kết hợp cùng dịch vụ trang trí, bánh kem, MC, và chụp hình – tất cả đều được chuẩn bị theo yêu cầu riêng của bạn. London Corner – nơi lưu giữ những khoảnh khắc sinh nhật ý nghĩa và đẳng cấp.",
-      "descriptionwedding": "London Corner là lựa chọn lý tưởng cho những cặp đôi mong muốn một lễ cưới ấm cúng, tinh tế và đẳng cấp ngay giữa lòng thành phố. Với kiến trúc sang trọng mang hơi hướng hoàng gia Anh, không gian tại nhà hàng tạo nên một khung cảnh lãng mạn và đầy cảm xúc cho ngày trọng đại của bạn. Chúng tôi cung cấp dịch vụ tổ chức tiệc cưới trọn gói, từ thực đơn món ăn cao cấp, trang trí không gian theo chủ đề riêng, đến hệ thống âm thanh, ánh sáng hiện đại và đội ngũ phục vụ chuyên nghiệp. Dù là tiệc cưới truyền thống, hiện đại hay tiệc cưới ngoài trời, London Corner luôn sẵn sàng hiện thực hóa mọi ý tưởng để mang đến cho bạn một ngày cưới hoàn hảo. London Corner – nơi đánh dấu khởi đầu hạnh phúc bằng một lễ cưới đẳng cấp và đầy ấn tượng.",
-      "rating": 4.5,
-      "serviceImages": {
-        "birthday": [
-          "/images/londoncorner/birthday1.jpg",
-          "/images/londoncorner/birthday2.jpg",
-          "/images/londoncorner/birthday3.jpg",
-          "/images/londoncorner/birthday4.jpg"
+      {
+        "id": 6,
+        "name": "London Corner",
+        "logo": "/images/londoncorner/logo.jpg",
+        "image": "/images/londoncorner/image.jpg",
+        "address": "138 Nam Ky Khoi Nghia, Ben Nghe, District 1, Ho Chi Minh City",
+        "phone": "+84 28 3825 7179",
+        "cuisine": "Vietnamese",
+        "opening_hours": "07:00 - 22:00",
+        "description": "Tọa lạc giữa trung tâm Quận 1, TP.HCM, London Corner là địa điểm lý tưởng để thưởng thức các món ăn đặc sản ba miền, kết hợp tinh tế cùng phong cách hoàng gia Anh sang trọng và đậm chất cổ điển châu Âu. Với không gian ấm cúng, thanh lịch và đầy cảm hứng, nơi đây mang đến trải nghiệm ẩm thực độc đáo cho thực khách. Thực đơn tại London Corner đa dạng với các món Việt chế biến công phu như phở bò, bánh mì, cùng các món Âu đẳng cấp như Bò Wellington, cá chẽm sốt Verde và súp đông trùng hạ thảo. Không chỉ là nơi thưởng thức ẩm thực, London Corner còn là điểm đến lý tưởng cho các buổi hẹn hò, gặp gỡ đối tác hay tổ chức sự kiện đáng nhớ – nơi tinh hoa ẩm thực Việt gặp gỡ nét đẹp hoàng gia Anh.",
+        "descriptionbirthday": "Tại London Corner, mỗi buổi tiệc sinh nhật không chỉ đơn thuần là một buổi gặp mặt – mà là một trải nghiệm đáng nhớ được chăm chút đến từng chi tiết. Với không gian sang trọng, ấm cúng mang phong cách hoàng gia Anh, nhà hàng là lựa chọn lý tưởng để bạn cùng người thân tận hưởng những khoảnh khắc đáng quý bên nhau. Chúng tôi cung cấp nhiều gói tổ chức sinh nhật đa dạng từ thân mật đến sang trọng, phù hợp cho cả trẻ em, người lớn và tiệc gia đình. Thực đơn phong phú với các món ăn đặc sản ba miền cùng đồ uống đa dạng, kết hợp cùng dịch vụ trang trí, bánh kem, MC, và chụp hình – tất cả đều được chuẩn bị theo yêu cầu riêng của bạn. London Corner – nơi lưu giữ những khoảnh khắc sinh nhật ý nghĩa và đẳng cấp.",
+        "descriptionwedding": "London Corner là lựa chọn lý tưởng cho những cặp đôi mong muốn một lễ cưới ấm cúng, tinh tế và đẳng cấp ngay giữa lòng thành phố. Với kiến trúc sang trọng mang hơi hướng hoàng gia Anh, không gian tại nhà hàng tạo nên một khung cảnh lãng mạn và đầy cảm xúc cho ngày trọng đại của bạn. Chúng tôi cung cấp dịch vụ tổ chức tiệc cưới trọn gói, từ thực đơn món ăn cao cấp, trang trí không gian theo chủ đề riêng, đến hệ thống âm thanh, ánh sáng hiện đại và đội ngũ phục vụ chuyên nghiệp. Dù là tiệc cưới truyền thống, hiện đại hay tiệc cưới ngoài trời, London Corner luôn sẵn sàng hiện thực hóa mọi ý tưởng để mang đến cho bạn một ngày cưới hoàn hảo. London Corner – nơi đánh dấu khởi đầu hạnh phúc bằng một lễ cưới đẳng cấp và đầy ấn tượng.",
+        "rating": 4.5,
+        "reviews": [
+          {
+            "name": "Tuấn Anh",
+            "imagepeple": "https://randomuser.me/api/portraits/men/12.jpg",
+            "comment": "Không gian ấm cúng, đồ ăn ngon, rất đáng thử!!"
+          },
+          {
+            "name": "Thùy Linh",
+            "imagepeple": "https://randomuser.me/api/portraits/women/34.jpg",
+            "comment": "Phục vụ thân thiện, món ăn chuẩn vị Anh quốc!!"
+          },
+          {
+            "name": "Minh Quân",
+            "imagepeple": "https://randomuser.me/api/portraits/men/56.jpg",
+            "comment": "Giá cả hợp lý, không gian thoáng mát, rất hài lòng!!"
+          }
         ],
-        "wedding": [
-          "/images/londoncorner/wedding1.jpg",
-          "/images/londoncorner/wedding2.jpg",
-          "/images/londoncorner/wedding3.jpg"
-        ],
-        "about": [
+        "galleryImage": [
           "/images/londoncorner/about1.jpg",
           "/images/londoncorner/about2.jpg",
           "/images/londoncorner/about3.jpg",
           "/images/londoncorner/about4.jpg",
-          "/images/londoncorner/about5.jpg"
-        ]
-      },
-      "sectionTitles": {
-        "starters": {
-          "en": "Breakfast",
-          "vi": "Bữa sáng"
-        },
-        "mainMeals": {
-          "en": "Dinner",
-          "vi": "Bữa Tối"
-        },
-        "desserts": {
-          "en": "Drink",
-          "vi": "Đồ uống"
-        }
-      },
-      "slideImages": [
-        "/images/londoncorner/slide1.jpg",
-        "/images/londoncorner/slide2.jpg",
-        "/images/londoncorner/slide3.jpg"
-      ],
-      "hero-section": [
-        "/images/londoncorner/slide4.jpg"
-      ],
-      "review-section": [
-        "/images/londoncorner/slide5.jpg"
-      ],
-      "startersImages": [
-        "/images/londoncorner/breakfast1.jpg",
-        "/images/londoncorner/breakfast2.jpg",
-        "/images/londoncorner/breakfast3.jpg",
-        "/images/londoncorner/breakfast4.jpg",
-        "/images/londoncorner/breakfast5.jpg",
-        "/images/londoncorner/breakfast6.jpg",
-        "/images/londoncorner/breakfast7.jpg",
-        "/images/londoncorner/breakfast8.jpg",
-        "/images/londoncorner/breakfast9.jpg",
-        "/images/londoncorner/breakfast10.jpg"
-      ],
-      "mainImages": [
-        "/images/londoncorner/dinner1.jpg",
-        "/images/londoncorner/dinner2.jpg",
-        "/images/londoncorner/dinner3.jpg",
-        "/images/londoncorner/dinner4.jpg",
-        "/images/londoncorner/dinner5.jpg",
-        "/images/londoncorner/dinner6.jpg",
-        "/images/londoncorner/dinner7.jpg",
-        "/images/londoncorner/dinner8.jpg",
-        "/images/londoncorner/dinner9.jpg",
-        "/images/londoncorner/dinner10.jpg",
-        "/images/londoncorner/dinner11.jpg",
-        "/images/londoncorner/dinner12.jpg",
-        "/images/londoncorner/dinner13.jpg",
-        "/images/londoncorner/dinner14.jpg"
-      ],
-      "dessertImages": [
-        "/images/londoncorner/drink1.jpg",
-        "/images/londoncorner/drink2.jpg",
-        "/images/londoncorner/drink3.jpg",
-        "/images/londoncorner/drink4.jpg",
-        "/images/londoncorner/drink5.jpg",
-        "/images/londoncorner/drink6.jpg",
-        "/images/londoncorner/drink7.jpg",
-        "/images/londoncorner/drink8.jpg",
-        "/images/londoncorner/drink9.jpg",
-        "/images/londoncorner/drink10.jpg",
-        "/images/londoncorner/drink11.jpg",
-        "/images/londoncorner/drink12.jpg",
-        "/images/londoncorner/drink13.jpg",
-        "/images/londoncorner/drink14.jpg",
-        "/images/londoncorner/drink15.jpg",
-        "/images/londoncorner/drink16.jpg",
-        "/images/londoncorner/drink17.jpg",
-        "/images/londoncorner/drink18.jpg",
-        "/images/londoncorner/drink19.jpg",
-        "/images/londoncorner/drink20.jpg",
-        "/images/londoncorner/drink21.jpg",
-        "/images/londoncorner/drink22.jpg",
-        "/images/londoncorner/drink23.jpg",
-        "/images/londoncorner/drink24.jpg",
-        "/images/londoncorner/drink25.jpg",
-        "/images/londoncorner/drink26.jpg",
-        "/images/londoncorner/drink27.jpg",
-        "/images/londoncorner/drink28.jpg",
-        "/images/londoncorner/drink29.jpg",
-        "/images/londoncorner/drink30.jpg",
-        "/images/londoncorner/drink31.jpg",
-        "/images/londoncorner/drink32.jpg",
-        "/images/londoncorner/drink33.jpg",
-        "/images/londoncorner/drink34.jpg"
-      ]
-    }
-  ],
-  "hotels": [
-    {
-      "id": 1,
-      "name": "Seava",
-      "image": "/images/seava/image.jpg",
-      "serviceImages": {
-        "about": [
-          "/images/seava/about1.jpg",
-          "/images/seava/about2.jpg",
-          "/images/seava/about3.jpg",
-          "/images/seava/about4.jpg",
-          "/images/seava/about5.jpg",
-          "/images/seava/about6.jpg",
-          "/images/seava/about7.jpg",
-          "/images/seava/about8.jpg",
-          "/images/seava/about9.jpg",
-          "/images/seava/about10.jpg",
-          "/images/seava/about11.jpg",
-          "/images/seava/about12.jpg",
-          "/images/seava/about13.jpg",
-          "/images/seava/about14.jpg",
-          "/images/seava/about15.jpg",
-          "/images/seava/about16.jpg",
-          "/images/seava/about17.jpg",
-          "/images/seava/about18.jpg",
-          "/images/seava/about19.jpg",
-          "/images/seava/about20.jpg",
-          "/images/seava/about21.jpg",
-          "/images/seava/about22.jpg"
+          "/images/londoncorner/about5.jpg",
+          "/images/londoncorner/birthday1.jpg",
+          "/images/londoncorner/birthday2.jpg",
+          "/images/londoncorner/birthday3.jpg",
+          "/images/londoncorner/birthday4.jpg",
+          "/images/londoncorner/wedding1.jpg",
+          "/images/londoncorner/wedding2.jpg",
+          "/images/londoncorner/wedding3.jpg"
         ],
-        "price": [
-          "/images/seava/price.jpg"
-        ]
-      },
-      "carouselItems": [
-        {
-          "src": "/images/seava/slide1.jpg",
-          "text": "Phòng tiện ích, sạch sẽ"
+        "serviceImages": {
+          "birthday": [
+            "/images/londoncorner/birthday1.jpg",
+            "/images/londoncorner/birthday2.jpg",
+            "/images/londoncorner/birthday3.jpg",
+            "/images/londoncorner/birthday4.jpg"
+          ],
+          "wedding": [
+            "/images/londoncorner/wedding1.jpg",
+            "/images/londoncorner/wedding2.jpg",
+            "/images/londoncorner/wedding3.jpg"
+          ],
+          "about": [
+            "/images/londoncorner/about1.jpg",
+            "/images/londoncorner/about2.jpg",
+            "/images/londoncorner/about3.jpg",
+            "/images/londoncorner/about4.jpg",
+            "/images/londoncorner/about5.jpg"
+          ]
         },
-        {
-          "src": "/images/seava/slide4.jpg",
-          "text": "Gần bãi biển "
+        "sectionTitles": {
+          "starters": {
+            "en": "Breakfast",
+            "vi": "Bữa sáng"
+          },
+          "mainMeals": {
+            "en": "Dinner",
+            "vi": "Bữa Tối"
+          },
+          "desserts": {
+            "en": "Drink",
+            "vi": "Đồ uống"
+          }
         },
-        {
-          "src": "/images/seava/slide3.jpg",
-          "text": "Hồ bơi ngay tại khách sạn"
-        }
-      ],
-      "elecmentorCards": [
-        {
-          "image": "/images/seava/slide1.jpg",
-          "title": "Phòng Đơn",
-          "price": "1tr5",
-          "info": "1-2 person",
-          "description": "Phòng được thiết kế thông minh, đầy đủ tiện nghi, sạch sẽ và đặc biệt cửa số hướng ra biển thoáng mát."
-        },
-        {
-          "image": "/images/seava/slide2.jpg",
-          "title": "Phòng Đôi",
-          "price": "1tr9",
-          "info": "1-4 person",
-          "description": "Phòng được thiết kế thông minh, đầy đủ tiện nghi, sạch sẽ và đặc biệt cửa số hướng ra biển thoáng mát."
-        }
-      ],
-      "quodefSection": {
-        "image": "/images/seava/slide3.jpg",
-        "text": "Tiện ích và dịch vụ",
-        "image2": "/images/seava/slide4.jpg",
-        "text2": "Vị trí khách sạn"
-      }
-    },
-    {
-      "id": 2,
-      "name": "Minera",
-      "image": "https://i.pinimg.com/736x/68/7e/16/687e16b383db5a854552169aacf463e5.jpg",
-      "serviceImages": {
-        "about": [
-          "/images/minera/about1.jpg",
-          "/images/minera/about2.jpg",
-          "/images/minera/about3.jpg",
-          "/images/minera/about4.jpg",
-          "/images/minera/about5.jpg",
-          "/images/minera/about6.jpg",
-          "/images/minera/about7.jpg",
-          "/images/minera/about8.jpg",
-          "/images/minera/about9.jpg",
-          "/images/minera/about10.jpg",
-          "/images/minera/about11.jpg",
-          "/images/minera/about12.jpg",
-          "/images/minera/about13.jpg",
-          "/images/minera/about14.jpg",
-          "/images/minera/about15.jpg",
-          "/images/minera/about16.jpg",
-          "/images/minera/about17.jpg",
-          "/images/minera/about18.jpg",
-          "/images/minera/about19.jpg",
-          "/images/minera/about20.jpg",
-          "/images/minera/about21.jpg",
-          "/images/minera/about22.jpg",
-          "/images/minera/about23.jpg",
-          "/images/minera/about24.jpg",
-          "/images/minera/about25.jpg",
-          "/images/minera/about26.jpg",
-          "/images/minera/about27.jpg",
-          "/images/minera/about28.jpg",
-          "/images/minera/about29.jpg",
-          "/images/minera/about30.jpg",
-          "/images/minera/about31.jpg",
-          "/images/minera/about32.jpg",
-          "/images/minera/about33.jpg",
-          "/images/minera/about34.jpg",
-          "/images/minera/about5.jpg"
+        "slideImages": [
+          "/images/londoncorner/slide1.jpg",
+          "/images/londoncorner/slide2.jpg",
+          "/images/londoncorner/slide3.jpg"
         ],
-        "price": [
-          "/images/minera/price.jpg"
+        "hero-section": [
+          "/images/londoncorner/slide4.jpg"
+        ],
+        "review-section": [
+          "/images/londoncorner/slide5.jpg"
+        ],
+        "startersImages": [
+          "/images/londoncorner/breakfast1.jpg",
+          "/images/londoncorner/breakfast2.jpg",
+          "/images/londoncorner/breakfast3.jpg",
+          "/images/londoncorner/breakfast4.jpg",
+          "/images/londoncorner/breakfast5.jpg",
+          "/images/londoncorner/breakfast6.jpg",
+          "/images/londoncorner/breakfast7.jpg",
+          "/images/londoncorner/breakfast8.jpg",
+          "/images/londoncorner/breakfast9.jpg",
+          "/images/londoncorner/breakfast10.jpg"
+        ],
+        "mainImages": [
+          "/images/londoncorner/dinner1.jpg",
+          "/images/londoncorner/dinner2.jpg",
+          "/images/londoncorner/dinner3.jpg",
+          "/images/londoncorner/dinner4.jpg",
+          "/images/londoncorner/dinner5.jpg",
+          "/images/londoncorner/dinner6.jpg",
+          "/images/londoncorner/dinner7.jpg",
+          "/images/londoncorner/dinner8.jpg",
+          "/images/londoncorner/dinner9.jpg",
+          "/images/londoncorner/dinner10.jpg",
+          "/images/londoncorner/dinner11.jpg",
+          "/images/londoncorner/dinner12.jpg",
+          "/images/londoncorner/dinner13.jpg",
+          "/images/londoncorner/dinner14.jpg"
+        ],
+        "dessertImages": [
+          "/images/londoncorner/drink1.jpg",
+          "/images/londoncorner/drink2.jpg",
+          "/images/londoncorner/drink3.jpg",
+          "/images/londoncorner/drink4.jpg",
+          "/images/londoncorner/drink5.jpg",
+          "/images/londoncorner/drink6.jpg",
+          "/images/londoncorner/drink7.jpg",
+          "/images/londoncorner/drink8.jpg",
+          "/images/londoncorner/drink9.jpg",
+          "/images/londoncorner/drink10.jpg",
+          "/images/londoncorner/drink11.jpg",
+          "/images/londoncorner/drink12.jpg",
+          "/images/londoncorner/drink13.jpg",
+          "/images/londoncorner/drink14.jpg",
+          "/images/londoncorner/drink15.jpg",
+          "/images/londoncorner/drink16.jpg",
+          "/images/londoncorner/drink17.jpg",
+          "/images/londoncorner/drink18.jpg",
+          "/images/londoncorner/drink19.jpg",
+          "/images/londoncorner/drink20.jpg",
+          "/images/londoncorner/drink21.jpg",
+          "/images/londoncorner/drink22.jpg",
+          "/images/londoncorner/drink23.jpg",
+          "/images/londoncorner/drink24.jpg",
+          "/images/londoncorner/drink25.jpg",
+          "/images/londoncorner/drink26.jpg",
+          "/images/londoncorner/drink27.jpg",
+          "/images/londoncorner/drink28.jpg",
+          "/images/londoncorner/drink29.jpg",
+          "/images/londoncorner/drink30.jpg",
+          "/images/londoncorner/drink31.jpg",
+          "/images/londoncorner/drink32.jpg",
+          "/images/londoncorner/drink33.jpg",
+          "/images/londoncorner/drink34.jpg"
+        ]
+      }
+    ],
+    "hotels": [
+      {
+        "id": 1,
+        "name": "Seava Hotel",
+        "image": "/images/seava/image.jpg",
+        "galleryImage": [
+          "/images/lalalandbinhkhanh/birthday1.jpg",
+          "/images/lalalandbinhkhanh/birthday2.jpg",
+          "/images/lalalandbinhkhanh/birthday3.jpg",
+          "/images/lalalandbinhkhanh/wedding1.jpg",
+          "/images/lalalandbinhkhanh/wedding2.jpg",
+          "/images/lalalandbinhkhanh/wedding3.jpg",
+          "/images/lalalandbinhkhanh/about1.jpg",
+          "/images/lalalandbinhkhanh/about2.jpg",
+          "/images/lalalandbinhkhanh/about3.jpg",
+          "/images/lalalandbinhkhanh/about4.jpg",
+          "/images/lalalandbinhkhanh/about5.jpg"
+        ],
+        "serviceImages": {
+          "about": [
+            "/images/seava/about1.jpg",
+            "/images/seava/about2.jpg",
+            "/images/seava/about3.jpg",
+            "/images/seava/about4.jpg",
+            "/images/seava/about5.jpg",
+            "/images/seava/about6.jpg",
+            "/images/seava/about7.jpg",
+            "/images/seava/about8.jpg",
+            "/images/seava/about9.jpg",
+            "/images/seava/about10.jpg",
+            "/images/seava/about11.jpg",
+            "/images/seava/about12.jpg",
+            "/images/seava/about13.jpg",
+            "/images/seava/about14.jpg",
+            "/images/seava/about15.jpg",
+            "/images/seava/about16.jpg",
+            "/images/seava/about17.jpg",
+            "/images/seava/about18.jpg",
+            "/images/seava/about19.jpg",
+            "/images/seava/about20.jpg",
+            "/images/seava/about21.jpg"
+          ],
+          "price": [
+            "/images/seava/price.jpg"
+          ]
+        },
+        "carouselItems": [
+          {
+            "src": "/images/seava/slide1.jpg",
+            "text": "Phòng tiện ích, sạch sẽ"
+          },
+          {
+            "src": "/images/seava/slide4.jpg",
+            "text": "Gần bãi biển "
+          },
+          {
+            "src": "/images/seava/slide3.jpg",
+            "text": "Hồ bơi ngay tại khách sạn"
+          }
+        ],
+        "elecmentorCards": [
+          {
+            "image": "/images/seava/slide1.jpg",
+            "title": "Phòng Đơn",
+            "price": "1tr5",
+            "info": "1-2 person",
+            "description": "Phòng được thiết kế thông minh, đầy đủ tiện nghi, sạch sẽ và đặc biệt cửa số hướng ra biển thoáng mát."
+          },
+          {
+            "image": "/images/seava/slide2.jpg",
+            "title": "Phòng Đôi",
+            "price": "1tr9",
+            "info": "1-4 person",
+            "description": "Phòng được thiết kế thông minh, đầy đủ tiện nghi, sạch sẽ và đặc biệt cửa số hướng ra biển thoáng mát."
+          }
+        ],
+        "quodefSection": {
+          "image": "/images/seava/slide3.jpg",
+          "text": "Tiện ích và dịch vụ",
+          "image2": "/images/seava/slide4.jpg",
+          "text2": "Vị trí khách sạn"
+        }
+      },
+      {
+        "id": 2,
+        "name": "Minera Resort",
+        "image": "/images/minera/image.jpg",
+        "galleryImage": [
+          "/images/minera/ (1).jpg",
+          "/images/minera/ (2).jpg",
+          "/images/minera/(3).jpg",
+          "/images/minera/(4).jpg",
+          "/images/minera/(5).jpg",
+          "/images/minera/(6).jpg",
+          "/images/minera/grandvilla.jpg",
+          "/images/minera/premiumwonder.jpg",
+          "/images/minera/grandvilla2.jpg",
+          "/images/minera/slide3.jpg"
+        ],
+        "serviceImages": {
+          "about": [
+            "/images/minera/about1.jpg",
+            "/images/minera/about2.jpg",
+            "/images/minera/about3.jpg",
+            "/images/minera/about4.jpg",
+            "/images/minera/about5.jpg",
+            "/images/minera/about6.jpg",
+            "/images/minera/about7.jpg",
+            "/images/minera/about8.jpg",
+            "/images/minera/about9.jpg",
+            "/images/minera/about10.jpg",
+            "/images/minera/about11.jpg",
+            "/images/minera/about12.jpg",
+            "/images/minera/about13.jpg",
+            "/images/minera/about14.jpg",
+            "/images/minera/about15.jpg",
+            "/images/minera/about16.jpg",
+            "/images/minera/about17.jpg",
+            "/images/minera/about18.jpg",
+            "/images/minera/about19.jpg",
+            "/images/minera/about20.jpg",
+            "/images/minera/about21.jpg",
+            "/images/minera/about22.jpg",
+            "/images/minera/about23.jpg",
+            "/images/minera/about24.jpg",
+            "/images/minera/about25.jpg",
+            "/images/minera/about26.jpg",
+            "/images/minera/about27.jpg",
+            "/images/minera/about28.jpg",
+            "/images/minera/about29.jpg",
+            "/images/minera/about30.jpg",
+            "/images/minera/about31.jpg",
+            "/images/minera/about32.jpg",
+            "/images/minera/about33.jpg",
+            "/images/minera/about34.jpg",
+            "/images/minera/about35.jpg"
+          ],
+          "price": [
+            "/images/minera/price.jpg"
+          ]
+        },
+        "carouselItems": [
+          {
+            "src": "/images/minera/slide1.jpg",
+            "text": "Sạch sẽ  và thoáng mát"
+          },
+          {
+            "src": "/images/minera/slide2.jpg",
+            "text": "Sang trọng và tinh tế"
+          },
+          {
+            "src": "/images/minera/slide3.jpg",
+            "text": "Đầy đủ tiện nghi"
+          }
+        ],
+        "elecmentorCards": [
+          {
+            "image": "/images/minera/gardenexe.jpg",
+            "title": "Exe Garden Deluxe",
+            "price": "1tr5",
+            "info": "1-2 person",
+            "description": "Nằm trong khuôn viên xanh mát, mang đến không gian yên tĩnh, tiện nghi hiện đại và dịch vụ chuyên nghiệp, lý tưởng cho kỳ nghỉ thư giãn hoặc chuyến công tác tại thành phố."
+          },
+          {
+            "image": "/images/minera/premiumwonder.jpg",
+            "title": "Pre Wonder",
+            "price": "1tr9",
+            "info": "1-2 person",
+            "description": "Loại phòng cao cấp mang phong cách hiện đại và tinh tế, kết hợp không gian rộng rãi với tiện nghi sang trọng, tạo nên trải nghiệm nghỉ dưỡng ấn tượng và đầy cảm hứng."
+          },
+          {
+            "image": "/images/minera/premiumsuite.jpg",
+            "title": "Pre Suite",
+            "price": "4tr",
+            "info": "1-4 person",
+            "description": "Căn hộ cao cấp với 2 phòng ngủ riêng biệt, không gian rộng rãi, đầy đủ tiện nghi sang trọng, phù hợp cho gia đình hoặc nhóm bạn, mang đến cảm giác thoải mái và riêng tư như ở nhà."
+          },
+          {
+            "image": "/images/minera/premiumwonder.jpg",
+            "title": "Pre Wonder",
+            "price": "1tr9",
+            "info": "1-2 person",
+            "description": "Không gian nghỉ dưỡng cao cấp với thiết kế hòa mình vào thiên nhiên, trang bị tiện nghi hiện đại, mang đến trải nghiệm thư thái, sang trọng giữa khu vườn xanh mát và yên bình."
+          },
+          {
+            "image": "/images/minera/aquavilla.jpg",
+            "title": "Aqua Villa",
+            "price": "4tr5",
+            "info": "1-2 person",
+            "description": "Biệt thự cao cấp với hồ bơi riêng ngay tại sân nhà, thiết kế hiện đại hòa quyện với thiên nhiên, mang đến không gian nghỉ dưỡng riêng tư, thư giãn tuyệt đối và tiện nghi đẳng cấp."
+          },
+          {
+            "images": [
+              "/images/minera/grandvilla.jpg",
+              "/images/minera/grandvilla2.jpg"
+            ],
+            "title": "Grand Villa",
+            "price": "6tr5",
+            "info": "1-4 person",
+            "description": "Biệt thự sang trọng với không gian rộng lớn, thiết kế tinh tế, tiện nghi cao cấp, khuôn viên riêng biệt, lý tưởng cho kỳ nghỉ đẳng cấp cùng gia đình hoặc nhóm bạn trong không gian riêng tư và yên bình."
+          },
+          {
+            "image": "/images/minera/familyroom.jpg",
+            "title": "Family Room 4 pax",
+            "price": "3tr3",
+            "info": "1-4 person",
+            "description": "Phòng nghỉ rộng rãi được trang bị 4 giường riêng biệt, đầy đủ tiện nghi hiện đại, mang đến sự thoải mái và thuận tiện cho kỳ nghỉ chung nhưng vẫn đảm bảo không gian riêng tư."
+          },
+          {
+            "image": "/images/minera/family6pax.jpg",
+            "title": "Family Room 6 pax",
+            "price": "4tr9",
+            "info": "1-6 person",
+            "description": "Phòng nghỉ rộng rãi được trang bị 3 giường đôi, đầy đủ tiện nghi hiện đại, mang đến sự thoải mái và thuận tiện cho kỳ nghỉ chung nhưng vẫn đảm bảo không gian riêng tư."
+          }
+        ],
+        "quodefSection": {
+          "image": "/images/minera/slide4.jpg",
+          "text": "Tiện ích và dịch vụ",
+          "image2": "/images/minera/slide5.jpg",
+          "text2": "Nhà hàng và Cafe"
+        }
+      },
+      {
+        "id": 3,
+        "name": "Ktown & Wonderland",
+        "image": "/images/nova/image.jpg",
+        "galleryImage": [
+          "/images/nova/slide1.jpg",
+          "/images/nova/slide2.jpg",
+          "/images/nova/slide3.jpg",
+          "/images/nova/slide4.jpg",
+          "/images/nova/slide5.jpg",
+          "/images/nova/gallery.jpg",
+          "/images/nova/BungalowDouble.jpg"
+        ],
+        "serviceImages": {
+          "about": [
+            "/images/nova/about1.jpg",
+            "/images/nova/about2.jpg",
+            "/images/nova/about3.jpg",
+            "/images/nova/about4.jpg",
+            "/images/nova/about5.jpg",
+            "/images/nova/about6.jpg",
+            "/images/nova/about7.jpg",
+            "/images/nova/about8.jpg",
+            "/images/nova/about9.jpg",
+            "/images/nova/about10.jpg",
+            "/images/nova/about11.jpg",
+            "/images/nova/about12.jpg",
+            "/images/nova/about13.jpg",
+            "/images/nova/about14.jpg",
+            "/images/nova/about15.jpg",
+            "/images/nova/about16.jpg",
+            "/images/nova/about17.jpg"
+          ],
+          "price": [
+            "/images/nova/price1.jpg",
+            "/images/nova/price2.jpg"
+          ]
+        },
+        "carouselItems": [
+          {
+            "src": "/images/nova/slide1.jpg",
+            "text": "Thôn dã, yên bình"
+          },
+          {
+            "src": "/images/nova/slide2.jpg",
+            "text": "Chu đáo, tinh tế"
+          },
+          {
+            "src": "/images/nova/slide3.jpg",
+            "text": "Đầy đủ tiện nghi"
+          }
+        ],
+        "elecmentorCards": [
+          {
+            "image": "/images/nova/Family.jpg",
+            "title": "Family",
+            "price": "1tr3",
+            "info": "1-4 person",
+            "description": "Nằm giữa không gian xanh mát, đầy đủ tiện nghi và bao gồm vé vào 5 công viên giải trí, lý tưởng cho kỳ nghỉ trọn vẹn tại NovaWorld Phan Thiết."
+          },
+          {
+            "image": "/images/nova/BungalowDouble.jpg",
+            "title": "Bungalow Double",
+            "price": "950k",
+            "info": "1-2 person",
+            "description": "Nằm giữa không gian xanh mát, đầy đủ tiện nghi và bao gồm vé vào 5 công viên giải trí, lý tưởng cho kỳ nghỉ trọn vẹn tại NovaWorld Phan Thiết."
+          }
+        ],
+        "quodefSection": {
+          "image": "/images/nova/slide4.jpg",
+          "text": "Tiện ích và dịch vụ",
+          "image2": "/images/nova/slide5.jpg",
+          "text2": "Nhà hàng-Cafe-Spa"
+        }
+      },
+      {
+        "id": 4,
+        "name": "Radison",
+        "image": "/images/radison/image.jpg",
+        "galleryImage": [
+          "/images/radison/villa1.jpg",
+          "/images/radison/villa2.jpg",
+          "/images/radison/villa3.jpg",
+          "/images/radison/premiumking.jpg",
+          "/images/radison/deluxeking.jpg",
+          "/images/radison/deluxeking2.jpg",
+          "/images/radison/deluxeking3.jpg",
+          "/images/radison/executive1.jpg",
+          "/images/radison/executive2.jpg",
+          "/images/radison/executive3.jpg",
+          "/images/radison/slide5.jpg",
+          "/images/radison/slide4.jpg"
+        ],
+        "serviceImages": {
+          "about": [
+            "/images/radison/about1.jpg",
+            "/images/radison/about2.jpg",
+            "/images/radison/about3.jpg",
+            "/images/radison/about4.jpg",
+            "/images/radison/about5.jpg",
+            "/images/radison/about6.jpg",
+            "/images/radison/about7.jpg",
+            "/images/radison/about8.jpg",
+            "/images/radison/about9.jpg",
+            "/images/radison/about10.jpg",
+            "/images/radison/about11.jpg",
+            "/images/radison/about12.jpg",
+            "/images/radison/about13.jpg",
+            "/images/radison/about14.jpg",
+            "/images/radison/about15.jpg",
+            "/images/radison/about16.jpg",
+            "/images/radison/about17.jpg",
+            "/images/radison/about18.jpg",
+            "/images/radison/about19.jpg",
+            "/images/radison/about20.jpg",
+            "/images/radison/about21.jpg",
+            "/images/radison/about22.jpg",
+            "/images/radison/about23.jpg",
+            "/images/radison/about24.jpg",
+            "/images/radison/about25.jpg",
+            "/images/radison/about26.jpg",
+            "/images/radison/about27.jpg",
+            "/images/radison/about28.jpg",
+            "/images/radison/about29.jpg",
+            "/images/radison/about30.jpg",
+            "/images/radison/about31.jpg"
+          ],
+          "price": [
+            "/images/radison/slide7.jpg",
+            "/images/radison/slide6.jpg"
+          ]
+        },
+        "carouselItems": [
+          {
+            "src": "/images/radison/slide1.jpg",
+            "text": "Sang trọng và tinh tế"
+          },
+          {
+            "src": "/images/radison/premiumking.jpg",
+            "text": "Sạch sẽ  và thoáng mát"
+          },
+          {
+            "src": "/images/radison/villa3.jpg",
+            "text": "Đầy đủ tiện nghi"
+          }
+        ],
+        "elecmentorCards": [
+          {
+            "images": [
+              "/images/radison/deluxeking.jpg",
+              "/images/radison/deluxeking2.jpg",
+              "/images/radison/deluxeking3.jpg"
+            ],
+            "title": "Deluxe King",
+            "price": "1tr",
+            "info": "1-2 person",
+            "description": "Nằm trong khuôn viên xanh mát, mang đến không gian yên tĩnh, tiện nghi hiện đại và dịch vụ chuyên nghiệp, lý tưởng cho kỳ nghỉ thư giãn hoặc chuyến công tác tại thành phố."
+          },
+          {
+            "images": [
+              "/images/radison/executive1.jpg",
+              "/images/radison/executive2.jpg",
+              "/images/radison/executive3.jpg"
+            ],
+            "title": "Executive Suite",
+            "price": "1tr5",
+            "info": "1-2 person",
+            "description": "Nằm trong khuôn viên xanh mát, mang đến không gian yên tĩnh, tiện nghi hiện đại và dịch vụ chuyên nghiệp, lý tưởng cho kỳ nghỉ thư giãn hoặc chuyến công tác tại thành phố."
+          },
+          {
+            "images": [
+              "/images/radison/family1.jpg",
+              "/images/radison/family2.jpg",
+              "/images/radison/family3.jpg"
+            ],
+            "title": "Family",
+            "price": "1tr9",
+            "info": "1-4 person",
+            "description": "Nằm trong khuôn viên xanh mát, mang đến không gian yên tĩnh, tiện nghi hiện đại và dịch vụ chuyên nghiệp, lý tưởng cho kỳ nghỉ thư giãn hoặc chuyến công tác tại thành phố."
+          },
+          {
+            "image": "/images/radison/premiumking.jpg",
+            "title": "Premium King",
+            "price": "2tr",
+            "info": "1-2 person",
+            "description": "Không gian nghỉ dưỡng cao cấp với thiết kế hòa mình vào thiên nhiên, trang bị tiện nghi hiện đại, mang đến trải nghiệm thư thái, sang trọng giữa khu vườn xanh mát và yên bình."
+          },
+          {
+            "image": "/images/radison/premiumtwin.jpg",
+            "title": "Pre Twin",
+            "price": "1tr9",
+            "info": "1-2 person",
+            "description": "Không gian nghỉ dưỡng cao cấp với thiết kế hòa mình vào thiên nhiên, trang bị tiện nghi hiện đại, mang đến trải nghiệm thư thái, sang trọng giữa khu vườn xanh mát và yên bình."
+          },
+          {
+            "images": [
+              "/images/radison/villa1.jpg",
+              "/images/radison/villa2.jpg",
+              "/images/radison/villa3.jpg"
+            ],
+            "title": "Villa",
+            "price": "3tr",
+            "info": "1-2 person",
+            "description": "Biệt thự cao cấp, thiết kế hiện đại hòa quyện với thiên nhiên, mang đến không gian nghỉ dưỡng riêng tư, thư giãn tuyệt đối và tiện nghi đẳng cấp."
+          }
+        ],
+        "quodefSection": {
+          "image": "/images/radison/slide4.jpg",
+          "text": "Tiện ích và dịch vụ",
+          "image2": "/images/radison/slide5.jpg",
+          "text2": "Nhà hàng và Cafe"
+        }
+      }
+    ],
+    "tourist": [
+      {
+        "id": 1,
+        "name": "Nova World Hồ Tràm",
+        "image": "/pdf/novahotram.jpg",
+        "pdfabout": [
+          "/pdf/nvwhotram/file1.pdf",
+          "/pdf/nvwhotram/file2.pdf",
+          "/pdf/nvwhotram/file3.pdf",
+          "/pdf/nvwhotram/file4.pdf"
+        ],
+        "labels": [
+          "40-90 khách",
+          "100-135 khách",
+          "135-180 khách",
+          "200 khách"
+        ],
+        "backgroundImages": [
+          "/pdf/nvwhotram/hotram1.jpg",
+          "/pdf/nvwhotram/hotram2.jpg",
+          "/pdf/nvwhotram/hotram3.jpg",
+          "/pdf/nvwhotram/hotram4.jpg"
         ]
       },
-      "carouselItems": [
-        {
-          "src": "/images/minera/slide1.jpg",
-          "text": "Sạch sẽ  và thoáng mát"
-        },
-        {
-          "src": "/images/minera/slide2.jpg",
-          "text": "Sang trọng và tinh tế"
-        },
-        {
-          "src": "/images/minera/slide3.jpg",
-          "text": "Đầy đủ tiện nghi"
-        }
-      ],
-      "elecmentorCards": [
-        {
-          "image": "/images/minera/gardenexe.jpg",
-          "title": "Exe Garden Deluxe",
-          "price": "1tr5",
-          "info": "1-2 person",
-          "description": "Nằm trong khuôn viên xanh mát, mang đến không gian yên tĩnh, tiện nghi hiện đại và dịch vụ chuyên nghiệp, lý tưởng cho kỳ nghỉ thư giãn hoặc chuyến công tác tại thành phố."
-        },
-        {
-          "image": "/images/minera/premiumwonder.jpg",
-          "title": "Pre Wonder",
-          "price": "1tr9",
-          "info": "1-2 person",
-          "description": "Loại phòng cao cấp mang phong cách hiện đại và tinh tế, kết hợp không gian rộng rãi với tiện nghi sang trọng, tạo nên trải nghiệm nghỉ dưỡng ấn tượng và đầy cảm hứng."
-        },
-        {
-          "image": "/images/minera/premiumsuite.jpg",
-          "title": "Pre Suite",
-          "price": "4tr",
-          "info": "1-4 person",
-          "description": "Căn hộ cao cấp với 2 phòng ngủ riêng biệt, không gian rộng rãi, đầy đủ tiện nghi sang trọng, phù hợp cho gia đình hoặc nhóm bạn, mang đến cảm giác thoải mái và riêng tư như ở nhà."
-        },
-        {
-          "image": "/images/minera/premiumwonder.jpg",
-          "title": "Pre Wonder",
-          "price": "1tr9",
-          "info": "1-2 person",
-          "description": "Không gian nghỉ dưỡng cao cấp với thiết kế hòa mình vào thiên nhiên, trang bị tiện nghi hiện đại, mang đến trải nghiệm thư thái, sang trọng giữa khu vườn xanh mát và yên bình."
-        },
-        {
-          "image": "/images/minera/aquavilla.jpg",
-          "title": "Aqua Villa",
-          "price": "4tr5",
-          "info": "1-2 person",
-          "description": "Biệt thự cao cấp với hồ bơi riêng ngay tại sân nhà, thiết kế hiện đại hòa quyện với thiên nhiên, mang đến không gian nghỉ dưỡng riêng tư, thư giãn tuyệt đối và tiện nghi đẳng cấp."
-        },
-        {
-          "image": "/images/minera/grandvilla.jpg",
-          "title": "Grand Villa",
-          "price": "6tr5",
-          "info": "1-4 person",
-          "description": "Biệt thự sang trọng với không gian rộng lớn, thiết kế tinh tế, tiện nghi cao cấp, khuôn viên riêng biệt, lý tưởng cho kỳ nghỉ đẳng cấp cùng gia đình hoặc nhóm bạn trong không gian riêng tư và yên bình."
-        },
-        {
-          "image": "/images/minera/familyroom.jpg",
-          "title": "Family Room 4 pax",
-          "price": "3tr3",
-          "info": "1-4 person",
-          "description": "Phòng nghỉ rộng rãi được trang bị 4 giường riêng biệt, đầy đủ tiện nghi hiện đại, mang đến sự thoải mái và thuận tiện cho kỳ nghỉ chung nhưng vẫn đảm bảo không gian riêng tư."
-        }
-        ,
-        {
-          "image": "/images/minera/family6pax.jpg",
-          "title": "Family Room 6 pax",
-          "price": "4tr9",
-          "info": "1-6 person",
-          "description": "Phòng nghỉ rộng rãi được trang bị 3 giường đôi, đầy đủ tiện nghi hiện đại, mang đến sự thoải mái và thuận tiện cho kỳ nghỉ chung nhưng vẫn đảm bảo không gian riêng tư."
-        }
-      ],
-      "quodefSection": {
-        "image": "/images/minera/slide4.jpg",
-        "text": "Tiện ích và dịch vụ",
-        "image2": "/images/minera/slide5.jpg",
-        "text2": "Nhà hàng và Cafe"
+      {
+        "id": 2,
+        "name": "Nova World Phan Thiết",
+        "image": "/pdf/novaphanthiet.jpg",
+        "pdfabout": [
+          "/pdf/nvwphanthiet/file1.pdf",
+          "/pdf/nvwphanthiet/file2.pdf",
+          "/pdf/nvwphanthiet/file3.pdf",
+          "/pdf/nvwphanthiet/file4.pdf",
+          "/pdf/nvwphanthiet/file5.pdf"
+        ],
+        "labels": [
+          "40-90 khách",
+          "100-135 khách",
+          "135-180 khách",
+          "200 khách",
+          "300 khách"
+        ],
+        "backgroundImages": [
+          "/pdf/nvwphanthiet/phanthiet1.jpg",
+          "/pdf/nvwphanthiet/phanthiet2.jpg",
+          "/pdf/nvwphanthiet/phanthiet3.jpg",
+          "/pdf/nvwphanthiet/phanthiet4.jpg",
+          "/pdf/nvwphanthiet/phanthiet5.jpg"
+        ]
       }
-    }
-  ]
-}
+    ]
+  }

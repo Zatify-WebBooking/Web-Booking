@@ -6,7 +6,7 @@ const HotelAside = ({ hotelId, hotelName, activeIndex, setActiveIndex }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const { t } = useTranslation();
-  const navItems = ['HOME', 'ROOMS', 'ABOUT', 'CONTACT'];
+  const navItems = ['HOME', 'ROOMS', 'ABOUT', 'CONTACT', 'GALLERY'];
 
   // Map pathname to tab index
   useEffect(() => {
@@ -20,6 +20,8 @@ const HotelAside = ({ hotelId, hotelName, activeIndex, setActiveIndex }) => {
       setActiveIndex(3);
     } else if (path === `/hotel/${hotelId}#rooms` || (path.includes('/hotel/') && path.includes('rooms'))) {
       setActiveIndex(1);
+    } else if (path === `/galleryhotel/${hotelId}`) {
+      setActiveIndex(4);
     } else {
       setActiveIndex(0); 
     }
@@ -38,7 +40,7 @@ const HotelAside = ({ hotelId, hotelName, activeIndex, setActiveIndex }) => {
       </div>
       <nav id="sidebar-nav">
         {navItems.map((item, idx) => {
-          const navKeyMap = ['home', 'rooms', 'about', 'contact'];
+          const navKeyMap = ['home', 'rooms', 'about', 'contact', 'gallery'];
           return (
             <a
               href="#"
@@ -58,6 +60,8 @@ const HotelAside = ({ hotelId, hotelName, activeIndex, setActiveIndex }) => {
                   navigate(`/hotel/abouthotel/${hotelId}`);
                 } else if (idx === 3) {
                   navigate(`/hotel/bookroom/${hotelId}`);
+                } else if (idx === 4) {
+                  navigate(`/galleryhotel/${hotelId}`);
                 } else {
                   handleNavClick(idx, e);
                 }

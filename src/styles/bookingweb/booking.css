@@ -414,6 +414,17 @@
   text-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
 }
 
+.tourist-hero-title {
+  font-size: 70px;
+  font-weight: 400;
+  font-family: 'Pacifico', cursive;
+  line-height: 1.1;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
 .hero-description {
   font-size: 1.6rem;
   font-weight: 400;
@@ -1671,4 +1682,26 @@ section.container {
 /* Hide the location dropdown section in the search bar */
 .location-dropdown-wrapper {
   display: none !important;
+}
+
+.tourist-hero-btn {
+  background: #1ccfc9;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 22px;
+  padding: 14px 56px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #0002;
+  margin-bottom: 0;
+  margin-top: 0;
+  letter-spacing: 1.2px;
+  align-self: center;
+  transition: background 0.2s, color 0.2s;
+}
+
+.tourist-hero-btn:hover {
+  background: #17b3ad;
+  color: #fff;
 }

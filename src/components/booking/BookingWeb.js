@@ -6,6 +6,7 @@ import "../../styles/bookingweb/booking.css";
 import FooterBooking from "../partials/FooterBooking";
 
 function BookingWeb() {
+  // All useState/useRef/useEffect hooks must be at the top, before any logic or return
   const [activeTab, setActiveTab] = useState("all");
   const [page, setPage] = useState(0);
   const [data, setData] = useState({ restaurants: [], hotels: [] });
@@ -16,8 +17,8 @@ function BookingWeb() {
   const prevPageRef = useRef(page);
   const [searchText, setSearchText] = useState("");
 
-  const [animatedWord, setAnimatedWord] = useState("Hotel");
-  const animatedWords = ["Hotel", "Restaurant", "Tourist"];
+  const [animatedWord, setAnimatedWord] = useState("Khách sạn");
+  const animatedWords = ["Khách sạn", "Nhà hàng", "Du lịch"];
   const animatedIndex = useRef(0);
   const [typing, setTyping] = useState("");
 
@@ -27,6 +28,7 @@ function BookingWeb() {
   ];
   const navigate = useNavigate();
   const [search] = useOutletContext();
+  const [showSearchResult, setShowSearchResult] = useState(false);
 
   // Fetch voucher
   useEffect(() => {
@@ -139,7 +141,7 @@ function BookingWeb() {
             <div className="card-listings">1 listings</div>
             <button className="card-browse-btn"
               onClick={() => handleCardClick(item.id)}
-              style={{ cursor: ["Restaurant","Hotel","Tourist"].includes(activeTab) ? "pointer" : "not-allowed", opacity: ["Restaurant","Hotel","Tourist"].includes(activeTab) ? 1 : 0.6 }}
+              style={{ cursor: ["Restaurant", "Hotel", "Tourist"].includes(activeTab) ? "pointer" : "not-allowed", opacity: ["Restaurant", "Hotel", "Tourist"].includes(activeTab) ? 1 : 0.6 }}
             >
               Browse
             </button>
@@ -244,7 +246,7 @@ function BookingWeb() {
         bottomBadges: []
       },
       {
-        img: "https://tpiland.com/wp-content/uploads/2025/04/NovaWorld_HoTram_phan_khu_biet_thu-1024x579.jpg",
+        img: "https://cdn3.ivivu.com/2022/08/Cong-vien-bikini-beach-novaworld-phan-thiet-ivivu.jpeg",
         title: "NovaWorld Hồ Tràm",
         badges: [],
         bottomBadges: []
@@ -296,19 +298,19 @@ function BookingWeb() {
   // Testimonial data (3 items, giống hình mẫu)
   const testimonials = [
     {
-      text: 'The booking process was seamless and the customer support was outstanding. I found the perfect restaurant for my anniversary dinner! Highly recommend this service.',
+      text: 'Quá trình đặt chỗ diễn ra suôn sẻ và dịch vụ hỗ trợ khách hàng rất tuyệt vời. Tôi đã tìm được nhà hàng hoàn hảo cho bữa tối kỷ niệm của mình! Rất đáng để sử dụng và giới thiệu.',
       name: 'David Lee',
       title: 'Software Engineer',
       img: 'https://randomuser.me/api/portraits/men/32.jpg',
     },
     {
-      text: 'I love how easy it is to discover new places and make reservations. The interface is user-friendly and the deals are great. Will use again!',
+      text: 'Nova World Phan Thiết có không gian rộng rãi, thoáng đãng, nhiều tiện ích vui chơi và giải trí đa dạng. Nhân viên thân thiện, phục vụ nhiệt tình. Một số phản hồi về việc cần cải thiện vệ sinh và tiện nghi trong phòng nghỉ. Tổng thể trải nghiệm tốt, phù hợp cho kỳ nghỉ gia đình hoặc nhóm bạn. Giá cả hợp lý với chất lượng dịch vụ.',
       name: 'Sophia Turner',
       title: 'Marketing Specialist',
       img: 'https://randomuser.me/api/portraits/women/44.jpg',
     },
     {
-      text: 'Excellent experience from start to finish. The reviews helped me choose the best spot and the confirmation was instant. Five stars!',
+      text: 'Trải nghiệm tuyệt vời từ đầu đến cuối. Các đánh giá giúp tôi chọn được địa điểm tốt nhất và việc xác nhận đặt chỗ diễn ra ngay lập tức. Đánh giá 5 sao!',
       name: 'Michael Chen',
       title: 'Business Owner',
       img: 'https://randomuser.me/api/portraits/men/45.jpg',
@@ -364,20 +366,47 @@ function BookingWeb() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  if (loading) return <div>Đang tải dữ liệu...</div>;
+  // Đặt hook useRef và useEffect cho carousel hero ở đây, ngay sau các khai báo useState/useRef
+  const carouselInterval = useRef(null);
+  const [heroSlideDirection, setHeroSlideDirection] = useState(null);
+
+  useEffect(() => {
+    // Xóa interval cũ nếu có
+    if (carouselInterval.current) clearInterval(carouselInterval.current);
+    // Tự động chuyển ảnh mỗi 5 giây
+    carouselInterval.current = setInterval(() => {
+      setHeroSlideDirection('right');
+      setPage(prev => (prev + 1) % carouselImages.length);
+    }, 3000);
+    // Cleanup khi unmount
+    return () => clearInterval(carouselInterval.current);
+  }, [carouselImages.length]);
+
+  // Hàm chuyển ảnh thủ công (nút trái/phải)
+  const handleHeroPrev = () => {
+    setHeroSlideDirection('left');
+    setPage(prev => (prev === 0 ? carouselImages.length - 1 : prev - 1));
+  };
+  const handleHeroNext = () => {
+    setHeroSlideDirection('right');
+    setPage(prev => (prev + 1) % carouselImages.length);
+  };
 
   const handleSearch = (e) => {
     e.preventDefault();
     setPage(0); // reset về trang đầu tiên khi search
+    setShowSearchResult(true); // chỉ hiển thị kết quả khi bấm Search
   };
+
+  if (loading) return <div>Đang tải dữ liệu...</div>;
 
   // Popular Categories data cho từng loại
   const popularCategories = {
     restaurant: data.restaurants,
     hotel: data.hotels,
     tourist: [
-      { id: 1, name: 'NovaWorld Hồ Tràm', image: '/images/slide3.jpg', address: 'Xuyên Mộc, Bà Rịa - Vũng Tàu' },
-      { id: 2, name: 'NovaWorld Phan Thiết', image: '/images/slide4.jpg', address: 'Phan Thiết, Bình Thuận' },
+      { id: 1, name: 'NovaWorld Hồ Tràm', image: 'https://scontent.fsgn8-4.fna.fbcdn.net/v/t39.30808-6/432049262_837264268416766_6786007986029882576_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEhiNoebN1Hf-_aj3Ddy-hHPhluM-FOTF4-GW4z4U5MXreH4FpryeopZUamgQHv89-EW5JsxzqD02pWipJZYaOL&_nc_ohc=DE-VPKDghNIQ7kNvwGyv0As&_nc_oc=Adn-JBAOPy-luydx77AYi3sVtKzCJZQVAKnbCzncquHhEw6LFhq4b5cf-pl2UGGud_BnF-CBxiWJ-IUZbbGpKQCp&_nc_zt=23&_nc_ht=scontent.fsgn8-4.fna&_nc_gid=WocDojf6o-OY66srLke4Ew&oh=00_AfK_RlKpMO9Xxhdpf3uI4EUe1rYzfdkTeHDs6gjoYL5rOg&oe=68457044', address: 'Xuyên Mộc, Bà Rịa - Vũng Tàu' },
+      { id: 2, name: 'NovaWorld Phan Thiết', image: 'https://scontent.fsgn8-4.fna.fbcdn.net/v/t39.30808-6/432664646_918739550258220_7309378048563958247_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHwuOGU7kDI_9553c-3q1OJBesAq_WanMYF6wCr9ZqcxoPiwMD_FQmkv_bncA0QCBkxvguYy10iqOkmDSlcdJ5b&_nc_ohc=3GAZkeTpEd4Q7kNvwGvbtNY&_nc_oc=Adni0QFW_p45ZhKqQsbHRKnRcX74uSujaM-08KwYF0Qvt0eeDtYJIZywdHCbY9VBnzFNo05YqP1LGfM2YBgM_Pzr&_nc_zt=23&_nc_ht=scontent.fsgn8-4.fna&_nc_gid=Le8PSoMosR_ebfvh6dGhRg&oh=00_AfJ0p-QWH7JEKAgRK60fpL5b-Mx1WG2aPrG7p5-ThuLNZQ&oe=68458EA3', address: 'Phan Thiết, Bình Thuận' },
     ]
   };
 
@@ -385,17 +414,18 @@ function BookingWeb() {
     <div className="bookingweb-root">
       <section className="carousel-booking slider-hover-group">
         <img
-          className="hero-image"
+          className={`hero-image${heroSlideDirection ? ' slide-' + heroSlideDirection : ''}`}
           src={carouselImages[page % carouselImages.length]}
           alt="Booking background"
+          onAnimationEnd={() => setHeroSlideDirection(null)}
         />
         <div className="hero-overlay">
           <div className="hero-text">
             <h1 className="hero-title">
-              Find Nearby Attractions <span style={{ color: '#fff', minWidth: 90, display: 'inline-block' }}>{typing}</span>
+              Khám phá địa điểm gần bạn <span style={{ color: '#fff', minWidth: 90, display: 'inline-block' }}>{typing}</span>
             </h1>
             <p className="hero-description">
-              Explore top-rated attractions, activities and more!
+              Khám phá các địa điểm, hoạt động nổi bật và nhiều hơn nữa!
             </p>
             <button className="btn-primary" onClick={() => {
               const el = document.querySelector('.most-visited-places-section');
@@ -403,9 +433,9 @@ function BookingWeb() {
                 el.scrollIntoView({ behavior: 'smooth', block: 'start' });
               }
             }}>
-              Browse Our Listings
+              Xem danh sách nổi bật
             </button>
-            <p className="category-label">Or browse featured categories:</p>
+            <p className="category-label">Hoặc chọn danh mục nổi bật:</p>
             <div className="category-buttons">
               <button className="category-btn" onClick={() => {
                 setActiveTab('restaurant');
@@ -414,7 +444,7 @@ function BookingWeb() {
                   if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }, 200);
               }}>
-                <i className="fas fa-utensils"></i> Restaurants
+                <i className="fas fa-utensils"></i> Nhà hàng
               </button>
               <button className="category-btn" onClick={() => {
                 setActiveTab('hotel');
@@ -423,30 +453,26 @@ function BookingWeb() {
                   if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }, 200);
               }}>
-                <i className="fas fa-hotel"></i> Hotels
+                <i className="fas fa-hotel"></i> Khách sạn
               </button>
               <button className="category-btn" onClick={() => {
-                setActiveTab('tourist');
-                setTimeout(() => {
-                  const el = document.querySelector('.card-container-wrapper');
-                  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }, 200);
+                navigate('/tourist');
               }}>
-                <i className="fas fa-map-marked-alt"></i> Tourist
+                <i className="fas fa-map-marked-alt"></i> Du lịch
               </button>
             </div>
           </div>
         </div>
         <button
           className="slider-btn left custom-slider-btn slider-btn-hide-on-default"
-          onClick={handlePrev}
+          onClick={handleHeroPrev}
           style={{ left: 24, top: '50%', transform: 'translateY(-50%)', position: 'absolute', zIndex: 5 }}
         >
-          <span className="slider-chevron">&#8250;</span>
+          <span className="slider-chevron">&#8249;</span>
         </button>
         <button
           className="slider-btn right custom-slider-btn slider-btn-hide-on-default"
-          onClick={handleNext}
+          onClick={handleHeroNext}
           style={{ right: 24, top: '50%', transform: 'translateY(-50%)', position: 'absolute', zIndex: 5 }}
         >
           <span className="slider-chevron">&#8250;</span>
@@ -455,16 +481,25 @@ function BookingWeb() {
       {/* Đưa search-bar ra ngoài carousel-booking */}
       <div className="search-bar">
         <nav className="search-nav">
-          <a className={activeTab === 'all' ? 'nav-link selected' : 'nav-link'} href="#" onClick={e => {e.preventDefault(); setActiveTab('all'); const el = document.querySelector('.card-container-wrapper'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });}}>
-            All
+          <a className={activeTab === 'all' ? 'nav-link selected' : 'nav-link'} href="#" onClick={e => { e.preventDefault(); setActiveTab('all'); const el = document.querySelector('.card-container-wrapper'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}>
+            Tất cả
           </a>
-          <a className={activeTab === 'restaurant' ? 'nav-link selected' : 'nav-link'} href="#" onClick={e => {e.preventDefault(); setActiveTab('restaurant'); const el = document.querySelector('.card-container-wrapper'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });}}>
+          <a className={activeTab === 'restaurant' ? 'nav-link selected' : 'nav-link'} href="#" onClick={e => { e.preventDefault(); setActiveTab('restaurant'); const el = document.querySelector('.card-container-wrapper'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}>
             Nhà hàng
           </a>
-          <a className={activeTab === 'hotel' ? 'nav-link selected' : 'nav-link'} href="#" onClick={e => {e.preventDefault(); setActiveTab('hotel'); const el = document.querySelector('.card-container-wrapper'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });}}>
+          <a className={activeTab === 'hotel' ? 'nav-link selected' : 'nav-link'} href="#" onClick={e => { e.preventDefault(); setActiveTab('hotel'); const el = document.querySelector('.card-container-wrapper'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}>
             Khách sạn
           </a>
-          <a className={activeTab === 'tourist' ? 'nav-link selected' : 'nav-link'} href="#" onClick={e => {e.preventDefault(); setActiveTab('tourist'); const el = document.querySelector('.card-container-wrapper'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });}}>
+          <a
+            className={activeTab === 'tourist' ? 'nav-link selected' : 'nav-link'}
+            href="/tourist"
+            onClick={e => {
+              e.preventDefault();
+              navigate('/tourist');
+            }}
+            role="button"
+            tabIndex={0}
+          >
             Du lịch
           </a>
         </nav>
@@ -474,7 +509,7 @@ function BookingWeb() {
         >
           <input
             type="text"
-            placeholder="What are you looking for?"
+            placeholder="Bạn muốn tìm gì?"
             className="search-input"
             value={searchText}
             onChange={e => setSearchText(e.target.value)}
@@ -487,7 +522,7 @@ function BookingWeb() {
                 options={cityOptions}
                 value={selectedCity}
                 onChange={setSelectedCity}
-                placeholder="Location"
+                placeholder="Khu vực..."
                 isClearable
                 styles={{
                   control: (base) => ({
@@ -532,13 +567,10 @@ function BookingWeb() {
             onChange={e => setActiveTab(e.target.value)}
             style={{ minWidth: 180 }}
           >
-            <option value="restaurant">Restaurant</option>
-            <option value="hotel">Hotel</option>
-            <option value="tourist">Tourist</option>
+            <option value="restaurant">Nhà hàng</option>
+            <option value="hotel">Khách sạn</option>
+            <option value="tourist">Du lịch</option>
           </select>
-          <button className="btn-primary" type="submit">
-            Search
-          </button>
         </form>
       </div>
       {/* Popular Categories heading */}
@@ -558,7 +590,7 @@ function BookingWeb() {
           boxShadow: '0 2px 12px #0001',
           lineHeight: 1.3
         }}>
-          Popular Categories
+          Danh mục nổi bật
         </h2>
         <div style={{ width: 100, height: 5, background: '#ee2a4a', margin: '0 auto', borderRadius: 3 }}></div>
       </div>
@@ -566,8 +598,8 @@ function BookingWeb() {
       <div className="card-container-wrapper" style={{ marginTop: '-90px', marginBottom: 0 }}>
         <div
           className="card-container-carousel"
-          style={{ 
-            transform: `translateX(-${page * 298}px)`,
+          style={{
+            transform: (activeTab === 'hotel' || activeTab === 'tourist') ? 'none' : `translateX(-${page * 298}px)`,
             display: 'flex',
             justifyContent: 'center',
             gap: 24,
@@ -578,41 +610,35 @@ function BookingWeb() {
           {(activeTab === 'all'
             ? [...(popularCategories.restaurant || []), ...(popularCategories.hotel || []), ...(popularCategories.tourist || [])]
             : (popularCategories[activeTab] || [])
-          ).slice(page * pageSize, page * pageSize + pageSize).map((item, idx) => (
-            <div
-              key={item.id || idx}
-              className={`card carousel-card${slideDirection ? ' slide-' + slideDirection : ''}`}
-              style={{ cursor: 'pointer' }}
-              onClick={() => handleCardClick(item.id)}
-              onAnimationEnd={() => setSlideDirection(null)}
-            >
-              <img
-                src={item.image}
-                alt={item.name || 'Category'}
-              />
-              <div className="carousel-card-overlay"></div>
-              <div className="carousel-card-title" style={{
-                fontFamily: 'Montserrat, Raleway, Arial, sans-serif',
-                fontWeight: 700,
-                fontSize: 22,
-                color: '#fff',
-                textShadow: '0 2px 12px #000a',
-                letterSpacing: 0.5,
-                padding: '10px 0 2px 0',
-                margin: 0,
-                textAlign: 'center',
-                width: '100%',
-                lineHeight: 1.2,
-                background: 'rgba(30,30,30,0.32)',
-                borderRadius: '0 0 12px 12px',
-                boxSizing: 'border-box',
-                position: 'absolute',
-                left: 0,
-                bottom: 0,
-                zIndex: 4
-              }}>{item.name}</div>
-            </div>
-          ))}
+          )
+            .filter(item => {
+              if (!searchText) return true;
+              const keyword = searchText.toLowerCase().trim();
+              return (
+                (item.name && item.name.toLowerCase().includes(keyword)) ||
+                (item.address && item.address.toLowerCase().includes(keyword))
+              );
+            })
+            .slice(
+              (activeTab === 'hotel' || activeTab === 'tourist') ? 0 : page * pageSize,
+              (activeTab === 'hotel' || activeTab === 'tourist') ? undefined : page * pageSize + pageSize
+            )
+            .map((item, idx) => (
+              <div
+                key={item.id || idx}
+                className={`card carousel-card${slideDirection ? ' slide-' + slideDirection : ''}`}
+                style={{ cursor: 'pointer' }}
+                onClick={() => handleCardClick(item.id)}
+                onAnimationEnd={() => setSlideDirection(null)}
+              >
+                <img
+                  src={item.image}
+                  alt={item.name || 'Category'}
+                />
+                <div className="carousel-card-overlay"></div>
+                {/* Đã bỏ carousel-card-title để không còn nền màu và không còn tên hiển thị */}
+              </div>
+            ))}
         </div>
         {/* Pagination dots chỉ là các chấm tròn */}
         <div className="pagination-dots-only" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 24, marginBottom: 8 }}>
@@ -623,19 +649,19 @@ function BookingWeb() {
               aria-label="Previous category"
               type="button"
               disabled={page === 0}
-              style={{ 
-                background: 'none', 
-                border: 'none', 
-                borderRadius: '50%', 
-                width: 22, 
-                height: 22, 
-                cursor: page === 0 ? 'not-allowed' : 'pointer', 
-                display: 'flex', 
-                alignItems: 'center', 
-                justifyContent: 'center', 
-                marginRight: 6, 
-                color: page === 0 ? '#eee' : '#bbb', 
-                fontSize: 15, 
+              style={{
+                background: 'none',
+                border: 'none',
+                borderRadius: '50%',
+                width: 22,
+                height: 22,
+                cursor: page === 0 ? 'not-allowed' : 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginRight: 6,
+                color: page === 0 ? '#eee' : '#bbb',
+                fontSize: 15,
                 transition: 'color 0.2s',
                 opacity: page === 0 ? 0.5 : 1
               }}
@@ -646,10 +672,12 @@ function BookingWeb() {
               ? [...(popularCategories.restaurant || []), ...(popularCategories.hotel || []), ...(popularCategories.tourist || [])]
               : (popularCategories[activeTab] || [])
             ).length / pageSize > 1 ?
-              Array.from({ length: Math.ceil((activeTab === 'all'
-                ? [...(popularCategories.restaurant || []), ...(popularCategories.hotel || []), ...(popularCategories.tourist || [])]
-                : (popularCategories[activeTab] || [])
-              ).length / pageSize) }, (_, idx) => idx)
+              Array.from({
+                length: Math.ceil((activeTab === 'all'
+                  ? [...(popularCategories.restaurant || []), ...(popularCategories.hotel || []), ...(popularCategories.tourist || [])]
+                  : (popularCategories[activeTab] || [])
+                ).length / pageSize)
+              }, (_, idx) => idx)
               : filteredList.map((_, idx) => idx)
             ).map((idx) => (
               <span
@@ -667,16 +695,17 @@ function BookingWeb() {
                   boxShadow: page === idx ? '0 1px 4px #bbb3' : 'none',
                   border: 'none'
                 }}
-                onClick={e => { e.preventDefault(); e.stopPropagation(); handleSetPage(idx); const wrapper = document.querySelector('.card-container-wrapper'); if(wrapper) wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}
+                onClick={e => { e.preventDefault(); e.stopPropagation(); handleSetPage(idx); const wrapper = document.querySelector('.card-container-wrapper'); if (wrapper) wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}
                 aria-label={`Page ${idx + 1}`}
                 role="button"
                 tabIndex={0}
-                onKeyPress={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); handleSetPage(idx); const wrapper = document.querySelector('.card-container-wrapper'); if(wrapper) wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }}
+                onKeyPress={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); handleSetPage(idx); const wrapper = document.querySelector('.card-container-wrapper'); if (wrapper) wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }}
               />
             ))}
             <button
               className="pagination-arrow-btn"
-              onClick={e => { e.preventDefault(); e.stopPropagation();
+              onClick={e => {
+                e.preventDefault(); e.stopPropagation();
                 const totalPages = Math.ceil((activeTab === 'all'
                   ? [...(popularCategories.restaurant || []), ...(popularCategories.hotel || []), ...(popularCategories.tourist || [])]
                   : (popularCategories[activeTab] || [])
@@ -687,7 +716,7 @@ function BookingWeb() {
                   handleNext();
                 }
                 const wrapper = document.querySelector('.card-container-wrapper');
-                if(wrapper) wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                if (wrapper) wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
               }}
               aria-label="Next category"
               type="button"
@@ -721,10 +750,10 @@ function BookingWeb() {
             boxShadow: '0 2px 12px #0001',
             lineHeight: 1.3
           }}>
-            Most Visited Places
+            Địa điểm được ghé thăm nhiều nhất
           </h2>
           <div style={{ width: 60, height: 3, background: '#ee2a4a', margin: '0 auto 10px auto', borderRadius: 2, position: 'relative', zIndex: 1 }}></div>
-          <p style={{ color: '#888', fontSize: 16, fontWeight: 500, margin: 0, position: 'relative', zIndex: 1 }}>Top-Rated Local Businesses</p>
+          <p style={{ color: '#888', fontSize: 16, fontWeight: 500, margin: 0, position: 'relative', zIndex: 1 }}>Doanh nghiệp địa phương nổi bật</p>
         </div>
         <div
           className={`most-visited-slide-wrapper` + (mostVisitedDirection ? ' slide-' + mostVisitedDirection : '')}
@@ -810,6 +839,9 @@ function BookingWeb() {
                   borderRadius: '50%',
                   background: mostVisitedSlide === idx ? '#bbb' : '#e5e5e5',
                   margin: '0 3px',
+                  borderRadius: '50%',
+                  background: mostVisitedSlide === idx ? '#bbb' : '#e5e5e5',
+                  margin: '0 3px',
                   transition: 'background 0.2s',
                   cursor: 'pointer',
                   boxShadow: mostVisitedSlide === idx ? '0 1px 4px #bbb3' : 'none',
@@ -835,7 +867,7 @@ function BookingWeb() {
         </div>
       </section>
       <section className="testimonial-section">
-        <h2>What our users say</h2>
+        <h2>Khách hàng nói gì về chúng tôi</h2>
         <div className="testimonial-list">
           <div className="testimonial-item">
             <span className="testimonial-quote-icon">“</span>
@@ -918,7 +950,7 @@ function BookingWeb() {
             textShadow: '0 2px 16px #0007',
             lineHeight: 1.1
           }}>
-            Streamline Your Business
+            Bạn muốn trải nghiệm tốt nhất?
           </h1>
           <p style={{
             color: '#fff',
@@ -928,7 +960,7 @@ function BookingWeb() {
             textShadow: '0 2px 12px #0007',
             lineHeight: 1.5
           }}>
-            We’re full-service, local agents who know how to find people and home each together. We use online tools with unmatched search capability to make you smarter and faster.
+            Đừng ngần ngại hãy liên hệ ngay để có một trải nghiệm ưng ý nhất
           </p>
           <button
             style={{
@@ -951,9 +983,9 @@ function BookingWeb() {
       </section>
       {/* From The Blog Section */}
       <section className="blog-section">
-        <h2>From The Blog</h2>
+        <h2>Tin tức mới nhất</h2>
         <div className="divider"></div>
-        <p className="subtitle">Latest News From The Blog</p>
+        <p className="subtitle">Tin tức & Chia sẻ</p>
         <div className="blog-grid">
           {/* Card 1 */}
           <article className="blog-card">
@@ -989,7 +1021,7 @@ function BookingWeb() {
             </div>
           </article>
         </div>
-        <button className="view-blog-button" type="button">View Blog</button>
+        <button className="view-blog-button" type="button">Xem tất cả bài viết</button>
       </section>
       {/* Footer Section (HTML/CSS from user) */}
       <FooterBooking />
@@ -1005,7 +1037,6 @@ function BookingWeb() {
             background: '#222',
             color: '#fff',
             border: 'none',
-            
             width: 48,
             height: 48,
             boxShadow: '0 2px 12px #0003',
@@ -1016,12 +1047,12 @@ function BookingWeb() {
             justifyContent: 'center',
             transition: 'background 0.2s',
           }}
-          aria-label="Scroll to top"
+          aria-label="Lên đầu trang"
         >
           <i className="fas fa-arrow-up" />
         </button>
       )}
-    </div>  
+    </div>
   );
 }
 

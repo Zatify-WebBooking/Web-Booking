@@ -24,6 +24,9 @@ const scrollToTopVariants = {
 
 function RestaurantDetail() {
   const { t, i18n } = useTranslation();
+
+
+
   const descriptions = [
     t('restaurantDetail.carousel.Carouseldescription'),
     t('restaurantDetail.carousel.Carouseldescription'),
@@ -276,209 +279,6 @@ function RestaurantDetail() {
             </button>
           </div>
 
-          {/* Sidebar Toggle Button */}
-          {/* {!sidebarOpen && (
-            <button
-              className="sidebar-toggle"
-              onClick={() => setSidebarOpen(true)}
-              aria-label="Open sidebar menu"
-            >
-              <FontAwesomeIcon icon={faBars} />
-            </button>
-          )} */}
-
-          {/* Sidebar */}
-          {/* <div className={`sidebar ${sidebarOpen ? "open" : ""}`}>
-            <button
-              className="close-btn"
-              onClick={() => setSidebarOpen(false)}
-              aria-label="Close sidebar menu"
-            >
-              <FontAwesomeIcon icon={faTimes} />
-            </button>
-            <div className="sidebar-content">
-              <ul>
-                <li>
-                  <button
-                    className="menu-button"
-                    onClick={() => toggleMenu("home")}
-                    aria-expanded={activeMenu === "home"}
-                  >
-                    {t('restaurantDetail.sidebar.Home')}
-                  </button>
-                  <AnimatePresence>
-                    {activeMenu === "home" && (
-                      <motion.ul
-                        className="submenu"
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <li>{t('restaurantDetail.sidebar.Restaurant Home')}</li>
-                        <li>{t('restaurantDetail.sidebar.Light Home')}</li>
-                        <li>{t('restaurantDetail.sidebar.Dinner Home')}</li>
-                        <li>{t('restaurantDetail.sidebar.Masonry Blog')}</li>
-                        <li>{t('restaurantDetail.sidebar.Health Food Home')}</li>
-                        <li>{t('restaurantDetail.sidebar.Landing')}</li>
-                      </motion.ul>
-                    )}
-                  </AnimatePresence>
-                </li>
-                <li>
-                  <button
-                    className="menu-button"
-                    onClick={() => toggleMenu("page")}
-                    aria-expanded={activeMenu === "page"}
-                  >
-                    {t('restaurantDetail.sidebar.Pages')}
-                  </button>
-                  <AnimatePresence>
-                    {activeMenu === "page" && (
-                      <motion.ul
-                        className="submenu"
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <li>{t('restaurantDetail.sidebar.About Us')}</li>
-                        <li>{t('restaurantDetail.sidebar.Services')}</li>
-                        <li>{t('restaurantDetail.sidebar.Our Menu')}</li>
-                        <li>{t('restaurantDetail.sidebar.Contact Page')}</li>
-                        <li>{t('restaurantDetail.sidebar.Reservations')}</li>
-                        <li>{t('restaurantDetail.sidebar.Meet The Chefs')}</li>
-                      </motion.ul>
-                    )}
-                  </AnimatePresence>
-                </li>
-                <li>
-                  <button
-                    className="menu-button"
-                    onClick={() => toggleMenu("element")}
-                    aria-expanded={activeMenu === "element"}
-                  >
-                    {t('restaurantDetail.sidebar.Elements')}
-                  </button>
-                  <AnimatePresence>
-                    {activeMenu === "element" && (
-                      <motion.ul
-                        className="submenu"
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <li>{t('restaurantDetail.sidebar.Restaurant Item')} </li>
-                        <li>{t('restaurantDetail.sidebar.Counters')} </li>
-                        <li>{t('restaurantDetail.sidebar.Dropcaps')} </li>
-                        <li>{t('restaurantDetail.sidebar.Info Box')} </li>
-                        <li>{t('restaurantDetail.sidebar.Blog List')} </li>
-                        <li>{t('restaurantDetail.sidebar.Portfolio Slider')} </li>
-                      </motion.ul>
-                    )}
-                  </AnimatePresence>
-                </li>
-                <li>
-                  <button
-                    className="menu-button"
-                    onClick={() => toggleMenu("portfolio")}
-                    aria-expanded={activeMenu === "portfolio"}
-                  >
-                    {t('restaurantDetail.sidebar.Portfolio')}
-                  </button>
-                  <AnimatePresence>
-                    {activeMenu === "portfolio" && (
-                      <motion.ul
-                        className="submenu"
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <li>{t('restaurantDetail.sidebar.Standard')}</li>
-                        <li>{t('restaurantDetail.sidebar.Gallery')}</li>
-                        <li>{t('restaurantDetail.sidebar.Gallery With Space')}</li>
-                        <li>{t('restaurantDetail.sidebar.Masonry Wide')}</li>
-                        <li>{t('restaurantDetail.sidebar.Portfolio Single')}</li>
-                      </motion.ul>
-                    )}
-                  </AnimatePresence>
-                </li>
-                <li>
-                  <button
-                    className="menu-button"
-                    onClick={() => toggleMenu("blog")}
-                    aria-expanded={activeMenu === "blog"}
-                  >
-                    {t('restaurantDetail.sidebar.Blog')}
-                  </button>
-                  <AnimatePresence>
-                    {activeMenu === "blog" && (
-                      <motion.ul
-                        className="submenu"
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <li>{t('restaurantDetail.sidebar.Standard')}</li>
-                        <li>{t('restaurantDetail.sidebar.Masonry')}</li>
-                        <li>{t('restaurantDetail.sidebar.Masonry Gallery')}</li>
-                        <li>{t('restaurantDetail.sidebar.Blog Single')}</li>
-                      </motion.ul>
-                    )}
-                  </AnimatePresence>
-                </li>
-                <li>
-                  <button
-                    className="menu-button"
-                    onClick={() => toggleMenu("shop")}
-                    aria-expanded={activeMenu === "shop"}
-                  >
-                    {t('restaurantDetail.sidebar.Shop')}
-                  </button>
-                  <AnimatePresence>
-                    {activeMenu === "shop" && (
-                      <motion.ul
-                        className="submenu"
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <li>{t('restaurantDetail.sidebar.With Sidebar')}</li>
-                        <li>{t('restaurantDetail.sidebar.Two Columns')}</li>
-                        <li>{t('restaurantDetail.sidebar.Full Width')}</li>
-                        <li>{t('restaurantDetail.sidebar.Product Single')}</li>
-                      </motion.ul>
-                    )}
-                  </AnimatePresence>
-                </li>
-              </ul>
-              <div className="sidebar-footer">
-                <div className="social-icons">
-                  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                    <FontAwesomeIcon icon={faSquareFacebook} className="social-icon" />
-                  </a>
-                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                    <FontAwesomeIcon icon={faTwitter} className="social-icon" />
-                  </a>
-                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                    <FontAwesomeIcon icon={faInstagram} className="social-icon" />
-                  </a>
-                  <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-                    <FontAwesomeIcon icon={faYoutube} className="social-icon" />
-                  </a>
-                  <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
-                    <FontAwesomeIcon icon={faPinterest} className="social-icon" />
-                  </a>
-                </div>
-              </div>
-            </div> 
-          </div>
-*/}
-          {/* Navigation Arrows */}
           <button className="prev" onClick={prevMainSlide}>❮</button>
           <button className="next" onClick={nextMainSlide}>❯</button>
         </div>
@@ -633,45 +433,29 @@ function RestaurantDetail() {
             </p>
           </div>
           <div className="grid-3">
-            <div className="card">
-              <p className="card-text">
-                {t('restaurantDetail.section_review.testimonialText')}
-              </p>
-              <hr className="hr" />
-              <div className="flex-row">
-                <img alt="Portrait of a woman with long brown hair wearing sunglasses" className="avatar" src="https://storage.googleapis.com/a1aa/image/71812286-09b9-44d0-7e1d-b78b7b1eaf14.jpg" width="48" height="48" />
-                <div>
-                  <p className="name">Sofia Mayer</p>
-                  <p className="role">{t('restaurantDetail.section_review.Founder')}</p>
+            {(() => {
+              const restaurantData = require('../../json/restaurant.json');
+              const restaurant = restaurantData.restaurants.find(r => String(r.id) === String(restaurantId));
+              if (!restaurant || !restaurant.reviews) return null;
+              return restaurant.reviews.map((review, index) => (
+                <div className="card" key={index}>
+                  <p className="card-text">{review.comment}</p>
+                  <hr className="hr" />
+                  <div className="flex-row">
+                    <img
+                      alt={`Portrait of ${review.name}`}
+                      className="avatar"
+                      src={review.imagepeple}
+                      width="48"
+                      height="48"
+                    />
+                    <div>
+                      <p className="name">{review.name}</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div className="card">
-              <p className="card-text">
-                {t('restaurantDetail.section_review.testimonialText')}
-              </p>
-              <hr className="hr" />
-              <div className="flex-row">
-                <img alt="Portrait of a woman with long blonde hair" className="avatar" src="https://storage.googleapis.com/a1aa/image/f219820e-6735-4b53-750a-ab2a3c1cb63b.jpg" width="48" height="48" />
-                <div>
-                  <p className="name">Marta Williams</p>
-                  <p className="role">{t('restaurantDetail.section_review.Founder')}</p>
-                </div>
-              </div>
-            </div>
-            <div className="card">
-              <p className="card-text">
-                {t('restaurantDetail.section_review.testimonialText')}
-              </p>
-              <hr className="hr" />
-              <div className="flex-row">
-                <img alt="Portrait of a man with beard wearing a hat" className="avatar" src="https://storage.googleapis.com/a1aa/image/5d7a55b5-4155-4bd0-436a-bab39d63d037.jpg" width="48" height="48" />
-                <div>
-                  <p className="name">Marco Williams</p>
-                  <p className="role">{t('restaurantDetail.section_review.Founder')}</p>
-                </div>
-              </div>
-            </div>
+              ));
+            })()}
           </div>
         </Parallax>
       </div>
