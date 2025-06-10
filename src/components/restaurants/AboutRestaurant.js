@@ -97,7 +97,7 @@ const AboutRestaurant = () => {
             <button className="dessert-prev-about" onClick={prevBirthdaySlide} aria-label="Previous birthday image">&#10094;</button>
             <button className="dessert-next-about" onClick={nextBirthdaySlide} aria-label="Next birthday image">&#10095;</button>
           </div>
-          <h4 className="title">Đặt tiệc cưới</h4>
+          <h4 className="title">{(restaurantId === 6 || restaurantId === 8) ? 'Tiệc công ty' : 'Đặt tiệc cưới'}</h4>
           <p className="description-about">{restaurant.descriptionwedding}</p>
           <div className="dessert-carousel-about">
             <div className="dessert-slide">

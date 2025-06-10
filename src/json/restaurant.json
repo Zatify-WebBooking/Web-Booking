@@ -580,12 +580,12 @@
         },
         "sectionTitles": {
           "starters": {
-            "en": "Breakfast and Lucnh",
-            "vi": "Bữa sáng và Trưa"
+            "en": "Breakfast",
+            "vi": "Điểm tâm"
           },
           "mainMeals": {
-            "en": "Dinner",
-            "vi": "Bữa Tối"
+            "en": "Main meal",
+            "vi": "Món chính"
           },
           "desserts": {
             "en": "Drink and Wine",
@@ -604,18 +604,8 @@
           "/images/parisgarden/slide5.jpg"
         ],
         "startersImages": [
-          "/images/parisgarden/breakfastandlunch1.jpg",
-          "/images/parisgarden/breakfastandlunch2.jpg",
-          "/images/parisgarden/breakfastandlunch3.jpg",
-          "/images/parisgarden/breakfastandlunch4.jpg",
-          "/images/parisgarden/breakfastandlunch5.jpg",
-          "/images/parisgarden/breakfastandlunch6.jpg",
-          "/images/parisgarden/breakfastandlunch7.jpg",
-          "/images/parisgarden/breakfastandlunch8.jpg",
-          "/images/parisgarden/breakfastandlunch9.jpg",
-          "/images/parisgarden/breakfastandlunch10.jpg",
-          "/images/parisgarden/breakfastandlunch11.jpg",
-          "/images/parisgarden/breakfastandlunch12.jpg"
+          "/images/parisgarden/breakfast1.jpg",
+          "/images/parisgarden/breakfast2.jpg"
         ],
         "mainImages": [
           "/images/parisgarden/dinner1.jpg",
@@ -649,7 +639,11 @@
           "/images/parisgarden/drinkandwine13.jpg",
           "/images/parisgarden/drinkandwine14.jpg",
           "/images/parisgarden/drinkandwine15.jpg",
-          "/images/parisgarden/drinkandwine16.jpg"
+          "/images/parisgarden/drinkandwine16.jpg",
+          "/images/parisgarden/drinkandwine17.jpg",
+          "/images/parisgarden/drinkandwine18.jpg",
+          "/images/parisgarden/drinkandwine19.jpg",
+          "/images/parisgarden/drinkandwine20.jpg"
         ]
       },
       {
@@ -663,7 +657,7 @@
         "opening_hours": "07:00 - 22:00",
         "description": "Tọa lạc giữa trung tâm Quận 1, TP.HCM, London Corner là địa điểm lý tưởng để thưởng thức các món ăn đặc sản ba miền, kết hợp tinh tế cùng phong cách hoàng gia Anh sang trọng và đậm chất cổ điển châu Âu. Với không gian ấm cúng, thanh lịch và đầy cảm hứng, nơi đây mang đến trải nghiệm ẩm thực độc đáo cho thực khách. Thực đơn tại London Corner đa dạng với các món Việt chế biến công phu như phở bò, bánh mì, cùng các món Âu đẳng cấp như Bò Wellington, cá chẽm sốt Verde và súp đông trùng hạ thảo. Không chỉ là nơi thưởng thức ẩm thực, London Corner còn là điểm đến lý tưởng cho các buổi hẹn hò, gặp gỡ đối tác hay tổ chức sự kiện đáng nhớ – nơi tinh hoa ẩm thực Việt gặp gỡ nét đẹp hoàng gia Anh.",
         "descriptionbirthday": "Tại London Corner, mỗi buổi tiệc sinh nhật không chỉ đơn thuần là một buổi gặp mặt – mà là một trải nghiệm đáng nhớ được chăm chút đến từng chi tiết. Với không gian sang trọng, ấm cúng mang phong cách hoàng gia Anh, nhà hàng là lựa chọn lý tưởng để bạn cùng người thân tận hưởng những khoảnh khắc đáng quý bên nhau. Chúng tôi cung cấp nhiều gói tổ chức sinh nhật đa dạng từ thân mật đến sang trọng, phù hợp cho cả trẻ em, người lớn và tiệc gia đình. Thực đơn phong phú với các món ăn đặc sản ba miền cùng đồ uống đa dạng, kết hợp cùng dịch vụ trang trí, bánh kem, MC, và chụp hình – tất cả đều được chuẩn bị theo yêu cầu riêng của bạn. London Corner – nơi lưu giữ những khoảnh khắc sinh nhật ý nghĩa và đẳng cấp.",
-        "descriptionwedding": "London Corner là lựa chọn lý tưởng cho những cặp đôi mong muốn một lễ cưới ấm cúng, tinh tế và đẳng cấp ngay giữa lòng thành phố. Với kiến trúc sang trọng mang hơi hướng hoàng gia Anh, không gian tại nhà hàng tạo nên một khung cảnh lãng mạn và đầy cảm xúc cho ngày trọng đại của bạn. Chúng tôi cung cấp dịch vụ tổ chức tiệc cưới trọn gói, từ thực đơn món ăn cao cấp, trang trí không gian theo chủ đề riêng, đến hệ thống âm thanh, ánh sáng hiện đại và đội ngũ phục vụ chuyên nghiệp. Dù là tiệc cưới truyền thống, hiện đại hay tiệc cưới ngoài trời, London Corner luôn sẵn sàng hiện thực hóa mọi ý tưởng để mang đến cho bạn một ngày cưới hoàn hảo. London Corner – nơi đánh dấu khởi đầu hạnh phúc bằng một lễ cưới đẳng cấp và đầy ấn tượng.",
+        "descriptionwedding": "London Corner là lựa chọn lý tưởng cho những doanh nghiệp mong muốn một buổi tiệc công ty ấm cúng, tinh tế và đẳng cấp ngay giữa lòng thành phố. Với kiến trúc sang trọng mang hơi hướng hoàng gia Anh, không gian tại nhà hàng tạo nên một khung cảnh trang trọng và đầy ấn tượng. Chúng tôi cung cấp dịch vụ tổ chức tiệc công ty trọn gói, từ thực đơn món ăn cao cấp, trang trí không gian theo chủ đề riêng, đến hệ thống âm thanh, ánh sáng hiện đại và đội ngũ phục vụ chuyên nghiệp. Dù là tiệc tất niên, tiệc kỷ niệm thành lập công ty hay tiệc chiêu đãi đối tác, London Corner luôn sẵn sàng hiện thực hóa mọi ý tưởng để mang đến cho bạn một buổi tiệc hoàn hảo. London Corner – nơi tạo dựng những khoảnh khắc đáng nhớ và thắt chặt mối quan hệ hợp tác bằng một buổi tiệc đẳng cấp và đầy ấn tượng.",
         "rating": 4.5,
         "reviews": [
           {
@@ -743,15 +737,7 @@
         ],
         "startersImages": [
           "/images/londoncorner/breakfast1.jpg",
-          "/images/londoncorner/breakfast2.jpg",
-          "/images/londoncorner/breakfast3.jpg",
-          "/images/londoncorner/breakfast4.jpg",
-          "/images/londoncorner/breakfast5.jpg",
-          "/images/londoncorner/breakfast6.jpg",
-          "/images/londoncorner/breakfast7.jpg",
-          "/images/londoncorner/breakfast8.jpg",
-          "/images/londoncorner/breakfast9.jpg",
-          "/images/londoncorner/breakfast10.jpg"
+          "/images/londoncorner/breakfast2.jpg"
         ],
         "mainImages": [
           "/images/londoncorner/dinner1.jpg",
@@ -759,15 +745,7 @@
           "/images/londoncorner/dinner3.jpg",
           "/images/londoncorner/dinner4.jpg",
           "/images/londoncorner/dinner5.jpg",
-          "/images/londoncorner/dinner6.jpg",
-          "/images/londoncorner/dinner7.jpg",
-          "/images/londoncorner/dinner8.jpg",
-          "/images/londoncorner/dinner9.jpg",
-          "/images/londoncorner/dinner10.jpg",
-          "/images/londoncorner/dinner11.jpg",
-          "/images/londoncorner/dinner12.jpg",
-          "/images/londoncorner/dinner13.jpg",
-          "/images/londoncorner/dinner14.jpg"
+          "/images/londoncorner/dinner6.jpg"
         ],
         "dessertImages": [
           "/images/londoncorner/drink1.jpg",
@@ -928,7 +906,7 @@
         "opening_hours": "07:00 - 22:00",
         "description": "Nằm ngay trung tâm Sài Gòn, bên cạnh biểu tượng Hồ Con Rùa, Casa Cafe là điểm hẹn lý tưởng cho những ai yêu thích sự hoài cổ pha lẫn hiện đại. Với không gian được thiết kế tinh tế, đậm chất Á Đông xen lẫn nét châu Âu cổ điển, Casa Cafe mang đến trải nghiệm ẩm thực và cà phê đặc biệt giữa lòng thành phố náo nhiệt. Thực đơn tại Casa đa dạng từ các món ăn nhẹ như bánh mì kẹp, mì Ý, đến các món Việt truyền thống được chế biến tinh tế. Cùng với đó là danh mục cà phê phong phú – từ cà phê phin đậm đà, cà phê sữa đá đặc trưng, đến các món espresso, cold brew hiện đại. Casa Cafe không chỉ là nơi để thưởng thức món ngon, mà còn là không gian lý tưởng để làm việc, hẹn hò, gặp gỡ bạn bè – nơi nhịp sống thành thị lắng lại trong từng khoảnh khắc.",
         "descriptionbirthday": "Tại Casa Cafe Hồ Con Rùa, mỗi buổi tiệc sinh nhật là một dịp để sẻ chia niềm vui trong không gian ấm áp và gần gũi giữa lòng Sài Gòn. Với thiết kế tinh tế cùng ánh sáng vàng ấm áp, Casa là lựa chọn hoàn hảo cho những bữa tiệc sinh nhật nhẹ nhàng, ý nghĩa. Chúng tôi cung cấp các gói tổ chức tiệc sinh nhật phù hợp cho mọi lứa tuổi – từ tiệc nhỏ thân mật đến buổi gặp mặt đông vui cùng bạn bè. Thực đơn đa dạng gồm món ăn nhẹ, món Việt và quốc tế, cùng thức uống độc đáo từ cà phê đến trà trái cây, soda tươi mát. Ngoài ra, Casa còn hỗ trợ dịch vụ trang trí theo yêu cầu, bánh sinh nhật và không gian check-in mang dấu ấn riêng cho mỗi khách hàng. Casa Cafe – nơi lưu giữ những khoảnh khắc sinh nhật giản dị mà đáng nhớ.",
-        "descriptionwedding": "Giữa lòng thành phố, Casa Cafe Hồ Con Rùa mang đến một lựa chọn tiệc cưới mới mẻ, tinh tế và gần gũi cho những cặp đôi yêu thích sự ấm cúng và lãng mạn. Không gian sân vườn nhỏ xinh kết hợp nội thất cổ điển tạo nên bầu không khí vừa sang trọng vừa thân quen – lý tưởng cho những buổi lễ đính hôn, tiệc cưới thân mật hoặc tiệc tiền cưới. Chúng tôi cung cấp dịch vụ tổ chức tiệc cưới mini với thực đơn linh hoạt, âm nhạc nhẹ nhàng, trang trí tối giản nhưng đầy cảm xúc. Với đội ngũ nhân viên chuyên nghiệp và tận tâm, Casa Cafe sẽ cùng bạn tạo nên một buổi lễ đáng nhớ – nơi cảm xúc thăng hoa giữa tiếng nhạc du dương và khung cảnh Sài Gòn dịu dàng về đêm.",
+        "descriptionwedding": "Giữa lòng thành phố, Casa Cafe Hồ Con Rùa mang đến một lựa chọn tiệc công ty mới mẻ, tinh tế và gần gũi cho những doanh nghiệp yêu thích sự ấm cúng và lãng mạn. Không gian sân vườn nhỏ xinh kết hợp nội thất cổ điển tạo nên bầu không khí vừa sang trọng vừa thân quen – lý tưởng cho những buổi tiệc công ty thân mật hoặc tiệc tất niên. Chúng tôi cung cấp dịch vụ tổ chức tiệc công ty mini với thực đơn linh hoạt, âm nhạc nhẹ nhàng, trang trí tối giản nhưng đầy cảm xúc. Với đội ngũ nhân viên chuyên nghiệp và tận tâm, Casa Cafe sẽ cùng bạn tạo nên một buổi tiệc đáng nhớ – nơi cảm xúc thăng hoa giữa tiếng nhạc du dương và khung cảnh Sài Gòn dịu dàng về đêm.",
         "rating": 4.5,
         "reviews": [
           {

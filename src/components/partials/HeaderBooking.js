@@ -2,7 +2,6 @@ import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "../../styles/bookingweb/booking.css";
 
-// Font Awesome CDN for icons
 const fontAwesomeLink = document.createElement("link");
 fontAwesomeLink.rel = "stylesheet";
 fontAwesomeLink.href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css";
@@ -17,8 +16,8 @@ const NAV_ITEMS = [
       { label: "Yoyo Garden Nam Kỳ Khởi Nghĩa", href: "/restaurant/3" },
       { label: "Lalaland Bình Khánh", href: "/restaurant/4" },
       { label: "Paris Garden", href: "/restaurant/5" },
-      { label: "LonDon Conner", href: "/restaurant/6" },
-      { label: "ChillHouse Beach Club", href: "/restaurant/7" },
+      { label: "LonDon Corner", href: "/restaurant/6" },
+      { label: "ChillHouse Saigon Beach Club", href: "/restaurant/7" },
       { label: "Casa Cafe Hồ Con Rùa", href: "/restaurant/8" },
 
     ],

@@ -824,7 +824,7 @@ nav a {
 
 /* Card */
 .card-elecmentor {
-    width: 42%;
+    min-width: 42%;
     height: 75vh;
     background-color: #fdf9f5;
     display: flex;
@@ -972,8 +972,8 @@ nav a {
     transform: translateY(-50%);
     background-color: #f6f6f1;
     padding: 12px 24px;
-    height: 28%;
-    width: 35%;
+    min-height: 28%;
+    min-width: 35%;
     font-family: serif;
     font-weight: 300;
     font-size: 25px;
