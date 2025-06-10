@@ -23,8 +23,14 @@ function BookingWeb() {
   const [typing, setTyping] = useState("");
 
   const carouselImages = [
-    process.env.PUBLIC_URL + "https://novaworld.info/wp-content/uploads/2023/07/yoyo-beer-garden-Novaworldinfo.jpg",
-    process.env.PUBLIC_URL + "https://viethouzz.com/wp-content/uploads/2024/10/yoyo-garden-nguyen-thi-minh-khai-copy.webp"
+    process.env.PUBLIC_URL + "/images/bookingweb/1.jpg",
+    process.env.PUBLIC_URL + "/images/bookingweb/2.jpg",
+    process.env.PUBLIC_URL + "/images/bookingweb/3.jpg",
+    process.env.PUBLIC_URL + "/images/bookingweb/3.jpg",
+    process.env.PUBLIC_URL + "/images/bookingweb/4.jpg",
+    process.env.PUBLIC_URL + "/images/bookingweb/5.jpg",
+    process.env.PUBLIC_URL + "/images/bookingweb/6.jpg",
+   
   ];
   const navigate = useNavigate();
   const [search] = useOutletContext();
@@ -85,12 +91,35 @@ function BookingWeb() {
     </button>
   </div> */}
 
-  const list = activeTab === "Restaurant" ? data.restaurants : activeTab === "Hotel" ? data.hotels : [];
+  // Popular Categories data cho từng loại (chỉ khai báo 1 lần, đặt sau khi có data)
+  const popularCategories = {
+    restaurant: data.restaurants,
+    hotel: data.hotels,
+    tourist: [
+      { id: 1, name: 'NovaWorld Hồ Tràm', image: 'https://scontent.fsgn8-4.fna.fbcdn.net/v/t39.30808-6/432049262_837264268416766_6786007986029882576_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEhiNoebN1Hf-_aj3Ddy-hHPhluM-FOTF4-GW4z4U5MXreH4FpryeopZUamgQHv89-EW5JsxzqD02pWipJZYaOL&_nc_ohc=DE-VPKDghNIQ7kNvwGyv0As&_nc_oc=Adn-JBAOPy-luydx77AYi3sVtKzCJZQVAKnbCzncquHhEw6LFhq4b5cf-pl2UGGud_BnF-CBxiWJ-IUZbbGpKQCp&_nc_zt=23&_nc_ht=scontent.fsgn8-4.fna&_nc_gid=WocDojf6o-OY66srLke4Ew&oh=00_AfK_RlKpMO9Xxhdpf3uI4EUe1rYzfdkTeHDs6gjoYL5rOg&oe=68457044', address: 'Xuyên Mộc, Bà Rịa - Vũng Tàu' },
+      { id: 2, name: 'NovaWorld Phan Thiết', image: 'https://scontent.fsgn8-4.fna.fbcdn.net/v/t39.30808-6/432664646_918739550258220_7309378048563958247_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHwuOGU7kDI_9553c-3q1OJBesAq_WanMYF6wCr9ZqcxoPiwMD_FQmkv_bncA0QCBkxvguYy10iqOkmDSlcdJ5b&_nc_ohc=3GAZkeTpEd4Q7kNvwGvbtNY&_nc_oc=Adni0QFW_p45ZhKqQsbHRKnRcX74uSujaM-08KwYF0Qvt0eeDtYJIZywdHCbY9VBnzFNo05YqP1LGfM2YBgM_Pzr&_nc_zt=23&_nc_ht=scontent.fsgn8-4.fna&_nc_gid=Le8PSoMosR_ebfvh6dGhRg&oh=00_AfJ0p-QWH7JEKAgRK60fpL5b-Mx1WG2aPrG7p5-ThuLNZQ&oe=68458EA3', address: 'Phan Thiết, Bình Thuận' },
+    ]
+  };
+
+  // Lấy list theo tab, nếu là 'all' thì gộp cả 3 loại
+  const list = activeTab === 'all'
+    ? [
+        ...(popularCategories.restaurant || []),
+        ...(popularCategories.hotel || []),
+        ...(popularCategories.tourist || [])
+      ]
+    : activeTab === 'restaurant'
+    ? popularCategories.restaurant
+    : activeTab === 'hotel'
+    ? popularCategories.hotel
+    : activeTab === 'tourist'
+    ? popularCategories.tourist
+    : [];
   const pageSize = 4;
 
   // Lọc theo tên hoặc địa chỉ (ưu tiên searchText nếu có)
   const filteredList = list.filter(item => {
-    const keyword = (searchText || search || "").toLowerCase().trim();
+    const keyword = (searchText || search || '').toLowerCase().trim();
     if (!keyword) return true;
     return (
       (item.name && item.name.toLowerCase().includes(keyword)) ||
@@ -98,76 +127,57 @@ function BookingWeb() {
     );
   });
 
-  const maxPage = Math.ceil(filteredList.length / pageSize) - 1;
+  // Tổng số trang dựa vào filteredList
+  const totalPages = Math.ceil(filteredList.length / pageSize);
 
   // Khi bấm Browse trên từng card trong Popular Categories, chuyển đúng trang chi tiết
   const handleCardClick = (id) => {
-    if (activeTab.toLowerCase() === "restaurant") {
+    if (activeTab === 'restaurant') {
       navigate(`/restaurant/${id}`);
-    } else if (activeTab.toLowerCase() === "hotel") {
+    } else if (activeTab === 'hotel') {
       navigate(`/hotel/${id}`);
-    } else if (activeTab.toLowerCase() === "all") {
-      // Determine if id is in restaurants or hotels
-      const isRestaurant = data.restaurants.some(item => item.id === id);
-      const isHotel = data.hotels.some(item => item.id === id);
+    } else if (activeTab === 'all') {
+      const isRestaurant = popularCategories.restaurant.some(item => item.id === id);
+      const isHotel = popularCategories.hotel.some(item => item.id === id);
       if (isRestaurant) {
         navigate(`/restaurant/${id}`);
       } else if (isHotel) {
         navigate(`/hotel/${id}`);
+      } else {
+        navigate(`/tourist/${id}`);
       }
-    } else if (activeTab.toLowerCase() === "tourist") {
+    } else if (activeTab === 'tourist') {
       navigate(`/tourist/${id}`);
     }
   };
 
-  const renderCards = (list) =>
-    list
-      .slice(page * pageSize, page * pageSize + pageSize)
-      .map((item, idx) => (
-        <div
-          key={item.id || idx}
-          className="card"
-          style={{ cursor: ["restaurant", "hotel"].includes(activeTab.toLowerCase()) ? "pointer" : "default" }}
-          onClick={() => handleCardClick(item.id)}
-        >
-          <div className="card-image">
-            <img
-              src={item.image}
-              alt={item.name || "Restaurant"}
-            />
-          </div>
-          <div className="card-overlay">
-            <div className="card-title">{item.name || `Nhà hàng ${idx + 1}`}</div>
-            <div className="card-listings">1 listings</div>
-            <button className="card-browse-btn"
-              onClick={() => handleCardClick(item.id)}
-              style={{ cursor: ["Restaurant", "Hotel", "Tourist"].includes(activeTab) ? "pointer" : "not-allowed", opacity: ["Restaurant", "Hotel", "Tourist"].includes(activeTab) ? 1 : 0.6 }}
-            >
-              Browse
-            </button>
-          </div>
-        </div>
-      ));
-
+  // Reset page về 0 khi đổi tab hoặc search
   useEffect(() => {
     setPage(0);
-  }, [activeTab, search]);
+  }, [activeTab, search, searchText]);
 
   // --- Carousel slide infinite loop with smooth direction ---
-  const getTotalPages = () => {
-    const items = activeTab === 'all'
-      ? [...(popularCategories.restaurant || []), ...(popularCategories.hotel || []), ...(popularCategories.tourist || [])]
-      : (popularCategories[activeTab] || []);
-    return Math.ceil(items.length / pageSize);
-  };
+  useEffect(() => {
+    if (totalPages <= 1) return;
+    const timer = setTimeout(() => {
+      setSlideDirection('right');
+      setPage(prev => (prev === totalPages - 1 ? 0 : prev + 1));
+    }, 3000); // Tự động chuyển slide sau 3s
+    return () => clearTimeout(timer);
+  }, [page, totalPages]);
 
   const handlePrev = () => {
     setSlideDirection('left');
-    setPage((prev) => (prev === 0 ? getTotalPages() - 1 : prev - 1));
+    setPage(prev => {
+      if (totalPages === 0) return 0;
+      return prev === 0 ? totalPages - 1 : prev - 1;
+    });
   };
-  const handleNext = () => {
-    setSlideDirection('right');
-    setPage((prev) => (prev === getTotalPages() - 1 ? 0 : prev + 1));
+  // Detect direction when user click
+  const handleSetPage = (idx) => {
+    if (idx > page) setSlideDirection("right");
+    else if (idx < page) setSlideDirection("left");
+    setPage(idx);
   };
 
   // useEffect(() => {
@@ -177,13 +187,6 @@ function BookingWeb() {
   //   }, 3000); // chuyển slide sau 3s
   //   return () => clearTimeout(timer);
   // }, [page, filteredList.length]);
-
-  // Detect direction when user click
-  const handleSetPage = (idx) => {
-    if (idx > page) setSlideDirection("right");
-    else if (idx < page) setSlideDirection("left");
-    setPage(idx);
-  };
 
   useEffect(() => {
     let wordIndex = animatedIndex.current;
@@ -291,7 +294,7 @@ function BookingWeb() {
     const timer = setTimeout(() => {
       setMostVisitedDirection('right');
       setMostVisitedSlide((prev) => (prev === mostVisitedSlides.length - 1 ? 0 : prev + 1));
-    }, 3500); // chuyển slide sau 3.5s
+    }, 2000); // chuyển slide sau 2s
     return () => clearTimeout(timer);
   }, [mostVisitedSlide, mostVisitedSlides.length]);
 
@@ -376,7 +379,7 @@ function BookingWeb() {
     // Tự động chuyển ảnh mỗi 5 giây
     carouselInterval.current = setInterval(() => {
       setHeroSlideDirection('right');
-      setPage(prev => (prev + 1) % carouselImages.length);
+      setCarouselIndex(prev => (prev + 1) % carouselImages.length);
     }, 3000);
     // Cleanup khi unmount
     return () => clearInterval(carouselInterval.current);
@@ -385,11 +388,11 @@ function BookingWeb() {
   // Hàm chuyển ảnh thủ công (nút trái/phải)
   const handleHeroPrev = () => {
     setHeroSlideDirection('left');
-    setPage(prev => (prev === 0 ? carouselImages.length - 1 : prev - 1));
+    setCarouselIndex(prev => (prev === 0 ? carouselImages.length - 1 : prev - 1));
   };
   const handleHeroNext = () => {
     setHeroSlideDirection('right');
-    setPage(prev => (prev + 1) % carouselImages.length);
+    setCarouselIndex(prev => (prev + 1) % carouselImages.length);
   };
 
   const handleSearch = (e) => {
@@ -400,22 +403,12 @@ function BookingWeb() {
 
   if (loading) return <div>Đang tải dữ liệu...</div>;
 
-  // Popular Categories data cho từng loại
-  const popularCategories = {
-    restaurant: data.restaurants,
-    hotel: data.hotels,
-    tourist: [
-      { id: 1, name: 'NovaWorld Hồ Tràm', image: 'https://scontent.fsgn8-4.fna.fbcdn.net/v/t39.30808-6/432049262_837264268416766_6786007986029882576_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEhiNoebN1Hf-_aj3Ddy-hHPhluM-FOTF4-GW4z4U5MXreH4FpryeopZUamgQHv89-EW5JsxzqD02pWipJZYaOL&_nc_ohc=DE-VPKDghNIQ7kNvwGyv0As&_nc_oc=Adn-JBAOPy-luydx77AYi3sVtKzCJZQVAKnbCzncquHhEw6LFhq4b5cf-pl2UGGud_BnF-CBxiWJ-IUZbbGpKQCp&_nc_zt=23&_nc_ht=scontent.fsgn8-4.fna&_nc_gid=WocDojf6o-OY66srLke4Ew&oh=00_AfK_RlKpMO9Xxhdpf3uI4EUe1rYzfdkTeHDs6gjoYL5rOg&oe=68457044', address: 'Xuyên Mộc, Bà Rịa - Vũng Tàu' },
-      { id: 2, name: 'NovaWorld Phan Thiết', image: 'https://scontent.fsgn8-4.fna.fbcdn.net/v/t39.30808-6/432664646_918739550258220_7309378048563958247_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHwuOGU7kDI_9553c-3q1OJBesAq_WanMYF6wCr9ZqcxoPiwMD_FQmkv_bncA0QCBkxvguYy10iqOkmDSlcdJ5b&_nc_ohc=3GAZkeTpEd4Q7kNvwGvbtNY&_nc_oc=Adni0QFW_p45ZhKqQsbHRKnRcX74uSujaM-08KwYF0Qvt0eeDtYJIZywdHCbY9VBnzFNo05YqP1LGfM2YBgM_Pzr&_nc_zt=23&_nc_ht=scontent.fsgn8-4.fna&_nc_gid=Le8PSoMosR_ebfvh6dGhRg&oh=00_AfJ0p-QWH7JEKAgRK60fpL5b-Mx1WG2aPrG7p5-ThuLNZQ&oe=68458EA3', address: 'Phan Thiết, Bình Thuận' },
-    ]
-  };
-
   return (
     <div className="bookingweb-root">
       <section className="carousel-booking slider-hover-group">
         <img
           className={`hero-image${heroSlideDirection ? ' slide-' + heroSlideDirection : ''}`}
-          src={carouselImages[page % carouselImages.length]}
+          src={carouselImages[carouselIndex % carouselImages.length]}
           alt="Booking background"
           onAnimationEnd={() => setHeroSlideDirection(null)}
         />
@@ -598,30 +591,10 @@ function BookingWeb() {
       <div className="card-container-wrapper" style={{ marginTop: '-90px', marginBottom: 0 }}>
         <div
           className="card-container-carousel"
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            gap: 24,
-            transition: 'transform 0.5s cubic-bezier(.7, 0, .2, 1)',
-            minHeight: 210
-          }}
+          style={{ display: 'flex', justifyContent: 'center', gap: 24, transition: 'transform 0.5s cubic-bezier(.7, 0, .2, 1)', minHeight: 210 }}
         >
-          {(activeTab === 'all'
-            ? [...(popularCategories.restaurant || []), ...(popularCategories.hotel || []), ...(popularCategories.tourist || [])]
-            : (popularCategories[activeTab] || [])
-          )
-            .filter(item => {
-              if (!searchText) return true;
-              const keyword = searchText.toLowerCase().trim();
-              return (
-                (item.name && item.name.toLowerCase().includes(keyword)) ||
-                (item.address && item.address.toLowerCase().includes(keyword))
-              );
-            })
-            .slice(
-              page * pageSize,
-              page * pageSize + pageSize
-            )
+          {filteredList
+            .slice(page * pageSize, page * pageSize + pageSize)
             .map((item, idx) => (
               <div
                 key={item.id || idx}
@@ -637,91 +610,80 @@ function BookingWeb() {
               </div>
             ))}
         </div>
-        <div className="pagination-dots-only" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 24, marginBottom: 8 }}>
-          <div style={{ background: '#fafafa', borderRadius: 32, padding: '4px 14px', display: 'flex', alignItems: 'center', boxShadow: '0 2px 8px #0001' }}>
-            <button
-              className="pagination-arrow-btn"
-              onClick={handlePrev}
-              aria-label="Previous category"
-              type="button"
-              disabled={page === 0}
-              style={{
-                background: 'none',
-                border: 'none',
-                borderRadius: '50%',
-                width: 22,
-                height: 22,
-                cursor: page === 0 ? 'not-allowed' : 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginRight: 6,
-                color: page === 0 ? '#eee' : '#bbb',
-                fontSize: 15,
-                transition: 'color 0.2s',
-                opacity: page === 0 ? 0.5 : 1
-              }}
-            >
-              <span>&lt;</span>
-            </button>
-            {((activeTab === 'all'
-              ? [...(popularCategories.restaurant || []), ...(popularCategories.hotel || []), ...(popularCategories.tourist || [])]
-              : (popularCategories[activeTab] || [])
-            ).length / pageSize > 1 ?
-              Array.from({
-                length: Math.ceil((activeTab === 'all'
-                  ? [...(popularCategories.restaurant || []), ...(popularCategories.hotel || []), ...(popularCategories.tourist || [])]
-                  : (popularCategories[activeTab] || [])
-                ).length / pageSize)
-              }, (_, idx) => idx)
-              : filteredList.map((_, idx) => idx)
-            ).map((idx) => (
-              <span
-                key={idx}
-                className={page === idx ? 'pagination-dot-bar active' : 'pagination-dot-bar'}
+        {/* Pagination chỉ hiện khi có nhiều hơn 1 trang */}
+        {totalPages > 1 && (
+          <div className="pagination-dots-only" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 24, marginBottom: 8 }}>
+            <div style={{ background: '#fafafa', borderRadius: 32, padding: '4px 14px', display: 'flex', alignItems: 'center', boxShadow: '0 2px 8px #0001' }}>
+              <button
+                className="pagination-arrow-btn"
+                onClick={handlePrev}
+                aria-label="Previous category"
+                type="button"
                 style={{
-                  display: 'inline-block',
-                  width: 10,
-                  height: 10,
+                  background: 'none',
+                  border: 'none',
                   borderRadius: '50%',
-                  background: page === idx ? '#bbb' : '#e5e5e5',
-                  margin: '0 3px',
-                  transition: 'background 0.2s',
-                  cursor: 'pointer',
-                  boxShadow: page === idx ? '0 1px 4px #bbb3' : 'none',
-                  border: 'none'
+                  width: 22,
+                  height: 22,
+                  cursor: totalPages <= 1 ? 'not-allowed' : 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginRight: 6,
+                  color: totalPages <= 1 ? '#eee' : '#bbb',
+                  fontSize: 15,
+                  transition: 'color 0.2s',
+                  opacity: totalPages <= 1 ? 0.5 : 1
                 }}
-                onClick={e => { e.preventDefault(); e.stopPropagation(); handleSetPage(idx); const wrapper = document.querySelector('.card-container-wrapper'); if (wrapper) wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}
-                aria-label={`Page ${idx + 1}`}
-                role="button"
-                tabIndex={0}
-                onKeyPress={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); handleSetPage(idx); const wrapper = document.querySelector('.card-container-wrapper'); if (wrapper) wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }}
-              />
-            ))}
-            <button
-              className="pagination-arrow-btn"
-              onClick={e => {
-                e.preventDefault(); e.stopPropagation();
-                const totalPages = Math.ceil((activeTab === 'all'
-                  ? [...(popularCategories.restaurant || []), ...(popularCategories.hotel || []), ...(popularCategories.tourist || [])]
-                  : (popularCategories[activeTab] || [])
-                ).length / pageSize);
-                if (page === totalPages - 1) {
-                  handleSetPage(0);
-                } else {
-                  handleNext();
-                }
-                const wrapper = document.querySelector('.card-container-wrapper');
-                if (wrapper) wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }}
-              aria-label="Next category"
-              type="button"
-              style={{ background: 'none', border: 'none', borderRadius: '50%', width: 22, height: 22, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', marginLeft: 6, color: '#bbb', fontSize: 15, transition: 'color 0.2s' }}
-            >
-              <span>&gt;</span>
-            </button>
+                disabled={totalPages <= 1}
+              >
+                <span>&lt;</span>
+              </button>
+              {Array.from({ length: totalPages }, (_, idx) => idx).map((idx) => (
+                <span
+                  key={idx}
+                  className={page === idx ? 'pagination-dot-bar active' : 'pagination-dot-bar'}
+                  style={{
+                    display: 'inline-block',
+                    width: 10,
+                    height: 10,
+                    borderRadius: '50%',
+                    background: page === idx ? '#bbb' : '#e5e5e5',
+                    transition: 'background 0.2s',
+                    cursor: 'pointer',
+                    boxShadow: page === idx ? '0 1px 4px #bbb3' : 'none',
+                    border: 'none',
+                    margin: '0 3px'
+                  }}
+                  onClick={e => { e.preventDefault(); e.stopPropagation(); handleSetPage(idx); const wrapper = document.querySelector('.card-container-wrapper'); if (wrapper) wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}
+                  aria-label={`Page ${idx + 1}`}
+                  role="button"
+                  tabIndex={0}
+                  onKeyPress={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); handleSetPage(idx); const wrapper = document.querySelector('.card-container-wrapper'); if (wrapper) wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }}
+                />
+              ))}
+              <button
+                className="pagination-arrow-btn"
+                onClick={e => {
+                  e.preventDefault(); e.stopPropagation();
+                  if (page === totalPages - 1) {
+                    handleSetPage(0);
+                  } else {
+                    handleSetPage(page + 1);
+                  }
+                  const wrapper = document.querySelector('.card-container-wrapper');
+                  if (wrapper) wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }}
+                aria-label="Next category"
+                type="button"
+                style={{ background: 'none', border: 'none', borderRadius: '50%', width: 22, height: 22, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', marginLeft: 6, color: '#bbb', fontSize: 15, transition: 'color 0.2s' }}
+                disabled={totalPages <= 1}
+              >
+                <span>&gt;</span>
+              </button>
+            </div>
           </div>
-        </div>
+        )}
       </div>
       {/* Đường gạch dài nằm giữa pagination và Most Visited Places */}
       <div style={{ width: '100%', height: 2, background: '#e0e0e0', margin: '32px 0 0 0' }}></div>
@@ -803,7 +765,7 @@ function BookingWeb() {
                   margin: 0,
                   fontWeight: 700,
                   fontSize: 20,
-                  lineHeight: 1.18,
+                  lineHeight: 1,
                   color: 'rgba(255,255,255,0.92)',
                   textShadow: '0 2px 8px #0007',
                   letterSpacing: 0.1
@@ -834,14 +796,11 @@ function BookingWeb() {
                   height: 10,
                   borderRadius: '50%',
                   background: mostVisitedSlide === idx ? '#bbb' : '#e5e5e5',
-                  margin: '0 3px',
-                  borderRadius: '50%',
-                  background: mostVisitedSlide === idx ? '#bbb' : '#e5e5e5',
-                  margin: '0 3px',
                   transition: 'background 0.2s',
                   cursor: 'pointer',
                   boxShadow: mostVisitedSlide === idx ? '0 1px 4px #bbb3' : 'none',
-                  border: 'none'
+                  border: 'none',
+                  margin: '0 3px'
                 }}
                 onClick={() => setMostVisitedSlide(idx)}
                 aria-label={`Slide ${idx + 1}`}
@@ -907,7 +866,7 @@ function BookingWeb() {
         </div>
       </section>
       {/* Hero Section - Streamline Your Business */}
-      <section className="hero-section" style={{ position: 'relative', width: '100%', height: 400, overflow: 'hidden' }}>
+      <section className="hero-section" style={{ position: 'relative', width: '100%', height: 400, overflow: 'hidden', marginBottom: 48 }}>
         <img
           src="https://thegioiclub.com/Uploads/files/8up/nhahanggarden5-22.jpg"
           alt="Restaurant interior with tables and chairs"
@@ -937,6 +896,7 @@ function BookingWeb() {
           alignItems: 'flex-start',
           paddingLeft: '4%',
           zIndex: 2,
+          paddingBottom: 56, // Thêm padding dưới để tránh dính vào footer
         }}>
           <h1 style={{
             color: '#fff',
