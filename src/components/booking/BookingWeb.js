@@ -457,18 +457,18 @@ function BookingWeb() {
           </div>
         </div>
         <button
-          className="slider-btn left custom-slider-btn slider-btn-hide-on-default"
+          className="carousel-button prev"
           onClick={handleHeroPrev}
-          style={{ left: 24, top: '50%', transform: 'translateY(-50%)', position: 'absolute', zIndex: 5 }}
+          aria-label="Previous slide"
         >
-          <span className="slider-chevron">&#8249;</span>
+          &#10094;
         </button>
         <button
-          className="slider-btn right custom-slider-btn slider-btn-hide-on-default"
+          className="carousel-button next"
           onClick={handleHeroNext}
-          style={{ right: 24, top: '50%', transform: 'translateY(-50%)', position: 'absolute', zIndex: 5 }}
+          aria-label="Next slide"
         >
-          <span className="slider-chevron">&#8250;</span>
+          &#10095;
         </button>
       </section>
       {/* Đưa search-bar ra ngoài carousel-booking */}
