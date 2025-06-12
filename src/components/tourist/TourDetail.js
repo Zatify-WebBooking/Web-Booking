@@ -30,6 +30,11 @@ const TourDetail = ({ tourId }) => {
         .btn-menu:hover {
           background-color: #043a5c !important;
         }
+        .subtitle {
+          font-size: 2.2rem !important;
+          font-weight: 600;
+          letter-spacing: 0.5px;
+        }
       `}</style>
       <HeaderTourist />
       {pdfs.length > 0 ? (
